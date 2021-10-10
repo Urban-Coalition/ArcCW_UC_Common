@@ -36,7 +36,7 @@ end
 att.Override_Firemodes_Priority = 100
 att.Override_Firemodes = {
     {
-        PrintName = "FRCD",
+        PrintName = "fcg.frcd",
         Mode = 2,
     },
     {
@@ -44,4 +44,5 @@ att.Override_Firemodes = {
     }
 }
 
-att.Mult_RPM = .8
+att.Mult_RPM = .75
+att.Mult_RecoilSide = 1.25

@@ -28,7 +28,7 @@ att.Add_SightsDispersion = 100
 att.Override_Firemodes = {
     {
         Mode = 2,
-        PrintName = "SLAM",
+        PrintName = "fcg.slam",
     },
     {
         Mode = 0
