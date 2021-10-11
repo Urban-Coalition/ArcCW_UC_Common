@@ -151,7 +151,7 @@ function ENT:Think()
 
         local dmg = DamageInfo()
         dmg:SetDamageType(DMG_BURN)
-        dmg:SetDamage(math.Round(math.random() * 3 + 2))
+        dmg:SetDamage(math.Round(math.random() * 2 + 2))
         dmg:SetInflictor(self)
         dmg:SetAttacker(self:GetOwner())
         util.BlastDamageInfo(dmg, self:GetPos(), 200)

@@ -1,7 +1,7 @@
-att.PrintName = "40mm Flashbang Grenades" -- trol
-att.AbbrevName = "Flashbang"
+att.PrintName = "40mm Stun Grenades" -- trol
+att.AbbrevName = "Stun"
 att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")
-att.Description = "gp30 moment"
+att.Description = "Less-than-lethal grenades that create a blinding flash and deafening bang.\nWhile typically used as hand grenades, the larger projectile allows for a more visible and audible effect."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {

@@ -11,9 +11,10 @@ ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 
 
 -- Intentionally not ENT.Damage since ArcCW base overwrites it with weapon damage (for some reason)
-ENT.GrenadeDamage = 0
+ENT.GrenadeDamage = false
 ENT.GrenadeRadius = 0
 ENT.FuseTime = 10
+ENT.DragCoefficient = 1
 
 ENT.Model = "models/weapons/shell.mdl"
 ENT.Scorch = true
@@ -29,6 +30,7 @@ if SERVER then
 
         if phys:IsValid() then
             phys:Wake()
+            phys:SetDragCoefficient(self.DragCoefficient)
         end
 
         self.SpawnTime = CurTime()
@@ -75,7 +77,7 @@ end
 -- overwrite to do special explosion things
 function ENT:DoDetonation()
     local attacker = IsValid(self:GetOwner()) and self:GetOwner() or self
-    util.BlastDamage(self, attacker, self:GetPos(), self.GrenadeRadius, self.GrenadeDamage)
+    util.BlastDamage(self, attacker, self:GetPos(), self.GrenadeRadius, self.GrenadeDamage or self.Damage or 0)
 end
 
 function ENT:Detonate()

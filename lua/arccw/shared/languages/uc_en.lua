@@ -31,6 +31,13 @@ L["uc.noubs"] = "Disables Underbarrel attachments"
 L["uc.nostocks"] = "Disables Stock attachments"
 L["uc.nomuzzle"] = "Disables Muzzle attachments"
 
+L["uc.pellet.8"] = "+8 Pellets per shot"
+L["uc.pellet.24"] = "+24 Pellets per shot"
+L["uc.penetration.12"] = "+12mm Penetration"
+
+L["uc.40mm.buckshot"] = "Fires multiple pellets"
+L["uc.40mm.hornet"] = "Fires multiple bullets"
+
 L["fcg.slam"] = "Slam-fire"
 L["fcg.slam.abbrev"] = "SLAM"
 L["fcg.frcd"] = "Forced-reset"

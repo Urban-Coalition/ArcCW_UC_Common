@@ -1,7 +1,7 @@
-att.PrintName = "40mm Napalm Grenades" -- trol
-att.AbbrevName = "Napalm"
+att.PrintName = "40mm Incendiary Grenades" -- trol
+att.AbbrevName = "Incendiary"
 att.Icon = nil
-att.Description = "guys the thermal drill go get it"
+att.Description = "Hand-made grenade loaded with a fuel mixture that disperses on impact, burning an area over time."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
