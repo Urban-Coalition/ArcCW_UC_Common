@@ -7,6 +7,8 @@ ENT.Information = ""
 ENT.Spawnable = false
 
 ENT.Ticks = 0
+ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
+
 
 -- Intentionally not ENT.Damage since ArcCW base overwrites it with weapon damage (for some reason)
 ENT.GrenadeDamage = 0
