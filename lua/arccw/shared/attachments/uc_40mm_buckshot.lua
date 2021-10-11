@@ -2,7 +2,7 @@ att.PrintName = "40mm Buckshot Grenades"
 att.AbbrevName = "Buckshot"
 
 att.Icon = nil
-att.Description = "big shotgun"
+att.Description = "Officially desginated the 'Multiple Projectile Anti Personnel' ammunition, this is effectively a large buckshot round containing 20 pellets. "
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -16,14 +16,14 @@ att.AutoStats = true
 att.Override_ShootEntity = false
 att.Override_Num = 20
 
-att.Override_Damage = 50
-att.Override_DamageMin = 15
+att.Override_Damage = 20 * 20
+att.Override_DamageMin = 5 * 20
 
-att.Override_Range = 100
-att.Override_RangeMin = 25
+att.Override_Range = 75
+att.Override_RangeMin = 10
 att.Override_HullSize = 2
 
-att.Mult_AccuracyMOA = 2
+att.Override_AccuracyMOA = 60
 
 att.ActivateElements = {"m79_nade_1gaugeshell"}
 

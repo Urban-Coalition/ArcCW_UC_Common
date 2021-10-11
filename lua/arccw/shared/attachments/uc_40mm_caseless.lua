@@ -1,5 +1,5 @@
-att.PrintName = "40mm Caseless High-explosive Grenades"
-att.AbbrevName = "Caseless HE"
+att.PrintName = "40mm Caseless Grenades"
+att.AbbrevName = "Caseless"
 att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")
 att.Description = "gp30 moment"
 att.Desc_Pros = {
