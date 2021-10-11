@@ -1,4 +1,5 @@
-att.PrintName = "\"TMJ\" Total Metal Jacket"
+att.PrintName = "\"TMJ\" Total Metal Jacket Rounds"
+att.AbbrevName = "\"TMJ\" Total Metal Jacket"
 
 att.SortOrder = 2
 att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")

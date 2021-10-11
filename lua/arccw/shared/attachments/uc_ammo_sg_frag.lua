@@ -16,17 +16,23 @@ att.Mult_Penetration = 0.1
 att.Mult_Damage = 0.5
 att.Mult_DamageMin = 0.5
 att.Mult_Range = .5
-att.Mult_HipDispersion = 2.25
+att.Mult_HipDispersion = 1.5
 att.Override_Num = 1
 att.Override_Num_Priority = 99
 att.AutoStats = true
 
-function BulletHit(wep, data)
+local function BulletHit(wep, data)
     if data.damage then
-        util.BlastDamage(wep, wep:GetOwner(), data.tr.HitPos, 150, data.damage)
+        util.BlastDamage(wep, wep:GetOwner(), data.tr.HitPos, 128, data.damage)
 
         local eff = EffectData()
         eff:SetOrigin(data.tr.HitPos)
+        --[[]
+        eff:SetMagnitude(4)
+        eff:SetScale(0.5)
+        eff:SetRadius(4)
+        util.Effect("Sparks", eff)
+        ]]
         util.Effect("Explosion", eff)
         util.Decal("Scorch", data.tr.HitPos - data.tr.HitNormal, data.tr.HitPos + data.tr.HitNormal, ents.GetAll())
     end

@@ -4,19 +4,21 @@ att.SortOrder = 1
 att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")
 att.Description = "The last 5 rounds of the magazine are tracer rounds, providing a visual indication when the magazine is almost empty."
 att.Desc_Pros = {
-    "Low ammo indication"
+    "uc.lowind"
 }
 att.Desc_Cons = {
-    "Visible bullet trail at low ammo"
+    "uc.tracer"
 }
 att.Desc_Neutrals = {
-    "Requires physical bullets"
 }
 att.Slot = "uc_ammo"
 
-att.AutoStats = true
+att.InvAtt = "uc_ammo_tr"
 
-att.Override_TracerFinalMag = 5
+att.AutoStats = true
+att.Ignore = true
+
+att.Override_TracerFinalMag = 5 -- this doesn't actually work like this, you know
 att.ToggleStats = {
     {
         PrintName = "Red",
