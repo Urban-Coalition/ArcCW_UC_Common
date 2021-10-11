@@ -32,6 +32,11 @@ att.Hook_SelectReloadAnimation = function(wep, anim)
     return anim .. "_shotgun"
 end
 
--- att.Hook_GetShootSound = function(wep, fsound)
---     if fsound == wep.ShootSound then return ")^weapons/arccw_ud/870/fire.ogg" end
--- end
+att.Hook_GetShootSound = function(wep, fsound)
+    if fsound == wep.ShootSound then return ")^/arccw_uc/common/gl_fire_buck.ogg" end
+end
+
+att.Hook_GetDistantShootSound = function(wep, distancesound)
+    if distancesound == wep.DistantShootSound then
+        return ")^/arccw_uc/common/gl_fire_buck_dist.ogg" end
+end
