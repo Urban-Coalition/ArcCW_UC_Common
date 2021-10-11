@@ -139,6 +139,11 @@ function ENT:Think()
 
         if self.NextDamageTick > CurTime() then return end
 
+        if IsValid(self:GetParent()) and self:GetParent():IsPlayer() and not self:GetParent():Alive() then
+            self:Remove()
+            return
+        end
+
         local dmg = DamageInfo()
         dmg:SetDamageType(DMG_BURN)
         dmg:SetDamage(self.Stuck and 2 or 1)
@@ -157,7 +162,7 @@ function ENT:Think()
             self.NextStickTick = CurTime() + 0.5
             if math.random() <= 0.5 then
                 for _, e in pairs(ents.FindInSphere(self:GetPos(), 96)) do
-                    if e:IsNPC() or e:IsNextBot() or e:IsVehicle() or e:IsPlayer() then
+                    if e:IsNPC() or e:IsNextBot() or e:IsVehicle() or (e:IsPlayer() and e:Alive()) then
                         self.Stuck = true
                         timer.Simple(0, function()
                             -- we commit a mild amount of war crimes

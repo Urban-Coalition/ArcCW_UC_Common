@@ -3,7 +3,7 @@ AddCSLuaFile()
 ENT.Base = "arccw_uc_40mm_he"
 ENT.PrintName = "40mm Incendiary"
 
-ENT.GrenadeDamage = 100
+ENT.GrenadeDamage = 50
 ENT.GrenadeRadius = 150
 
 function ENT:DoDetonation()

@@ -4,7 +4,7 @@ ENT.Base = "arccw_uc_40mm_he"
 ENT.PrintName = "40mm Flash Grenade"
 
 ENT.GrenadeDamage = 50
-ENT.GrenadeRadius = 300
+ENT.GrenadeRadius = 150
 
 function ENT:DoDetonation()
     local attacker = IsValid(self:GetOwner()) and self:GetOwner() or self

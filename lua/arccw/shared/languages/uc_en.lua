@@ -35,8 +35,12 @@ L["uc.pellet.8"] = "+8 Pellets per shot"
 L["uc.pellet.24"] = "+24 Pellets per shot"
 L["uc.penetration.12"] = "+12mm Penetration"
 
+L["uc.40mm.mindmg"] = "Minimal blast damage"
 L["uc.40mm.buckshot"] = "Fires multiple pellets"
 L["uc.40mm.hornet"] = "Fires multiple bullets"
+L["uc.40mm.incendiary"] = "Creates fire on impact"
+L["uc.40mm.napalm"] = "Creates napalm on impact"
+L["uc.40mm.flash"] = "Blinds targets on impact"
 
 L["fcg.slam"] = "Slam-fire"
 L["fcg.slam.abbrev"] = "SLAM"
