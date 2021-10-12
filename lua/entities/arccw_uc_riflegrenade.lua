@@ -82,7 +82,8 @@ function ENT:DoDetonation()
 end
 
 function ENT:Detonate()
-    if not self:IsValid() then return end
+    if not self:IsValid() or self.BOOM then return end
+    self.BOOM = true
 
     if self.ExplosionEffect then
         local effectdata = EffectData()

@@ -5,21 +5,35 @@ ENT.PrintName = "40mm Flash Grenade"
 
 ENT.GrenadeDamage = 50
 ENT.GrenadeRadius = 150
+ENT.ExplosionEffect = false
+ENT.Scorch = false
 
 function ENT:DoDetonation()
-    local attacker = IsValid(self:GetOwner()) and self:GetOwner() or self
-    util.BlastDamage(self, attacker, self:GetPos(), self.GrenadeRadius, self.GrenadeDamage)
-    self:EmitSound("weapons/arccw/flashbang/flashbang_explode1.wav", 100, 100, 1, CHAN_AUTO)
-    self:EmitSound("weapons/arccw/flashbang/flashbang_explode1_distant.wav", 140, 100, 1, CHAN_AUTO)
 
     local effectdata = EffectData()
-    effectdata:SetOrigin( self:GetPos() )
+    effectdata:SetOrigin(self:GetPos())
+
+    if self:WaterLevel() >= 1 then
+        util.Effect("WaterSurfaceExplosion", effectdata)
+        self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
+    else
+        effectdata:SetMagnitude(4)
+        effectdata:SetScale(1)
+        effectdata:SetRadius(4)
+        effectdata:SetNormal(self:GetVelocity():GetNormalized())
+        util.Effect("Sparks", effectdata)
+        self:EmitSound("physics/metal/metal_box_break1.wav", 100, 200, 0.5)
+    end
+
+    -- TODO: these sounds need to be replaced (dependency)!
+    self:EmitSound("weapons/arccw/flashbang/flashbang_explode1.wav", 100, 100, 1, CHAN_AUTO)
+    self:EmitSound("weapons/arccw/flashbang/flashbang_explode1_distant.wav", 140, 100, 1, CHAN_AUTO)
 
     util.Effect( "arccw_flashexplosion", effectdata)
 
     local flashorigin = self:GetPos()
 
-    local flashpower = 1024
+    local flashpower = 512
     local targets = ents.FindInSphere(flashorigin, flashpower)
 
     for _, k in pairs(targets) do
