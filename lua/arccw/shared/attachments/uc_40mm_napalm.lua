@@ -1,7 +1,7 @@
 att.PrintName = "40mm Napalm Grenades"
 att.AbbrevName = "Napalm"
 att.Icon = nil
-att.Description = "Extremely illegal airburst grenades loaded with sticky napalm.\nWhile the napalm only disperses in a small radius, it will stick onto targets that come into contact with it, causing a gruelsome and fiery death."
+att.Description = "Extremely illegal airburst grenades loaded with sticky napalm.\nWhile the napalm only disperses in a small radius, it will stick onto targets that come into contact with it, causing a gruesome and firey death."
 att.Desc_Pros = {
     "uc.40mm.napalm"
 }
