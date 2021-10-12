@@ -18,13 +18,13 @@ att.Override_ShootEntity = false
 att.Override_Num = 20
 
 att.Override_Damage = 20 * 20
-att.Override_DamageMin = 5 * 20
+att.Override_DamageMin = 8 * 20
 
 att.Override_Range = 75
 att.Override_RangeMin = 10
-att.Override_HullSize = 2
+att.Override_HullSize = 4
 
-att.Override_AccuracyMOA = 60
+att.Override_AccuracyMOA = 50
 
 att.ActivateElements = {"m79_nade_1gaugeshell"}
 

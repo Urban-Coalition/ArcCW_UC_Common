@@ -17,14 +17,14 @@ att.Override_ShootEntity = false
 att.Override_Num = 16
 
 att.Override_Damage = 18 * 16
-att.Override_DamageMin = 9 * 16
+att.Override_DamageMin = 10 * 16
 
 att.Override_Range = 100
 att.Override_RangeMin = 25
-att.Override_HullSize = 1
+att.Override_HullSize = 2
 
-att.Override_AccuracyMOA = 30
-att.Mult_Recoil = 0.6
+att.Override_AccuracyMOA = 25
+att.Mult_Recoil = 0.4
 
 -- att.Mult_AccuracyMOA = 1
 
