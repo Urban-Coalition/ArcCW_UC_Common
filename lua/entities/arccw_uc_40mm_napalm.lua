@@ -5,23 +5,63 @@ ENT.PrintName = "40mm Napalm"
 
 ENT.GrenadeDamage = 50
 ENT.GrenadeRadius = 150
+ENT.ExplosionEffect = false
+ENT.Scorch = false
+ENT.DragCoefficient = 0.5
+
+ENT.NextTraceTime = 0
+
+if SERVER then
+    function ENT:Think()
+        if SERVER and CurTime() - self.SpawnTime >= self.FuseTime then
+            self:Detonate()
+        end
+
+        if self.NextTraceTime < CurTime() then
+            self.NextTraceTime = CurTime() + 0.1
+            local tr = util.TraceLine({
+                start = self:GetPos(),
+                endpos = self:GetPos() + self:GetVelocity():GetNormalized() * 512,
+                filter = self,
+            })
+            if tr.Hit then
+                self:Detonate()
+            end
+        end
+
+    end
+end
 
 function ENT:DoDetonation()
-    local attacker = IsValid(self:GetOwner()) and self:GetOwner() or self
-    util.BlastDamage(self, attacker, self:GetPos(), self.GrenadeRadius, self.GrenadeDamage)
+    local effectdata = EffectData()
+    effectdata:SetOrigin(self:GetPos())
 
-    for i = 1, 4 do
+    if self:WaterLevel() >= 1 then
+        util.Effect("WaterSurfaceExplosion", effectdata)
+        self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
+    else
+        effectdata:SetMagnitude(4)
+        effectdata:SetScale(1)
+        effectdata:SetRadius(4)
+        effectdata:SetNormal(self:GetVelocity():GetNormalized())
+        util.Effect("Sparks", effectdata)
+        self:EmitSound("physics/metal/metal_box_break1.wav", 100, 200)
+    end
+
+    for i = 1, 5 do
         local cloud = ents.Create("arccw_uc_napalm")
         cloud.FireTime = 20
 
         if !IsValid(cloud) then return end
 
-        local vel = Vector(math.Rand(-1, 1), math.Rand(-1, 1), math.Rand(-1, 1)) * 500
+        local vel = VectorRand() * 500
 
         cloud.Order = i
-        cloud:SetPos(self:GetPos() - (self:GetVelocity() * FrameTime()) * 3 + VectorRand())
-        cloud:SetAbsVelocity(vel + self:GetVelocity() * math.Rand(-1, 1) * 1000)
+        cloud:SetPos(self:GetPos() - (self:GetVelocity() * FrameTime()) + VectorRand())
+        --cloud:SetAbsVelocity(vel + self:GetVelocity())
         cloud:SetOwner(self:GetOwner())
         cloud:Spawn()
+        cloud:GetPhysicsObject():SetVelocityInstantaneous(vel + self:GetVelocity() * 0.5)
+
     end
 end

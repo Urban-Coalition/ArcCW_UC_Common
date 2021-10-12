@@ -17,6 +17,7 @@ ENT.FuseTime = 10
 ENT.DragCoefficient = 1
 
 ENT.Model = "models/weapons/shell.mdl"
+ENT.ExplosionEffect = true
 ENT.Scorch = true
 ENT.SmokeTrail = true
 
@@ -82,15 +83,18 @@ end
 
 function ENT:Detonate()
     if not self:IsValid() then return end
-    local effectdata = EffectData()
-    effectdata:SetOrigin(self:GetPos())
 
-    if self:WaterLevel() >= 1 then
-        util.Effect("WaterSurfaceExplosion", effectdata)
-        self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
-    else
-        util.Effect("Explosion", effectdata)
-        self:EmitSound("phx/kaboom.wav", 125, 100, 1, CHAN_AUTO)
+    if self.ExplosionEffect then
+        local effectdata = EffectData()
+        effectdata:SetOrigin(self:GetPos())
+
+        if self:WaterLevel() >= 1 then
+            util.Effect("WaterSurfaceExplosion", effectdata)
+            self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
+        else
+            util.Effect("Explosion", effectdata)
+            self:EmitSound("phx/kaboom.wav", 125, 100, 1, CHAN_AUTO)
+        end
     end
 
     self:DoDetonation()

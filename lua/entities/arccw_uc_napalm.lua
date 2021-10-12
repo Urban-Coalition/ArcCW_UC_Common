@@ -84,7 +84,7 @@ function ENT:Think()
             fire:SetNextThink( CurTime() + FrameTime() )
             fire:SetThinkFunction( function(pa)
                 if !pa then return end
-                local col1 = Color(255, 200, 200)
+                local col1 = Color(255, 255, 175)
                 local col2 = Color(0, 0, 0)
 
                 local col3 = col1
@@ -98,12 +98,12 @@ function ENT:Think()
             end )
         end
 
-        if math.random(1, 100) < 5 then
+        if math.random(1, 100) < 15 then
             local fire = emitter:Add("particles/smokey", self:GetPos())
-                fire:SetVelocity( VectorRand() * 25 )
-                fire:SetGravity( Vector(0, 0, 1500) )
-                fire:SetDieTime( math.Rand(0.25, 1) )
-                fire:SetStartAlpha( 255 )
+                fire:SetVelocity( VectorRand() * 100 )
+                fire:SetGravity( Vector(0, 0, 1000) )
+                fire:SetDieTime( math.Rand(0.5, 2) )
+                fire:SetStartAlpha( 200 )
                 fire:SetEndAlpha( 0 )
                 fire:SetStartSize( 10 )
                 fire:SetEndSize( 128 )
@@ -118,7 +118,7 @@ function ENT:Think()
                 fire:SetNextThink( CurTime() + FrameTime() )
                 fire:SetThinkFunction( function(pa)
                     if !pa then return end
-                    local col1 = Color(200, 128, 0)
+                    local col1 = Color(150, 75, 0)
                     local col2 = Color(50, 50, 50)
 
                     local col3 = col1
@@ -139,14 +139,14 @@ function ENT:Think()
 
         if self.NextDamageTick > CurTime() then return end
 
-        if IsValid(self:GetParent()) and self:GetParent():IsPlayer() and not self:GetParent():Alive() then
+        if IsValid(self:GetParent()) and self:GetParent():IsPlayer() and !self:GetParent():Alive() then
             self:Remove()
             return
         end
 
         local dmg = DamageInfo()
         dmg:SetDamageType(DMG_BURN)
-        dmg:SetDamage(self.Stuck and 2 or 1)
+        dmg:SetDamage(self.Stuck and 4 or 2)
         dmg:SetInflictor(self)
         dmg:SetAttacker(self:GetOwner())
 
@@ -157,7 +157,7 @@ function ENT:Think()
 
         util.BlastDamageInfo(dmg, self:GetPos(), 150)
 
-        self.NextDamageTick = CurTime() + 0.2
+        self.NextDamageTick = CurTime() + 0.25
         if !self.Stuck and self.NextStickTick < CurTime() then
             self.NextStickTick = CurTime() + 0.5
             if math.random() <= 0.5 then
