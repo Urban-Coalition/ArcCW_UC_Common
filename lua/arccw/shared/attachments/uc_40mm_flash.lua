@@ -6,7 +6,7 @@ att.Desc_Pros = {
     "uc.40mm.flash"
 }
 att.Desc_Cons = {
-    "uc.40mm.mindmg"
+    "uc.40mm.nodmg"
 }
 att.Desc_Neutrals = {
 }

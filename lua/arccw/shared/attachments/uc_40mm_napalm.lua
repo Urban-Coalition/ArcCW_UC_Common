@@ -6,7 +6,7 @@ att.Desc_Pros = {
     "uc.40mm.napalm"
 }
 att.Desc_Cons = {
-    "uc.40mm.mindmg"
+    "uc.40mm.nodmg"
 }
 att.Desc_Neutrals = {
 }
@@ -15,7 +15,5 @@ att.Slot = "uc_40mm"
 att.AutoStats = true
 
 att.Override_ShootEntity = "arccw_uc_40mm_napalm"
-
---att.Mult_Recoil = 1
 
 att.ActivateElements = {"m79_nade_incendiary"}
