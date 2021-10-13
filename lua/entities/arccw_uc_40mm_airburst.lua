@@ -35,6 +35,7 @@ if SERVER then
 end
 
 function ENT:DoDetonation()
+    local dir = self:GetVelocity():GetNormalized()
     local effectdata = EffectData()
     effectdata:SetOrigin(self:GetPos())
 
@@ -45,7 +46,7 @@ function ENT:DoDetonation()
         effectdata:SetMagnitude(4)
         effectdata:SetScale(1)
         effectdata:SetRadius(4)
-        effectdata:SetNormal(self:GetVelocity():GetNormalized())
+        effectdata:SetNormal(dir)
         util.Effect("Sparks", effectdata)
         self:EmitSound("physics/metal/metal_box_break1.wav", 100, 200)
     end
@@ -57,9 +58,9 @@ function ENT:DoDetonation()
         Distance = 2048,
         HullSize = 16,
         Num = 64,
-        Tracer = 4,
+        Tracer = 1,
         Src = self:GetPos(),
-        Dir = self:GetVelocity():GetNormalized(),
+        Dir = dir,
         Spread = Vector(1, 1, 0),
         IgnoreEntity = self,
     })
@@ -68,7 +69,7 @@ function ENT:DoDetonation()
     dmg:SetDamageType(DMG_BULLET)
     dmg:SetInflictor(self)
     dmg:SetDamageForce(self:GetVelocity() * 100)
-    for _, ent in pairs(ents.FindInCone(self:GetPos(), self:GetVelocity():GetNormalized(), 1024, 0.707)) do
+    for _, ent in pairs(ents.FindInCone(self:GetPos(), dir, 1024, 0.707)) do
         local tr = util.QuickTrace(self:GetPos(), ent:WorldSpaceCenter() - self:GetPos(), self)
         if tr.Entity == ent then
             dmg:SetDamage(math.Rand(30, 120) * math.min(tr.Fraction + 0.5, 1))
@@ -88,3 +89,46 @@ function ENT:PhysicsCollide(colData, collider)
     self:EmitSound("weapons/rpg/shotdown.wav", 100, 150)
     self:Remove()
 end
+
+--[[]
+function ENT:BurstEffect()
+    local dir = self:GetVelocity():GetNormalized()
+    local emitter = ParticleEmitter(self:GetPos())
+    if !self:IsValid() or self:WaterLevel() > 2 then return end
+    if !IsValid(emitter) then return end
+    for i = 1, 64 do
+        local fire = emitter:Add("particles/smokey", self:GetPos())
+        fire:SetVelocity( VectorRand() * 500 + dir * 1000 )
+        fire:SetGravity( Vector(0, 0, -90) )
+        fire:SetDieTime( math.Rand(0.25, 0.5) )
+        fire:SetStartAlpha( 200 )
+        fire:SetEndAlpha( 0 )
+        fire:SetStartSize( 10 )
+        fire:SetEndSize( 128 )
+        fire:SetRoll( math.Rand(-180, 180) )
+        fire:SetRollDelta( math.Rand(-0.2,0.2) )
+        fire:SetColor( 255, 255, 255 )
+        fire:SetAirResistance( 150 )
+        fire:SetPos( self:GetPos() )
+        fire:SetLighting( false )
+        fire:SetCollide(true)
+        fire:SetBounce(0.75)
+        fire:SetNextThink( CurTime() + FrameTime() )
+        fire:SetThinkFunction( function(pa)
+            if !pa then return end
+            local col1 = Color(150, 150, 150)
+            local col2 = Color(200, 200, 200)
+
+            local col3 = col1
+            local d = pa:GetLifeTime() / pa:GetDieTime()
+            col3.r = Lerp(d, col1.r, col2.r)
+            col3.g = Lerp(d, col1.g, col2.g)
+            col3.b = Lerp(d, col1.b, col2.b)
+
+            pa:SetColor(col3.r, col3.g, col3.b)
+            pa:SetNextThink( CurTime() + FrameTime() )
+        end )
+    end
+    emitter:Finish()
+end
+]]

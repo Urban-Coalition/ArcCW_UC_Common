@@ -7,7 +7,7 @@ ENT.GrenadeDamage = 50
 ENT.GrenadeRadius = 150
 ENT.ExplosionEffect = false
 ENT.Scorch = false
-ENT.DragCoefficient = 0.5
+ENT.DragCoefficient = 1
 
 ENT.NextTraceTime = 0
 
@@ -49,20 +49,20 @@ function ENT:DoDetonation()
         self:EmitSound("ambient/fire/gascan_ignite1.wav", 100, 100, 0.75)
     end
 
-    for i = 1, 5 do
+    for i = 1, 4 do
         local cloud = ents.Create("arccw_uc_napalm")
         cloud.FireTime = 20
 
         if !IsValid(cloud) then return end
 
-        local vel = VectorRand() * 500
+        local vel = VectorRand() * 250
 
         cloud.Order = i
         cloud:SetPos(self:GetPos() - (self:GetVelocity() * FrameTime()) + VectorRand())
         --cloud:SetAbsVelocity(vel + self:GetVelocity())
         cloud:SetOwner(self:GetOwner())
         cloud:Spawn()
-        cloud:GetPhysicsObject():SetVelocityInstantaneous(vel + self:GetVelocity() * 0.5)
+        cloud:GetPhysicsObject():SetVelocityInstantaneous(vel + self:GetVelocity())
 
     end
 end
