@@ -101,7 +101,7 @@ function ENT:Detonate()
             Damage = 0,
             Tracer = 0,
             Distance = 20000,
-            Dir = self:GetVelocity(),
+            Dir = self.GrenadeDir or self:GetVelocity():GetNormalized(),
             Src = self:GetPos(),
             Callback = function(att, tr, dmg)
                 util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
@@ -113,8 +113,10 @@ function ENT:Detonate()
 end
 
 function ENT:PhysicsCollide(colData, collider)
+    self.GrenadeDir = colData.OurOldVelocity:GetNormalized()
     self:Detonate()
 end
+
 
 function ENT:Draw()
     self:DrawModel()

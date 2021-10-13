@@ -34,6 +34,7 @@ L["uc.nomuzzle"] = "Disables Muzzle attachments"
 L["uc.pellet.8"] = "+8 Pellets per shot"
 L["uc.pellet.24"] = "+24 Pellets per shot"
 L["uc.penetration.12"] = "+12mm Penetration"
+L["uc.sightdisp.50"] = "+50 MOA Dispersion in sights"
 
 L["uc.40mm.nodmg"] = "No blast damage"
 L["uc.40mm.mindmg"] = "Minimal blast damage"
@@ -49,7 +50,8 @@ L["uc.40mm.proximity"] = "Projectile detonates by proximity"
 L["uc.40mm.arm"] = "0.25 second arm time"
 L["uc.40mm.drag.high"] = "Projectile has high drag"
 L["uc.40mm.drag.low"] = "Projectile has low drag"
-
+L["uc.40mm.blast.high"] = "Increased blast radius"
+L["uc.40mm.blast.low"] = "Reduced blast radius"
 
 L["fcg.slam"] = "Slam-fire"
 L["fcg.slam.abbrev"] = "SLAM"
