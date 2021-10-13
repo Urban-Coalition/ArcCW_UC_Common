@@ -17,7 +17,7 @@ if SERVER then
             self:Detonate()
         end
 
-        if self.SpawnTime + 0.5 < CurTime() and self.NextTraceTime < CurTime() then
+        if self.SpawnTime + 0.25 < CurTime() and self.NextTraceTime < CurTime() then
             self.NextTraceTime = CurTime() + 0.1
             local tr = util.TraceLine({
                 start = self:GetPos(),

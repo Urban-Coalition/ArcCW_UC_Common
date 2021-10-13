@@ -3,11 +3,12 @@ att.AbbrevName = "Napalm"
 att.Icon = nil
 att.Description = "Extremely illegal airburst grenades loaded with sticky napalm.\nWhile the napalm only disperses in a small radius, it will stick onto targets that come into contact with it, causing a gruesome and fiery death."
 att.Desc_Pros = {
-    "uc.40mm.napalm"
+    "uc.40mm.napalm",
+    "uc.40mm.proximity",
 }
 att.Desc_Cons = {
     "uc.40mm.nodmg",
-    "uc.40mm.arm.0.5",
+    "uc.40mm.arm",
     "uc.40mm.drag.high",
 }
 att.Desc_Neutrals = {

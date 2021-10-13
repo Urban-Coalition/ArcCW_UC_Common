@@ -4,10 +4,11 @@ att.Icon = nil
 att.Description = "Grenades filled with fragmentation. While usually detonated by a time fuse, this one has been modified to detonate by proximity. Intended for indirect fire, the projectile is slow and has high drag, with a safety fuse to prevent point-blank detonations."
 att.Desc_Pros = {
     "uc.40mm.airburst",
+    "uc.40mm.proximity",
 }
 att.Desc_Cons = {
     "uc.40mm.nodmg",
-    "uc.40mm.arm.0.5",
+    "uc.40mm.arm",
     "uc.40mm.drag.high",
 }
 att.Desc_Neutrals = {
