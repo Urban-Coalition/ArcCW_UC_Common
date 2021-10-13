@@ -1,7 +1,7 @@
 att.PrintName = "40mm HE Dual Purpose Grenades"
 att.AbbrevName = "HE Dual Purpose"
 att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")
-att.Description = "Grenade with a shaped charge that can penetrate armor, allowing it to punch through thin walls or deal massive impact damage."
+att.Description = "Grenades with a shaped charge for armor penetration, allowing it to punch through thin walls or deal massive impact damage to enemies or vehicles."
 att.Desc_Pros = {
     "uc.40mm.hedp",
     "uc.40mm.impact"

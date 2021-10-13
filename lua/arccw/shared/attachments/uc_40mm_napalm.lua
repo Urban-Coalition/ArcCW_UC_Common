@@ -6,7 +6,9 @@ att.Desc_Pros = {
     "uc.40mm.napalm"
 }
 att.Desc_Cons = {
-    "uc.40mm.nodmg"
+    "uc.40mm.nodmg",
+    "uc.40mm.arm.0.5",
+    "uc.40mm.drag.high",
 }
 att.Desc_Neutrals = {
 }

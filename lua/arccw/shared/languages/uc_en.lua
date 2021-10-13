@@ -44,6 +44,11 @@ L["uc.40mm.napalm"] = "Creates napalm on detonation"
 L["uc.40mm.flash"] = "Blinds targets on detonation"
 L["uc.40mm.impact"] = "High impact damage"
 L["uc.40mm.hedp"] = "Penetrates walls on impact"
+L["uc.40mm.airburst"] = "Creates shrapnel on detonation"
+L["uc.40mm.arm.0.5"] = "0.5 second arm time"
+L["uc.40mm.arm.1"] = "1 second arm time"
+L["uc.40mm.drag.high"] = "Projectile has high drag"
+L["uc.40mm.drag.low"] = "Projectile has low drag"
 
 
 L["fcg.slam"] = "Slam-fire"

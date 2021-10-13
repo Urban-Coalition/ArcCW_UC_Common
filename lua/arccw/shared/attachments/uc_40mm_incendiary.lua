@@ -1,7 +1,7 @@
 att.PrintName = "40mm Incendiary Grenades" -- trol
 att.AbbrevName = "Incendiary"
 att.Icon = nil
-att.Description = "Hand-made grenade loaded with a fuel mixture that disperses on impact, burning an area over time."
+att.Description = "Hand-made grenades loaded with a fuel mixture that disperses on impact, burning an area over time."
 att.Desc_Pros = {
     "uc.40mm.incendiary"
 }

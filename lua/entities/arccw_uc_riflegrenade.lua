@@ -35,11 +35,6 @@ if SERVER then
         end
 
         self.SpawnTime = CurTime()
-
-        timer.Simple(0.1, function()
-            if not IsValid(self) then return end
-            self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
-        end)
     end
 
     function ENT:Think()

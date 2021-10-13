@@ -2,7 +2,7 @@ att.PrintName = "40mm Buckshot Grenades"
 att.AbbrevName = "Buckshot"
 
 att.Icon = nil
-att.Description = "Officially desginated the 'Multiple Projectile Anti Personnel' ammunition, this is effectively a large buckshot round containing 20 pellets.\nIntended to be used when the enemy is too close to use explosives."
+att.Description = "Officially desginated the 'Multiple Projectile Anti Personnel' ammunition, these grenades are effectively large buckshot rounds containing 20 pellets.\nIntended to be used when the enemy is too close to use explosives."
 att.Desc_Pros = {
     "uc.40mm.buckshot"
 }

@@ -1,13 +1,13 @@
 AddCSLuaFile()
 
 ENT.Base = "arccw_uc_40mm_he"
-ENT.PrintName = "40mm Napalm"
+ENT.PrintName = "40mm Airburst"
 
 ENT.GrenadeDamage = 50
 ENT.GrenadeRadius = 150
 ENT.ExplosionEffect = false
 ENT.Scorch = false
-ENT.DragCoefficient = 0.5
+ENT.DragCoefficient = 1
 
 ENT.NextTraceTime = 0
 
@@ -17,12 +17,14 @@ if SERVER then
             self:Detonate()
         end
 
-        if self.SpawnTime + 0.5 < CurTime() and self.NextTraceTime < CurTime() then
+        if self.SpawnTime + 0.25 < CurTime() and self.NextTraceTime < CurTime() then
             self.NextTraceTime = CurTime() + 0.1
-            local tr = util.TraceLine({
+            local tr = util.TraceHull({
                 start = self:GetPos(),
                 endpos = self:GetPos() + self:GetVelocity():GetNormalized() * 512,
                 filter = self,
+                mins = Vector(-16, -16, -8),
+                maxs = Vector(16, 16, 8)
             })
             if tr.Hit then
                 self:Detonate()
@@ -46,24 +48,32 @@ function ENT:DoDetonation()
         effectdata:SetNormal(self:GetVelocity():GetNormalized())
         util.Effect("Sparks", effectdata)
         self:EmitSound("physics/metal/metal_box_break1.wav", 100, 200)
-        self:EmitSound("ambient/fire/gascan_ignite1.wav", 100, 100, 0.75)
     end
 
-    for i = 1, 5 do
-        local cloud = ents.Create("arccw_uc_napalm")
-        cloud.FireTime = 20
-
-        if !IsValid(cloud) then return end
-
-        local vel = VectorRand() * 500
-
-        cloud.Order = i
-        cloud:SetPos(self:GetPos() - (self:GetVelocity() * FrameTime()) + VectorRand())
-        --cloud:SetAbsVelocity(vel + self:GetVelocity())
-        cloud:SetOwner(self:GetOwner())
-        cloud:Spawn()
-        cloud:GetPhysicsObject():SetVelocityInstantaneous(vel + self:GetVelocity() * 0.5)
-
+    self:FireBullets({
+        Attacker = IsValid(self:GetOwner()) and self:GetOwner() or self,
+        Damage = 25,
+        Force = 5,
+        Distance = 2048,
+        HullSize = 16,
+        Num = 64,
+        Tracer = 4,
+        Src = self:GetPos(),
+        Dir = self:GetVelocity():GetNormalized(),
+        Spread = Vector(1, 1, 0),
+        IgnoreEntity = self,
+    })
+    local dmg = DamageInfo()
+    dmg:SetAttacker(IsValid(self:GetOwner()) and self:GetOwner() or self)
+    dmg:SetDamageType(DMG_BULLET)
+    dmg:SetInflictor(self)
+    dmg:SetDamageForce(self:GetVelocity() * 100)
+    for _, ent in pairs(ents.FindInCone(self:GetPos(), self:GetVelocity():GetNormalized(), 1024, 0.707)) do
+        local tr = util.QuickTrace(self:GetPos(), ent:WorldSpaceCenter() - self:GetPos(), self)
+        if tr.Entity == ent then
+            dmg:SetDamage(math.Rand(30, 120) * math.min(tr.Fraction + 0.5, 1))
+            ent:TakeDamageInfo(dmg)
+        end
     end
 end
 
