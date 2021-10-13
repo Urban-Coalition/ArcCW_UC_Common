@@ -14,3 +14,7 @@ att.AutoStats = true
 att.SortOrder = 8
 
 att.Add_ClipSize = 1
+
+att.Hook_Compatible = function(wep)
+    if wep:GetCapacity() == 1 then return false end
+end

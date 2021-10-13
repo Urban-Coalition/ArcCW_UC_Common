@@ -16,6 +16,10 @@ function att.Hook_GetCapacity(wep,cap)
     return math.max(cap + 1, math.floor(cap * 1.08))
 end
 
+att.Hook_Compatible = function(wep)
+    if wep:GetCapacity() == 1 then return false end
+end
+
 att.Mult_RPM = .85
 att.Mult_MalfunctionMean = 0.9
 att.GivesFlags = {"ud_loosesprings"}

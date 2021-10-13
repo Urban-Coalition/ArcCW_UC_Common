@@ -18,6 +18,11 @@ function att.Hook_GetCapacity(wep, cap)
     return math.max(math.floor(cap * (1 - 0.14)), 1)
 end
 
+att.Hook_Compatible = function(wep)
+    if wep:GetCapacity() == 1 then return false end
+end
+
+
 att.Mult_MalfunctionMean = 1.25
 att.Mult_HeatCapacity = 1.25
 att.Mult_RPM = 1.05
