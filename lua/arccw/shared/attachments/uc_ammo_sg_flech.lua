@@ -1,7 +1,7 @@
 att.PrintName = "\"FLECH\" Flechettes"
 
 att.SortOrder = 3
-att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")
+att.Icon = Material("entities/att/arccw_uc_ammo_shotgun_generic.png", "mips smooth")
 att.Description = [[Payload consisting of heavy, aerodynamic metal darts, which have less clump spread and more penetration than buckshot.]]
 att.Desc_Pros = {
     "uc.pellet.8",

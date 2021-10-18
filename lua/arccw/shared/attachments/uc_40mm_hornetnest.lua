@@ -1,6 +1,6 @@
 att.PrintName = "40mm 'Hornet's Nest' Grenades"
 att.AbbrevName = "Hornet's Nest"
-att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")
+att.Icon = Material("entities/att/arccw_uc_40mm_generic.png", "mips smooth")
 att.Description = "Aftermarket grenades that fit 16 .22 LR cartridges.\nMade to circumvent legal restrictions, these grenades are less lethal but more accurate than an equivalent 40mm buckshot round."
 att.Desc_Pros = {
     "uc.40mm.hornet"

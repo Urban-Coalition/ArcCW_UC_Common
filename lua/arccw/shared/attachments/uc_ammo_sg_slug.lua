@@ -1,7 +1,7 @@
 att.PrintName = "\"SLUG\" Full-Bore Slug"
 
 att.SortOrder = 1
-att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")
+att.Icon = Material("entities/att/arccw_uc_ammo_shotgun_generic.png", "mips smooth")
 att.Description = [[A single heavy projectile, comparable in performance to a high-caliber rifle cartridge.
 Applicable in situations that require marksmanship and minimal collateral damage.]]
 att.Desc_Pros = {

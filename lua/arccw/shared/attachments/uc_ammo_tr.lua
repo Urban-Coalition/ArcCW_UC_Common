@@ -2,7 +2,7 @@ att.PrintName = "\"TR\" Tracer Rounds"
 att.AbbrevName = "\"TR\" Tracer"
 
 att.SortOrder = 1
-att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")
+att.Icon = Material("entities/att/arccw_uc_ammo_generic.png", "mips smooth")
 att.Description = "A pyrotechnic charge inside the bullet creates a bright, colorful trail behind it during flight. The bright trails help predict ballistic trajectories without using sights."
 att.Desc_Pros = {
 }

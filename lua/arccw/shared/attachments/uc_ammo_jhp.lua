@@ -2,7 +2,7 @@ att.PrintName = "\"JHP\" Jacketed Hollow-point Rounds"
 att.AbbrevName = "\"JHP\" Jacketed Hollow-point"
 
 att.SortOrder = 4
-att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")
+att.Icon = Material("entities/att/arccw_uc_ammo_generic.png", "mips smooth")
 att.Description = "A type of bullet with a hollow tip that expands on impact, causing a more lethal hit without penetrating further than necessary.\nFor use in environments where over-penetration could cause collateral damage."
 att.Desc_Pros = {
 }

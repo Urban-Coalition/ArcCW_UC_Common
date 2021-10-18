@@ -2,7 +2,7 @@ att.PrintName = "\"JSP\" Jacketed Soft-point Rounds"
 att.AbbrevName = "\"JSP\" Jacketed Soft-point"
 
 att.SortOrder = 3
-att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")
+att.Icon = Material("entities/att/arccw_uc_ammo_generic.png", "mips smooth")
 att.Description = "Bullets with an exposed lead tip that expands on impact.\nThese expose the soft lead-alloy core deformed when striking a target."
 att.Desc_Pros = {
 }

@@ -1,6 +1,6 @@
 att.PrintName = "40mm Stun Grenades" -- trol
 att.AbbrevName = "Stun"
-att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")
+att.Icon = Material("entities/att/arccw_uc_40mm_generic.png", "mips smooth")
 att.Description = "Less-than-lethal grenades that create a blinding flash and deafening bang.\nWhile typically used as hand grenades, the larger projectile allows for a more visible and audible effect."
 att.Desc_Pros = {
     "uc.40mm.flash"

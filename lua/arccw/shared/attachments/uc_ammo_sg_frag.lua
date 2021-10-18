@@ -1,5 +1,5 @@
 att.PrintName = "\"HE\" FRAG-12"
---att.Icon = Material("entities/acwatt_go_ammo_sub.png", "mips smooth")
+att.Icon = Material("entities/att/arccw_uc_ammo_shotgun_generic.png", "mips smooth")
 att.Description = [[Shotgun slug with a small high-explosive warhead. On impact, the round saturates its surroundings with shrapnel like a frag grenade.
 Meant for breaching, but it can also useful for applying damage over an area.
 Beware: the explosion doesn't care who it hurts.]]

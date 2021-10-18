@@ -1,6 +1,6 @@
 att.PrintName = "40mm Airburst Grenades"
 att.AbbrevName = "Airburst"
-att.Icon = nil
+att.Icon = Material("entities/att/arccw_uc_40mm_generic.png", "mips smooth")
 att.Description = "Grenades filled with fragmentation. While usually detonated by a time fuse, this one has been modified to detonate by proximity. Intended for indirect fire, the projectile is slow and has high drag, with a safety fuse to prevent point-blank detonations."
 att.Desc_Pros = {
     "uc.40mm.airburst",
