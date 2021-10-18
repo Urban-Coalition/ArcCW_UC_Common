@@ -3,7 +3,8 @@ att.PrintName = "Match Trigger"
 att.Icon = Material("entities/att/arccw_uc_matchgradetrigger.png", "mips smooth")
 att.Description = "Hair trigger for competition shooting allows crisp trigger pulls, improving first shot performance."
 att.Desc_Pros = {
-    "uc.match",
+    "uc.match.1",
+    "uc.match.2",
 }
 att.Desc_Cons = {
 }
@@ -19,8 +20,9 @@ att.Hook_Compatible = function(wep)
     end
 end
 
---att.Mult_RPM = 0.9
-att.Override_ShotRecoilTable = {0.7}
+att.Override_ShotRecoilTable = {[0] = 0.75}
+att.Mult_TriggerDelayTime = 0.25
+
 --[[]
 att.M_Hook_Mult_AccuracyMOA = function(wep, data)
     if wep:GetBurstCount() == 0 then
