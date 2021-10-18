@@ -7,7 +7,7 @@ ENT.GrenadeDamage = 50
 ENT.GrenadeRadius = 150
 ENT.ExplosionEffect = false
 ENT.Scorch = false
-ENT.DragCoefficient = 1
+ENT.DragCoefficient = 0.75
 
 ENT.NextTraceTime = 0
 
@@ -19,10 +19,13 @@ if SERVER then
 
         if self.SpawnTime + 0.25 < CurTime() and self.NextTraceTime < CurTime() then
             self.NextTraceTime = CurTime() + 0.1
-            local tr = util.TraceLine({
+            local dir = self:GetVelocity():GetNormalized()
+            local tr = util.TraceHull({
                 start = self:GetPos(),
-                endpos = self:GetPos() + self:GetVelocity():GetNormalized() * 512,
+                endpos = self:GetPos() + dir * 512,
                 filter = self,
+                mins = Vector(-16, -16, -8),
+                maxs = Vector(16, 16, 8)
             })
             if tr.Hit then
                 self:Detonate()
@@ -49,7 +52,7 @@ function ENT:DoDetonation()
         self:EmitSound("ambient/fire/gascan_ignite1.wav", 100, 100, 0.75)
     end
 
-    for i = 1, 4 do
+    for i = 1, 5 do
         local cloud = ents.Create("arccw_uc_napalm")
         cloud.FireTime = 20
 

@@ -10,7 +10,7 @@ ENT.AdminSpawnable = false
 
 ENT.Model = "models/Items/AR2_Grenade.mdl"
 
-ENT.FireTime = 15
+ENT.FireTime = 30
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 ENT.Armed = false
 
@@ -139,14 +139,24 @@ function ENT:Think()
 
         if self.NextDamageTick > CurTime() then return end
 
-        if IsValid(self:GetParent()) and self:GetParent():IsPlayer() and !self:GetParent():Alive() then
-            self:Remove()
+        if self.Stuck and (!IsValid(self:GetParent()) or (self:GetParent():IsPlayer() and !self:GetParent():Alive())) then
+            self:SetParent(NULL)
+            self:SetMoveType( MOVETYPE_VPHYSICS )
+            self:SetSolid( SOLID_VPHYSICS )
+            self.Stuck = false
+            local maxs = Vector(1, 1, 1)
+            local mins = -maxs
+            self:PhysicsInitBox(mins, maxs)
+            local phys = self:GetPhysicsObject()
+            if phys:IsValid() then
+                phys:Wake()
+            end
             return
         end
 
         local dmg = DamageInfo()
         dmg:SetDamageType(DMG_BURN)
-        dmg:SetDamage(self.Stuck and 4 or 2)
+        dmg:SetDamage(math.random() * 1 + 1)
         dmg:SetInflictor(self)
         dmg:SetAttacker(self:GetOwner())
 
@@ -157,7 +167,7 @@ function ENT:Think()
 
         util.BlastDamageInfo(dmg, self:GetPos(), 150)
 
-        self.NextDamageTick = CurTime() + 0.25
+        self.NextDamageTick = CurTime() + 0.15
         if !self.Stuck and self.NextStickTick < CurTime() then
             self.NextStickTick = CurTime() + 0.5
             if math.random() <= 0.5 then

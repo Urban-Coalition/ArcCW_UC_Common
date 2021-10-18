@@ -10,7 +10,7 @@ ENT.AdminSpawnable = false
 
 ENT.Model = "models/Items/AR2_Grenade.mdl"
 
-ENT.FireTime = 15
+ENT.FireTime = 20
 
 ENT.Armed = false
 
@@ -39,12 +39,7 @@ function ENT:Initialize()
         self.SpawnTime = CurTime()
         self:Detonate()
 
-        self.FireTime = math.Rand(14.5, 15.5)
-
-        timer.Simple(0.1, function()
-            if !IsValid(self) then return end
-            self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
-        end)
+        self.FireTime = math.Rand(self.FireTime - 1, self.FireTime + 1)
     end
 end
 
@@ -151,12 +146,12 @@ function ENT:Think()
 
         local dmg = DamageInfo()
         dmg:SetDamageType(DMG_BURN)
-        dmg:SetDamage(math.Round(math.random() * 2 + 2))
+        dmg:SetDamage(math.Round(math.random() * 2 + 3))
         dmg:SetInflictor(self)
         dmg:SetAttacker(self:GetOwner())
         util.BlastDamageInfo(dmg, self:GetPos(), 200)
 
-        self.NextDamageTick = CurTime() + 0.25
+        self.NextDamageTick = CurTime() + 0.15
 
         if self.SpawnTime + self.FireTime <= CurTime() then self:Remove() return end
     end

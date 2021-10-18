@@ -32,6 +32,7 @@ if SERVER then
         if phys:IsValid() then
             phys:Wake()
             phys:SetDragCoefficient(self.DragCoefficient)
+            phys:SetBuoyancyRatio(0.1)
         end
 
         self.SpawnTime = CurTime()

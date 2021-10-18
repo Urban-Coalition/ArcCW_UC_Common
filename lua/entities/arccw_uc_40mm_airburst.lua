@@ -7,7 +7,7 @@ ENT.GrenadeDamage = 50
 ENT.GrenadeRadius = 150
 ENT.ExplosionEffect = false
 ENT.Scorch = false
-ENT.DragCoefficient = 1
+ENT.DragCoefficient = 0.75
 
 ENT.NextTraceTime = 0
 
@@ -19,9 +19,13 @@ if SERVER then
 
         if self.SpawnTime + 0.25 < CurTime() and self.NextTraceTime < CurTime() then
             self.NextTraceTime = CurTime() + 0.1
+
+            local dir = self:GetVelocity():GetNormalized()
+            local deg = math.Clamp(1.5 - dir:Cross(Vector(0, 0, -1)):Length(), 0.5, 1)
+
             local tr = util.TraceHull({
                 start = self:GetPos(),
-                endpos = self:GetPos() + self:GetVelocity():GetNormalized() * 512,
+                endpos = self:GetPos() + dir * (1024 * deg),
                 filter = self,
                 mins = Vector(-16, -16, -8),
                 maxs = Vector(16, 16, 8)
@@ -51,6 +55,9 @@ function ENT:DoDetonation()
         self:EmitSound("physics/metal/metal_box_break1.wav", 100, 200)
     end
 
+    -- The steeper the vertical angle, the higher the damage
+    local deg = math.Clamp(1.5 - dir:Cross(Vector(0, 0, -1)):Length(), 0.5, 1)
+
     self:FireBullets({
         Attacker = IsValid(self:GetOwner()) and self:GetOwner() or self,
         Damage = 25,
@@ -72,7 +79,7 @@ function ENT:DoDetonation()
     for _, ent in pairs(ents.FindInCone(self:GetPos(), dir, 1024, 0.707)) do
         local tr = util.QuickTrace(self:GetPos(), ent:WorldSpaceCenter() - self:GetPos(), self)
         if tr.Entity == ent then
-            dmg:SetDamage(math.Rand(30, 120) * math.min(tr.Fraction + 0.5, 1))
+            dmg:SetDamage(math.Rand(75, 150) * deg * math.Clamp(tr.Fraction, 0.5, 1))
             ent:TakeDamageInfo(dmg)
         end
     end
