@@ -21,4 +21,6 @@ att.Mult_DamageMin = 0.7
 
 att.Mult_MuzzleVelocity = 1.5
 
+att.Mult_ShootPitch = 1.15
+
 -- att.ActivateElements = {"m79_nade_caseless"}

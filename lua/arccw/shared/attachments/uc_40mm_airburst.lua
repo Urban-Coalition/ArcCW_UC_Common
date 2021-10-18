@@ -21,4 +21,6 @@ att.Override_ShootEntity = "arccw_uc_40mm_airburst"
 
 att.Mult_MuzzleVelocity = 0.75
 
+att.Mult_ShootPitch = 0.9
+
 --att.ActivateElements = {"m79_nade_incendiary"}

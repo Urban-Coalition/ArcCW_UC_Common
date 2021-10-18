@@ -16,7 +16,8 @@ att.Mult_ReloadTime = 0.78
 att.Mult_MuzzleVelocity = 0.85
 att.Mult_Damage = 0.75
 att.Mult_DamageMin = 0.75
---att.Mult_Recoil = 1
+
+att.Mult_ShootPitch = 1.1
 
 att.ActivateElements = {"m79_nade_caseless"}
 
