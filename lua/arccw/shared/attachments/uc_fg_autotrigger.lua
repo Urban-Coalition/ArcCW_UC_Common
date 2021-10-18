@@ -6,6 +6,7 @@ att.Desc_Pros = {
     "uc.auto"
 }
 att.Desc_Cons = {
+    "uc.frcd_visrec"
 }
 att.Desc_Neutrals = {
 }
@@ -42,3 +43,4 @@ att.Override_Firemodes = {
 
 att.Mult_RPM = .85
 att.Mult_RecoilSide = 1.25
+att.Mult_VisualRecoil = 2
