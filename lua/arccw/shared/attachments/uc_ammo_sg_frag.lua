@@ -4,9 +4,13 @@ att.Description = [[Shotgun slug with a small high-explosive warhead. On impact,
 Meant for breaching, but it can also useful for applying damage over an area.
 Beware: the explosion doesn't care who it hurts.]]
 att.Desc_Pros = {
-    "Splash damage"
+    "uc.explode"
 }
 att.Desc_Cons = {
+    "uc.alwaysphys",
+}
+att.Desc_Neutrals = {
+    "uc.oneprojectile"
 }
 att.SortOrder = 2
 
@@ -20,6 +24,13 @@ att.Mult_HipDispersion = 1.5
 att.Override_Num = 1
 att.Override_Num_Priority = 99
 att.AutoStats = true
+
+att.Override_HullSize = 0
+
+att.GivesFlags = {"uc_slug"}
+
+att.Override_AlwaysPhysBullet = true
+att.Mult_PhysBulletGravity = 1.5
 
 local function BulletHit(wep, data)
     if data.damage then
@@ -38,7 +49,7 @@ local function BulletHit(wep, data)
     end
 end
 
-att.Hook_PhysBulletHit = BulletHit
+--att.Hook_PhysBulletHit = BulletHit
 att.Hook_BulletHit = BulletHit
 
 att.Hook_Compatible = function(wep)

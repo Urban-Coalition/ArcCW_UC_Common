@@ -20,3 +20,5 @@ att.Mult_AccuracyMOA = .5
 att.Add_Penetration = 12
 att.Mult_Range = .75
 att.Mult_Damage = .8
+
+att.Mult_HullSize = 0.5
