@@ -20,7 +20,7 @@ att.Hook_Compatible = function(wep)
     end
 end
 
-att.Override_ShotRecoilTable = {[0] = 0.75}
+att.Override_ShotRecoilTable = {[1] = 0.75}
 att.Mult_TriggerDelayTime = 0.25
 
 --[[]
