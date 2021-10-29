@@ -28,7 +28,7 @@ att.Mult_Recoil = 0.4
 
 -- att.Mult_AccuracyMOA = 1
 
-att.ActivateElements = {"m79_nade_hornetnest"}
+att.ActivateElements = {"40mm_hornetnest"}
 
 -- att.Hook_GetShootSound = function(wep, fsound)
 --     if fsound == wep.ShootSound then return ")^weapons/arccw_ud/870/fire.ogg" end

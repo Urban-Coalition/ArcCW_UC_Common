@@ -23,4 +23,4 @@ att.Mult_MuzzleVelocity = 0.75
 
 att.Mult_ShootPitch = 0.9
 
---att.ActivateElements = {"m79_nade_incendiary"}
+att.ActivateElements = {"40mm_airburst"}

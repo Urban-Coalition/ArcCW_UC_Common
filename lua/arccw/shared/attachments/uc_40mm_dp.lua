@@ -19,4 +19,4 @@ att.AutoStats = true
 att.Mult_Damage = 0.6
 att.Mult_DamageMin = 0.6
 
--- att.ActivateElements = {"m79_nade_caseless"}
+att.ActivateElements = {"40mm_dp"}

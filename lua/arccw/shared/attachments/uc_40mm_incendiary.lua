@@ -18,4 +18,4 @@ att.Override_ShootEntity = "arccw_uc_40mm_incendiary"
 
 --att.Mult_Recoil = 1
 
-att.ActivateElements = {"m79_nade_incendiary"}
+att.ActivateElements = {"40mm_incendiary"}

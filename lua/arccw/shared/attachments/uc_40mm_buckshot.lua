@@ -25,7 +25,7 @@ att.Override_HullSize = 4
 
 att.Override_AccuracyMOA = 50
 
-att.ActivateElements = {"m79_nade_1gaugeshell"}
+att.ActivateElements = {"40mm_buckshot"}
 
 att.Hook_SelectReloadAnimation = function(wep, anim)
     return anim .. "_shotgun"

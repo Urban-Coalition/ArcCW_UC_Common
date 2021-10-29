@@ -18,4 +18,4 @@ att.AutoStats = true
 
 --att.Mult_Recoil = 1
 
--- att.ActivateElements = {"m79_nade_caseless"}
+att.ActivateElements = {"40mm_flash"}

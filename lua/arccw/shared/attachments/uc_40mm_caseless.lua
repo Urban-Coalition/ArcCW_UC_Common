@@ -19,7 +19,7 @@ att.Mult_DamageMin = 0.75
 
 att.Mult_ShootPitch = 1.1
 
-att.ActivateElements = {"m79_nade_caseless"}
+att.ActivateElements = {"40mm_caseless"}
 
 att.Hook_SelectReloadAnimation = function(wep, anim)
     return anim .. "_caseless"
