@@ -38,6 +38,7 @@ L["uc.nomuzzle"] = "Disables Muzzle attachments"
 
 L["uc.pellet.8"] = "+8 Pellets per shot"
 L["uc.pellet.24"] = "+24 Pellets per shot"
+L["uc.penetration.8"] = "+8mm Penetration"
 L["uc.penetration.12"] = "+12mm Penetration"
 L["uc.sightdisp.50"] = "+50 MOA Dispersion in sights"
 L["uc.disp.50"] = "+50 MOA Dispersion"
