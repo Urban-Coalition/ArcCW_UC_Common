@@ -21,13 +21,6 @@ att.Mult_Sway = 1.5
 att.LHIK = true
 att.LHIKHide = true
 
--- sry bby u too OP
-att.O_Hook_Override_ShootWhileSprint = function(wep, data)
-    if GetConVar("arccw_ud_homeboy_epic"):GetBool() then
-        return true
-    end
-end
-
 att.Hook_Compatible = function(wep, data)
     if wep:GetIsManualAction() or (not GetConVar("arccw_ud_homeboy_epic"):GetBool()
             and wep:GetBuff("HoldtypeActive") ~= "pistol" and wep:GetBuff("HoldtypeActive") ~= "revolver") then return false end
