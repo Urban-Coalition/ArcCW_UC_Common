@@ -22,6 +22,5 @@ att.LHIK = true
 att.LHIKHide = true
 
 att.Hook_Compatible = function(wep, data)
-    if wep:GetIsManualAction() or (not GetConVar("arccw_ud_homeboy_epic"):GetBool()
-            and wep:GetBuff("HoldtypeActive") ~= "pistol" and wep:GetBuff("HoldtypeActive") ~= "revolver") then return false end
+    if wep:GetIsManualAction() and wep:GetBuff("HoldtypeActive") ~= "pistol" and wep:GetBuff("HoldtypeActive") ~= "revolver" then return false end
 end
