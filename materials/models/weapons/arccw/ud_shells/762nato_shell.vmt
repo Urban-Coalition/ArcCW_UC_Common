@@ -15,5 +15,5 @@ VertexlitGeneric
     $normalmapalphaenvmapmask 1
     $envmaptint "[0.25 0.25 0.275]"
 
-    $bumpmap "models\weapons\arccw\ud_shells\762nato_shell_roughness"
+    $bumpmap "models\weapons\arccw\ud_shells\762nato_shell_bump"
 }

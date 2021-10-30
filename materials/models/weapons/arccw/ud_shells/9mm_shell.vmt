@@ -13,9 +13,7 @@ VertexlitGeneric
     $rimlightboost 0.2
     $envmap "env_cubemap"
     $normalmapalphaenvmapmask 1
-    $envmaptint "[0.02 0.02 0.02]"
+    $envmaptint "[0.03 0.03 0.03]"
 
-    $bumpmap "models\weapons\arccw\ud_shells\9mm_shell_roughness"
-	
-	$color2 "[0.6 0.6 0.6]"
+    $bumpmap "models\weapons\arccw\ud_shells\9mm_shell_bump"
 }
