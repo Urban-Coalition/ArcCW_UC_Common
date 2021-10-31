@@ -1,7 +1,7 @@
 att.PrintName = "\"TR\" Near-empty tracers"
 
 att.SortOrder = 1
-att.Icon = Material("entities/att/arccw_uc_ammo_generic.png", "mips smooth")
+att.Icon = Material("entities/att/obsolete.png", "mips smooth")
 att.Description = "The last 5 rounds of the magazine are tracer rounds, providing a visual indication when the magazine is almost empty."
 att.Desc_Pros = {
     "uc.lowind"
