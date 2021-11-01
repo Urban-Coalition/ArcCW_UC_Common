@@ -6,7 +6,6 @@ att.Description = "Ammunition loaded with a higher amount of powder, slightly in
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
-    "uc.jam"
 }
 att.Desc_Neutrals = {
 }
