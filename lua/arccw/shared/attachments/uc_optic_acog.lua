@@ -27,21 +27,20 @@ att.AdditionalSights = {
         HolosightBone = "holosight",
         HolosightData = {
             Holosight = true,
-            HolosightReticle = Material("hud/scopes/acog_reticle.png", "mips smooth"),
+            HolosightReticle = Material("hud/scopes/uc_acog_reticle.png", "mips smooth"),
             HolosightNoFlare = true,
             HolosightSize = 9.5,
             HolosightPiece = "models/weapons/arccw/atts/ud_acog_hsp.mdl",
             HolosightBlackbox = true,
             HolosightMagnification = 4,
+            Colorable = true,
         },
     },
-    //SOMEONEELSE ALIGN THIS BITCH
     {
-        Pos = Vector(0, 11, -2.25),
-        Ang = Angle(0, 0, 0),
+        Pos = Vector(0, 11, -2.35),
+        Ang = Angle(-2, 0, 0),
         Magnification = 1.1,
         IgnoreExtra = true,
-        CrosshairInSights = true,
         HolosightData = {
             Holosight = false,
         },
