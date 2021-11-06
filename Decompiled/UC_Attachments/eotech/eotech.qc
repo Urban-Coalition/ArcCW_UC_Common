@@ -1,8 +1,8 @@
-$modelname "weapons/arccw/atts/ud_acog.mdl"
+$modelname "weapons/arccw/atts/ud_eotech.mdl"
 
 $bodygroup "body"
 {
-	studio "acog.smd"
+	studio "eotech.smd"
 }
 $bodygroup "hsp"
 {
@@ -33,7 +33,7 @@ $sequence "idle" {
 	fps 30
 }
 
-$collisionmodel "acog.smd"
+$collisionmodel "eotech.smd"
 {
 	$mass 1
 	$inertia 1
