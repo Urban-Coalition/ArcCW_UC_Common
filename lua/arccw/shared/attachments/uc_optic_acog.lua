@@ -1,4 +1,4 @@
-att.PrintName = "Trijicon ACOG (6x)"
+att.PrintName = "Trijicon ACOG (4x)"
 att.Icon = Material("entities/att/arccw_uc_tp_operator.png", "mips smooth")
 att.Description = "Medium range combat scope for improved precision at longer ranges."
 
@@ -8,7 +8,7 @@ att.Desc_Pros = {
     "autostat.holosight",
     "autostat.zoom",
 }
-att.Desc_Neutrals = {"bo.desc"}
+att.Desc_Neutrals = {"ud.bus"}
 
 att.AutoStats = true
 att.Slot = {"optic", "ud_optic", "ud_acog"}
