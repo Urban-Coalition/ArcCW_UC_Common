@@ -1,5 +1,5 @@
-att.PrintName = "EOTech XPS3-0 (HOLO)"
-att.AbbrevName = "EOTech (HOLO)"
+att.PrintName = "EOTech XPS3-0 (HOLO)" 
+att.AbbrevName = "EOTech (HOLO)" 
 att.Icon = Material("entities/att/arccw_uc_tp_operator.png", "mips smooth")
 att.Description = "Close range holographic sight that improves sighted visibility and assists target acquisition."
 

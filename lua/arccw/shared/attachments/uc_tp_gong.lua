@@ -1,8 +1,8 @@
-att.PrintName = "Hombboy"
+att.PrintName = "Action Hero"
 att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")
-att.Description = "one hand the gun"
+att.Description = "Operate the firearm using only one hand. This improves weapon mobility, but accurate fire becomes difficult at best and near impossible at worst."
 att.Desc_Pros = {
-    "one hand this gun"
+    "Badass"
 }
 att.Desc_Cons = {
 }
@@ -11,15 +11,22 @@ att.Desc_Neutrals = {
 att.Slot = "uc_tp"
 
 att.AutoStats = true
-att.SortOrder = 13.9
+att.SortOrder = 20
 
-att.Mult_HipDispersion = 0.5
-att.Mult_RecoilSide = 1.25
-att.Mult_SightTime = 1.75
-att.Mult_Sway = 1.5
+att.Override_ShootWhileSprint = true
+att.Mult_HipDispersion = 0.75
+att.Mult_Recoil = 1.5
+att.Mult_RecoilSide = 2.5
+att.Mult_SightTime = 1.5
+att.Mult_Sway = 2
+--att.Mult_MoveDispersion = 2
+att.Mult_MoveSpeed = .95
 
 att.LHIK = true
 att.LHIKHide = true
+att.Override_HoldtypeActive = "pistol"
+att.Override_HoldtypeSights = "pistol"
+att.Override_HoldtypeHolstered = "normal"
 
 att.Hook_Compatible = function(wep, data)
     if wep:GetIsManualAction() and wep:GetBuff("HoldtypeActive") ~= "pistol" and wep:GetBuff("HoldtypeActive") ~= "revolver" then return false end
