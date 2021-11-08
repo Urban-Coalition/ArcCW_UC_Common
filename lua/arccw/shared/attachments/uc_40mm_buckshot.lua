@@ -16,11 +16,11 @@ att.AutoStats = true
 att.Override_ShootEntity = false
 att.Override_Num = 20
 
-att.Override_Damage = 20 * 20
-att.Override_DamageMin = 8 * 20
+att.Override_Damage = 18 * 20
+att.Override_DamageMin = 6 * 20
 
-att.Override_Range = 75
-att.Override_RangeMin = 10
+att.Override_Range = 50
+att.Override_RangeMin = 5
 att.Override_HullSize = 4
 
 att.Override_AccuracyMOA = 50
@@ -38,4 +38,8 @@ end
 att.Hook_GetDistantShootSound = function(wep, distancesound)
     if distancesound == wep.DistantShootSound then
         return ")^/arccw_uc/common/gl_fire_buck_dist.ogg" end
+end
+
+if engine.ActiveGamemode() == "urbanstrife" then
+    att.PenetrationAmmoType = "buckshot"
 end

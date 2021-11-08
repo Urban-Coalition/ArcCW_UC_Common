@@ -16,11 +16,11 @@ att.AutoStats = true
 att.Override_ShootEntity = false
 att.Override_Num = 16
 
-att.Override_Damage = 18 * 16
-att.Override_DamageMin = 10 * 16
+att.Override_Damage = 12 * 16
+att.Override_DamageMin = 5 * 16
 
-att.Override_Range = 100
-att.Override_RangeMin = 25
+att.Override_Range = 60
+att.Override_RangeMin = 15
 att.Override_HullSize = 2
 
 att.Override_AccuracyMOA = 25
@@ -37,4 +37,8 @@ end
 att.Hook_GetDistantShootSound = function(wep, distancesound)
     if distancesound == wep.DistantShootSound then
         return ")^/arccw_uc/common/gl_fire_hornet_dist.ogg" end
+end
+
+if engine.ActiveGamemode() == "urbanstrife" then
+    att.PenetrationAmmoType = "plinking"
 end
