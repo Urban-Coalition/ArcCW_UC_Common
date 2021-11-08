@@ -16,6 +16,17 @@ att.Model = "models/weapons/arccw/atts/ud_eotech.mdl"
 att.ModelOffset = Vector(0, 0, 0)
 att.OffsetAng = Angle(0, 0, 0)
 
+att.AdditionalSights = {
+    {
+        Pos = Vector(0, 10, -1.5),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.25,
+        ScrollFunc = ArcCW.SCROLL_NONE,
+        IgnoreExtra = false,
+        CrosshairInSights = false,
+    }
+}
+
 att.Holosight = true
 att.HolosightReticle = Material("hud/reticles/holo.png","mips smooth")
 att.HolosightBone = "holosight"
