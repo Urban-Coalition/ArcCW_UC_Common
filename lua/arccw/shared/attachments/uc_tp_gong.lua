@@ -2,7 +2,7 @@ att.PrintName = "Action Hero"
 att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")
 att.Description = "Operate the firearm using only one hand. This improves weapon mobility, but accurate fire becomes difficult at best and near impossible at worst."
 att.Desc_Pros = {
-    "Badass"
+    "+6% Coolness"
 }
 att.Desc_Cons = {
 }
