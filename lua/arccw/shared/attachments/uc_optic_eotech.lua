@@ -17,7 +17,7 @@ att.Model = "models/weapons/arccw/atts/ud_eotech.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0.025, 10, -1.13633) * 1.25,
+        Pos = Vector(0, 10, -1.25),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_NONE,
