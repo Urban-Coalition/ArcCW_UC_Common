@@ -10,6 +10,7 @@
 	$phongfresnelranges "[.1 .4 2]"
 	
 	"$translucent" "1"
+	"$alpha" "0.01"
 
 	"$envmap" "env_cubemap"
 	"$envmapfresnel" 			"1"
