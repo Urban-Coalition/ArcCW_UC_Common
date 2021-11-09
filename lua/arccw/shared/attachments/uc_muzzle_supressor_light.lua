@@ -1,6 +1,6 @@
 att.PrintName = "Light Suppressor"
 att.Icon = Material("entities/att/arccw_uc_tp_operator.png", "mips smooth")
-att.Description = "Suppressor of lightweight material. Reduces muzzle report without major impact on weight."
+att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nThis suppressor is of lightweight material, rendering its impact on weapon weight marginal."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
