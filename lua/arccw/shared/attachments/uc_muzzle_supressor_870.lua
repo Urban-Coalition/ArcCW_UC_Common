@@ -1,17 +1,17 @@
-att.PrintName = "Tactical Suppressor"
+att.PrintName = "Shotgun Suppressor"
 att.Icon = Material("entities/att/arccw_uc_tp_operator.png", "mips smooth")
-att.Description = "Low-profile, slightly cumbersome suppressor with ballistic-enhancing qualities."
+att.Description = "Especially heavy suppressor, compatible with shotguns."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
 }
 att.AutoStats = true
 att.AutoStats = true
-att.Slot = {"muzzle"}
+att.Slot = {"muzzle_shotgun"}
 
 att.SortOrder = 150
 
-att.Model = "models/weapons/arccw/atts/ud_silencer_tactical.mdl"
+att.Model = "models/weapons/arccw/atts/ud_silencer_870.mdl"
 att.ModelOffset = Vector(1.25, 0, 0)
 att.OffsetAng = Angle(0, 0, 0)
 
@@ -21,7 +21,6 @@ att.IsMuzzleDevice = true
 
 att.Mult_ShootPitch = 1.1
 att.Mult_ShootVol = 0.75
-att.Mult_Range = 1.1
+att.Mult_Range = 0.9
 
 att.Add_BarrelLength = 5
-att.Mult_SightTime = 1.15
