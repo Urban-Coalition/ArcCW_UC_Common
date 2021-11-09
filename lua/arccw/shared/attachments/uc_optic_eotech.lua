@@ -8,30 +8,32 @@ att.SortOrder = 1
 att.Desc_Pros = {
     "autostat.holosight",
 }
-
+att.Desc_Cons = {
+}
 att.AutoStats = true
-att.Slot = {"optic", "ud_optic", "ud_acog"}
+att.Slot = "optic"
 
 att.Model = "models/weapons/arccw/atts/ud_eotech.mdl"
-att.ModelOffset = Vector(0, 0, 0)
-att.OffsetAng = Angle(0, 0, 0)
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 10, -1.25),
+        Pos = Vector(0.025, 10, -1.13633) * 1.25,
         Ang = Angle(0, 0, 0),
-        Magnification = 1.25,
+        Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_NONE,
-        IgnoreExtra = false,
-        CrosshairInSights = false,
+        IgnoreExtra = false
     }
 }
 
-att.Holosight = true
-att.HolosightReticle = Material("hud/reticles/holo.png","mips smooth")
-att.HolosightBone = "holosight"
-att.HolosightSize = 1.5
-att.HolosightMagnification = 1.1
-att.Colorable = true
+--[[att.ModelScale = Vector(1.25, 1.25, 1.25)
+att.ModelOffset = Vector(0, -0.05, 0)]]
 
-att.Mult_SightTime = 1.05
+att.Holosight = true
+att.HolosightReticle = Material("hud/reticles/holo.png", "mips smooth")
+att.HolosightSize = 1
+att.HolosightBone = "holosight"
+att.HolosightNoFlare = true
+
+att.Mult_SightTime = 1.01
+
+att.Colorable = true
