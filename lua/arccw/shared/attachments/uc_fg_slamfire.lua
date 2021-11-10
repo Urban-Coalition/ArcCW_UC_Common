@@ -34,3 +34,5 @@ att.Override_Firemodes = {
         Mode = 0
     }
 }
+
+att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"

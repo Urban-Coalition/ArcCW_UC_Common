@@ -24,3 +24,5 @@ att.Mult_RPM = .85
 att.Mult_MalfunctionMean = 0.9
 att.GivesFlags = {"ud_loosesprings"}
 att.ExcludeFlags = {"ud_underload"}
+
+att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"

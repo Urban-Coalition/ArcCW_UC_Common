@@ -19,3 +19,5 @@ att.Hook_Compatible = function(wep)
 end
 
 att.Mult_AccuracyMOA = 0.75
+
+att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"

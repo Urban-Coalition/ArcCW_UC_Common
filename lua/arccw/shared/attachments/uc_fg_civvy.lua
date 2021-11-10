@@ -32,3 +32,5 @@ att.Mult_Range = 1.25
 att.Mult_AccuracyMOA = 0.75
 att.Mult_RPM = .9
 att.Mult_MalfunctionMean = 1.25
+
+att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"

@@ -20,3 +20,5 @@ att.Hook_Compatible = function(wep)
         return false
     end
 end
+
+att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"

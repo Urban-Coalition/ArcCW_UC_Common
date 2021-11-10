@@ -48,3 +48,5 @@ att.Override_Firemodes = {
 att.Mult_RPM = .75
 att.Mult_RecoilSide = 1.25
 att.Mult_VisualRecoil = 2
+
+att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"

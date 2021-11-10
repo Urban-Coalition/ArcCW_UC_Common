@@ -41,3 +41,5 @@ function att.Hook_ModifyRPM(wep, delay)
         return delay * 2
     end
 end
+
+att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"

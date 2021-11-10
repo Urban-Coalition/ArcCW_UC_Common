@@ -31,3 +31,5 @@ att.M_Hook_Mult_ShootPitch = function(wep, data)
         data.mult = data.mult * 0.6
     end
 end
+
+att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"

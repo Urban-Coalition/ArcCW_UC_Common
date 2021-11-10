@@ -19,3 +19,5 @@ att.Hook_Compatible = function(wep)
 end
 
 att.Mult_Penetration = 1.25
+
+att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"
