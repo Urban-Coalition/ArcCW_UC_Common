@@ -33,6 +33,7 @@ L["uc.explode"] = "Blast damage on hit"
 L["uc.reqslug"] = "Only usable with slug ammo types"
 L["uc.oneprojectile"] = "One projectile"
 L["uc.bus"] = "Double-tap +USE to toggle backup sights"
+L["uc.light"] = "Increased visibility"
 
 L["uc.noubs"] = "Disables Underbarrel attachments"
 L["uc.nostocks"] = "Disables Stock attachments"

@@ -14,7 +14,7 @@ $illumposition 0 0 0
 
 $cdmaterials "models/UC/attachments/"
 
-$attachment "light" "light" 0.00 0.00 0.00 rotate -0 0 0
+$attachment "light" "light" 0.00 0.00 0.00 rotate -0 180 0
 
 $cbox 0 0 0 0 0 0
 
