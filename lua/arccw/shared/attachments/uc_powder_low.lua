@@ -21,3 +21,4 @@ att.Mult_ShootVol = 0.9
 att.Mult_ShootPitch = 1.05
 
 att.Mult_MalfunctionMean = 1.15
+att.Mult_PhysBulletMuzzleVelocity = 0.9
