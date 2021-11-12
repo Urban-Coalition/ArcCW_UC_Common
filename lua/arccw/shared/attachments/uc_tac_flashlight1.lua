@@ -1,7 +1,7 @@
 att.PrintName = "Civilian Rail-Mounted Flashlight"
 att.AbbrevName = "Civilian Flashlight"
 att.Icon = nil
-att.Description = "Illuminates dark areas in front of the muzzle. Civilian-grade model, adjustable for brightness."
+att.Description = "Illuminates dark areas in front of the muzzle.\n\nCan be adjusted for a wide light."
 att.Desc_Pros = {
     "uc.light"
 }
@@ -21,7 +21,7 @@ att.ModelScale = Vector(1.2,1.2,1.2)
 
 att.Flashlight = false
 att.FlashlightFOV = 50
-att.FlashlightFarZ = 512 -- how far it goes
+att.FlashlightFarZ = 1024 -- how far it goes
 att.FlashlightNearZ = 1 -- how far away it starts
 att.FlashlightAttenuationType = ArcCW.FLASH_ATT_LINEAR -- LINEAR, CONSTANT, QUADRATIC are available
 att.FlashlightColor = Color(255, 255, 255)
@@ -29,18 +29,16 @@ att.FlashlightTexture = "effects/flashlight001"
 att.FlashlightBrightness = 3
 att.FlashlightBone = "light"
 
-att.Mult_SightTime = 1.02
-
 att.ToggleStats = {
     {
-        PrintName = "High",
+        PrintName = "On",
         Flashlight = true
     },
     {
-        PrintName = "Eco",
+        PrintName = "Wide",
         Flashlight = true,
-        FlashlightFOV = 50,
-        FlashlightFarZ = 384,
+        FlashlightFOV = 80,
+        FlashlightFarZ = 768,
         FlashlightBrightness = 1
     },
     {
