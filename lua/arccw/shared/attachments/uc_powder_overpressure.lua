@@ -15,7 +15,7 @@ att.AutoStats = true
 
 att.Mult_RecoilSide = 1.25
 att.Mult_Recoil = 1.2
-att.Mult_DamageMin = 1.1
+att.Mult_RangeMin = 1.25
 att.Mult_Range = 1.3
 
 att.Mult_RPM = 1.08
