@@ -37,3 +37,5 @@ att.HolosightNoFlare = true
 att.Mult_SightTime = 1.01
 
 att.Colorable = true
+
+att.Ignore = true
