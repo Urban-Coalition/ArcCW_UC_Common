@@ -1,7 +1,7 @@
-att.PrintName = "Competitive Internals"
+att.PrintName = "Competition Internals"
 
 att.Icon = Material("entities/att/arccw_uc_fg_civvy.png", "smooth mips")
-att.Description = "High quality, precision manufactured aftermarket parts that improve weapon performance. Because of the parts' civilian origin, this will restrict automatic fire."
+att.Description = "High quality, precision manufactured aftermarket parts that improve weapon performance. Because of the parts' civilian origin, the fire control group doesn't support automatic fire."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
