@@ -1,11 +1,8 @@
-att.PrintName = "Salvo Suppressor"
+att.PrintName = "Salvo 12 Suppressor"
 att.Icon = Material("entities/att/arccw_uc_tp_operator.png", "mips smooth")
-att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nFront-heavy, but doesn't obstruct iron sights and increases effective range. Made for shotguns."
-att.Desc_Pros = {
-}
-att.Desc_Cons = {
-}
-att.AutoStats = true
+att.Description = "Shotgun muzzle device that traps propellant gases, hiding muzzle flash and reducing firing volume. Low profile and relatively lightweight, with no negative ballistic impact."
+att.Desc_Neutrals = {"uc.muzzleblocking"}
+
 att.AutoStats = true
 att.Slot = {"muzzle_shotgun"}
 
@@ -22,11 +19,12 @@ att.Silencer = true
 att.Override_MuzzleEffect = "muzzleflash_suppressed"
 att.IsMuzzleDevice = true
 
-att.Mult_ShootPitch = 1.1
-att.Mult_ShootVol = 0.75
-att.Mult_Range = 1.05
+att.Mult_ShootPitch = 1.05
+att.Mult_ShootVol = 0.8
 
 att.Add_BarrelLength = 8
 att.Mult_SightTime = 1.2
+att.Mult_HipDispersion = 1.1
+att.Mult_Sway = 1.25
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"

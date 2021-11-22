@@ -39,6 +39,7 @@ L["uc.noubs"] = "Disables Underbarrel attachments"
 L["uc.nostocks"] = "Disables Stock attachments"
 L["uc.nomuzzle"] = "Disables Muzzle attachments"
 L["uc.nogrip"] = "Disables Grip Type attachments"
+L["uc.muzzleblocking"] = "Incompatible with certain Tube and Barrel combinations"
 
 L["uc.pellet.8"] = "+8 Pellets per shot"
 L["uc.pellet.24"] = "+24 Pellets per shot"
