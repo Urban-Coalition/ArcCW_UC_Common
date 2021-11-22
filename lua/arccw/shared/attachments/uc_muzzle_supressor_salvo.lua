@@ -9,6 +9,9 @@ att.AutoStats = true
 att.AutoStats = true
 att.Slot = {"muzzle_shotgun"}
 
+att.GivesFlags = {"muzzleblocking"}
+att.ExcludeFlags = {"nomuzzleblocking"}
+
 att.SortOrder = 150
 
 att.Model = "models/weapons/arccw/atts/ud_silencer_salvo.mdl"
