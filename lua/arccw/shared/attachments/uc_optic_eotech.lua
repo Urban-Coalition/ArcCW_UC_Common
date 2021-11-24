@@ -1,6 +1,6 @@
-att.PrintName = "EOTech XPS3-0 (HOLO)" 
-att.AbbrevName = "EOTech (HOLO)" 
-att.Icon = Material("entities/att/arccw_uc_tp_operator.png", "mips smooth")
+att.PrintName = "EOTech XPS3-0 (HOLO)"
+att.AbbrevName = "EOTech (HOLO)"
+att.Icon = Material("entities/att/acwatt_uc_optic_eotech.png", "mips smooth")
 att.Description = "Close range holographic sight that improves sighted visibility and assists target acquisition."
 
 att.SortOrder = 1
@@ -34,8 +34,7 @@ att.HolosightSize = 1
 att.HolosightBone = "holosight"
 att.HolosightNoFlare = true
 
-att.Mult_SightTime = 1.01
-
 att.Colorable = true
-
 att.Ignore = true
+
+att.Mult_SightedSpeedMult = 0.9

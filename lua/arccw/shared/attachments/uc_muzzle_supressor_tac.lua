@@ -1,5 +1,5 @@
 att.PrintName = "Tactical Suppressor"
-att.Icon = Material("entities/att/arccw_uc_tp_operator.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_supressor_tactical.png", "mips smooth")
 att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nLow-profile and enhances ballistics, but slightly cumbersome."
 att.Desc_Pros = {
 }

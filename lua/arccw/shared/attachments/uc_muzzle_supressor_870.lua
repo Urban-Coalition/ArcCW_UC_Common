@@ -1,6 +1,6 @@
-att.PrintName = "SS1C Suppressor"
-att.Icon = Material("entities/att/arccw_uc_tp_operator.png", "mips smooth")
-att.Description = "Shotgun muzzle device that traps propellant gases, hiding muzzle flash and reducing firing volume. Bulky and heavy, but provides better ballistic performance."
+att.PrintName = "Cylinder Suppressor"
+att.Icon = Material("entities/att/acwatt_uc_supressor_870.png", "mips smooth")
+att.Description = "Shotgun muzzle device that traps propellant gases, hiding muzzle flash and reducing firing volume. Bulky and heavy, but provides better ballistic performance.\n\n\"By the time you figured it out, it would be too late.\""
 att.Desc_Neutrals = {"uc.muzzleblocking"}
 
 att.AutoStats = true
@@ -23,7 +23,7 @@ att.Mult_ShootPitch = 1.1
 att.Mult_ShootVol = 0.75
 
 att.Add_BarrelLength = 6
-att.Mult_SightTime = 1.4
+att.Mult_SightTime = 1.3
 att.Mult_HipDispersion = 1.2
 att.Mult_Sway = 1.5
 att.Mult_Range = 1.1

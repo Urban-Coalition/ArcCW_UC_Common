@@ -1,6 +1,6 @@
 att.PrintName = "Trijicon Advanced Combat Optical Gunsight (4x)"
 att.AbbrevName = "ACOG (4x)"
-att.Icon = Material("entities/att/arccw_uc_tp_operator.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_optic_acog.png", "mips smooth")
 att.Description = "Medium range combat scope for improved precision at longer ranges."
 
 att.SortOrder = 6
@@ -49,5 +49,6 @@ att.AdditionalSights = {
 }
 
 att.Colorable = true
-att.Mult_SightTime = 1.1
 att.HolosightPiece = "models/weapons/arccw/atts/ud_acog_hsp.mdl"
+
+att.Mult_SightedSpeedMult = 0.75
