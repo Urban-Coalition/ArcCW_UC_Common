@@ -21,3 +21,16 @@ ArcCW.UC.BodyDamageMults = {
     [HITGROUP_LEFTLEG] = 0.5,
     [HITGROUP_RIGHTLEG] = 0.5,
 }
+
+ArcCW.UC.BodyDamageMults_Shotgun = {
+    [HITGROUP_HEAD] = 1,
+
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+
+    [HITGROUP_LEFTARM] = 0.85,
+    [HITGROUP_RIGHTARM] = 0.85,
+
+    [HITGROUP_LEFTLEG] = 0.5,
+    [HITGROUP_RIGHTLEG] = 0.5,
+}
