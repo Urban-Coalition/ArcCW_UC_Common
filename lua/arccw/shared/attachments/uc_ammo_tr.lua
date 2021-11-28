@@ -15,23 +15,20 @@ att.Slot = "uc_ammo"
 
 att.AutoStats = true
 
-att.Mult_HipDispersion = .9
+att.Mult_HipDispersion = 0.85
 
 att.ToggleStats = {
-    {
-        PrintName = "Red",
-        Override_PhysTracerProfile = 1
-    },
     {
         PrintName = "Green",
         Override_PhysTracerProfile = 2
     },
     {
-        PrintName = "Violet",
-        Override_PhysTracerProfile = 5
+        PrintName = "Red",
+        Override_PhysTracerProfile = 1
     },
     {
-        PrintName = "Yellow",
-        Override_PhysTracerProfile = 4
+        PrintName = "White",
+        Override_PhysTracerProfile = 8
     },
-} -- ripped from GSO lul
+}
+att.Override_Tracer = "arccw_uc_tracer"
