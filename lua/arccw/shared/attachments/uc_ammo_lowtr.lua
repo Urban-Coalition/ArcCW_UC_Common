@@ -18,6 +18,13 @@ att.InvAtt = "uc_ammo_tr"
 att.AutoStats = true
 att.Mult_HipDispersion = 0.95
 
+att.Hook_AddShootSound = function(wep, data)
+    local clip = wep:Clip1()
+    if clip <= 5 and clip > 0 then
+        wep:MyEmitSound("physics/metal/metal_computer_impact_bullet3.wav", data.volume, data.pitch + (5 - clip) * 7, 0.2, CHAN_AUTO)
+    end
+end
+
 att.Override_TracerFinalMag = 6
 att.Override_TracerFinal = "arccw_uc_tracer"
 att.ToggleStats = {
