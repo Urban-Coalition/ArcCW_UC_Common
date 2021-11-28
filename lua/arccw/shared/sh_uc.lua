@@ -12,7 +12,7 @@ ArcCW.UC = {}
 ArcCW.UC.BodyDamageMults = {
     [HITGROUP_HEAD] = 3,
 
-    [HITGROUP_CHEST] = 1.1,
+    [HITGROUP_CHEST] = 1.15,
     [HITGROUP_STOMACH] = 1,
 
     [HITGROUP_LEFTARM] = 0.85,
