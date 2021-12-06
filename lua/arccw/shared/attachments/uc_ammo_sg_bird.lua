@@ -17,9 +17,9 @@ att.AutoStats = true
 
 att.Add_Num = 24
 att.Mult_Damage = .9
-att.Mult_DamageMin = .9
+att.Mult_DamageMin = .8
 att.Mult_Recoil = .85
-att.Mult_AccuracyMOA = 2
+att.Mult_AccuracyMOA = 3
 
 -- it's payday, fellas
 att.Add_HullSize = 1
