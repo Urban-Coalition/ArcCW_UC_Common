@@ -1,7 +1,7 @@
-att.PrintName = "flashlight number 3"
-att.AbbrevName = "flashlight number 3"
+att.PrintName = "High-power Rail-mounted Flashlight"
+att.AbbrevName = "High-power Flashlight"
 att.Icon = nil
-att.Description = "Illuminates dark areas in front of the muzzle.\n\nCan be adjusted for a wide light."
+att.Description = "Illuminates dark areas in front of the muzzle.\nEmits a strong, orange-tinted light."
 att.Desc_Pros = {
     "uc.light"
 }
@@ -20,13 +20,13 @@ att.OffsetAng = Angle(0,0,0)
 att.ModelScale = Vector(0.75,0.75,0.75)
 
 att.Flashlight = false
-att.FlashlightFOV = 50
-att.FlashlightFarZ = 1024 -- how far it goes
+att.FlashlightFOV = 40
+att.FlashlightFarZ = 1536 -- how far it goes
 att.FlashlightNearZ = 1 -- how far away it starts
 att.FlashlightAttenuationType = ArcCW.FLASH_ATT_LINEAR -- LINEAR, CONSTANT, QUADRATIC are available
-att.FlashlightColor = Color(255, 242, 229)
+att.FlashlightColor = Color(255, 229, 200)
 att.FlashlightTexture = "effects/flashlight001"
-att.FlashlightBrightness = 3
+att.FlashlightBrightness = 4
 att.FlashlightBone = "flashlight"
 
 att.ToggleStats = {

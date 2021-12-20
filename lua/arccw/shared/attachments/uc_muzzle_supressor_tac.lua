@@ -1,4 +1,5 @@
-att.PrintName = "Tactical Suppressor"
+att.PrintName = "Mountain Armory Tactical Suppressor" -- fictional
+att.AbbrevName = "Tactical Suppressor"
 att.Icon = Material("entities/att/acwatt_uc_supressor_tactical.png", "mips smooth")
 att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nLow-profile and enhances ballistics, but slightly cumbersome."
 att.Desc_Pros = {
@@ -25,5 +26,6 @@ att.Mult_Range = 1.1
 
 att.Add_BarrelLength = 5
 att.Mult_SightTime = 1.15
+att.Mult_Sway = 1.25
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"

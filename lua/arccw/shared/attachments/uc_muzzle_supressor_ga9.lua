@@ -1,6 +1,7 @@
-att.PrintName = "GA9 Revolution 9"
+att.PrintName = "GA9 Revolution 9 Suppressor"
+att.AbbrevName = "GA9 Suppressor"
 att.Icon = nil
-att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nLow-profile and enhances ballistics, but slightly cumbersome."
+att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nCompact and lightweight, with little impact on handling."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -21,9 +22,10 @@ att.IsMuzzleDevice = true
 
 att.Mult_ShootPitch = 1.1
 att.Mult_ShootVol = 0.75
-att.Mult_Range = 1.1
+att.Mult_Range = 0.9
 
 att.Add_BarrelLength = 5
-att.Mult_SightTime = 1.15
+att.Mult_SightTime = 1.05
+att.Mult_Sway = 1.1
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"

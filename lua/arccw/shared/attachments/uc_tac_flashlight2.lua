@@ -1,7 +1,7 @@
 att.PrintName = "Tactical Rail-Mounted Flashlight"
 att.AbbrevName = "Tactical Flashlight"
 att.Icon = Material("entities/att/acwatt_uc_tac_flashlight2.png", "mips smooth")
-att.Description = "Illuminates dark areas in front of the muzzle.\n\nCan be adjusted for a focused light."
+att.Description = "Illuminates dark areas in front of the muzzle.\nCan be adjusted for a focused light."
 att.Desc_Pros = {
     "uc.light"
 }
