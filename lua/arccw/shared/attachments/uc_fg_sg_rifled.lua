@@ -24,5 +24,7 @@ att.Mult_HipDispersion = 1.2
 att.Mult_Recoil = 1.2
 
 att.RequireFlags = {"uc_slug"}
+att.GivesFlags = {"uc_fg_sg_rifled"}
+att.ExcludeFlags = {"uc_choke_rifled"}
 
 att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"
