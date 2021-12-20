@@ -1,0 +1,8 @@
+"VertexlitGeneric"
+{
+   "$basetexture"   "models/UC/attachments/uc_glass"
+	"$nodecal" "1"
+	"$translucent" 1
+
+
+}
