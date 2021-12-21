@@ -23,7 +23,7 @@ ArcCW.UC.BodyDamageMults = {
 }
 
 ArcCW.UC.BodyDamageMults_Shotgun = {
-    [HITGROUP_HEAD] = 1,
+    [HITGROUP_HEAD] = 1.5,
 
     [HITGROUP_CHEST] = 1,
     [HITGROUP_STOMACH] = 1,
