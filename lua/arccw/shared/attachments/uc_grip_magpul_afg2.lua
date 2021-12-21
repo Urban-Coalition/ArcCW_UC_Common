@@ -8,7 +8,7 @@ att.Slot = "foregrip"
 
 att.LHIK = true
 
-att.ModelOffset = Vector(0, 0, -0.8)
+att.ModelOffset = Vector(0, 0, -0.65)
 
 att.Model = "models/weapons/arccw/atts/uc_magpul_afg2.mdl"
 att.ModelSkin  = 1
