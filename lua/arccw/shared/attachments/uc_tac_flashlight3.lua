@@ -1,5 +1,5 @@
-att.PrintName = "High-power Rail-mounted Flashlight"
-att.AbbrevName = "High-power Flashlight"
+att.PrintName = "High-Power Rail-Mounted Flashlight"
+att.AbbrevName = "High-Power Flashlight"
 att.Icon = nil
 att.Description = "Illuminates dark areas in front of the muzzle.\nEmits a strong, orange-tinted light."
 att.Desc_Pros = {
