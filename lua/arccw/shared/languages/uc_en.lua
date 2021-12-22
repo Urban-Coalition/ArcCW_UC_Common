@@ -35,6 +35,7 @@ L["uc.oneprojectile"] = "One projectile"
 L["uc.bus"] = "Double-tap +USE to toggle backup sights"
 L["uc.light"] = "Increased visibility"
 L["uc.technician"] = "-35% Malfunction fix time"
+L["uc.flashhider"] = "Reduced muzzle flash"
 
 L["uc.noubs"] = "Disables Underbarrel attachments"
 L["uc.nostocks"] = "Disables Stock attachments"

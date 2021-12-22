@@ -9,3 +9,5 @@ att.Slot = "foregrip"
 att.Mult_Recoil = .8
 att.Mult_SightTime = 1.15
 att.Mult_MoveDispersion = 1.25
+
+-- Model is still needed

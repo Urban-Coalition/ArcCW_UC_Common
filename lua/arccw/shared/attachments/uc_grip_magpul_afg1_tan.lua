@@ -14,3 +14,5 @@ att.Model = "models/weapons/arccw/atts/uc_magpul_afg1.mdl"
 att.Mult_Recoil = .8
 att.Mult_SightTime = 1.15
 att.Mult_MoveDispersion = 1.25
+
+att.Ignore = true

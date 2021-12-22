@@ -30,3 +30,5 @@ att.Add_BarrelLength = 2
 -- att.Mult_Sway = 1.25
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
+
+att.Ignore = true

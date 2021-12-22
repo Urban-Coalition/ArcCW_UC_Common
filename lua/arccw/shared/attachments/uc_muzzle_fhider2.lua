@@ -18,7 +18,7 @@ att.ModelScale = Vector(1.15, 1.15, 1.15)
 att.OffsetAng = Angle(0, 0, 0)
 
 -- att.Silencer = true
--- att.Override_MuzzleEffect = "muzzleflash_suppressed"
+att.Override_MuzzleEffect = "muzzleflash_suppressed"
 att.IsMuzzleDevice = true
 
 -- att.Mult_ShootPitch = 1.1
@@ -30,3 +30,5 @@ att.Add_BarrelLength = 2
 -- att.Mult_Sway = 1.25
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
+
+att.Ignore = true
