@@ -1,7 +1,7 @@
 att.PrintName = "Recoil Compensator" -- fictional
 att.AbbrevName = "Compensator"
 att.Icon = nil
-att.Description = "Redirects propellant gases to counter muzzle rise, particularly in the lateral direction."
+att.Description = "Redirects propellant gases to counter muzzle rise, particularly in the lateral directions."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -21,11 +21,11 @@ att.IsMuzzleDevice = true
 
 att.Mult_ShootPitch = .95
 att.Mult_Recoil = .85
-att.Mult_RecoilSide = .65
+att.Mult_RecoilSide = .75
 
 att.Add_BarrelLength = 2
-att.Mult_SightTime = 1.15
-att.Mult_Sway = 1.25
+att.Mult_SightTime = 1.2
+att.Mult_Sway = 1.5
 att.Mult_ShootVol = 1.25
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
