@@ -1,7 +1,7 @@
-att.PrintName = "Micro T-1 Red Dot Reflex Sight"
-att.AbbrevName = "Micro T-1"
+att.PrintName = "Vortex SPITFIRE™ 3X PRISM SCOPE"
+att.AbbrevName = "Vortex Spitfire 3x"
 att.Icon = nil
-att.Description = "tiny scope"
+att.Description = "not tiny scope"
 
 att.SortOrder = 1
 
@@ -13,12 +13,12 @@ att.Desc_Cons = {
 att.AutoStats = true
 att.Slot = {"optic"}
 
-att.Model = "models/weapons/arccw/atts/uc_mirco_t1.mdl"
-att.ModelOffset = Vector(0,0,0.2)
+att.Model = "models/weapons/arccw/atts/uc_vortex3x.mdl"
+att.ModelOffset = Vector(0,-0.017,0)
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 12, -1.28),
+        Pos = Vector(0, 12, -1.43),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_NONE
@@ -28,7 +28,7 @@ att.AdditionalSights = {
 att.Holosight = true
 att.HolosightReticle = Material("mifl_tarkov_reticle/dot.png", "mips smooth")
 
-att.HolosightPiece = "models/weapons/arccw/atts/uc_mirco_t1_hsp.mdl"
+att.HolosightPiece = "models/weapons/arccw/atts/uc_vortex3x_hsp.mdl"
 att.HolosightNoFlare = true
 att.HolosightSize = 1
 att.HolosightBone = "holosight"
