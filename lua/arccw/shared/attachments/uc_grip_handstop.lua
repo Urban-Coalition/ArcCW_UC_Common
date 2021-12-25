@@ -1,7 +1,7 @@
 att.PrintName = "Handstop"
 att.AbbrevName = "Handstop"
 att.Icon = nil -- todo
-att.Description = "Prevents the hand from sliding down the barrel, allowing improved aim precision with a special grip. please write here something about c clamp grab"
+att.Description = "Prevents the hand from sliding down the barrel, allowing improved aim precision via a special \"C-clamp\" grip."
 
 att.AutoStats = true
 att.Slot = "foregrip"
@@ -14,7 +14,7 @@ att.ModelSkin = 1
 att.Override_ActivePos = Vector(-0.5, -0.5, 0.5)
 att.Override_ActiveAng = Angle(0, 0, -7)
 
-att.Mult_Recoil = .8
+att.Mult_Recoil = .95
 att.Mult_Sway = .75
 att.Mult_HipDispersion = .8
 att.Mult_SightTime = 1.2
