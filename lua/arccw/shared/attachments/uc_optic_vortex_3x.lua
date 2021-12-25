@@ -21,15 +21,25 @@ att.AdditionalSights = {
         Pos = Vector(0, 12, -1.43),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
-        ScrollFunc = ArcCW.SCROLL_NONE
+        ScrollFunc = ArcCW.SCROLL_NONE,
+        HolosightData = {
+            Holosight = true,
+            HolosightReticle = Material("hud/scopes/uc_acog_reticle.png", "mips smooth"),
+            HolosightNoFlare = true,
+            HolosightSize = 9.5,
+            HolosightPiece = "models/weapons/arccw/atts/uc_vortex3x_hsp.mdl",
+            HolosightBlackbox = true,
+            HolosightMagnification = 3,
+            Colorable = true,
+        },
     }
 }
 
-att.Holosight = true
-att.HolosightReticle = Material("mifl_tarkov_reticle/dot.png", "mips smooth")
+-- att.Holosight = true
+-- att.HolosightReticle = Material("mifl_tarkov_reticle/dot.png", "mips smooth")
 
 att.HolosightPiece = "models/weapons/arccw/atts/uc_vortex3x_hsp.mdl"
-att.HolosightNoFlare = true
-att.HolosightSize = 1
-att.HolosightBone = "holosight"
+-- att.HolosightNoFlare = true
+-- att.HolosightSize = 1
+-- att.HolosightBone = "holosight"
 att.Colorable = true
