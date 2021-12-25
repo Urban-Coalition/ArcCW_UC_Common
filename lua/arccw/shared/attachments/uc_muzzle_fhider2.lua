@@ -21,7 +21,7 @@ att.OffsetAng = Angle(0, 0, 0)
 att.Override_MuzzleEffect = "muzzleflash_suppressed"
 att.IsMuzzleDevice = true
 
--- att.Mult_ShootPitch = 1.1
+-- att.Mult_ShootPitch = 1.1 please don't
 -- att.Mult_ShootVol = 0.75
 -- att.Mult_Range = 1.1
 

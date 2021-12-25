@@ -21,7 +21,7 @@ att.Mult_Range = 0.7
 
 att.Mult_RPM = 0.89
 att.Mult_ShootVol = 0.7
-att.Mult_ShootPitch = 1.1
+--att.Mult_ShootPitch = 1.1 please don't
 
 att.Override_PhysTracerProfile = 7
 att.Override_TracerNum = 0

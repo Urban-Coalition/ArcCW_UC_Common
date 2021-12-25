@@ -19,7 +19,7 @@ att.OffsetAng = Angle(0, 0, 0)
 
 att.IsMuzzleDevice = true
 
-att.Mult_ShootPitch = .95
+--att.Mult_ShootPitch = .95 please don't
 att.Mult_Recoil = .85
 att.Mult_RecoilSide = .75
 

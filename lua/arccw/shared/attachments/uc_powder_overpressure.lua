@@ -20,7 +20,7 @@ att.Mult_Range = 1.3
 
 att.Mult_RPM = 1.08
 att.Mult_ShootVol = 1.25
-att.Mult_ShootPitch = 0.9
+--att.Mult_ShootPitch = 0.9 please don't
 
 att.Mult_MalfunctionMean = 0.7
 att.Mult_PhysBulletMuzzleVelocity = 1.25
