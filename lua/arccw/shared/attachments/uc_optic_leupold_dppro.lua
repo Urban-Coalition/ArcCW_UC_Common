@@ -1,9 +1,9 @@
-att.PrintName = "Leupold DeltaPoint Pro Reflex Sight"
-att.AbbrevName = "Leupold DP-Pro"
+att.PrintName = "Leupold DeltaPoint Pro Reflex Sight (RDS)"
+att.AbbrevName = "DP-Pro (RDS)"
 att.Icon = nil
-att.Description = "tiny scope"
+att.Description = "Low-profile reflex sight. While its lens isn't as wide as other reflex sights, it's significantly lighter and small enough to use on pistols."
 
-att.SortOrder = 1
+att.SortOrder = 0.5
 
 att.Desc_Pros = {
     "autostat.holosight",
@@ -31,3 +31,5 @@ att.HolosightNoFlare = true
 att.HolosightSize = 1
 att.HolosightBone = "holosight"
 att.Colorable = true
+
+att.Mult_SightedSpeedMult = .99

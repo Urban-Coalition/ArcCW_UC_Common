@@ -1,7 +1,7 @@
-att.PrintName = "Micro T-1 Red Dot Reflex Sight"
-att.AbbrevName = "Micro T-1"
+att.PrintName = "Micro T-1 Red Dot Reflex Sight (RDS)"
+att.AbbrevName = "Micro T-1 (RDS)"
 att.Icon = nil
-att.Description = "tiny scope"
+att.Description = "Improves sighted visibility with a red-dot targeting reticle, while adding minimal extra weight."
 
 att.SortOrder = 1
 
@@ -33,3 +33,5 @@ att.HolosightNoFlare = true
 att.HolosightSize = 1
 att.HolosightBone = "holosight"
 att.Colorable = true
+
+att.Mult_SightedSpeedMult = .9

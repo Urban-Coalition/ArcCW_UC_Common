@@ -1,7 +1,7 @@
-att.PrintName = "Sightmark Sure Shot Reflex Sight Black"
-att.AbbrevName = "Sightmark Sure Shot"
+att.PrintName = "Sightmark Sure Shot Reflex Sight Black (RDS)"
+att.AbbrevName = "Sure Shot (RDS)"
 att.Icon = nil
-att.Description = "tiny scope"
+att.Description = "Improves sighted visibility with a red-dot targeting reticle, while adding minimal extra weight."
 
 att.SortOrder = 1
 
@@ -31,3 +31,5 @@ att.HolosightNoFlare = true
 att.HolosightSize = 1
 att.HolosightBone = "holosight"
 att.Colorable = true
+
+att.Mult_SightedSpeedMult = .9
