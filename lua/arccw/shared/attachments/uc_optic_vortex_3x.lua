@@ -1,9 +1,9 @@
-att.PrintName = "Vortex SPITFIRE™ 3X PRISM SCOPE"
-att.AbbrevName = "Vortex Spitfire 3x"
+att.PrintName = "Vortex SPITFIRE™ 3X PRISM SCOPE (3x)"
+att.AbbrevName = "Spitfire (3x)"
 att.Icon = nil
-att.Description = "not tiny scope"
+att.Description = "Medium range combat scope for improved precision at longer ranges."
 
-att.SortOrder = 1
+att.SortOrder = 3
 
 att.Desc_Pros = {
     "autostat.holosight",
@@ -46,3 +46,5 @@ att.HolosightPiece = "models/weapons/arccw/atts/uc_vortex3x_hsp.mdl"
 -- att.HolosightSize = 1
 -- att.HolosightBone = "holosight"
 att.Colorable = true
+
+att.Mult_SightedSpeedMult = .8
