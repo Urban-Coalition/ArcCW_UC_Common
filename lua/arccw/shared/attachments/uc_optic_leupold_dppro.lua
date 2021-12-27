@@ -14,7 +14,7 @@ att.AutoStats = true
 att.Slot = {"optic", "optic_lp"}
 
 att.Model = "models/weapons/arccw/atts/uc_leupold_dppro.mdl"
--- att.ModelOffset = Vector(0.1, 0, 0)
+att.ModelScale = Vector(1.1, 1.1, 1.1)
 att.AdditionalSights = {
     {
         Pos = Vector(-0.026, 12, -0.54),
