@@ -14,8 +14,7 @@ att.AutoStats = true
 att.Slot = {"optic"}
 
 att.Model = "models/weapons/arccw/atts/uc_vortex3x.mdl"
-att.ModelOffset = Vector(0, .05, 0.1)
-att.ModelScale = Vector(.85,.85,.85)
+att.ModelOffset = Vector(0, -0.017, 0.3)
 
 att.AdditionalSights = {
     {
