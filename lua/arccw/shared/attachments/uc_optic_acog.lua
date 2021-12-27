@@ -16,11 +16,12 @@ att.Slot = {"optic", "ud_optic", "ud_acog"}
 
 att.Model = "models/weapons/arccw/atts/ud_acog.mdl"
 att.ModelOffset = Vector(0, 0, 0)
+att.ModelScale = Vector(1.15, 1.15, 1.15)
 att.OffsetAng = Angle(0, 0, 0)
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 9, -1.3),
+        Pos = Vector(0, 9, -1.48),
         Ang = Angle(0, 0, 0),
         Magnification = 1.25,
         IgnoreExtra = true,
