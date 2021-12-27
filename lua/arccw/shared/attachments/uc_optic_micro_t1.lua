@@ -26,8 +26,7 @@ att.AdditionalSights = {
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("mifl_tarkov_reticle/dot.png", "mips smooth")
-
+att.HolosightReticle = Material("hud/reticles/reddot.png", "mips smooth")
 att.HolosightPiece = "models/weapons/arccw/atts/uc_mirco_t1_hsp.mdl"
 att.HolosightNoFlare = true
 att.HolosightSize = 1
