@@ -14,11 +14,11 @@ att.AutoStats = true
 att.Slot = {"optic"}
 
 att.Model = "models/weapons/arccw/atts/uc_vortex3x.mdl"
-att.ModelOffset = Vector(0, -0.017, 0.3)
+att.ModelOffset = Vector(0, 0, 0.18)
 
 att.AdditionalSights = {
     {
-        Pos = Vector(-0.05, 12, -1.3),
+        Pos = Vector(0, 12, -1.6),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
@@ -29,7 +29,7 @@ att.AdditionalSights = {
             Holosight = true,
             HolosightReticle = Material("hud/scopes/uc_vortex_reticle.png", "mips smooth"),
             HolosightNoFlare = true,
-            HolosightSize = 6,
+            HolosightSize = 7,
             HolosightPiece = "models/weapons/arccw/atts/uc_vortex3x_hsp.mdl",
             HolosightBlackbox = true,
             HolosightMagnification = 3,
