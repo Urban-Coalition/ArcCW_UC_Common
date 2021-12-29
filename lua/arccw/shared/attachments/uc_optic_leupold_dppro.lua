@@ -14,10 +14,10 @@ att.AutoStats = true
 att.Slot = {"optic", "optic_lp"}
 
 att.Model = "models/weapons/arccw/atts/uc_leupold_dppro.mdl"
-att.ModelScale = Vector(1.1, 1.1, 1.1)
+att.ModelScale = Vector(1.3, 1.3, 1.3)
 att.AdditionalSights = {
     {
-        Pos = Vector(-0.026, 12, -0.54),
+        Pos = Vector(-0.026, 12, -0.65),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_NONE
@@ -25,7 +25,7 @@ att.AdditionalSights = {
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("mifl_tarkov_reticle/dot.png", "mips smooth")
+att.HolosightReticle = Material("hud/reticles/reddot.png", "mips smooth")
 att.HolosightPiece = "models/weapons/arccw/atts/uc_leupold_dppro_hsp.mdl"
 att.HolosightNoFlare = true
 att.HolosightSize = 1
