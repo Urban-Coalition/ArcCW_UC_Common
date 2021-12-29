@@ -1,14 +1,19 @@
-att.PrintName = "N-Vision HALO-LR THERMAL SCOPE (3.5x)"
-att.AbbrevName = "HALO THERM. SCOPE (3.5x)"
+att.PrintName = "N-Vision HALO-LR Thermal Scope (3.5-6.5x)"
+att.AbbrevName = "HALO-LR (3.5-6.5x)"
 att.Icon = nil
-att.Description = "thermal scope 3.5x + digital zoom 1-4x ip67 oled display 640x480 60 hz gaming rgb lights https://nvisionoptics.com/product/halo-lr/"
+att.Description = "Cutting-edge night vision optic that highlights targets via infrared imaging. The complicated electronics result in a massive weight gain for the base weapon."
 
 att.SortOrder = 3
 
 att.Desc_Pros = {
     "autostat.holosight",
+    "autostat.zoom",
+    "autostat.thermal"
 }
 att.Desc_Cons = {
+}
+att.Desc_Neutrals = {
+    "Double-tap +USE to toggle imaging modes"
 }
 att.AutoStats = true
 att.Slot = {"optic"}
@@ -92,12 +97,11 @@ att.HolosightBlackbox = true
 
 att.HolosightMagnification = 2.3
 
-att.Mult_SightTime = 1.125
-
-att.Mult_SightTime = 1.4
+att.Mult_SightTime = 1.25
 att.Mult_SightedSpeedMult = 0.75
-att.Mult_SpeedMult = 0.875
+att.Mult_SpeedMult = 0.9
 att.Mult_SightedSpeedMult = .8
+att.Mult_Sway = 1.5
 
 local Ret1 = Material("hud/scopes/uc_nvis_reticle1.png", "mips smooth")
 local Ret2 = Material("hud/scopes/uc_nvis_reticle2.png", "mips smooth")
