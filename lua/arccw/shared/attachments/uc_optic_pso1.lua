@@ -1,7 +1,7 @@
 att.PrintName = "PSO-1 (4x)"
 att.AbbrevName = "PSO-1 (4x)"
 att.Icon = nil
-att.Description = "Medium range combat scope for improved precision at longer ranges."
+att.Description = "Medium range combat scope for improved precision at longer ranges.\nExclusive to the unorthodox \"dovetail\" optic mount."
 
 att.SortOrder = 300
 
