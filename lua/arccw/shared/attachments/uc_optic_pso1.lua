@@ -48,3 +48,4 @@ att.HolosightPiece = "models/weapons/arccw/atts/ur_pso1_hsp.mdl"
 att.Colorable = true
 
 att.Mult_SightedSpeedMult = .8
+att.ExcludeFlags = {"ak_norail"}
