@@ -98,9 +98,8 @@ att.HolosightBlackbox = true
 att.HolosightMagnification = 2.3
 
 att.Mult_SightTime = 1.25
-att.Mult_SightedSpeedMult = 0.75
+att.Mult_SightedSpeedMult = 0.65
 att.Mult_SpeedMult = 0.9
-att.Mult_SightedSpeedMult = .8
 att.Mult_Sway = 1.5
 
 local Ret1 = Material("hud/scopes/uc_nvis_reticle1.png", "mips smooth")
