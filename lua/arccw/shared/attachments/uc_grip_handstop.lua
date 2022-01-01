@@ -1,7 +1,7 @@
 att.PrintName = "Handstop"
 att.AbbrevName = "Handstop"
 att.Icon = nil -- todo
-att.Description = "Prevents the hand from sliding down the barrel, allowing improved aim precision via a special \"C-clamp\" grip."
+att.Description = "Prevents the hand from sliding down the barrel, allowing improved point shooting precision via a special \"C-clamp\" grip."
 
 att.AutoStats = true
 att.Slot = "foregrip"
