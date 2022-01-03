@@ -39,8 +39,8 @@ att.AdditionalSights = {
         },
     },
     {
-        Pos = Vector(-0.005, 11, -2.35-0.23),
-        Ang = Angle(-2, 0, 0),
+        Pos = Vector(-0.005, 11, -2.632),
+        Ang = Angle(-1, 0, 0),
         Magnification = 1.1,
         IgnoreExtra = true,
         HolosightData = {
