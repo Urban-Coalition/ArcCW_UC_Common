@@ -1,12 +1,13 @@
 att.PrintName = "PSO-1 (4x)"
 att.AbbrevName = "PSO-1 (4x)"
 att.Icon = nil
-att.Description = "Medium range combat scope for improved precision at longer ranges.\nExclusive to the unorthodox \"dovetail\" optic mount."
+att.Description = "Medium range combat scope for improved precision at longer ranges.\nExclusive to the uncommon \"Warsaw Pact\" optic mount."
 
 att.SortOrder = 300
 
 att.Desc_Pros = {
     "autostat.holosight",
+    "autostat.zoom",
 }
 att.Desc_Cons = {
 }
@@ -20,11 +21,7 @@ att.AdditionalSights = {
     {
         Pos = Vector(0, 13, -1.5),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.1,
-        ScrollFunc = ArcCW.SCROLL_ZOOM,
-        ScopeMagnificationMin = 1.5,
-        ScopeMagnificationMax = 3,
-        ScopeMagnification = 3,
+        Magnification = 1.25,
         HolosightData = {
             Holosight = true,
             HolosightReticle = Material("hud/scopes/uc_pso.png", "mips smooth"),
@@ -32,7 +29,7 @@ att.AdditionalSights = {
             HolosightSize = 10.5,
             HolosightPiece = "models/weapons/arccw/atts/ur_pso1_hsp.mdl",
             HolosightBlackbox = true,
-            HolosightMagnification = 3,
+            HolosightMagnification = 4,
             Colorable = true,
         },
     }
@@ -48,4 +45,4 @@ att.HolosightPiece = "models/weapons/arccw/atts/ur_pso1_hsp.mdl"
 att.Colorable = true
 
 att.Mult_SightedSpeedMult = .8
-att.ExcludeFlags = {"ak_norail"}
+att.ExcludeFlags = {"ak_norail","cover_rail"}

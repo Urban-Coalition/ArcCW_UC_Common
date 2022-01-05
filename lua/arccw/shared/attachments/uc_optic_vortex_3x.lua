@@ -1,12 +1,13 @@
-att.PrintName = "Vortex SPITFIRE™ 3X PRISM SCOPE (3x)"
-att.AbbrevName = "Spitfire (3x)"
+att.PrintName = "Vortex SPITFIRE™ 3X PRISM SCOPE (1.5x-3x)"
+att.AbbrevName = "Spitfire (1.5x-3x)"
 att.Icon = nil
-att.Description = "Medium range combat scope for improved precision at longer ranges."
+att.Description = "Short to medium range combat scope that allows a more versatile engagement range."
 
 att.SortOrder = 3
 
 att.Desc_Pros = {
     "autostat.holosight",
+    "autostat.zoom",
 }
 att.Desc_Cons = {
 }

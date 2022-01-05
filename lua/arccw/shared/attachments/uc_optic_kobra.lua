@@ -1,15 +1,17 @@
-att.PrintName = "Cobra EKP-8-16 Reflex Sight"
-att.AbbrevName = "Cobra EKP-8-16"
+att.PrintName = "Kobra EKP-8-16 Reflex Sight"
+att.AbbrevName = "Kobra EKP-8-16"
 att.Icon = nil
-att.Description = "Wwwwwwwwwwwww.\nExclusive to the unorthodox \"dovetail\" optic mount."
+att.Description = "Improves sighted visibility with a red-dot targeting reticle, while adding minimal extra weight.\nExclusive to the uncommon \"Warsaw Pact\" optic mount."
 
-att.SortOrder = 300
+att.SortOrder = 299
 
 att.Desc_Pros = {
     "autostat.holosight",
-    "preess two times e for new reticle"
 }
 att.Desc_Cons = {
+}
+att.Desc_Neutrals = {
+    "Double-tap +USE to toggle reticles"
 }
 att.AutoStats = true
 att.Slot = {"ur_ak_optic"}
@@ -84,4 +86,6 @@ att.AdditionalSights = {
 
 att.Holosight = true
 att.HolosightPiece = "models/weapons/arccw/atts/ur_kobra_hsp.mdl"
-att.Mult_SightedSpeedMult = .99
+att.Mult_SightedSpeedMult = .9
+
+att.ExcludeFlags = {"ak_norail","cover_rail"}
