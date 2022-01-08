@@ -3,7 +3,7 @@ att.AbbrevName = "Trijicon TARS (3-15x)"
 att.Icon = nil
 att.Description = "Variable power scope, adjustable for a very wide range of magnifications."
 
-att.SortOrder = 3
+att.SortOrder = 15
 
 att.Desc_Pros = {
     "autostat.holosight",
@@ -15,11 +15,12 @@ att.AutoStats = true
 att.Slot = {"optic"}
 
 att.Model = "models/weapons/arccw/atts/uc_trijicon_tars.mdl"
-att.ModelOffset = Vector(0, 0, 0.25)
+att.ModelOffset = Vector(0, 0, 0.1)
+att.ModelScale = Vector(1.05,1.05,1.05)
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 12, -1.6),
+        Pos = Vector(0, 12, -1.55),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
@@ -58,4 +59,4 @@ att.HolosightPiece = "models/weapons/arccw/atts/uc_trijicon_tars_hsp.mdl"
 att.Colorable = true
 
 att.Mult_SightedSpeedMult = .7
-att.Mult_SightTime = .9
+att.Mult_SightTime = 1.1
