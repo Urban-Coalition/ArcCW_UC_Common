@@ -1,12 +1,13 @@
-att.PrintName = "Trijicon® TARS™ (Tactical Advanced Riflescope) 3-15x50"
+att.PrintName = "Trijicon® Tactical Advanced Riflescope (3-15x)"
 att.AbbrevName = "Trijicon TARS (3-15x)"
 att.Icon = nil
-att.Description = "The Trijicon TARS variable power riflescope is as rugged as the Trijicon ACOG, but with the precise adjustablility that long-range shooting demands. It features an LED first focal plane reticle with ten illumination settings-including three for night vision. With 120 MOA / 36 MIL total elevation adjustment and 30 MOA / 10 MIL adjustments per revolution, the Trijicon TARS allows you to rapidly zero in on your target no matter the distance. Made in the U.S.A., this long-range riflescope is also equipped with locking external adjusters and an elevation zero stop. NOTE: Service and repair for discontinued products may vary. Please contact repairs@trijicon.com for more information. Please have proof of purchase ready to determine repair eligibility."
+att.Description = "Variable power scope, adjustable for a very wide range of magnifications."
 
 att.SortOrder = 3
 
 att.Desc_Pros = {
     "autostat.holosight",
+    "autostat.zoom"
 }
 att.Desc_Cons = {
 }
@@ -56,4 +57,5 @@ att.HolosightPiece = "models/weapons/arccw/atts/uc_trijicon_tars_hsp.mdl"
 -- att.HolosightBone = "holosight"
 att.Colorable = true
 
-att.Mult_SightedSpeedMult = .8
+att.Mult_SightedSpeedMult = .7
+att.Mult_SightTime = .9
