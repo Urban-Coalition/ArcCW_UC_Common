@@ -1,5 +1,5 @@
-att.PrintName = "Kobra EKP-8-16 Reflex Sight"
-att.AbbrevName = "Kobra EKP-8-16"
+att.PrintName = "Kobra EKP-8-16 Reflex Sight (RDS)"
+att.AbbrevName = "Kobra (RDS)"
 att.Icon = nil
 att.Description = "Improves sighted visibility with a red-dot targeting reticle, while adding minimal extra weight.\nExclusive to the uncommon \"Warsaw Pact\" optic mount."
 
