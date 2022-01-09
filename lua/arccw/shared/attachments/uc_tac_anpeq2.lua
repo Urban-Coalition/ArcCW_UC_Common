@@ -15,9 +15,9 @@ att.Slot = {"tac"}
 att.SortOrder = .9
 
 att.Model = "models/weapons/arccw/atts/uc_anpeq2.mdl"
-att.ModelOffset = Vector(0, 0.2, 0.6)
+att.ModelOffset = Vector(0, 0.1, 0.6)
 att.OffsetAng = Angle(0, 0,180)
-att.ModelScale = Vector(1.3, 1.3, 1.3)
+att.ModelScale = Vector(1.5, 1.5, 1.5)
 att.ModelSkin = 1
 att.Laser = false
 att.LaserStrength = 2 / 5
