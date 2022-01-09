@@ -1,7 +1,7 @@
 att.PrintName = "Insight Technologies ATPIAL AN/PEQ-2 (Tan)"
 att.AbbrevName = "AN/PEQ-2 (Tan)"
 att.Icon = nil
-att.Description = "A combined flashlight and laser module for pistols.\nThe laser and flashlight can be toggled individually."
+att.Description = "Large flashlight and laser module for rifles, with a stronger, more effective laser that also aids target acquisition.\nThe laser and flashlight can be toggled individually. This unit is cosmetically colored tan."
 att.Desc_Pros = {
     "uc.light"
 }
@@ -20,13 +20,13 @@ att.OffsetAng = Angle(0, 0,180)
 att.ModelScale = Vector(1.5, 1.5, 1.5)
 
 att.Laser = false
-att.LaserStrength = 2 / 5
+att.LaserStrength = 3.5 / 5
 att.LaserBone = "laser"
 
 att.ColorOptionsTable = {Color(255, 0, 0, 150)}
 
-att.Mult_SightTime = 1.05
-att.Mult_SightedSpeedMult = 0.95
+att.Mult_SightTime = 1.1
+att.Mult_SightedSpeedMult = 0.9
 att.Mult_MoveSpeed = 1
 
 att.Flashlight = false
@@ -43,15 +43,19 @@ att.ToggleStats = {
     {
         PrintName = "Laser",
         Laser = true,
-        Mult_HipDispersion = 0.8,
-        Mult_MoveDispersion = 0.8
+        Mult_HipDispersion = 0.7,
+        Mult_MoveDispersion = 0.8,
+        Mult_SightTime = .9,
+        Mult_SightedSpeedMult = .75
     },
     {
         PrintName = "Both",
         Laser = true,
         Flashlight = true,
-        Mult_HipDispersion = 0.8,
-        Mult_MoveDispersion = 0.8
+        Mult_HipDispersion = 0.7,
+        Mult_MoveDispersion = 0.8,
+        Mult_SightTime = .9,
+        Mult_SightedSpeedMult = .75
     },
     {
         PrintName = "Light",

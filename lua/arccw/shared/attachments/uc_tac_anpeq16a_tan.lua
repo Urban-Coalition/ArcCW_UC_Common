@@ -1,7 +1,7 @@
 att.PrintName = "Insight Technologies MIPIM AN/PEQ-16A (Tan)"
 att.AbbrevName = "AN/PEQ-16A (Tan)"
 att.Icon = nil
-att.Description = "A combined flashlight and laser module for pistols.\nThe laser and flashlight can be toggled individually."
+att.Description = "Low-profile flashlight and laser module for rifles. The laser increases accuracy without the use of sights.\nThe laser and flashlight can be toggled individually. This unit is cosmetically colored tan."
 att.Desc_Pros = {
     "uc.light"
 }
@@ -18,7 +18,6 @@ att.Model = "models/weapons/arccw/atts/uc_anpeq16a.mdl"
 att.ModelOffset = Vector(0, 0.2, 0.6)
 att.OffsetAng = Angle(0, 0,180)
 att.ModelScale = Vector(1.3, 1.3, 1.3)
-
 att.Laser = false
 att.LaserStrength = 2 / 5
 att.LaserBone = "laser"

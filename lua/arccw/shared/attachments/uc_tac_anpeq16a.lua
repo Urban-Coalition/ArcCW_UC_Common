@@ -1,7 +1,7 @@
 att.PrintName = "Insight Technologies MIPIM AN/PEQ-16A"
 att.AbbrevName = "AN/PEQ-16A"
 att.Icon = nil
-att.Description = "A combined flashlight and laser module for pistols.\nThe laser and flashlight can be toggled individually."
+att.Description = "Low-profile flashlight and laser module for rifles. The laser increases accuracy without the use of sights.\nThe laser and flashlight can be toggled individually."
 att.Desc_Pros = {
     "uc.light"
 }
