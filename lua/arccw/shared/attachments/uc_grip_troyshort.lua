@@ -1,7 +1,7 @@
 att.PrintName = "Troy Modular Combat Grip (Stubby)"
 att.AbbrevName = "Stubby Foregrip"
 att.Icon = nil -- todo
-att.Description = "Decreases recoil by providing a more secure holding position."
+att.Description = "Decreases recoil by providing a more natural forearm position."
 
 att.AutoStats = true
 att.Slot = "foregrip"
