@@ -1,7 +1,7 @@
-att.PrintName = "Troy Modular Combat Grip (Short)"
-att.AbbrevName = "Troy Grip (Short)"
+att.PrintName = "Troy Modular Combat Grip (Stubby)"
+att.AbbrevName = "Stubby Foregrip"
 att.Icon = nil -- todo
-att.Description = "wrist strain"
+att.Description = "Decreases recoil by providing a more natural forearm position."
 
 att.AutoStats = true
 att.Slot = "foregrip"
@@ -12,8 +12,8 @@ att.ModelOffset = Vector(0, 0, -0.7)
 att.Model = "models/weapons/arccw/atts/uc_troygrip_short.mdl"
 -- att.ModelSkin  = 1
 
-att.Mult_SightTime = .85
-att.Mult_Sway = 1.5
-att.Mult_Recoil = 1.05
+att.Mult_Recoil = .8
+att.Mult_SightTime = 1.15
+att.Mult_MoveDispersion = 1.25
 
 -- att.Ignore = true
