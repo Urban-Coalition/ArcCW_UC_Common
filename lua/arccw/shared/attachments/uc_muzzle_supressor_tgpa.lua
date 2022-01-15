@@ -10,7 +10,7 @@ att.AutoStats = true
 att.AutoStats = true
 att.Slot = {"muzzle"}
 
-att.SortOrder = 150
+att.SortOrder = 149
 
 att.Model = "models/weapons/arccw/atts/uc_tgpa.mdl"
 att.ModelOffset = Vector(2, 0, 0)
