@@ -29,7 +29,7 @@ att.AdditionalSights = {
 att.ModelOffset = Vector(0, -0.05, 0)]]
 
 att.Holosight = true
-att.HolosightReticle = Material("hud/reticles/holo.png", "mips smooth")
+att.HolosightReticle = Material("hud/reticles/uc_holo.png", "mips smooth")
 att.HolosightSize = 1
 att.HolosightBone = "holosight"
 att.HolosightNoFlare = true

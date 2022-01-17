@@ -1,4 +1,4 @@
-att.PrintName = "Trijicon® Tactical Advanced Riflescope (3-15x)"
+att.PrintName = "Trijicon Tactical Advanced Riflescope (3-15x)"
 att.AbbrevName = "TARS (3-15x)"
 att.Icon = nil
 att.Description = "Variable power scope, adjustable for a very wide range of magnifications."
@@ -38,11 +38,11 @@ att.AdditionalSights = {
             Colorable = true,
             SpecialScopeFunction = function(screen)
                 render.PushRenderTarget(screen)
-                
+
                 DrawBloom(0,0.3,5,5,3,0.5,1,1,1)
                 DrawSharpen(1,1.65)
                 DrawMotionBlur(0.45,1,1/45)
-    
+
                 render.PopRenderTarget()
             end,
         },

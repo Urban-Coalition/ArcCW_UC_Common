@@ -25,7 +25,7 @@ att.AdditionalSights = {
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("hud/reticles/reddot.png", "mips smooth")
+att.HolosightReticle = Material("hud/reticles/uc_reddot.png", "mips smooth")
 att.HolosightPiece = "models/weapons/arccw/atts/uc_leupold_dppro_hsp.mdl"
 att.HolosightNoFlare = true
 att.HolosightSize = 1

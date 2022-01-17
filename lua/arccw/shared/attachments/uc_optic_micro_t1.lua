@@ -1,4 +1,4 @@
-att.PrintName = "AIMPOINT™ Micro T-1 Red Dot Reflex Sight (RDS)"
+att.PrintName = "AIMPOINT Micro T-1 Red Dot Reflex Sight (RDS)"
 att.AbbrevName = "Micro T-1 (RDS)"
 att.Icon = nil
 att.Description = "Improves sighted visibility with a red-dot targeting reticle, while adding minimal extra weight."
@@ -27,7 +27,7 @@ att.AdditionalSights = {
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("hud/reticles/reddot.png", "mips smooth")
+att.HolosightReticle = Material("hud/reticles/uc_reddot.png", "mips smooth")
 att.HolosightPiece = "models/weapons/arccw/atts/uc_mirco_t1_hsp.mdl"
 att.HolosightNoFlare = true
 att.HolosightSize = 1

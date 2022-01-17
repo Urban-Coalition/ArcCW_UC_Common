@@ -1,4 +1,4 @@
-att.PrintName = "Sightmark Sure Shot Reflex Sight Black (RDS)"
+att.PrintName = "Sightmark Sure Shot Reflex Sight (RDS)"
 att.AbbrevName = "Sure Shot (RDS)"
 att.Icon = nil
 att.Description = "Improves sighted visibility with a red-dot targeting reticle, while adding minimal extra weight."
@@ -28,7 +28,7 @@ att.AdditionalSights = {
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("hud/reticles/reddot.png", "mips smooth")
+att.HolosightReticle = Material("hud/reticles/uc_reddot.png", "mips smooth")
 att.HolosightPiece = "models/weapons/arccw/atts/uc_sureshot_hsp.mdl"
 att.HolosightNoFlare = true
 att.HolosightSize = 1

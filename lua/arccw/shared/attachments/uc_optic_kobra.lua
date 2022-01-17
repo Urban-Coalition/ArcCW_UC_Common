@@ -19,7 +19,7 @@ att.Slot = {"ur_ak_optic"}
 att.Model = "models/weapons/arccw/atts/ur_kobra.mdl"
 att.ModelOffset = Vector(-2, 0, -4.55)
 
-local R1, R2, R3, R4 = Material("hud/reticles/kobra1.png", "mips smooth"), Material("hud/reticles/kobra2.png", "mips smooth"), Material("hud/reticles/kobra3.png", "mips smooth"), Material("hud/reticles/kobra4.png", "mips smooth")
+local R1, R2, R3, R4 = Material("hud/reticles/uc_kobra1.png", "mips smooth"), Material("hud/reticles/uc_kobra2.png", "mips smooth"), Material("hud/reticles/uc_kobra3.png", "mips smooth"), Material("hud/reticles/uc_kobra4.png", "mips smooth")
 
 att.AdditionalSights = {
     {
