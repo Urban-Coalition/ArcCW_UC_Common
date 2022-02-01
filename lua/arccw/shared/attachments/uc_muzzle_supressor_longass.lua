@@ -1,6 +1,6 @@
 att.PrintName = "ATA Giraffe-556 Suppressor" -- fictional
 att.AbbrevName = "Giraffe Suppressor"
-att.Icon = nil
+att.Icon = Material("entities/att/longass.png", "mips smooth")
 att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nExtremely long suppressor tube provides excellent noise reduction, but is also very unwieldy."
 att.Desc_Pros = {
 }

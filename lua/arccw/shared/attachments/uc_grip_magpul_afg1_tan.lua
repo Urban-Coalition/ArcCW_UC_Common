@@ -1,6 +1,6 @@
 att.PrintName = "MAGPUL AFG-1 Tan Horizontal Grip"
 att.AbbrevName = "MAGPUL AFG-1 Tan"
-att.Icon = nil -- todo
+att.Icon = Material("entities/att/afg1_tan.png", "mips smooth")
 att.Description = "Decreases recoil by providing a more secure holding position."
 
 att.AutoStats = true

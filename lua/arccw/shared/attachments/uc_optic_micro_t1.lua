@@ -1,6 +1,6 @@
 att.PrintName = "AIMPOINT Micro T-1 Red Dot Reflex Sight (RDS)"
 att.AbbrevName = "Micro T-1 (RDS)"
-att.Icon = nil
+att.Icon = Material("entities/att/t1.png", "mips smooth")
 att.Description = "Improves sighted visibility with a red-dot targeting reticle, while adding minimal extra weight."
 
 att.SortOrder = 1

@@ -1,6 +1,6 @@
 att.PrintName = "Sightmark Sure Shot Reflex Sight (RDS)"
 att.AbbrevName = "Sure Shot (RDS)"
-att.Icon = nil
+att.Icon = Material("entities/att/sureshot.png", "mips smooth")
 att.Description = "Improves sighted visibility with a red-dot targeting reticle, while adding minimal extra weight."
 
 att.SortOrder = 1

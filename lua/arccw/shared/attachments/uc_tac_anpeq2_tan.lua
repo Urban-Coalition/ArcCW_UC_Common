@@ -1,6 +1,6 @@
 att.PrintName = "Insight Technologies ATPIAL AN/PEQ-2 (Tan)"
 att.AbbrevName = "AN/PEQ-2 (Tan)"
-att.Icon = nil
+att.Icon = Material("entities/att/anpeq2_tan.png", "mips smooth")
 att.Description = "Large flashlight and laser module for rifles, with a stronger, more effective laser that also aids target acquisition.\nThe laser and flashlight can be toggled individually. This unit is cosmetically colored tan."
 att.Desc_Pros = {
     "uc.light"

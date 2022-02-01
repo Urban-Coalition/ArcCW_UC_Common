@@ -1,6 +1,6 @@
 att.PrintName = "Basilisk Heavy Compensator" -- fictional
 att.AbbrevName = "Basilisk Compensator"
-att.Icon = nil
+att.Icon = Material("entities/att/muzzle4.png", "mips smooth")
 att.Description = "A muzzle device that redirects propellant gases to counter muzzle rise, particularly in the lateral directions."
 att.Desc_Pros = {
 }
