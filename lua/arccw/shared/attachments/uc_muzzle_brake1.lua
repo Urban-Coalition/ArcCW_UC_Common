@@ -1,6 +1,6 @@
 att.PrintName = "Hammerhead Muzzle Brake" -- fictional
 att.AbbrevName = "Hammerhead Brake"
-att.Icon = nil
+att.Icon = Material("entities/att/muzzle3.png", "mips smooth")
 att.Description = "A muzzle device that redirects propellant gasses to the sides to reduce the recoil of the gun."
 att.Desc_Pros = {
 }

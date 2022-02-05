@@ -1,6 +1,6 @@
 att.PrintName = "Troy Modular Combat Grip"
 att.AbbrevName = "Vertical Foregrip"
-att.Icon = nil -- todo
+att.Icon = Material("entities/att/longtroy.png", "mips smooth")
 att.Description = "Long, massive foregrip tailored for exquisite weapon control. Makes the weapon difficult to conceal."
 
 att.AutoStats = true

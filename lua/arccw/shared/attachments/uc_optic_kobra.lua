@@ -1,6 +1,6 @@
 att.PrintName = "Kobra EKP-8-16 Reflex Sight (RDS)"
 att.AbbrevName = "Kobra (RDS)"
-att.Icon = nil
+att.Icon = Material("entities/att/kobra.png", "mips smooth")
 att.Description = "Improves sighted visibility with a red-dot targeting reticle, while adding minimal extra weight.\nExclusive to the uncommon \"Warsaw Pact\" optic mount."
 
 att.SortOrder = 299

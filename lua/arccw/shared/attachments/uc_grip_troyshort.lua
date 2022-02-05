@@ -1,6 +1,6 @@
 att.PrintName = "Troy Modular Combat Grip (Stubby)"
 att.AbbrevName = "Stubby Foregrip"
-att.Icon = nil -- todo
+att.Icon = Material("entities/att/shorttroy.png", "mips smooth")
 att.Description = "Decreases recoil by providing a more natural forearm position."
 
 att.AutoStats = true

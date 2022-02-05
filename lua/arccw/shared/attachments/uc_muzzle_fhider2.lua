@@ -1,6 +1,6 @@
 att.PrintName = "idk2 Flash Hider" -- fictional
 att.AbbrevName = "idk2 Flash Hider"
-att.Icon = nil
+att.Icon = Material("entities/att/muzzle5.png", "mips smooth")
 att.Description = "nigga hidden twice"
 att.Desc_Pros = {
 }

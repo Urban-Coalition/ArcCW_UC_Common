@@ -1,6 +1,6 @@
 att.PrintName = "N-Vision HALO-LR Thermal Scope (3.5-6.5x)"
 att.AbbrevName = "HALO-LR (3.5-6.5x)"
-att.Icon = nil
+att.Icon = Material("entities/att/nvis.png", "mips smooth")
 att.Description = "Cutting-edge night vision optic that highlights targets via infrared imaging. The complicated electronics result in a massive weight gain for the base weapon."
 
 att.SortOrder = 3

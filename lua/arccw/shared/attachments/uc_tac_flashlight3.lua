@@ -1,6 +1,6 @@
 att.PrintName = "High-Power Rail-Mounted Flashlight"
 att.AbbrevName = "High-Power Flashlight"
-att.Icon = nil
+att.Icon = Material("entities/att/flashlight.png", "mips smooth")
 att.Description = "Illuminates dark areas in front of the muzzle.\nEmits a strong, orange-tinted light."
 att.Desc_Pros = {
     "uc.light"

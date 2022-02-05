@@ -1,6 +1,6 @@
 att.PrintName = "PSO-1 (4x)"
 att.AbbrevName = "PSO-1 (4x)"
-att.Icon = nil
+att.Icon = Material("entities/att/pso1.png", "mips smooth")
 att.Description = "Medium range combat scope for improved precision at longer ranges.\nExclusive to the uncommon \"Warsaw Pact\" optic mount."
 
 att.SortOrder = 300

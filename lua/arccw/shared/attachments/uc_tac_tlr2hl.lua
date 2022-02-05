@@ -1,6 +1,6 @@
 att.PrintName = "TLR-2 HL Pistol Flashlight"
 att.AbbrevName = "TLR-2 HL"
-att.Icon = nil
+att.Icon = Material("entities/att/pistolflashlight.png", "mips smooth")
 att.Description = "A combined flashlight and laser module for pistols.\nThe laser and flashlight can be toggled individually."
 att.Desc_Pros = {
     "uc.light"

@@ -1,6 +1,6 @@
 att.PrintName = "Helix Light Brake" -- fictional
 att.AbbrevName = "Helix Brake"
-att.Icon = nil
+att.Icon = Material("entities/att/muzzle5.png", "mips smooth")
 att.Description = "A light muzzle device that redirects propellant gasses to the sides to reduce the recoil of the gun ableit less efficiently than a normal brake."
 att.Desc_Pros = {
 }

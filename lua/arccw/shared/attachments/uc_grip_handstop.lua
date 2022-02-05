@@ -1,6 +1,6 @@
 att.PrintName = "Handstop"
 att.AbbrevName = "Handstop"
-att.Icon = nil -- todo
+att.Icon = Material("entities/att/hs.png", "mips smooth")
 att.Description = "Prevents the hand from sliding down the barrel, allowing improved point shooting precision via a special \"C-clamp\" grip."
 
 att.AutoStats = true

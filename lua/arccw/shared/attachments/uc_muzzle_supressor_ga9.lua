@@ -1,6 +1,6 @@
 att.PrintName = "GA9 Revolution 9 Suppressor"
 att.AbbrevName = "GA9 Suppressor"
-att.Icon = nil
+att.Icon = Material("entities/att/ga9rev.png", "mips smooth")
 att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nCompact and lightweight, with little impact on handling."
 att.Desc_Pros = {
 }

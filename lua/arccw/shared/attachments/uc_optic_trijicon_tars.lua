@@ -1,6 +1,6 @@
 att.PrintName = "Trijicon Tactical Advanced Riflescope (3-15x)"
 att.AbbrevName = "TARS (3-15x)"
-att.Icon = nil
+att.Icon = Material("entities/att/tars.png", "mips smooth")
 att.Description = "Variable power scope, adjustable for a very wide range of magnifications."
 
 att.SortOrder = 15
