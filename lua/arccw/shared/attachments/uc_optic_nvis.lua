@@ -42,15 +42,15 @@ att.AdditionalSights = {
         IgnoreExtra = true,
         Contrast = 0.51,
         Brightness = 0.1,
-        SpecialScopeFunction = function(screen)
-            render.PushRenderTarget(screen)
+        -- SpecialScopeFunction = function(screen)
+            -- render.PushRenderTarget(screen)
             
-            DrawBloom(0,0.3,5,5,3,0.5,1,1,1)
-            DrawSharpen(1,1.65)
-            DrawMotionBlur(0.45,1,1/45)
+            -- DrawBloom(0,0.3,5,5,3,0.5,1,1,1)
+            -- DrawSharpen(1,1.65)
+            -- DrawMotionBlur(0.45,1,1/45)
 
-            render.PopRenderTarget()
-        end,
+            -- render.PopRenderTarget()
+        -- end,
     },
     {
         Pos = Vector(-0.035, 8, -1.25),
@@ -71,15 +71,15 @@ att.AdditionalSights = {
         IgnoreExtra = true,
         Contrast = 0.7,
         Brightness = 0.5,
-        SpecialScopeFunction = function(screen)
-            render.PushRenderTarget(screen)
+        -- SpecialScopeFunction = function(screen)
+            -- render.PushRenderTarget(screen)
             
-            DrawBloom(0, 0.3, 5, 5, 3, 0.5, 1, 1, 1)
-            DrawSharpen(1, 1.65)
-            DrawMotionBlur(0.45, 1, 1/45)
+            -- DrawBloom(0, 0.3, 5, 5, 3, 0.5, 1, 1, 1)
+            -- DrawSharpen(1, 1.65)
+            -- DrawMotionBlur(0.45, 1, 1/45)
 
-            render.PopRenderTarget()
-        end,
+            -- render.PopRenderTarget()
+        -- end,
     },
 }
 
