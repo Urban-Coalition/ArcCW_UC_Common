@@ -23,9 +23,9 @@ att.Hook_Compatible = function(wep)
         if v.Mode == 2 then
             -- Not available if gun has automatic firemode
             return false
-        elseif v.Mode < 0 then
-            -- Use burst variant
-            return false
+        -- elseif v.Mode < 0 then
+        --     -- Use burst variant
+        --     return false
         end
     end
 end
@@ -41,8 +41,9 @@ att.Override_Firemodes = {
     }
 }
 
-att.Mult_RPM = .85
+--att.Mult_RPM = 1.25
 att.Mult_RecoilSide = 1.25
-att.Mult_VisualRecoil = 2
+att.Mult_VisualRecoilMult = 2
+att.Mult_MalfunctionMean = .85
 
 att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"
