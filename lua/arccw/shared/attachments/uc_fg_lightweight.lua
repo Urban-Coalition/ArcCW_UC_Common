@@ -16,3 +16,5 @@ att.Mult_SpeedMult = 1.075
 att.Mult_Recoil = 1.075
 
 att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"
+
+att.Ignore = true
