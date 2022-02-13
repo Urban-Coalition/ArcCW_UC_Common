@@ -17,17 +17,17 @@ att.SortOrder = 2
 att.Hook_Compatible = function(wep)
     if wep:GetIsManualAction() then return false end
 
-    for i, v in pairs(wep.Firemodes) do
-        if !v then continue end
-        if !v.Mode then continue end
-        if v.Mode == 2 then
-            -- Not available if gun has automatic firemode
-            return false
-        -- elseif v.Mode < 0 then
-        --     -- Use burst variant
-        --     return false
-        end
-    end
+    -- for i, v in pairs(wep.Firemodes) do
+    --     if !v then continue end
+    --     if !v.Mode then continue end
+    --     if v.Mode == 2 then
+    --         -- Not available if gun has automatic firemode
+    --         return false
+    --     -- elseif v.Mode < 0 then
+    --     --     -- Use burst variant
+    --     --     return false
+    --     end
+    -- end
 end
 
 att.Override_Firemodes_Priority = 100
