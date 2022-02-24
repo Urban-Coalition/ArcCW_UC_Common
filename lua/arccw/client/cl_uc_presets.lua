@@ -238,3 +238,15 @@ for wep,data in pairs(presetData) do
 end
 
 -- TODO: Make preset generation prompted instead of automatic
+
+matproxy.Add({
+    name = "UC_Weapon_Color", 
+    init = function(self, mat, values)
+        self.ResultTo = values.resultvar
+    end,
+    bind = function(self, mat, ent)
+       if IsValid(ent) and ent.ArcCW and IsValid(ent:GetOwner()) then
+           mat:SetVector(self.ResultTo, (ent:GetOwner():GetPlayerColor()*.9))
+       end
+   end 
+})
