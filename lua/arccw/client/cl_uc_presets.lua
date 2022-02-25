@@ -245,8 +245,8 @@ matproxy.Add({
         self.ResultTo = values.resultvar
     end,
     bind = function(self, mat, ent)
-       if IsValid(ent) and ent.ArcCW and IsValid(ent:GetOwner()) then
-           mat:SetVector(self.ResultTo, (ent:GetOwner():GetPlayerColor()*.9))
+       if IsValid(ent) and ent.ArcCW and IsValid(ent:GetOwner()) and ent:GetOwner():IsPlayer() then
+           mat:SetVector(self.ResultTo, ((ent:GetOwner():GetPlayerColor() or color_white)*.9))
        end
    end 
 })
