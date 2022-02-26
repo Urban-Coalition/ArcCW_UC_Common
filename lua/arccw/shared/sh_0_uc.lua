@@ -12,7 +12,7 @@ sound.Add( {
     channel = CHAN_AUTO,
     volume = 1.0,
     level = 100,
-    sound = {"^arccw_uc/common/db_add_1", "^arccw_uc/common/db_add_2", "^arccw_uc/common/db_add_3"}
+    sound = {"^arccw_uc/common/db_add_1.ogg", "^arccw_uc/common/db_add_2.ogg", "^arccw_uc/common/db_add_3.ogg"}
 } )
 
 ArcCW.UC = {}
