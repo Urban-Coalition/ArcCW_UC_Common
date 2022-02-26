@@ -19,7 +19,3 @@ att.Override_ShootEntity = "arccw_uc_40mm_incendiary"
 --att.Mult_Recoil = 1
 
 att.ActivateElements = {"40mm_incendiary"}
-
-att.Hook_AddShootSound = function(wep, data)
-    wep:EmitSound("DB_ADD",data.volume,data.pitch,1,CHAN_WEAPON - 1) -- lua/arccw/shared/sh_0_uc.lua
-end

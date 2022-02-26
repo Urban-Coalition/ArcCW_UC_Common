@@ -15,6 +15,9 @@ sound.Add( {
     sound = {"^arccw_uc/common/db_add_1.ogg", "^arccw_uc/common/db_add_2.ogg", "^arccw_uc/common/db_add_3.ogg"}
 } )
 
+game.AddParticles("particles/muzzleflash_dragonsbreath.pcf")
+PrecacheParticleSystem("muzzleflash_dragonbreath")
+
 ArcCW.UC = {}
 
 ArcCW.UC.BodyDamageMults = {

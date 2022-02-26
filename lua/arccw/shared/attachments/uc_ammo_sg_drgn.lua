@@ -20,7 +20,7 @@ att.Override_DamageType = DMG_BURN
 
 att.Hook_PostBulletHit = function(wep,data)
     if SERVER and data.tr.Entity then
-        local dur = math.floor(5.5 - (data.range * 2) / wep.Range)
+        local dur = 5 - (data.range * 2) / wep.Range
         
         if dur > 0 then
             data.tr.Entity:Ignite(dur)
@@ -30,7 +30,7 @@ end
 
 att.Hook_PhysBulletHit = function(wep,data)
     if SERVER and data.tr.Entity then
-        local dur = math.floor(5.5 - (data.bullet.Travelled * 2 * ArcCW.HUToM) / wep.Range)
+        local dur = 5 - (data.bullet.Travelled * 2 * ArcCW.HUToM) / wep.Range
         if dur > 0 then
             data.tr.Entity:Ignite(dur)
         end
@@ -43,8 +43,8 @@ att.Mult_DamageMin = .5
 att.Mult_Range = .5
 att.Mult_Penetration = .5
 
-att.Override_PhysTracerProfile = 1
--- INSERT NEW MUZZLE EFFECT HERE
+--att.Override_PhysTracerProfile = 1
+att.Override_MuzzleEffect = "muzzleflash_dragonbreath"
 
 att.Hook_AddShootSound = function(wep, data)
     wep:EmitSound("DB_ADD",data.volume,data.pitch,1,CHAN_WEAPON - 1) -- lua/arccw/shared/sh_0_uc.lua
