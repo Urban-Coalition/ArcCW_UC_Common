@@ -3,7 +3,7 @@ att.AbbrevName = "HALO-LR (3.5-6.5x)"
 att.Icon = Material("entities/att/nvis.png", "mips smooth")
 att.Description = "Cutting-edge night vision optic that highlights targets via infrared imaging. The complicated electronics result in a massive weight gain for the base weapon."
 
-att.SortOrder = 3
+att.SortOrder = 6.5
 
 att.Desc_Pros = {
     "autostat.holosight",
@@ -31,7 +31,7 @@ att.AdditionalSights = {
         ScopeMagnificationMin = 3.5,
         ScopeMagnificationMax = 6.5,
         ZoomLevels = 3,
-        ScopeMagnification = 3.5,
+        ScopeMagnification = 5,
         Thermal = true,
         ThermalScopeColor = Color(255, 255, 255),
         ThermalHighlightColor = Color(255, 255, 255),
@@ -62,7 +62,7 @@ att.AdditionalSights = {
         ScopeMagnificationMin = 3.5,
         ScopeMagnificationMax = 6.5,
         ZoomLevels = 3,
-        ScopeMagnification = 3.5,
+        ScopeMagnification = 5,
         Thermal = true,
         ThermalScopeColor = Color(255, 255, 255),
         ThermalHighlightColor = Color(0, 0, 0),
@@ -99,7 +99,7 @@ att.Colorable = false
 
 att.HolosightBlackbox = true
 
-att.HolosightMagnification = 2.3
+att.HolosightMagnification = 5
 
 att.Mult_SightTime = 1.25
 att.Mult_SightedSpeedMult = 0.65
