@@ -17,10 +17,20 @@ att.Slot = "ud_ammo_shotgun"
 att.AutoStats = true
 
 att.Override_DamageType = DMG_BURN
+
 att.Hook_PostBulletHit = function(wep,data)
     if SERVER and data.tr.Entity then
         local dur = math.floor(5.5 - (data.range * 2) / wep.Range)
         
+        if dur > 0 then
+            data.tr.Entity:Ignite(dur)
+        end
+    end
+end
+
+att.Hook_PhysBulletHit = function(wep,data)
+    if SERVER and data.tr.Entity then
+        local dur = math.floor(5.5 - (data.bullet.Travelled * 2 * ArcCW.HUToM) / wep.Range)
         if dur > 0 then
             data.tr.Entity:Ignite(dur)
         end
