@@ -9,7 +9,7 @@ end)
 
 sound.Add( {
     name = "DB_ADD",
-    channel = CHAN_AUTO
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 100,
     sound = {"^arccw_uc/common/db_add_1", "^arccw_uc/common/db_add_2", "^arccw_uc/common/db_add_3"}
