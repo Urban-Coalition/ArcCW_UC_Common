@@ -26,3 +26,7 @@ function ENT:DoDetonation()
         cloud:Spawn()
     end
 end
+
+--[[att.Hook_FireBullets = function(wep, data)  this thing doesn't actually call firebullets lol
+    wep:EmitSound("DB_ADD") -- lua/arccw/shared/sh_0_uc.lua
+  end]]
