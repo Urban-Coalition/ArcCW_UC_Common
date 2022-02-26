@@ -5,7 +5,8 @@ att.Icon = Material("entities/att/arccw_uc_ammo_shotgun_generic.png", "mips smoo
 att.Description = [[Novelty round that creates a spectacular, pyrotechnic flare of magnesium pellets.
 Burning at over 3,000 °F, the blast produces enough heat to set objects and people ablaze.]]
 att.Desc_Pros = {
-    "pro.ignite"
+    "pro.ignite",
+    "uc.pellet.24"
 }
 att.Desc_Cons = {
     "uc.dragon"
@@ -17,6 +18,7 @@ att.Slot = "ud_ammo_shotgun"
 att.AutoStats = true
 
 att.Override_DamageType = DMG_BURN
+att.Add_Num = 24
 
 att.Hook_PostBulletHit = function(wep,data)
     if SERVER and data.tr.Entity then
