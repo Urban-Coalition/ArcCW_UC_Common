@@ -49,7 +49,7 @@ att.Hook_PhysBulletHit = function(wep,data)
     -- end
 end
 
-att.Mult_AccuracyMOA = 3
+att.Mult_AccuracyMOA = 1.5
 att.Mult_Damage = .5
 att.Mult_DamageMin = .5
 att.Mult_Penetration = .5
