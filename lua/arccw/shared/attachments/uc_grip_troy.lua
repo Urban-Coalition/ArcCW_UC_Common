@@ -17,4 +17,7 @@ att.Mult_HipDispersion = .9
 att.Mult_SightTime = 1.25
 att.Mult_DrawTime = 1.35
 
+att.Override_HoldtypeActive = "smg"
+att.Override_HoldtypeActive_Priority = 2
+
 -- att.Ignore = true

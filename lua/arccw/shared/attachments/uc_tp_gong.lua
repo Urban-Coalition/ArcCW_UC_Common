@@ -25,7 +25,9 @@ att.Mult_MoveSpeed = .95
 att.LHIK = true
 att.LHIKHide = true
 att.Override_HoldtypeActive = "pistol"
+att.Override_HoltypeActive_Priority = 999
 att.Override_HoldtypeSights = "pistol"
+att.Override_HoltypeSights_Priority = 999
 att.Override_HoldtypeHolstered = "normal"
 
 att.Hook_Compatible = function(wep, data)

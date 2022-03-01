@@ -16,4 +16,7 @@ att.Mult_Recoil = .8
 att.Mult_SightTime = 1.15
 att.Mult_MoveDispersion = 1.25
 
+att.Override_HoldtypeActive = "smg"
+att.Override_HoldtypeActive_Priority = 2
+
 -- att.Ignore = true
