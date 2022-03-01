@@ -14,7 +14,7 @@ att.Slot = {"muzzle"}
 att.SortOrder = 150
 
 att.Model = "models/weapons/arccw/atts/ud_silencer_light.mdl"
-att.ModelOffset = Vector(0, 0, 0)
+att.ModelOffset = Vector(2, 0, 0)
 att.OffsetAng = Angle(0, 180, 0)
 
 att.Silencer = true
@@ -31,3 +31,9 @@ att.Mult_SightTime = 1.15
 att.Mult_Sway = 1.15
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
+
+att.Hook_Compatible = function(wep,data)
+    if !(ArcCW.UC.RifleAmmoTypes[wep.Primary.Ammo]) then
+        return false
+    end
+end

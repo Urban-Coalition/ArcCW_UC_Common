@@ -30,3 +30,9 @@ att.Mult_SightTime = 1.15
 att.Mult_Sway = 1.25
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
+
+att.Hook_Compatible = function(wep,data)
+    if !(ArcCW.UC.RifleAmmoTypes[wep.Primary.Ammo]) then
+        return false
+    end
+end

@@ -1,7 +1,7 @@
 att.PrintName = "GA9 Revolution 9 Suppressor"
 att.AbbrevName = "GA9 Suppressor"
 att.Icon = Material("entities/att/ga9rev.png", "mips smooth")
-att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nCompact and lightweight, with little impact on handling."
+att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nCompact and lightweight, with little impact on handling, but still lengthens profile more than other muzzle attachments."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -30,3 +30,9 @@ att.Mult_SightTime = 1.05
 att.Mult_Sway = 1.1
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
+
+att.Hook_Compatible = function(wep,data)
+    if !(ArcCW.UC.PistolAmmoTypes[wep.Primary.Ammo]) then
+        return false
+    end
+end

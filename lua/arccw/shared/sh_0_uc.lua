@@ -45,3 +45,14 @@ ArcCW.UC.BodyDamageMults_Shotgun = {
     [HITGROUP_LEFTLEG] = 0.5,
     [HITGROUP_RIGHTLEG] = 0.5,
 }
+
+ArcCW.UC.RifleAmmoTypes = {
+    ["smg1"] = true,
+    ["ar2"] = true,
+    ["SniperPenetratedRound"] = true
+}
+ArcCW.UC.PistolAmmoTypes = {
+    ["pistol"] = true,
+    ["357"] = true,
+    ["plinking"] = true
+}
