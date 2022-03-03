@@ -1,7 +1,7 @@
 att.PrintName = "Trijicon Advanced Combat Optical Gunsight (4x)"
 att.AbbrevName = "ACOG (4x)"
 att.Icon = Material("entities/att/acwatt_uc_optic_acog.png", "mips smooth")
-att.Description = "Medium range combat scope for improved precision at longer ranges.\nEquipped with backup iron sights for use in emergencies."
+att.Description = "Medium range combat optic for improved precision at longer ranges.\nEquipped with backup iron sights for use in emergencies."
 
 att.SortOrder = 4
 
