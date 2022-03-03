@@ -1,7 +1,7 @@
 att.PrintName = "Magpul PTS AAC Masada Suppressor"
 att.AbbrevName = "Masada Suppressor"
 att.Icon = Material("entities/att/masada.png", "mips smooth")
-att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nLow-profile and enhances ballistics, but slightly cumbersome."
+att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nReduces recoil by providing extra room for gas expansion."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -23,7 +23,7 @@ att.IsMuzzleDevice = true
 
 att.Mult_ShootPitch = 1.1
 att.Mult_ShootVol = 0.75
-att.Mult_Range = 1.1
+att.Mult_Recoil = .9
 
 att.Add_BarrelLength = 5
 att.Mult_SightTime = 1.15
