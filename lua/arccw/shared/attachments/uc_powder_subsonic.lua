@@ -28,3 +28,7 @@ att.Override_TracerNum = 0
 
 att.Mult_MalfunctionMean = 1.3
 att.Mult_PhysBulletMuzzleVelocity = 0.75
+
+att.GiveFlags = {
+    "subsonic"
+    }
