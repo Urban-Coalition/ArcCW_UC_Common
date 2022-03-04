@@ -63,3 +63,9 @@ att.ToggleStats = {
     },
 }
 ]]
+
+att.Hook_Compatible = function(wep)
+    if wep:GetIsShotgun() then
+        return false
+    end
+end

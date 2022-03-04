@@ -32,3 +32,9 @@ att.ToggleStats = {
     },
 }
 att.Override_Tracer = "arccw_uc_tracer"
+
+att.Hook_Compatible = function(wep)
+    if wep:GetIsShotgun() then
+        return false
+    end
+end

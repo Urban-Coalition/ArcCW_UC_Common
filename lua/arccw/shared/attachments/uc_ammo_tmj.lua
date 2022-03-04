@@ -18,3 +18,9 @@ att.Mult_DamageMin = 1.15
 
 att.Mult_Damage = 0.9
 att.Mult_RangeMin = 0.8
+
+att.Hook_Compatible = function(wep)
+    if wep:GetIsShotgun() then
+        return false
+    end
+end

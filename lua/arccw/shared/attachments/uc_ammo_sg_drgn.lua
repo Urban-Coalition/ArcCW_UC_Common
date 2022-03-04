@@ -16,7 +16,7 @@ att.Desc_Cons = {
 }
 att.Desc_Neutrals = {
 }
-att.Slot = "ud_ammo_shotgun"
+att.Slot = {"ud_ammo_shotgun","uc_ammo"}
 
 att.AutoStats = true
 
@@ -66,5 +66,5 @@ att.Hook_AddShootSound = function(wep, data)
 end
 
 att.Hook_Compatible = function(wep)
-    if !wep.ManualAction then return false end
+    if !wep.ManualAction or !wep:GetIsShotgun() then return false end
 end

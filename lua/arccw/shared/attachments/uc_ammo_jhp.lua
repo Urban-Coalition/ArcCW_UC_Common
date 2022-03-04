@@ -18,3 +18,9 @@ att.Mult_Penetration = 0.25
 att.Mult_Damage = 1.17
 
 att.Mult_DamageMin = 0.85
+
+att.Hook_Compatible = function(wep)
+    if wep:GetIsShotgun() then
+        return false
+    end
+end

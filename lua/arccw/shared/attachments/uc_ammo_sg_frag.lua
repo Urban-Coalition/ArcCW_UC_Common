@@ -14,7 +14,7 @@ att.Desc_Neutrals = {
 }
 att.SortOrder = 2
 
-att.Slot = "ud_ammo_shotgun"
+att.Slot = {"ud_ammo_shotgun","uc_ammo"}
 
 att.Mult_Penetration = 0.1
 att.Mult_Damage = 0.5
@@ -67,5 +67,7 @@ att.Hook_PhysBulletHit = function(wep, data)
 end
 
 att.Hook_Compatible = function(wep)
-    if !wep:GetIsShotgun() then return false end
+    if !wep:GetIsShotgun() then
+        return false
+    end
 end

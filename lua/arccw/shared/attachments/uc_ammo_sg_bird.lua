@@ -11,7 +11,7 @@ att.Desc_Cons = {
 }
 att.Desc_Neutrals = {
 }
-att.Slot = "ud_ammo_shotgun"
+att.Slot = {"ud_ammo_shotgun","uc_ammo"}
 
 att.AutoStats = true
 
@@ -23,3 +23,9 @@ att.Mult_AccuracyMOA = 3
 
 -- it's payday, fellas
 att.Add_HullSize = 1
+
+att.Hook_Compatible = function(wep)
+    if !wep:GetIsShotgun() then
+        return false
+    end
+end

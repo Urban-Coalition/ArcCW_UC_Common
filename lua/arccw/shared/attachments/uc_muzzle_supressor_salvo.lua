@@ -4,7 +4,7 @@ att.Description = "Shotgun muzzle device that traps propellant gases, hiding muz
 att.Desc_Neutrals = {"uc.muzzleblocking"}
 
 att.AutoStats = true
-att.Slot = {"muzzle_shotgun"}
+att.Slot = {"muzzle_shotgun","muzzle"}
 
 att.GivesFlags = {"muzzleblocking"}
 att.ExcludeFlags = {"nomuzzleblocking"}
@@ -28,3 +28,9 @@ att.Mult_HipDispersion = 1.1
 att.Mult_Sway = 1.25
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
+
+att.Hook_Compatible = function(wep)
+    if !wep:GetIsShotgun() then
+        return false
+    end
+end

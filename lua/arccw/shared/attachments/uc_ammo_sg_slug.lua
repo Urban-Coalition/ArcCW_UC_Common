@@ -12,7 +12,7 @@ att.Desc_Cons = {
 att.Desc_Neutrals = {
     "uc.oneprojectile"
 }
-att.Slot = "ud_ammo_shotgun"
+att.Slot = {"ud_ammo_shotgun","uc_ammo"}
 
 att.AutoStats = true
 
@@ -28,3 +28,9 @@ att.Mult_HipDispersion = 2
 att.Override_HullSize = 0
 
 att.GivesFlags = {"uc_slug"}
+
+att.Hook_Compatible = function(wep)
+    if !wep:GetIsShotgun() then
+        return false
+    end
+end
