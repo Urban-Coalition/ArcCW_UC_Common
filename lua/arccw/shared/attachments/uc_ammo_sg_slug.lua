@@ -17,6 +17,7 @@ att.Slot = {"ud_ammo_shotgun","uc_ammo"}
 att.AutoStats = true
 
 att.Override_Num = 1
+att.Override_Num_Priority = 2
 att.Mult_Damage = .75
 att.Mult_DamageMin = .5
 att.Mult_AccuracyMOA = .3
