@@ -3,13 +3,17 @@
 {
 	"$basetexture" "models/UC/attachments/uc_vgrips_alb"
 	"$bumpmap" "models/UC/attachments/uc_vgrips_nrm"
-	//"$color2" "[ .7 .7 .7 ]"
-	//"$phong" "1"
-	//"$phongboost" "0.8"
-	//"$phongalbedotint" "1"
-	//"$PhongFresnelRanges" "[ 2 4 30 ]"
-	//"$envmap" "env_cubemap"
-	//"$basemapalphaenvmapmask" "1"
-	//"$envmapfresnel" "0.01"
-	//"$envmaptint" "[ .008 .008 .008 ]"
+	
+	"$color2" "[ .9 .9 .9 ]"
+	
+	"$phong" "1"
+	"$phongboost" "0.1"
+	"$phongalbedotint" "1"
+	"$PhongFresnelRanges" "[ 1 4 8 ]"
+	"$phongexponent"	        "50"
+	
+	"$envmap" "env_cubemap"
+	"$basemapalphaenvmapmask" "1"
+	"$envmapfresnel" "0.01"
+	"$envmaptint" "[ .008 .008 .008 ]"
 }
