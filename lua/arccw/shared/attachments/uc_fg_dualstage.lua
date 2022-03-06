@@ -38,7 +38,7 @@ function att.Hook_ModifyRPM(wep, delay)
     if wep:GetBurstCount() > 0 then
         return delay * .95
     else
-        return delay * 2
+        return delay * 1.5
     end
 end
 
