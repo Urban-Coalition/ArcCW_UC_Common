@@ -31,3 +31,9 @@ att.Mult_SightTime = 1.15
 att.Mult_Sway = 1.15
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
+
+att.Hook_Compatible = function(wep)
+    if !(wep.Primary.Ammo == "smg1" and table.HasValue(wep:GetWeaponFlags(),"barrel_carbine")) then
+        return false
+    end
+end
