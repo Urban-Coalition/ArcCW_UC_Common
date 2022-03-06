@@ -8,7 +8,7 @@ att.Desc_Cons = {
 }
 att.Desc_Neutrals = {
 }
-att.Slot = "choke"
+att.Slot = {"choke","muzzle"}
 att.AutoStats = true
 
 att.Hook_Compatible = function(wep)
