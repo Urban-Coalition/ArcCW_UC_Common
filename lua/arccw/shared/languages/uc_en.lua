@@ -37,6 +37,7 @@ L["uc.light"] = "Increased visibility"
 L["uc.technician"] = "-35% Malfunction fix time"
 L["uc.flashhider"] = "Reduced muzzle flash"
 L["uc.dragon"] = "Increased muzzle flash"
+L["uc.subsonic"] = "No distant firing sound when suppressed"
 
 L["uc.noubs"] = "Disables Underbarrel attachments"
 L["uc.nostocks"] = "Disables Stock attachments"
