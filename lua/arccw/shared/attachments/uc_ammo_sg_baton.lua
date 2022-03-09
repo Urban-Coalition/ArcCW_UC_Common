@@ -23,6 +23,8 @@ att.Override_Num = 1
 att.Override_Num_Priority = 2
 att.Mult_Recoil = .5
 
+local path = ")^arccw_uc/common/"
+
 att.Hook_PhysBulletHit = function(wep,data)
     if CLIENT then return end
     local tr = data.tr
@@ -44,6 +46,16 @@ att.Hook_PhysBulletHit = function(wep,data)
                 tr.Entity:ViewPunch(Angle(3,0,0))
             end
         end
+    end
+end
+
+att.Hook_GetShootSound = function(wep, fsound)
+    if fsound == wep.ShootSound or fsound == wep.FirstShootSound then return {path .. "shotgun-lesslethal-01.ogg", path .. "shotgun-lesslethal-02.ogg"} end
+    --if fsound == wep.ShootSoundSilenced then return path .. "shotgun-lesslethal_sup.ogg" end
+end
+
+att.Hook_GetDistantShootSound = function(wep, distancesound)
+    if distancesound == wep.DistantShootSound then return false 
     end
 end
 
