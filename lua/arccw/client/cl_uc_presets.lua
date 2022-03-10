@@ -221,6 +221,84 @@ local presetData = {
             .."\n",
 
     },
+
+    ["arccw_ur_mp5"] = {
+        ["MP5SD6"] = 
+            "\n"
+            .."ur_mp5_barrel_sd\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."ur_mp5_stock_a3\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n",
+        ["MP5K"] = 
+            "\n"
+            .."ur_mp5_barrel_kurz\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."ur_mp5_stock_none\n"
+            .."ur_mp5_mag_15\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n",
+        ["HK94A2"] = 
+            "\n"
+            .."ur_mp5_barrel_long\n"
+            .."ur_mp5_caliber_noburst\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."ur_mp5_mag_15\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."uc_fg_civvy\n"
+            .."\n",
+    },
+
+    ["arccw_ur_aw"] = {
+        ["AWM 338"] = 
+            "uc_optic_trijicon_tars\n"
+            .."ur_aw_barrel_long\n"
+            .."ur_aw_muzzle_brake\n"
+            .."ur_aw_cal_338\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."ur_aw_stock_fixed\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n",
+        ["AWS"] = 
+            "uc_optic_trijicon_tars\n"
+            .."ur_aw_barrel_sd\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."uc_powder_subsonic\n"
+            .."\n"
+            .."\n"
+            .."\n"
+            .."\n",
+    },
 } -- The things I have to go through for readability :defeat:
 
 
