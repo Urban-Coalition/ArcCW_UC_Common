@@ -30,7 +30,7 @@ att.Override_Firemodes_Priority = 10
 
 att.Mult_Range = 1.25
 att.Mult_AccuracyMOA = 0.5
-att.Mult_RPM = .9
+att.Mult_RPM = .8
 att.Mult_MalfunctionMean = 1.5
 
 att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"
