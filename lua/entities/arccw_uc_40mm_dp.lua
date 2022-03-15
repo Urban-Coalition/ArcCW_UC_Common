@@ -4,7 +4,7 @@ ENT.Base = "arccw_uc_40mm_he"
 ENT.PrintName = "40mm HE Dual Purpose Grenade"
 
 ENT.GrenadeDamage = false
-ENT.GrenadeRadius = 180
+ENT.GrenadeRadius = 300
 ENT.ExplosionEffect = false
 ENT.Scorch = false
 

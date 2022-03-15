@@ -16,7 +16,7 @@ att.Override_ShootEntity = "arccw_uc_40mm_dp"
 
 att.AutoStats = true
 
-att.Mult_Damage = 0.8
-att.Mult_DamageMin = 0.8
+att.Mult_Damage = 0.6
+att.Mult_DamageMin = 0.6
 
 att.ActivateElements = {"40mm_dp"}
