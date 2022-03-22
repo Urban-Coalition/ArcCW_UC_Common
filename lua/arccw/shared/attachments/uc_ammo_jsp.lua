@@ -17,7 +17,7 @@ att.AutoStats = true
 att.Mult_Penetration = 0.6
 --att.Mult_Damage = 1.1
 att.Mult_Range = 0.8
-att.Mult_RangeMin = 1.4
+att.Mult_RangeMin = 1.8
 
 att.Hook_Compatible = function(wep)
     if wep:GetIsShotgun() then
