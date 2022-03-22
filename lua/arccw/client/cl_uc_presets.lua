@@ -306,7 +306,7 @@ for wep,data in pairs(presetData) do
     local filePath = "arccw_presets/"..wep
 
     if !file.Exists(filePath,"DATA") then -- This code will do nothing if the weapon's preset folder exists, even if it's empty
-        print("Urban Renewal: Writing default presets for "..wep)
+        print("Urban Coalition: Writing default presets for "..wep)
         file.CreateDir("arccw_presets/"..wep)
 
         for name,atts in pairs(data) do
