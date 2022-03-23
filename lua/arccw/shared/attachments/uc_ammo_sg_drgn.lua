@@ -23,31 +23,36 @@ att.AutoStats = true
 --att.Override_DamageType = DMG_BURN
 att.Add_Num = 24
 
--- att.Hook_PostBulletHit = function(wep,data)
---     if SERVER and data.tr.Entity then
---         local dur = 6 - (data.range * 2) / wep.Range
---         if dur > 0 then
---             data.tr.Entity:Ignite(dur)
---         end
---     end
--- end
-
-att.Hook_PhysBulletHit = function(wep,data)
+att.Hook_PostBulletHit = function(wep,data)
     if SERVER and data.tr.Entity then
-        local dur = 6 - (data.bullet.Travelled * 2 * ArcCW.HUToM) / wep.Range
+        local dur = 6 - (data.range * 2 * ArcCW.HUToM) / wep.Range
         if dur > 0 then
             data.tr.Entity:Extinguish() -- Entity:Ignite() doesn't work if it's already on fire, gotta prevent that DPS loss
             data.tr.Entity:Ignite(dur)
         end
-    end
 
-    local effect = EffectData()
-    effect:SetOrigin(data.tr.HitPos)
-    util.Effect("StunstickImpact",effect)
-    -- if data.tr.HitWorld and math.random(1,3) == 3 then
-    --     util.Decal("FadingScorch",data.tr.HitPos - data.tr.HitNormal,data.tr.HitPos + data.tr.HitNormal) -- this is too spammy
-    -- end
+        local effect = EffectData()
+        effect:SetOrigin(data.tr.HitPos)
+        util.Effect("StunstickImpact",effect)
+    end
 end
+
+-- att.Hook_PhysBulletHit = function(wep,data)
+--     if SERVER and data.tr.Entity then
+--         local dur = 6 - (data.bullet.Travelled * 2 * ArcCW.HUToM) / wep.Range
+--         if dur > 0 then
+--             data.tr.Entity:Extinguish() -- Entity:Ignite() doesn't work if it's already on fire, gotta prevent that DPS loss
+--             data.tr.Entity:Ignite(dur)
+--         end
+--     end
+
+--     local effect = EffectData()
+--     effect:SetOrigin(data.tr.HitPos)
+--     util.Effect("StunstickImpact",effect)
+--     -- if data.tr.HitWorld and math.random(1,3) == 3 then
+--     --     util.Decal("FadingScorch",data.tr.HitPos - data.tr.HitNormal,data.tr.HitPos + data.tr.HitNormal) -- this is too spammy
+--     -- end
+-- end
 
 att.Mult_AccuracyMOA = 1.5
 att.Mult_Damage = .5
