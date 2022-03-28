@@ -181,6 +181,6 @@ ArcCW.UC.StdDmg = {
     ["50bmg"] = {
         max = 104,
         min = 180,
-        pen = 50
+        pen = 46
     },
 }
