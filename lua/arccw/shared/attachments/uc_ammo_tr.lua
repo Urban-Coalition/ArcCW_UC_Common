@@ -3,7 +3,7 @@ att.AbbrevName = "\"TR\" Tracer"
 
 att.SortOrder = 1
 att.Icon = Material("entities/att/arccw_uc_ammo_generic.png", "mips smooth")
-att.Description = "A pyrotechnic charge inside the bullet creates a bright, colorful trail behind it during flight. The bright trails help predict ballistic trajectories without using sights."
+att.Description = "A pyrotechnic charge inside the bullet creates a bright, colorful trail behind it during flight. The bright trails can help the shooter predict ballistic trajectories without using sights."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {

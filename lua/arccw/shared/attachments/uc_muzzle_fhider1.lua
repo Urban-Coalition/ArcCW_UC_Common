@@ -1,7 +1,7 @@
-att.PrintName = "Flash Suppressor" -- fictional
+att.PrintName = "Flash Hider" -- fictional
 att.AbbrevName = "Flash Hider"
 att.Icon = Material("entities/att/muzzle1.png", "mips smooth")
-att.Description = "Reduces muzzle flash to the point where it can't block the shooter's vision or compromise their position."
+att.Description = "Reduces muzzle flash to the point where it can't block the shooter's vision or compromise their position. Marginally improves hip fire performance."
 att.Desc_Pros = {
     "uc.flashhider"
 }
@@ -22,12 +22,10 @@ att.OffsetAng = Angle(0, 0, 0)
 att.Override_MuzzleEffect = "muzzleflash_suppressed"
 att.IsMuzzleDevice = true
 
--- att.Mult_ShootPitch = 1.1 please don't
--- att.Mult_ShootVol = 0.75
--- att.Mult_Range = 1.1
 
 att.Add_BarrelLength = 2
--- att.Mult_SightTime = 1.15
+att.Mult_Sway = 1.15
+att.Mult_HipDispersion = 0.9
 -- att.Mult_Sway = 1.25
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"

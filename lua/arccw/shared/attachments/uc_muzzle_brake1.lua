@@ -1,7 +1,7 @@
 att.PrintName = "Hammerhead Muzzle Brake" -- fictional
 att.AbbrevName = "Hammerhead Brake"
 att.Icon = Material("entities/att/muzzle3.png", "mips smooth")
-att.Description = "A muzzle device that redirects propellant gasses to the sides to reduce the recoil of the gun."
+att.Description = "A muzzle device that redirects propellant gasses to the sides to reduce the weapon recoil. Reduces vertical muzzle rise but makes recoil less stable."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -19,12 +19,12 @@ att.OffsetAng = Angle(0, 0, 0)
 
 att.IsMuzzleDevice = true
 
-att.Mult_Recoil = .75
-att.Mult_RecoilSide = .9
+att.Mult_Recoil = 0.75
+att.Mult_RecoilSide = 1.25
 
 att.Add_BarrelLength = 2
 att.Mult_SightTime = 1.15
-att.Mult_Sway = 1.05
+att.Mult_Sway = 1.15
 att.Mult_ShootVol = 1.35
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"

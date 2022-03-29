@@ -34,9 +34,9 @@ att.AdditionalSights = {
             HolosightSize = 10.2,
             HolosightPiece = "models/weapons/arccw/atts/uc_trijicon_tars_hsp.mdl",
             HolosightBlackbox = true,
-            HolosightMagnification = 3.5,
-            HolosightMagnificationMin = 3.5,
-            HolosightMagnificationMax = 6.5,
+            HolosightMagnification = 9,
+            HolosightMagnificationMin = 3,
+            HolosightMagnificationMax = 15,
             Colorable = true,
             SpecialScopeFunction = function(screen)
                 render.PushRenderTarget(screen)

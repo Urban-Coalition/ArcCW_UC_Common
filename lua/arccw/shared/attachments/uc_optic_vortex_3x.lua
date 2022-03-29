@@ -33,9 +33,9 @@ att.AdditionalSights = {
             HolosightSize = 7,
             HolosightPiece = "models/weapons/arccw/atts/uc_vortex3x_hsp.mdl",
             HolosightBlackbox = true,
-            HolosightMagnification = 2,
-            HolosightMagnificationMin = 2,
-            HolosightMagnificationMax = 4,
+            HolosightMagnification = 2.25,
+            HolosightMagnificationMin = 1.5,
+            HolosightMagnificationMax = 3,
             Colorable = true,
         },
     }
