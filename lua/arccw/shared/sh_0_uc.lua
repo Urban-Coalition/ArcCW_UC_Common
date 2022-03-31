@@ -94,7 +94,7 @@ ArcCW.UC.StdDmg = {
         max = 45,
         min = 15,
         pen = 9,
-        vel = 253
+        vel = 250
     },
     ["357sig"] = {
         max = 33,
@@ -134,7 +134,7 @@ ArcCW.UC.StdDmg = {
         max = 34,
         min = 20,
         pen = 14,
-        vel = 915
+        vel = 910
     },
     ["300blk"] = {
         max = 40,
