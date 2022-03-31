@@ -178,13 +178,13 @@ ArcCW.UC.StdDmg = {
         max = 18,
         min = 10,
         pen = 2,
-        vel = 900
+        vel = 400
     },
     ["410b"] = {
         max = 18,
         min = 5,
         pen = 2,
-        vel = 550
+        vel = 400
     },
 
     -- Sniper calibers
