@@ -1,7 +1,7 @@
 att.PrintName = "Flash Hider" -- fictional
 att.AbbrevName = "Flash Hider"
 att.Icon = Material("entities/att/muzzle1.png", "mips smooth")
-att.Description = "Reduces muzzle flash to the point where it can't block the shooter's vision or compromise their position. Marginally improves hip fire performance."
+att.Description = "Reduces muzzle flash to the point where it can't block the shooter's vision or compromise their position. The enhanced clarity marginally improves hip fire performance."
 att.Desc_Pros = {
     "uc.flashhider"
 }
