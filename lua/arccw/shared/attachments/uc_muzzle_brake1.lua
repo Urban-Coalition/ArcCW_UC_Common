@@ -1,7 +1,7 @@
 att.PrintName = "Hammerhead Muzzle Brake" -- fictional
 att.AbbrevName = "Hammerhead Brake"
 att.Icon = Material("entities/att/muzzle3.png", "mips smooth")
-att.Description = "A muzzle device that redirects propellant gasses to the sides to reduce the weapon recoil. Reduces vertical muzzle rise but makes recoil less stable."
+att.Description = "Redirects propellant gases to the sides to reduce the weapon recoil.\nReduces muzzle rise substantially, but makes recoil less stable."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
