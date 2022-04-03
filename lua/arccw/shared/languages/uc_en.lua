@@ -40,6 +40,7 @@ L["uc.dragon"] = "Increased muzzle flash"
 L["uc.subsonic"] = "No distant firing sound when suppressed"
 L["uc.api.1"] = "Increased damage to objects"
 L["uc.api.2"] = "Deals fire damage"
+L["uc.swapreticle"] = "Double-tap +USE to toggle reticles"
 
 L["uc.noubs"] = "Disables Underbarrel attachments"
 L["uc.nostocks"] = "Disables Stock attachments"
