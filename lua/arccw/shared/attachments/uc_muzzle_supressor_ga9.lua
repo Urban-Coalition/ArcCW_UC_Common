@@ -1,7 +1,7 @@
 att.PrintName = "GA9 Revolution 9 Suppressor"
 att.AbbrevName = "GA9 Suppressor"
 att.Icon = Material("entities/att/ga9rev.png", "mips smooth")
-att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nCompact and lightweight, with little impact on handling, but still lengthens profile more than other muzzle attachments."
+att.Description = "Traps propellant gas from the muzzle, reducing visual and audible report.\nCompact and lightweight, with little impact on handling, but still lengthens profile more than other muzzle attachments."
 att.Desc_Neutrals = {"uc.exclusive.pistol"}
 
 att.AutoStats = true

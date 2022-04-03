@@ -1,8 +1,7 @@
 att.PrintName = "Magpul PTS AAC Masada Suppressor"
 att.AbbrevName = "Masada Suppressor"
 att.Icon = Material("entities/att/masada.png", "mips smooth")
-att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nReduces recoil by providing extra room for gas expansion."
-att.Desc_Neutrals = {"uc.exclusive.rifle"}
+att.Description = "Traps propellant gas from the muzzle, reducing visual and audible report.\nReduces recoil by providing extra room for gas expansion."
 
 att.AutoStats = true
 att.Slot = {"muzzle"}
@@ -27,9 +26,3 @@ att.Mult_SightTime = 1.15
 att.Mult_Sway = 1.25
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
-
-att.Hook_Compatible = function(wep,data)
-    if !ArcCW.UC.RifleAmmoTypes[wep:GetBuff_Override("Override_Ammo", wep.Primary.Ammo)] then
-        return false
-    end
-end

@@ -2,7 +2,7 @@ att.PrintName = "L15 'Lighthouse' Suppressor" -- fictional
 att.AbbrevName = "Lighthouse Suppressor"
 
 att.Icon = Material("entities/att/acwatt_uc_supressor_light.png", "mips smooth")
-att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nImproves close range stopping power slightly due to redirection of gas pressure."
+att.Description = "Traps propellant gas from the muzzle, reducing visual and audible report.\nImproves close range stopping power slightly due to redirection of gas pressure."
 att.Desc_Neutrals = {"uc.exclusive.rifle"}
 
 att.AutoStats = true

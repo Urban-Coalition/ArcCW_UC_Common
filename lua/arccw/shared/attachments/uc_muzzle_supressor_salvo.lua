@@ -1,6 +1,6 @@
 att.PrintName = "Salvo 12 Suppressor"
 att.Icon = Material("entities/att/acwatt_uc_supressor_salvo.png", "mips smooth")
-att.Description = "Shotgun muzzle device that traps propellant gases, hiding muzzle flash and reducing firing volume. Low profile and relatively lightweight, with no negative ballistic impact."
+att.Description = "Traps propellant gas from the muzzle, reducing visual and audible report.\nLow profile and relatively lightweight, with no negative ballistic impact."
 att.Desc_Neutrals = {"uc.muzzleblocking", "uc.exclusive.shotgun"}
 
 att.AutoStats = true
