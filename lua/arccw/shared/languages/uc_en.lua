@@ -47,6 +47,12 @@ L["uc.nomuzzle"] = "Disables Muzzle attachments"
 L["uc.nogrip"] = "Disables Grip Type attachments"
 L["uc.muzzleblocking"] = "Incompatible with certain Tube and Barrel combinations"
 
+L["uc.exclusive.pistol"] = "Exclusive to small caliber firearms"
+L["uc.exclusive.rifle"] = "Exclusive to medium caliber firearms"
+L["uc.exclusive.shotgun"] = "Exclusive to shotguns"
+L["uc.exclusive.762"] = "Exclusive to Russian rifle caliber firearms"
+L["uc.exclusive.545"] = "Exclusive to Russian carbine caliber firearms"
+
 L["uc.pellet.8"] = "+8 Pellets per shot"
 L["uc.pellet.24"] = "+24 Pellets per shot"
 L["uc.penetration.8"] = "+8mm Penetration"

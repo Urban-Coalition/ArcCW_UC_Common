@@ -1,7 +1,7 @@
 att.PrintName = "Cylinder Suppressor"
 att.Icon = Material("entities/att/acwatt_uc_supressor_870.png", "mips smooth")
 att.Description = "Shotgun muzzle device that traps propellant gases, hiding muzzle flash and reducing firing volume. Bulky and heavy, but provides better ballistic performance.\n\n\"By the time you figured it out, it would be too late.\""
-att.Desc_Neutrals = {"uc.muzzleblocking"}
+att.Desc_Neutrals = {"uc.muzzleblocking", "uc.exclusive.shotgun"}
 
 att.AutoStats = true
 att.Slot = {"muzzle_shotgun","muzzle"}

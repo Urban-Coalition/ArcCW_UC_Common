@@ -1,12 +1,9 @@
 att.PrintName = "PBS-1 Suppressor"
 
 att.Icon = Material("entities/att/pbs1.png", "mips smooth")
-att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nRussian-made. Stats are temporary."
-att.Desc_Pros = {
-}
-att.Desc_Cons = {
-}
-att.AutoStats = true
+att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly."
+att.Desc_Neutrals = {"uc.exclusive.762"}
+
 att.AutoStats = true
 att.Slot = {"ur_ak_muzzle"}
 

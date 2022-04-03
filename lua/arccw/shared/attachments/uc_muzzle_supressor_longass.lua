@@ -2,11 +2,8 @@ att.PrintName = "ATA Giraffe-556 Suppressor" -- fictional
 att.AbbrevName = "Giraffe Suppressor"
 att.Icon = Material("entities/att/longass.png", "mips smooth")
 att.Description = "Traps propellant gases from the muzzle, hiding muzzle flash and reducing volume significantly.\nExtremely long suppressor tube provides excellent noise reduction, but is also very unwieldy."
-att.Desc_Pros = {
-}
-att.Desc_Cons = {
-}
-att.AutoStats = true
+att.Desc_Neutrals = {"uc.exclusive.pistol"}
+
 att.AutoStats = true
 att.Slot = {"muzzle"}
 
@@ -33,7 +30,7 @@ att.Mult_Sway = 1.5
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
 
 att.Hook_Compatible = function(wep,data)
-    if !(ArcCW.UC.PistolAmmoTypes[wep.Primary.Ammo]) then
+    if !ArcCW.UC.PistolAmmoTypes[wep:GetBuff_Override("Override_Ammo", wep.Primary.Ammo)] then
         return false
     end
 end
