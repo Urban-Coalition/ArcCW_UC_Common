@@ -46,6 +46,9 @@ att.Hook_PhysBulletHit = function(wep,data)
                 tr.Entity:ViewPunch(Angle(3,0,0))
             end
         end
+        if tr.Entity:IsNPC() then
+            tr.Entity:SetSchedule(SCHED_FLINCH_PHYSICS)
+        end
     end
 end
 
@@ -55,7 +58,7 @@ att.Hook_GetShootSound = function(wep, fsound)
 end
 
 att.Hook_GetDistantShootSound = function(wep, distancesound)
-    if distancesound == wep.DistantShootSound then return false 
+    if distancesound == wep.DistantShootSound then return false
     end
 end
 
@@ -64,6 +67,8 @@ att.Mult_DamageMin = .2
 att.Mult_Penetration = 0
 att.Mult_Range = .33
 att.Mult_RangeMin = .33
+
+att.Override_DamageType = DMG_CLUB
 
 att.Override_AlwaysPhysBullet = true
 --att.Override_PhysBulletMuzzleVelocity = 80
