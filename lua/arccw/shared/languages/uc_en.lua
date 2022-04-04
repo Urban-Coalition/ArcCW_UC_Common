@@ -42,6 +42,7 @@ L["uc.api.1"] = "Increased damage to objects"
 L["uc.api.2"] = "Deals fire damage"
 L["uc.swapreticle"] = "Double-tap +USE to toggle reticles"
 
+L["uc.nooptics"] = "Disables Optic attachments"
 L["uc.noubs"] = "Disables Underbarrel attachments"
 L["uc.nostocks"] = "Disables Stock attachments"
 L["uc.nomuzzle"] = "Disables Muzzle attachments"
