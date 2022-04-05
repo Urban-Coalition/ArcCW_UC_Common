@@ -1,6 +1,6 @@
 att.PrintName = "\"BATON\" Flexible Baton"
 
-att.SortOrder = -1
+att.SortOrder = 0
 att.Icon = Material("entities/att/arccw_uc_ammo_shotgun_generic.png", "mips smooth")
 att.Description = [[Less-lethal law enforcement round that fires a cushioned, low-velocity "bean bag" filled with lead pellets.
 Designed to apprehend targets through pain instead of killing them, though the 40-gram projectile can still inflict deadly or permanent injuries.
