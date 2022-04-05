@@ -12,13 +12,16 @@ att.Slot = "uc_fg"
 att.AutoStats = true
 att.SortOrder = 3
 
-att.Mult_Recoil = .9
-att.Mult_RPM = .75
+att.Mult_Recoil = 0.9
+att.Mult_RPM = 0.8
+att.Mult_CycleTime = 1.1
 
+--[[]
 att.Hook_Compatible = function(wep)
     if wep:GetIsManualAction() then
         return false
     end
 end
+]]
 
 att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"

@@ -14,11 +14,14 @@ att.SortOrder = 3
 
 att.Mult_Recoil = 1.25
 att.Mult_RPM = 1.1
+att.Mult_CycleTime = 0.9
 
+--[[]
 att.Hook_Compatible = function(wep)
     if wep:GetIsManualAction() then
         return false
     end
 end
+]]
 
 att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"
