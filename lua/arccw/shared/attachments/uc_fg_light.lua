@@ -1,7 +1,7 @@
 att.PrintName = "Light Bolt"
 
 att.Icon = Material("entities/att/arccw_uc_lightbolt.png", "mips smooth")
-att.Description = "A low weight set of bolt components increase the cyclic speed of the weapon, at the cost of recoil absorption."
+att.Description = "A low weight set of bolt components increase the cyclic speed of the weapon at the cost of recoil absorption."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {

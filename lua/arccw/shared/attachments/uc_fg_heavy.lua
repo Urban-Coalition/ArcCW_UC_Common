@@ -1,7 +1,7 @@
 att.PrintName = "Heavy Bolt"
 
 att.Icon = Material("entities/att/arccw_uc_heavybolt.png", "mips smooth")
-att.Description = "Heavyweight bolt springs reduce the cyclic rate of the weapon while improving its controllability."
+att.Description = "Heavyweight bolt springs reduce the cyclic rate of the weapon, improving its controllability."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
