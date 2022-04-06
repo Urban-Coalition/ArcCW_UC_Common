@@ -41,6 +41,8 @@ L["uc.subsonic"] = "No distant firing sound when suppressed"
 L["uc.api.1"] = "Increased damage to objects"
 L["uc.api.2"] = "Deals fire damage"
 L["uc.swapreticle"] = "Double-tap +USE to toggle reticles"
+L["uc.infiniteammo"] = "Infinite Ammo"
+L["uc.noprojectile"] = "No Projectile"
 
 L["uc.nooptics"] = "Disables Optic attachments"
 L["uc.noubs"] = "Disables Underbarrel attachments"
