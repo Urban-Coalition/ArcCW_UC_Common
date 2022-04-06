@@ -19,4 +19,4 @@ att.Mult_Recoil = .25
 
 att.Mult_Damage = 0
 att.Mult_DamageMin = 0
-att.Mult_Num = 0
+att.Override_Num = 0
