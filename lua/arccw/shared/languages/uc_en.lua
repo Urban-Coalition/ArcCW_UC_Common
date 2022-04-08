@@ -64,6 +64,8 @@ L["uc.penetration.12"] = "+12mm Penetration"
 L["uc.sightdisp.50"] = "+50 MOA Dispersion in sights"
 L["uc.disp.50"] = "+50 MOA Dispersion"
 L["uc.disp.100"] = "+100 MOA Dispersion"
+L["uc.accuracy.20"] = "+20 MOA Imprecision"
+
 
 L["uc.40mm.nodmg"] = "No blast damage"
 L["uc.40mm.mindmg"] = "Minimal blast damage"
