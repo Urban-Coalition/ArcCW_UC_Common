@@ -6,7 +6,6 @@ att.Desc_Pros = {
     "uc.slam"
 }
 att.Desc_Cons = {
-    "uc.disp.100"
 }
 att.Desc_Neutrals = {
 }
@@ -21,9 +20,6 @@ end
 
 att.Mult_Recoil = 1.2
 att.Mult_RecoilSide = 1.5
-
-att.Add_HipDispersion = 100
-att.Add_SightsDispersion = 100
 
 att.Override_Firemodes = {
     {
