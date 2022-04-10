@@ -5,6 +5,7 @@ att.Description = "High quality, precision manufactured aftermarket parts that i
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
+    "uc.semionly"
 }
 att.Desc_Neutrals = {
 }
