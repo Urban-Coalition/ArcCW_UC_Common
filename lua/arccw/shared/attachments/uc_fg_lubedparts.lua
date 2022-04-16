@@ -1,7 +1,7 @@
 att.PrintName = "Lubricated Parts"
 
 att.Icon = Material("entities/att/arccw_uc_lubedparts.png", "mips smooth")
-att.Description = "A lubricated set internal components which greatly reduces the likelihood of malfuntion."
+att.Description = "Extensive maintenance, high-quality parts, and liberal lubrication greatly reduce the likelihood of malfuntions."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -12,7 +12,7 @@ att.Slot = "uc_fg"
 att.AutoStats = true
 att.SortOrder = 3
 
-att.Mult_MalfunctionMean = 1.5
+att.Mult_MalfunctionMean = 1.25
 
 --[[]
 att.Hook_Compatible = function(wep)
