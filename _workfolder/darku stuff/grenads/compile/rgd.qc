@@ -1,11 +1,11 @@
-$modelname "weapons\arccw\c_uc_common_rgd.mdl"
+$modelname "weapons\arccw\c_uo_rgd.mdl"
  
-$bodygroup "grenada" {
+$bodygroup "granata" {
 	studio "rgd5.smd"
 }
 
 $cdmaterials "models\weapons\arccw\shared"
-$cdmaterials "models\weapons\arccw\ud_common"
+$cdmaterials "models\weapons\arccw\uo"
 
 $attachment "1" "camera" 0 0 0 rotate -90 0 0
  
@@ -19,86 +19,49 @@ $bbox 0 0 0 0 0 0
  
 $cbox 0 0 0 0 0 0
 
-$poseparameter "sights" 0 1 loop 0
 
 $sequence "idle"{
 	"anims\idle.smd" 
-	fps 30
+	fps 40
 	"ACT_VM_IDLE" 1
- 	blend "sights" 0 1
 	loop
-	snap
-	node "Ready"
 }
 
 $sequence "ready"{
 	"anims\ready.smd" 
-	fps 30
-	"ACT_VM_IDLE" 1
- 	blend "sights" 0 1
-	loop
-	snap
-	node "Ready"
+	fps 50
 }
 
 $sequence "draw"{
 	"anims\draw.smd" 
-	fps 30
-	"ACT_VM_IDLE" 1
- 	blend "sights" 0 1
-	loop
-	snap
-	node "Ready"
+	fps 40
 }
 
 $sequence "throw_start"{
 	"anims\throw_start.smd" 
-	fps 30
-	"ACT_VM_IDLE" 1
- 	blend "sights" 0 1
-	loop
-	snap
-	node "Ready"
+	fps 40
 }
 
 $sequence "throw_idle"{
 	"anims\throw_idle.smd" 
-	fps 30
-	"ACT_VM_IDLE" 1
- 	blend "sights" 0 1
+	fps 40
 	loop
-	snap
-	node "Ready"
 }
 
 $sequence "throw2_start"{
 	"anims\throw2_start.smd" 
-	fps 30
-	"ACT_VM_IDLE" 1
- 	blend "sights" 0 1
-	loop
-	snap
-	node "Ready"
+	fps 40
 }
 
 $sequence "throw2_idle"{
 	"anims\throw2_idle.smd" 
-	fps 30
-	"ACT_VM_IDLE" 1
- 	blend "sights" 0 1
+	fps 40
 	loop
-	snap
-	node "Ready"
 }
 
 $sequence "throw_end"{
 	"anims\throw_end.smd" 
-	fps 30
-	"ACT_VM_IDLE" 1
- 	blend "sights" 0 1
-	loop
-	snap
-	node "Ready"
+	fps 40
 }
 
 $bonemerge "ValveBiped.Bip01_Spine4"
