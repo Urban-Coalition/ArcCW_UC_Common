@@ -302,18 +302,18 @@ local presetData = {
 } -- The things I have to go through for readability :defeat:
 
 
-for wep,data in pairs(presetData) do
-    local filePath = "arccw_presets/"..wep
+-- for wep,data in pairs(presetData) do
+--     local filePath = "arccw_presets/"..wep
 
-    if !file.Exists(filePath,"DATA") then -- This code will do nothing if the weapon's preset folder exists, even if it's empty
-        print("Urban Coalition: Writing default presets for "..wep)
-        file.CreateDir("arccw_presets/"..wep)
+--     if !file.Exists(filePath,"DATA") then -- This code will do nothing if the weapon's preset folder exists, even if it's empty
+--         print("Urban Coalition: Writing default presets for "..wep)
+--         file.CreateDir("arccw_presets/"..wep)
 
-        for name,atts in pairs(data) do
-            file.Write(filePath.."/"..name..".txt",atts)
-        end
-    end
-end
+--         for name,atts in pairs(data) do
+--             file.Write(filePath.."/"..name..".txt",atts)
+--         end
+--     end
+-- end
 
 -- TODO: Make preset generation prompted instead of automatic
 
