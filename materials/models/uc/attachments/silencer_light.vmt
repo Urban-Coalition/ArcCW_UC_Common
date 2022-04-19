@@ -10,6 +10,7 @@
 	"$phongalbedotint" 			"1"
 	"$phongfresnelranges" "[.6 1 2]"
 	"$halflambert" "1"
+	"$color2"					"[.8 .8 .8]"
 	
 	"$envmap" "env_cubemap"
 	"$envmapfresnel" 			"1"
