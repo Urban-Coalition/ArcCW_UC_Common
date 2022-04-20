@@ -12,7 +12,7 @@ att.Desc_Pros = {
 att.Desc_Cons = {
 }
 att.AutoStats = true
-att.Slot = {"sniper_optic"}
+att.Slot = {"optic_sniper"}
 
 att.Model = "models/weapons/arccw/atts/uc_trijicon_tars.mdl"
 att.ModelOffset = Vector(0, 0, 0.1)
