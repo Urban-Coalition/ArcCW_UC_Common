@@ -25,6 +25,7 @@ All weapons using the same caliber are expected to do the same penetration and d
 | .40 S&W     | 30-23  | 8mm         | 8/50m (pistols); 10/100m (SMGs)
 | .45 ACP     | 45-15  | 9mm         | 10/50m (pistols); 15/100m (SMGs)
 | .380 ACP    | 30-15  | 3mm         | 12/40m (pistols); 16/80m (SMGs)
+| 9x18mm      | 28-17  | 3mm         | 15/50m (pistols); 20/100m (SMGs)
 
 #### Magnum Ammo (357)
 | Caliber     | Damage | Penetration | Expected Range
@@ -51,7 +52,7 @@ All weapons using the same caliber are expected to do the same penetration and d
 #### Plinking Ammo (plinking)
 | Caliber     | Damage | Penetration | Expected Range
 | ----------- | -----  | ----------- | --------------
-| .22 LR      | 12-7   | 3mm         |~50m (pistols); ~100m (rifles)
+| .22 LR      | 12-7   | 3mm         | 50m (pistols); 100m (rifles)
 
 #### Shotgun Ammo (buckshot)
 We make an exception to the rule for shotguns because most use a single caliber, and auto shotguns can be very powerful.
