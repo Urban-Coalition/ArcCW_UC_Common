@@ -7,16 +7,17 @@ Designed to apprehend targets through pain instead of killing them, though the 4
 
 Only compatible with manual action shotguns due to a weak pressure curve.]]
 att.Desc_Pros = {
-    "Targets may drop their weapon",
+    "uc.baton",
 }
 att.Desc_Cons = {
     "uc.alwaysphys",
-    "ur.spas12.pump",
 }
 att.Desc_Neutrals = {
-    "uc.oneprojectile"
+    "uc.oneprojectile",
+    "uc.manualonly",
 }
 att.Slot = {"ud_ammo_shotgun","uc_ammo"}
+att.ActivateElements = {"uc_manualonly"}
 
 att.AutoStats = true
 
@@ -74,7 +75,7 @@ att.Override_DamageType = DMG_CLUB
 att.Override_AlwaysPhysBullet = true
 --att.Override_PhysBulletMuzzleVelocity = 80
 
-att.Override_UC_ShellColor = Color(0.6*255, 0.2*255, 0.6*255)
+att.Override_UC_ShellColor = Color(0.6 * 255, 0.2 * 255, 0.6 * 255)
 
 att.Hook_Compatible = function(wep)
     if (!wep.ManualAction and !wep.UC_CanManualAction) or !wep:GetIsShotgun() then return false end
