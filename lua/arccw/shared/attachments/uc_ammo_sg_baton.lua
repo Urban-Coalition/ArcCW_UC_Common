@@ -76,6 +76,7 @@ att.Override_AlwaysPhysBullet = true
 
 att.Override_UC_ShellColor = Color(0.6*255, 0.2*255, 0.6*255)
 
+att.GivesFlags = {"needsmanual"}
 att.Hook_Compatible = function(wep)
     if (!wep.ManualAction and !wep.UC_CanManualAction) or !wep:GetIsShotgun() then return false end
 end
