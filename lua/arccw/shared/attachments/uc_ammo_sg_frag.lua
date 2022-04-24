@@ -56,7 +56,7 @@ att.Hook_PhysBulletHit = function(wep, data)
     end
 end
 
-att.Override_UC_ShellColor = Color(0.9 * 255, 0.3 * 255, 0.1 * 255)
+att.Override_UC_ShellColor = Color(0.9 * 255, 0.7 * 255, 0.3 * 255)
 
 att.Hook_Compatible = function(wep)
     if (!wep.ManualAction and !wep.UC_CanManualAction) or !wep:GetIsShotgun() then return false end

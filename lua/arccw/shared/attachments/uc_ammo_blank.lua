@@ -21,4 +21,4 @@ att.Override_Num = 0
 att.Override_Num_Priority = 9001
 att.Override_InfiniteAmmo = true
 
-att.Override_UC_ShellColor = Color(1 * 255, 1 * 255, 1 * 255)
+att.Override_UC_ShellColor = Color(0.3*255, 0.3*255, 0.3*255)
