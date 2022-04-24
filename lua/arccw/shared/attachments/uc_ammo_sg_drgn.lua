@@ -55,6 +55,7 @@ att.Hook_AddShootSound = function(wep, data)
     wep:EmitSound("DB_ADD", data.volume,data.pitch,1,CHAN_WEAPON - 1) -- lua/arccw/shared/sh_0_uc.lua
 end
 
+att.GivesFlags = {"needsmanual"}
 att.Hook_Compatible = function(wep)
     if (!wep.ManualAction and !wep.UC_CanManualAction) or !wep:GetIsShotgun() then return false end
 end
