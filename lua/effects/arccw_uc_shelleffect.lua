@@ -32,7 +32,7 @@ function EFFECT:Init(data)
         mdl = ent.WMModel or ent
     end
 
-    if owner != LocalPlayer() and !GetConVar("arccw_Override_ShellEffects"):GetBool() then self:Remove() return end
+    if owner != LocalPlayer() and !GetConVar("arccw_shelleffects"):GetBool() then self:Remove() return end
     if !IsValid(mdl) then self:Remove() return end
     if !mdl:GetAttachment(att) then self:Remove() return end
 
