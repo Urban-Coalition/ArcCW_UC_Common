@@ -8,7 +8,8 @@ Burning at over 3,000 °F, the blast isn't immediately lethal, but can easily se
 Only compatible with manual action shotguns due to a weak pressure curve.]]
 att.Desc_Pros = {
     "pro.ignite",
-    "uc.pellet.24"
+    "uc.pellet.24",
+    "ur.spas12.pump",
 }
 att.Desc_Cons = {
     "uc.dragon",
@@ -70,10 +71,12 @@ att.Mult_PhysBulletGravity = 3
 --att.Override_PhysTracerProfile = 1
 att.Override_MuzzleEffect = "muzzleflash_dragonbreath"
 
+att.Override_UC_ShellColor = Color(0.9*255, 0.3*255, 0.1*255)
+
 att.Hook_AddShootSound = function(wep, data)
     wep:EmitSound("DB_ADD",data.volume,data.pitch,1,CHAN_WEAPON - 1) -- lua/arccw/shared/sh_0_uc.lua
 end
 
 att.Hook_Compatible = function(wep)
-    if !wep.ManualAction or !wep:GetIsShotgun() then return false end
+    if (!wep.ManualAction and !wep.UC_CanManualAction) or !wep:GetIsShotgun() then return false end
 end

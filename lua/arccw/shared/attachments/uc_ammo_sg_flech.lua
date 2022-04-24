@@ -23,6 +23,8 @@ att.Mult_Damage = .8
 
 att.Mult_HullSize = 0.5
 
+att.Override_UC_ShellColor = Color(0.2*255, 0.2*255, 0.7*255)
+
 att.Hook_Compatible = function(wep)
     if !wep:GetIsShotgun() then
         return false

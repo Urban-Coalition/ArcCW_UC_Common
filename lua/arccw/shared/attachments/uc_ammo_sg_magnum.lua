@@ -28,6 +28,8 @@ att.Add_AccuracyMOA = 10
 -- it's payday, fellas
 att.Add_HullSize = 0.5
 
+att.Override_UC_ShellColor = Color(0.8*255, 0.7*255, 0.7*255)
+
 att.Hook_Compatible = function(wep)
     if !wep:GetIsShotgun() then
         return false

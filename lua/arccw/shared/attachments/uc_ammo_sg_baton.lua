@@ -11,6 +11,7 @@ att.Desc_Pros = {
 }
 att.Desc_Cons = {
     "uc.alwaysphys",
+    "ur.spas12.pump",
 }
 att.Desc_Neutrals = {
     "uc.oneprojectile"
@@ -73,6 +74,8 @@ att.Override_DamageType = DMG_CLUB
 att.Override_AlwaysPhysBullet = true
 --att.Override_PhysBulletMuzzleVelocity = 80
 
+att.Override_UC_ShellColor = Color(0.6*255, 0.2*255, 0.6*255)
+
 att.Hook_Compatible = function(wep)
-    if !wep.ManualAction or !wep:GetIsShotgun() then return false end
+    if (!wep.ManualAction and !wep.UC_CanManualAction) or !wep:GetIsShotgun() then return false end
 end
