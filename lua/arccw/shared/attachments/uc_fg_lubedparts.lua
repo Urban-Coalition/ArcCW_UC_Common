@@ -12,7 +12,7 @@ att.Slot = "uc_fg"
 att.AutoStats = true
 att.SortOrder = 3
 
-att.Mult_MalfunctionMean = 1.25
+att.Mult_MalfunctionMean = 2
 
 --[[]
 att.Hook_Compatible = function(wep)
