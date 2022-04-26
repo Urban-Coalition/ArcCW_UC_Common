@@ -64,6 +64,35 @@ $sequence "throw_end"{
 	fps 40
 }
 
+
+
+$sequence "lowthrow_start"{
+	"anims\lowthrow_start.smd" 
+	fps 40
+}
+
+$sequence "lowthrow_idle"{
+	"anims\lowthrow_idle.smd" 
+	fps 40
+	loop
+}
+
+$sequence "lowthrow2_start"{
+	"anims\lowthrow2_start.smd" 
+	fps 40
+}
+
+$sequence "lowthrow2_idle"{
+	"anims\lowthrow2_idle.smd" 
+	fps 40
+	loop
+}
+
+$sequence "lowthrow_end"{
+	"anims\lowthrow_end.smd" 
+	fps 40
+}
+
 $bonemerge "ValveBiped.Bip01_Spine4"
 $bonemerge "ValveBiped.Bip01_L_Clavicle"
 $bonemerge "ValveBiped.Bip01_L_UpperArm"
