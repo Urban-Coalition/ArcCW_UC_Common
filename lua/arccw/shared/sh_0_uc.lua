@@ -18,6 +18,12 @@ sound.Add( {
 game.AddParticles("particles/muzzleflash_dragonsbreath.pcf")
 PrecacheParticleSystem("muzzleflash_dragonbreath")
 
+game.AddParticles("particles/uo_explosions_fas2.pcf")
+PrecacheParticleSystem("explosion_HE_m79_fas2")
+PrecacheParticleSystem("explosion_he_grenade_fas2")
+PrecacheParticleSystem("explosion_HE_claymore_fas2")
+PrecacheParticleSystem("explosion_grenade_fas2")
+
 ArcCW.UC = {}
 
 ArcCW.UC.BodyDamageMults = {

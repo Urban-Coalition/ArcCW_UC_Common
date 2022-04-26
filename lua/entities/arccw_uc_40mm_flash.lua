@@ -49,7 +49,7 @@ function ENT:DoDetonation()
                 k:ScreenFade( SCREENFADE.IN, Color( 255, 255, 255, 255 ), 2.5, time )
             end
 
-            k:SetDSP( 37, false )
+            k:SetDSP(37, false)
 
         elseif k:IsNPC() then
 
