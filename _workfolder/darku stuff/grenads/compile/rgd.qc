@@ -22,7 +22,7 @@ $cbox 0 0 0 0 0 0
 
 $sequence "idle"{
 	"anims\idle.smd" 
-	fps 40
+	fps 30
 	"ACT_VM_IDLE" 1
 	loop
 }
@@ -34,63 +34,63 @@ $sequence "ready"{
 
 $sequence "draw"{
 	"anims\draw.smd" 
-	fps 40
+	fps 30
 }
 
 $sequence "throw_start"{
 	"anims\throw_start.smd" 
-	fps 40
+	fps 30
 }
 
 $sequence "throw_idle"{
 	"anims\throw_idle.smd" 
-	fps 40
+	fps 30
 	loop
 }
 
 $sequence "throw2_start"{
 	"anims\throw2_start.smd" 
-	fps 40
+	fps 30
 }
 
 $sequence "throw2_idle"{
 	"anims\throw2_idle.smd" 
-	fps 40
+	fps 30
 	loop
 }
 
 $sequence "throw_end"{
 	"anims\throw_end.smd" 
-	fps 40
+	fps 30
 }
 
-
+// alt throw animations
 
 $sequence "lowthrow_start"{
 	"anims\lowthrow_start.smd" 
-	fps 40
+	fps 30
 }
 
 $sequence "lowthrow_idle"{
 	"anims\lowthrow_idle.smd" 
-	fps 40
+	fps 30
 	loop
 }
 
 $sequence "lowthrow2_start"{
 	"anims\lowthrow2_start.smd" 
-	fps 40
+	fps 30
 }
 
 $sequence "lowthrow2_idle"{
 	"anims\lowthrow2_idle.smd" 
-	fps 40
+	fps 30
 	loop
 }
 
 $sequence "lowthrow_end"{
 	"anims\lowthrow_end.smd" 
-	fps 40
+	fps 30
 }
 
 $bonemerge "ValveBiped.Bip01_Spine4"
