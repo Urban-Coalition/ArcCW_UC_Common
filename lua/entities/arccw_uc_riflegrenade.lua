@@ -21,6 +21,12 @@ ENT.ExplosionEffect = true
 ENT.Scorch = true
 ENT.SmokeTrail = true
 
+local path = "arccw_uo/frag/"
+local path1 = "arccw_uo/common/"
+ENT.ExplosionSounds = {path .. "explosion-close-01.ogg", path .. "explosion-close-02.ogg"}
+ENT.DebrisSounds = {path1 .. "debris-01.ogg", path1 .. "debris-02.ogg", path1 .. "debris-03.ogg", path1 .. "debris-04.ogg", path1 .. "debris-05.ogg"}
+
+
 if SERVER then
     function ENT:Initialize()
         local pb_vert = 1
@@ -96,9 +102,10 @@ function ENT:Detonate()
             -- explosion_HE_claymore_fas2
             -- explosion_grenade_fas2
 
+            self:EmitSound(self.ExplosionSounds[math.random(1,#self.ExplosionSounds)], 125, 100, 1, CHAN_AUTO)
             ParticleEffect("explosion_HE_m79_fas2", self:GetPos(), Angle(-90, 0, 0))
 
-            self:EmitSound("phx/kaboom.wav", 125, 100, 1, CHAN_AUTO)
+            --self:EmitSound("phx/kaboom.wav", 125, 100, 1, CHAN_AUTO)
 
             -- Where is the sound zenith ? ???
         end
@@ -118,6 +125,16 @@ function ENT:Detonate()
                 util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
             end
         })
+    end
+    
+    local trace = util.TraceLine({
+        start = self:GetPos(),
+        endpos = self:GetPos() + Vector(0,0,-5),
+        mask = MASK_SOLID_BRUSHONLY
+    })
+
+    if self.DebrisSounds and trace.Hit then
+        self:EmitSound(self.DebrisSounds[math.random(1,#self.DebrisSounds)], 85, 100, 1, CHAN_AUTO)
     end
 
     self:Remove()
