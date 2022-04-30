@@ -462,7 +462,7 @@ if CLIENT then
         panel:ControlHelp( "How accurate should the weapon tail calculation be for when used outdoors or indoors?" )
 	end
 
-    hook.Add("PopulateToolMenu", "ARC9_MenuOptions", function()
+    hook.Add("PopulateToolMenu", "ARCCW_UC_MenuOptions", function()
         spawnmenu.AddToolMenuOption("Options", "ArcCW", "ArcCW_UC", "Urban Coalition", "", "", menu_uc)
     end)
 end
