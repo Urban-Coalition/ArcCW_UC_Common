@@ -247,19 +247,19 @@ local traces2 = {
 local traces3 = {
     {   -- Up
         Distance = Vector(0, 0, 1024),
-        Influence = 1,
+        Influence = 0,
     },
     {   -- Up Forward
-        Distance = Vector(0, 1024, 384),
+        Distance = Vector(0, 768, 768),
         Influence = 1,
     },
     {   -- Up Back
-        Distance = Vector(0, -1024, 384),
+        Distance = Vector(0, -768, 768),
         Influence = 1,
     },
     {   -- Forward
-        Distance = Vector(0, 1024, 0),
-        Influence = 1,
+        Distance = Vector(0, 768, 0),
+        Influence = 0.5,
     },
     {   -- Right
         Distance = Vector(768, 768, 0),
@@ -273,19 +273,19 @@ local traces3 = {
 local traces4 = {
     {   -- Up
         Distance = Vector(0, 0, 1024),
-        Influence = 1,
+        Influence = 0.5,
     },
     {   -- Up Forward
-        Distance = Vector(0, 1024, 384),
+        Distance = Vector(0, 768, 768),
         Influence = 1,
     },
     {   -- Up Back
-        Distance = Vector(0, -1024, 384),
+        Distance = Vector(0, -768, 768),
         Influence = 1,
     },
     {   -- Forward
-        Distance = Vector(0, 1024, 0),
-        Influence = 1,
+        Distance = Vector(0, 768, 0),
+        Influence = 0.5,
     },
     {   -- Back
         Distance = Vector(0, -1024, 0),
@@ -386,13 +386,12 @@ ArcCW.UC.InnyOuty = function(wep)
 
             vol = vol / t_influ
             if GetConVar("developer"):GetInt() > 0 then print(vol) end
-            --vol = math.ease.InOutCubic(vol)
             if dso then
                 for _, snd in ipairs(dso) do
                     wep:StopSound(snd)
                 end
                 if math.max(0.15, vol) != 0.15 then
-                    wep:EmitSound(dso[math.random(1, #dso)], 75, 100, (vol) * dsov or 1, CHAN_AUTO)
+                    wep:EmitSound(dso[math.random(1, #dso)], 75, 100, (vol) * dsov or 1, CHAN_VOICE2)
                 end
             end
             if dsi then
@@ -400,7 +399,7 @@ ArcCW.UC.InnyOuty = function(wep)
                     wep:StopSound(snd)
                 end
                 if math.min(0.85, vol) != 0.85 then
-                    wep:EmitSound(dsi[math.random(1, #dsi)], 75, 100, (1-vol) * dsiv or 1, CHAN_AUTO)
+                    wep:EmitSound(dsi[math.random(1, #dsi)], 75, 100, (1-vol) * dsiv or 1, CHAN_STREAM)
                 end
             end
 
