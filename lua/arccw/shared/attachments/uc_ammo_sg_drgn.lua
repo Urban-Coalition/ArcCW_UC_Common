@@ -7,10 +7,11 @@ Burning at over 3,000 °F, the blast isn't immediately lethal, but can easily se
 
 Only compatible with manual action shotguns due to a weak pressure curve.]]
 att.Desc_Pros = {
-    "pro.ignite",
-    "uc.pellet.24",
+    "uc.ignite",
+    "uc.pellet.12",
 }
 att.Desc_Cons = {
+    "uc.accuracy.35",
     "uc.dragon",
     "uc.alwaysphys",
 }
@@ -21,15 +22,41 @@ att.Slot = {"ud_ammo_shotgun", "uc_ammo"}
 att.ActivateElements = {"uc_manualonly"}
 att.AutoStats = true
 
-att.Add_Num = 24
+att.Add_Num = 12
 
-att.Hook_PhysBulletHit = function(wep,data)
+-- zombies don't take damage from DMG_BURN (hardcoded to set them on fire)
+local dontburn = {
+    npc_zombie = true,
+    npc_zombie_torso = true,
+    npc_zombine = true,
+    npc_fastzombie = true,
+    npc_fastzombie_torso = true,
+    npc_headcrab = true,
+    npc_headcrab_fast = true,
+    npc_headcrab_black = true,
+}
+
+att.Hook_PhysBulletHit = function(wep, data)
     if SERVER and data.tr.Entity then
-        local dur = 6 - (data.bullet.Travelled * 2 * ArcCW.HUToM) / wep.Range
+        local d = data.bullet.Travelled * ArcCW.HUToM
+        local dur = 6 - d * 2 / wep.Range
         if dur > 0 then
             data.tr.Entity:Extinguish()
             data.tr.Entity:Ignite(dur)
         end
+
+        local delta = math.Clamp(d / data.bullet.Range, 0, 1)
+
+        -- Impact is disabled (no bullet holes) so we do damage ourselves
+        local dmg = DamageInfo()
+        dmg:SetAttacker(data.bullet.Attacker)
+        dmg:SetInflictor(data.bullet.Weapon)
+        dmg:SetDamage(Lerp(delta, data.bullet.DamageMax, data.bullet.DamageMin))
+        dmg:SetDamagePosition(data.bullet.Pos)
+        dmg:SetDamageForce(data.bullet.Vel)
+        dmg:SetDamageType(dontburn[data.tr.Entity:GetClass()] and DMG_BUCKSHOT or (DMG_BURN + DMG_BUCKSHOT))
+
+        data.tr.Entity:TakeDamageInfo(dmg)
     end
 
     local effect = EffectData()
@@ -37,14 +64,17 @@ att.Hook_PhysBulletHit = function(wep,data)
     util.Effect("StunstickImpact",effect)
 end
 
-att.Mult_AccuracyMOA = 1.5
+att.Override_PhysBulletImpact = false
+
+att.Override_DamageType = DMG_BURN + DMG_BUCKSHOT
+
+att.Add_AccuracyMOA = 35
 att.Mult_Damage = .5
 att.Mult_DamageMin = .5
-att.Mult_Penetration = .5
-att.Mult_Range = .35
 
 att.Override_AlwaysPhysBullet = true
-att.Mult_PhysBulletGravity = 3
+att.Mult_PhysBulletMuzzleVelocity = 0.25
+att.Mult_PhysBulletGravity = 1.5
 
 --att.Override_PhysTracerProfile = 1
 att.Override_MuzzleEffect = "muzzleflash_dragonbreath"
