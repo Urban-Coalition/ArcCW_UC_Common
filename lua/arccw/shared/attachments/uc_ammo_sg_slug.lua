@@ -28,7 +28,7 @@ att.Mult_HipDispersion = 2
 
 att.Override_HullSize = 0
 
-att.Override_UC_ShellColor = Color(0.2*255, 0.6*255, 0.2*255)
+att.Override_UC_ShellColor = Color(0.2*255, 0.45*255, 0.2*255)
 
 att.GivesFlags = {"uc_slug"}
 
