@@ -113,28 +113,35 @@ function ENT:Detonate()
 
     self:DoDetonation()
 
-    if self.Scorch then
-        self:FireBullets({
-            Attacker = attacker,
-            Damage = 0,
-            Tracer = 0,
-            Distance = 20000,
-            Dir = self.GrenadeDir or self:GetVelocity():GetNormalized(),
-            Src = self:GetPos(),
-            Callback = function(att, tr, dmg)
-                util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
-            end
-        })
-    end
-    
     local trace = util.TraceLine({
         start = self:GetPos(),
-        endpos = self:GetPos() + Vector(0,0,-5),
+        endpos = self:GetPos() + Vector(0,0,-15),
         mask = MASK_SOLID_BRUSHONLY
     })
 
-    if self.DebrisSounds and trace.Hit then
-        self:EmitSound(self.DebrisSounds[math.random(1,#self.DebrisSounds)], 85, 100, 1, CHAN_AUTO)
+    if trace.Hit then
+        if self.Scorch then
+            self:FireBullets({
+                Attacker = attacker,
+                Damage = 0,
+                Tracer = 0,
+                Distance = 15,
+                Dir = self.GrenadeDir or self:GetVelocity():GetNormalized(),
+                Src = self:GetPos(),
+                Callback = function(att, tr, dmg)
+                    util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
+                end
+            })
+        end
+
+        -- local debrisMats = {
+        --     [MAT_GRASS] = true,
+        --     [MAT_DIRT] = true,
+        --     [MAT_SAND] = true,
+        -- }
+        if self.DebrisSounds then
+            self:EmitSound(self.DebrisSounds[math.random(1,#self.DebrisSounds)], 85, 100, 1, CHAN_AUTO)
+        end
     end
 
     self:Remove()

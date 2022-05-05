@@ -56,8 +56,14 @@ function ENT:DoDetonation()
         util.Effect("WaterSurfaceExplosion", effectdata)
         self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
     else
-        util.Effect("Explosion", effectdata)
-        self:EmitSound("phx/kaboom.wav", 125, 100, 1, CHAN_AUTO)
+        self:EmitSound(self.ExplosionSounds[math.random(1,#self.ExplosionSounds)], 125, 100, 1, CHAN_AUTO)
+        ParticleEffect("explosion_grenade_fas2", self:GetPos(), tr.HitNormal:Angle())
+        if tr2.Hit and !tr2.StartSolid then
+            ParticleEffect("explosion_he_m79_fas2", tr2.StartPos, tr.HitNormal:Angle() * -1)
+        end
+        if self.DebrisSounds then
+            self:EmitSound(self.DebrisSounds[math.random(1,#self.DebrisSounds)], 85, 100, 1, CHAN_AUTO)
+        end
     end
 
     util.BlastDamage(self, attacker, blastpos, self.GrenadeRadius, self.GrenadeDamage or self.Damage or 0)
