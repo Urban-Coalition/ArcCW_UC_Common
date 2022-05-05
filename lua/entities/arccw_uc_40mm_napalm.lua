@@ -17,7 +17,7 @@ if SERVER then
             self:Detonate()
         end
 
-        if self.SpawnTime + 0.25 < CurTime() and self.NextTraceTime < CurTime() then
+        if self.SpawnTime + 0.2 < CurTime() and self.NextTraceTime < CurTime() then
             self.NextTraceTime = CurTime() + 0.1
             local dir = self:GetVelocity():GetNormalized()
             local tr = util.TraceHull({
@@ -52,20 +52,23 @@ function ENT:DoDetonation()
         self:EmitSound("ambient/fire/gascan_ignite1.wav", 100, 100, 0.75)
     end
 
-    for i = 1, 5 do
+    local r = self:GetRight()
+    local u = self:GetForward()
+
+    for i = 1, math.random(5, 7) do
         local cloud = ents.Create("arccw_uc_napalm")
-        cloud.FireTime = 20
+        cloud.FireTime = math.Rand(20, 40)
 
         if !IsValid(cloud) then return end
 
-        local vel = VectorRand() * 250
+        local vel = VectorRand() * 500
 
         cloud.Order = i
         cloud:SetPos(self:GetPos() - (self:GetVelocity() * FrameTime()) + VectorRand())
         --cloud:SetAbsVelocity(vel + self:GetVelocity())
         cloud:SetOwner(self:GetOwner())
         cloud:Spawn()
-        cloud:GetPhysicsObject():SetVelocityInstantaneous(vel + self:GetVelocity())
+        cloud:GetPhysicsObject():SetVelocityInstantaneous(self:GetVelocity() + vel)
 
     end
 end

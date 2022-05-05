@@ -3,8 +3,8 @@ AddCSLuaFile()
 ENT.Base = "arccw_uc_40mm_he"
 ENT.PrintName = "40mm Airburst"
 
-ENT.GrenadeDamage = 50
-ENT.GrenadeRadius = 150
+ENT.GrenadeDamage = 75
+ENT.GrenadeRadius = 300
 ENT.ExplosionEffect = false
 ENT.Scorch = false
 ENT.DragCoefficient = 0.75
@@ -17,7 +17,7 @@ if SERVER then
             self:Detonate()
         end
 
-        if self.SpawnTime + 0.25 < CurTime() and self.NextTraceTime < CurTime() then
+        if self.SpawnTime + 0.2 < CurTime() and self.NextTraceTime < CurTime() then
             self.NextTraceTime = CurTime() + 0.1
 
             local dir = self:GetVelocity():GetNormalized()
@@ -39,6 +39,7 @@ if SERVER then
 end
 
 function ENT:DoDetonation()
+    local attacker = IsValid(self:GetOwner()) and self:GetOwner() or self
     local dir = self:GetVelocity():GetNormalized()
     local effectdata = EffectData()
     effectdata:SetOrigin(self:GetPos())
@@ -59,7 +60,7 @@ function ENT:DoDetonation()
     local deg = math.Clamp(1.5 - dir:Cross(Vector(0, 0, -1)):Length(), 0.5, 1)
 
     self:FireBullets({
-        Attacker = IsValid(self:GetOwner()) and self:GetOwner() or self,
+        Attacker = attacker,
         Damage = 25,
         Force = 5,
         Distance = 2048,
@@ -83,6 +84,8 @@ function ENT:DoDetonation()
             ent:TakeDamageInfo(dmg)
         end
     end
+
+    util.BlastDamage(self, attacker, self:GetPos(), self.GrenadeRadius, self.GrenadeDamage or self.Damage or 0)
 end
 
 function ENT:PhysicsCollide(colData, collider)

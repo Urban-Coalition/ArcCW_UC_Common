@@ -11,6 +11,7 @@ ENT.Scorch = false
 function ENT:DoDetonation()
     local dir = self.GrenadeDir or self:GetVelocity():GetNormalized()
     local attacker = IsValid(self:GetOwner()) and self:GetOwner() or self
+    local damage = self.GrenadeDamage or self.Damage or 0
     local blastpos = self:GetPos()
     local tr = util.TraceLine({
         start = self:GetPos(),
@@ -22,7 +23,7 @@ function ENT:DoDetonation()
         local dmg = DamageInfo()
         dmg:SetAttacker(attacker)
         dmg:SetInflictor(self)
-        dmg:SetDamage((self.GrenadeDamage or self.Damage or 0) * 10)
+        dmg:SetDamage(damage * 10)
         dmg:SetDamageForce(dir * 3000)
         dmg:SetDamagePosition(tr.HitPos)
         tr.Entity:TakeDamageInfo(dmg)
@@ -34,7 +35,10 @@ function ENT:DoDetonation()
         filter = self,
     })
 
-    if tr2.Hit and not tr2.StartSolid then
+    if tr2.Hit and !tr2.StartSolid then
+        -- Produce a weaker blast on the pre-penetration side
+        util.BlastDamage(self, attacker, blastpos, self.GrenadeRadius, damage * 0.5)
+
         blastpos = tr2.HitPos + dir * 16
         self:EmitSound("physics/concrete/concrete_break2.wav", 100, 110)
         local effectdata = EffectData()
@@ -67,5 +71,5 @@ function ENT:DoDetonation()
     end
 
     util.ScreenShake(self:GetPos(),25,4,.75,self.GrenadeRadius * 4)
-    util.BlastDamage(self, attacker, blastpos, self.GrenadeRadius, self.GrenadeDamage or self.Damage or 0)
+    util.BlastDamage(self, attacker, blastpos, self.GrenadeRadius, damage)
 end

@@ -156,12 +156,12 @@ function ENT:Think()
 
         local dmg = DamageInfo()
         dmg:SetDamageType(DMG_BURN)
-        dmg:SetDamage(math.random() * 1 + 1)
+        dmg:SetDamage(math.random() * 2 + 1)
         dmg:SetInflictor(self)
         dmg:SetAttacker(self:GetOwner())
 
         if self:WaterLevel() > 2 then
-            if math.random() <= 0.1 then self:Remove() return end
+            if math.random() <= 0.075 then self:Remove() return end
             dmg:SetDamage(1)
         end
 
@@ -170,7 +170,7 @@ function ENT:Think()
         self.NextDamageTick = CurTime() + 0.15
         if !self.Stuck and self.NextStickTick < CurTime() then
             self.NextStickTick = CurTime() + 0.5
-            if math.random() <= 0.5 then
+            if math.random() <= 0.25 then
                 for _, e in pairs(ents.FindInSphere(self:GetPos(), 96)) do
                     if e:IsNPC() or e:IsNextBot() or e:IsVehicle() or (e:IsPlayer() and e:Alive()) then
                         self.Stuck = true

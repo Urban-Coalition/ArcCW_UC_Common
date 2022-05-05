@@ -96,7 +96,7 @@ function ENT:Detonate()
             self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
         else
             -- util.Effect("Explosion", effectdata)
-                       
+
             -- explosion_HE_m79_fas2
             -- explosion_he_grenade_fas2
             -- explosion_HE_claymore_fas2

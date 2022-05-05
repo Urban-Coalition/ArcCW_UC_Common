@@ -19,6 +19,7 @@ att.AutoStats = true
 
 att.Override_ShootEntity = "arccw_uc_40mm_napalm"
 
+att.Mult_MuzzleVelocity = 0.75
 
 att.Mult_ShootPitch = 0.95
 

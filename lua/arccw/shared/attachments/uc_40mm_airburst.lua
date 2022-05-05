@@ -7,7 +7,7 @@ att.Desc_Pros = {
     "uc.40mm.proximity",
 }
 att.Desc_Cons = {
-    "uc.40mm.nodmg",
+    "uc.40mm.mindmg",
     "uc.40mm.arm",
     "uc.40mm.drag.high",
 }
