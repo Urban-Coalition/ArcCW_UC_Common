@@ -66,5 +66,6 @@ function ENT:DoDetonation()
         end
     end
 
+    util.ScreenShake(self:GetPos(),25,4,.75,self.GrenadeRadius * 4)
     util.BlastDamage(self, attacker, blastpos, self.GrenadeRadius, self.GrenadeDamage or self.Damage or 0)
 end

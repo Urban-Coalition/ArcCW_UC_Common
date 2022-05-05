@@ -109,6 +109,8 @@ function ENT:Detonate()
 
             -- Where is the sound zenith ? ???
         end
+
+        util.ScreenShake(self:GetPos(),25,4,.75,self.GrenadeRadius * 4)
     end
 
     self:DoDetonation()
