@@ -21,8 +21,8 @@ ENT.ExplosionEffect = true
 ENT.Scorch = true
 ENT.SmokeTrail = true
 
-local path = "arccw_uo/frag/"
-local path1 = "arccw_uo/common/"
+local path = "arccw_uc/common/"
+local path1 = "arccw_uc/common/"
 ENT.ExplosionSounds = {path .. "explosion-close-01.ogg", path .. "explosion-close-02.ogg"}
 ENT.DebrisSounds = {path1 .. "debris-01.ogg", path1 .. "debris-02.ogg", path1 .. "debris-03.ogg", path1 .. "debris-04.ogg", path1 .. "debris-05.ogg"}
 
