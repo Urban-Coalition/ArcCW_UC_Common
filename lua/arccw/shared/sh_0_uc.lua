@@ -339,8 +339,12 @@ ArcCW.UC.InnyOuty = function(wep)
             local dsov = wep.DistantShootSoundOutdoorsVolume
             local dsiv = wep.DistantShootSoundIndoorsVolume
             if wep:GetBuff_Override("Silencer") then
-                dso = wep.DistantShootSoundOutdoorsSilenced
-                dsi = wep.DistantShootSoundIndoorsSilenced
+                if wep:CheckFlags(nil, {"powder_subsonic"}) then
+                    return -- no tail
+                else
+                    dso = wep.DistantShootSoundOutdoorsSilenced
+                    dsi = wep.DistantShootSoundIndoorsSilenced
+                end
             end
             dso = wep:GetBuff_Hook("Hook_GetDistantShootSoundOutdoors", dso)
             dsi = wep:GetBuff_Hook("Hook_GetDistantShootSoundIndoors", dsi)
@@ -379,8 +383,8 @@ ArcCW.UC.InnyOuty = function(wep)
                 tracebase.filter = wo
                 t_influ = t_influ + (tin.Influence or 1)
                 local result = util.TraceLine(tracebase)
-                debugoverlay.Line(wop-(vector_up*4), result.HitPos-(vector_up*4), 1, Color((_/4)*255, 0, (1-(_/4))*255))
-                debugoverlay.Text(result.HitPos-(vector_up*4), math.Round((result.HitSky and 1 or result.Fraction)*100).."%", 1)
+                debugoverlay.Line(wop-(vector_up * 4), result.HitPos-(vector_up * 4), 1, Color((_ / 4 ) *  255, 0, (1-(_ / 4)) * 255))
+                debugoverlay.Text(result.HitPos-(vector_up * 4), math.Round((result.HitSky and 1 or result.Fraction) * 100) .. "%", 1)
                 vol = vol + (result.HitSky and 1 or result.Fraction) * tin.Influence
             end
 
@@ -391,7 +395,7 @@ ArcCW.UC.InnyOuty = function(wep)
                     wep:StopSound(snd)
                 end
                 if math.max(0.15, vol) != 0.15 then
-                    wep:EmitSound(dso[math.random(1, #dso)], 75, 100, (vol) * dsov or 1, CHAN_VOICE2)
+                    wep:EmitSound(dso[math.random(1, #dso)], 75, 100, vol * dsov or 1, CHAN_VOICE2)
                 end
             end
             if dsi then
@@ -408,14 +412,14 @@ ArcCW.UC.InnyOuty = function(wep)
 end
 
 if CLIENT then
-	matproxy.Add( {
-		name = "UC_ShellColor",
-		init = function( self, mat, values )
-			--self.envMin = values.min
-			--self.envMax = values.max
-			self.col = Vector()
-		end,
-		bind = function( self, mat, ent )
+    matproxy.Add( {
+        name = "UC_ShellColor",
+        init = function( self, mat, values )
+            --self.envMin = values.min
+            --self.envMax = values.max
+            self.col = Vector()
+        end,
+        bind = function( self, mat, ent )
             local swent = ent
             if IsValid(swent) then
                 local herg = color_white
@@ -445,21 +449,21 @@ if CLIENT then
                 self.col.z = b/255
                 mat:SetVector( "$color2", self.col )
             end
-		end
-	} )
+        end
+    } )
 
     CreateClientConVar("arccw_uc_disttrace", 0, true, false, "Mode for traces", 0, 4)
-	local function menu_uc(panel)
+    local function menu_uc(panel)
         panel:AddControl( "header", { description = "This menu contains options for configuring Urban Coalition weapons and items." } )
-		local combobox = panel:ComboBox( "Trace count", "arccw_uc_disttrace" )--vgui.Create( "DComboBox", panel )
+        local combobox = panel:ComboBox( "Trace count", "arccw_uc_disttrace" )--vgui.Create( "DComboBox", panel )
         combobox:SetSortItems( false )
-		combobox:AddChoice( "Automatic",            0 )
-		combobox:AddChoice( "1-way (performance, not recommended)",  1 )
-		combobox:AddChoice( "3-way (default)",      2 )
-		combobox:AddChoice( "6-way (expensive)",    3 )
-		combobox:AddChoice( "9-way (absurd)",       4 )
+        combobox:AddChoice( "Automatic",            0 )
+        combobox:AddChoice( "1-way (performance, not recommended)",  1 )
+        combobox:AddChoice( "3-way (default)",      2 )
+        combobox:AddChoice( "6-way (expensive)",    3 )
+        combobox:AddChoice( "9-way (absurd)",       4 )
         panel:ControlHelp( "How accurate should the weapon tail calculation be for when used outdoors or indoors?" )
-	end
+    end
 
     hook.Add("PopulateToolMenu", "ARCCW_UC_MenuOptions", function()
         spawnmenu.AddToolMenuOption("Options", "ArcCW", "ArcCW_UC", "Urban Coalition", "", "", menu_uc)
