@@ -52,6 +52,7 @@ L["uc.noubs"] = "Disables Underbarrel attachments"
 L["uc.nostocks"] = "Disables Stock attachments"
 L["uc.nomuzzle"] = "Disables Muzzle attachments"
 L["uc.nogrip"] = "Disables Grip Type attachments"
+L["uc.nopowder"] = "Disables Powder Load attachments"
 L["uc.muzzleblocking"] = "Incompatible with certain Tube and Barrel combinations"
 
 L["uc.exclusive.pistol"] = "Exclusive to small caliber firearms"
