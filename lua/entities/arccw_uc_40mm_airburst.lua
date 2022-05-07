@@ -8,6 +8,7 @@ ENT.GrenadeRadius = 300
 ENT.ExplosionEffect = false
 ENT.Scorch = false
 ENT.DragCoefficient = 0.75
+ENT.DetonateOnImpact = false
 
 ENT.NextTraceTime = 0
 
@@ -86,18 +87,6 @@ function ENT:DoDetonation()
     end
 
     util.BlastDamage(self, attacker, self:GetPos(), self.GrenadeRadius, self.GrenadeDamage or self.Damage or 0)
-end
-
-function ENT:PhysicsCollide(colData, collider)
-    local effectdata = EffectData()
-    effectdata:SetOrigin(self:GetPos())
-    effectdata:SetMagnitude(2)
-    effectdata:SetScale(1)
-    effectdata:SetRadius(2)
-    effectdata:SetNormal(colData.OurOldVelocity:GetNormalized())
-    util.Effect("Sparks", effectdata)
-    self:EmitSound("weapons/rpg/shotdown.wav", 100, 150)
-    self:Remove()
 end
 
 --[[]
