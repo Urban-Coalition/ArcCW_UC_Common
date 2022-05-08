@@ -15,10 +15,11 @@ att.Desc_Neutrals = {
 }
 att.Slot = {"uc_ammo","ud_ammo_shotgun"}
 
+att.SortOrder = -9001
 att.AutoStats = true
 
 att.Override_Num = 0
 att.Override_Num_Priority = 9001
 att.Override_InfiniteAmmo = true
 
-att.Override_UC_ShellColor = Color(0.3*255, 0.3*255, 0.3*255)
+att.Override_UC_ShellColor = Color(0.3 * 255, 0.3 * 255, 0.3 * 255)

@@ -15,10 +15,11 @@ ENT.GrenadeDamage = false
 ENT.GrenadeRadius = 0
 ENT.FuseTime = 10
 ENT.DragCoefficient = 1
+ENT.DetonateOnImpact = true
 
 ENT.Model = "models/weapons/shell.mdl"
 ENT.ExplosionEffect = true
-ENT.Scorch = true
+ENT.Scorch = "Scorch"
 ENT.SmokeTrail = true
 
 local path = "arccw_uc/common/"
@@ -83,6 +84,18 @@ function ENT:DoDetonation()
     util.BlastDamage(self, attacker, self:GetPos(), self.GrenadeRadius, self.GrenadeDamage or self.Damage or 0)
 end
 
+function ENT:DoImpact(ent)
+    local attacker = IsValid(self:GetOwner()) and self:GetOwner() or self
+    local dmg = DamageInfo()
+    dmg:SetAttacker(attacker)
+    dmg:SetInflictor(self)
+    dmg:SetDamage(100)
+    dmg:SetDamageType(DMG_CRUSH)
+    dmg:SetDamageForce(self.GrenadeDir * 5000)
+    dmg:SetDamagePosition(self:GetPos())
+    ent:TakeDamageInfo(dmg)
+end
+
 function ENT:Detonate()
     if not self:IsValid() or self.BOOM then return end
     self.BOOM = true
@@ -110,40 +123,22 @@ function ENT:Detonate()
             -- Where is the sound zenith ? ???
         end
 
-        util.ScreenShake(self:GetPos(),25,4,.75,self.GrenadeRadius * 4)
+        util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.GrenadeRadius * 4)
+
+        local trace = util.TraceLine({
+            start = self.GrenadePos,
+            endpos = self.GrenadePos + self.GrenadeDir * 4,
+            mask = MASK_SOLID_BRUSHONLY
+        })
+        if trace.Hit then
+            self:EmitSound(self.DebrisSounds[math.random(1,#self.DebrisSounds)], 85, 100, 1, CHAN_AUTO)
+        end
     end
 
     self:DoDetonation()
 
-    local trace = util.TraceLine({
-        start = self:GetPos(),
-        endpos = self:GetPos() + Vector(0,0,-15),
-        mask = MASK_SOLID_BRUSHONLY
-    })
-
-    if trace.Hit then
-        if self.Scorch then
-            self:FireBullets({
-                Attacker = attacker,
-                Damage = 0,
-                Tracer = 0,
-                Distance = 15,
-                Dir = self.GrenadeDir or self:GetVelocity():GetNormalized(),
-                Src = self:GetPos(),
-                Callback = function(att, tr, dmg)
-                    util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
-                end
-            })
-        end
-
-        -- local debrisMats = {
-        --     [MAT_GRASS] = true,
-        --     [MAT_DIRT] = true,
-        --     [MAT_SAND] = true,
-        -- }
-        if self.DebrisSounds then
-            self:EmitSound(self.DebrisSounds[math.random(1,#self.DebrisSounds)], 85, 100, 1, CHAN_AUTO)
-        end
+    if self.Scorch then
+        util.Decal(self.Scorch, self.GrenadePos, self.GrenadePos + self.GrenadeDir * 4, self)
     end
 
     self:Remove()
@@ -151,7 +146,23 @@ end
 
 function ENT:PhysicsCollide(colData, collider)
     self.GrenadeDir = colData.OurOldVelocity:GetNormalized()
-    self:Detonate()
+    self.GrenadePos = colData.HitPos
+
+    self:DoImpact(colData.HitEntity)
+
+    if self.DetonateOnImpact then
+        self:Detonate()
+    else
+        local effectdata = EffectData()
+        effectdata:SetOrigin(self:GetPos())
+        effectdata:SetMagnitude(2)
+        effectdata:SetScale(1)
+        effectdata:SetRadius(2)
+        effectdata:SetNormal(self.GrenadeDir)
+        util.Effect("Sparks", effectdata)
+        self:EmitSound("weapons/rpg/shotdown.wav", 100, 150)
+        self:Remove()
+    end
 end
 
 

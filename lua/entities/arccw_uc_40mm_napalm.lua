@@ -8,6 +8,7 @@ ENT.GrenadeRadius = 150
 ENT.ExplosionEffect = false
 ENT.Scorch = false
 ENT.DragCoefficient = 0.75
+ENT.DetonateOnImpact = false
 
 ENT.NextTraceTime = 0
 
@@ -52,9 +53,6 @@ function ENT:DoDetonation()
         self:EmitSound("ambient/fire/gascan_ignite1.wav", 100, 100, 0.75)
     end
 
-    local r = self:GetRight()
-    local u = self:GetForward()
-
     for i = 1, math.random(5, 7) do
         local cloud = ents.Create("arccw_uc_napalm")
         cloud.FireTime = math.Rand(20, 40)
@@ -71,16 +69,4 @@ function ENT:DoDetonation()
         cloud:GetPhysicsObject():SetVelocityInstantaneous(self:GetVelocity() + vel)
 
     end
-end
-
-function ENT:PhysicsCollide(colData, collider)
-    local effectdata = EffectData()
-    effectdata:SetOrigin(self:GetPos())
-    effectdata:SetMagnitude(2)
-    effectdata:SetScale(1)
-    effectdata:SetRadius(2)
-    effectdata:SetNormal(colData.OurOldVelocity:GetNormalized())
-    util.Effect("Sparks", effectdata)
-    self:EmitSound("weapons/rpg/shotdown.wav", 100, 150)
-    self:Remove()
 end
