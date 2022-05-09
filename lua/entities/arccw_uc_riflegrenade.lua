@@ -125,6 +125,13 @@ function ENT:Detonate()
 
         util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.GrenadeRadius * 4)
 
+        if self.GrenadePos == nil then
+            self.GrenadePos = self:GetPos()
+        end
+        if self.GrenadeDir == nil then
+            self.GrenadeDir = self:GetVelocity():GetNormalized()
+        end
+
         local trace = util.TraceLine({
             start = self.GrenadePos,
             endpos = self.GrenadePos + self.GrenadeDir * 4,
