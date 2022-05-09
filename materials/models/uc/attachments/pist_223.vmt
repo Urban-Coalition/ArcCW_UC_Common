@@ -1,5 +1,4 @@
-
-	"VertexLitGeneric"
+"VertexLitGeneric"
 {
 	"$baseTexture" "models/UC/attachments/pist_223"
     "$bumpmap" "models/UC/attachments/pist_223_n"
@@ -20,4 +19,3 @@
 	"$envmapfresnel" "1"
 	"$envmaptint" 		"[.2 .2 .2]"
 }
-
