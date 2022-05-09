@@ -2,6 +2,7 @@
 {
 	"$baseTexture" "models/UC/attachments/pist_223"
     "$bumpmap" "models/UC/attachments/pist_223_n"
+	"$phongexponenttexture" "models/UC/attachments/pist_223_exponent"
 	"$phong" "1"
 
 
