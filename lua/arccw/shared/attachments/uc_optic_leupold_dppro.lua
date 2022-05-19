@@ -33,4 +33,4 @@ att.HolosightSize = 2
 att.HolosightBone = "holosight"
 att.Colorable = true
 
-att.Mult_SightedSpeedMult = .99
+att.Mult_SightedSpeedMult = .95
