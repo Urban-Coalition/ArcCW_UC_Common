@@ -1,7 +1,7 @@
 att.PrintName = "40mm Dummy Grenades"
 att.AbbrevName = "Dummy"
 att.Icon = Material("entities/att/arccw_uc_40mm_generic.png", "mips smooth")
-att.Description = "Non-lethal grenades with an empty ceramic shell.\nUsed for target practice, the grenade has a noticable smoke trail and paints its impact point."
+att.Description = "Non-lethal grenades with an empty ceramic shell.\nUsed for target practice, the grenade has a noticable trail and paints its impact point with blue chalk."
 att.Desc_Pros = {
     "uc.infiniteammo"
 }
