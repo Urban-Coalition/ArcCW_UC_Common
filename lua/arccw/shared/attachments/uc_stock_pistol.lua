@@ -9,5 +9,7 @@ att.Model = "models/weapons/arccw/atts/stock_fab.mdl"
 
 att.Mult_Recoil = .75
 att.Mult_RecoilSide = .5
-att.Mult_SightTime = 1.4
+att.Mult_Sway = .5
+att.Mult_SightTime = 1.3
+att.Mult_DrawTime = 1.4
 att.Add_BarrelLength = 20
