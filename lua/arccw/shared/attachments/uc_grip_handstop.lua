@@ -1,12 +1,12 @@
 att.PrintName = "Handstop"
 att.AbbrevName = "Handstop"
 att.Icon = Material("entities/att/hs.png", "mips smooth")
-att.Description = "Prevents the hand from sliding down the barrel, allowing improved point shooting precision via a special \"C-clamp\" grip.\nMay obstruct ironsights, be careful."
+att.Description = "Prevents the hand from sliding down the barrel, allowing improved point shooting precision."
 
 att.AutoStats = true
 att.Slot = "foregrip"
 
-att.LHIK = true
+--att.LHIK = true
 
 att.ModelOffset = Vector(2, 0, -0.8)
 att.Model = "models/weapons/arccw/atts/uc_handstop.mdl"
