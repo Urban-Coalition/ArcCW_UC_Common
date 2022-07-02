@@ -46,6 +46,7 @@ L["uc.infiniteammo"] = "Infinite ammo"
 L["uc.noprojectile"] = "No projectile"
 L["uc.baton"] = "Target may drop their weapon"
 L["uc.ignite"] = "Ignites targets"
+L["uc.custcolor"] = "Use the menu in \"Utilities -> ArcCW -> Urban Coalition\" to modify color."
 
 L["uc.nooptics"] = "Disables Optic attachments"
 L["uc.noubs"] = "Disables Underbarrel attachments"
