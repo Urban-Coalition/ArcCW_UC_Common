@@ -426,6 +426,7 @@ if CLIENT then
                 local r = 255
                 local g = 255
                 local b = 255
+                
                 if swent:IsWeapon() and swent.ArcCW then
                     herg = swent:GetBuff_Override("Override_UC_ShellColor") or swent.UC_ShellColor or herg
                     r = herg.r or 255
@@ -451,6 +452,19 @@ if CLIENT then
             end
         end
     } )
+
+    matproxy.Add({
+        name = "UC_Weapon_Color", 
+        init = function(self, mat, values)
+            self.ResultTo = values.resultvar
+        end,
+        bind = function(self, mat, ent)
+            
+            if IsValid(ent) and ent.ArcCW and IsValid(ent:GetOwner()) then
+                mat:SetVector(self.ResultTo, (ent:GetOwner():GetPlayerColor()*.9))
+            end
+        end
+    })
 
     CreateClientConVar("arccw_uc_disttrace", 0, true, false, "Mode for traces", 0, 4)
     local function menu_uc(panel)
