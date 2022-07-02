@@ -1,7 +1,7 @@
 "VertexLitGeneric"
 {
-	"$basetexture"	"models\uc\attachments\holosun\optic_lense"
-	"$bumpmap"	"models\uc\attachments\holosun\optic_lense_nm"
+	"$basetexture"	"models\uc\attachments\ins2\optic_lense"
+	"$bumpmap"	"models\uc\attachments\ins2\optic_lense_nm"
 	"normalmapalphaenvmapmask"	"1"
 	"$model" 		"1"
 	"$translucent" 	"1"

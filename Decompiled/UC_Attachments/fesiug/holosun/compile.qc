@@ -16,7 +16,7 @@ $surfaceprop "weapon"
 $contents "solid"
 $illumposition 0 0 0
 
-$cdmaterials "models\uc\attachments\holosun\"
+$cdmaterials "models\uc\attachments\ins2\"
 
 $sequence "ref" {
 	"ref.smd"

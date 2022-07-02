@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-	"$basetexture" "models\uc\attachments\holosun\eft_larue_blank_c"
-	"$bumpmap" "models\uc\attachments\holosun\eft_larue_n"
-	"$masks" "models\uc\attachments\holosun\eft_larue_blank_s"
+	"$basetexture" "models\uc\attachments\ins2\eft_larue_blank_c"
+	"$bumpmap" "models\uc\attachments\ins2\eft_larue_n"
+	"$masks" "models\uc\attachments\ins2\eft_larue_blank_s"
 	
 	"$pbr" "1"
 	"$roughnessmultiplier" ".75"

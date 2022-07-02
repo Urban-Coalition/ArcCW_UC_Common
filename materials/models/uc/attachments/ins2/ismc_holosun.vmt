@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-	"$basetexture" "models\uc\attachments\holosun\Holosun_D"
-	"$bumpmap" "models\uc\attachments\holosun\Holosun_N"
-	"$phongexponenttexture" "models\uc\attachments\holosun\Holosun_M"
+	"$basetexture" "models\uc\attachments\ins2\Holosun_D"
+	"$bumpmap" "models\uc\attachments\ins2\Holosun_N"
+	"$phongexponenttexture" "models\uc\ins2\holosun\Holosun_M"
 	
 	"$metal" "1"
 	"$roughnessmultiplier" "1"
