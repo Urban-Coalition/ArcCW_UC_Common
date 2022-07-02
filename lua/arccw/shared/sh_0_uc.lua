@@ -618,4 +618,11 @@ hook.Add("ArcCW_InitBulletProfiles", "UrbanCoalition", function()
         size_min = 2,
         tail_length = 0.05,
     })
+
+    ArcCW:AddBulletProfile("uc_plinking", {
+        color = Color(255, 255, 255, 200),
+        size = 0.5,
+        size_min = 0.25,
+        tail_length = 0.03,
+    })
 end)
