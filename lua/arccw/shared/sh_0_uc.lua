@@ -426,7 +426,7 @@ if CLIENT then
                 local r = 255
                 local g = 255
                 local b = 255
-                
+
                 if swent:IsWeapon() and swent.ArcCW then
                     herg = swent:GetBuff_Override("Override_UC_ShellColor") or swent.UC_ShellColor or herg
                     r = herg.r or 255
@@ -452,21 +452,44 @@ if CLIENT then
             end
         end
     } )
-
-    matproxy.Add({
-        name = "UC_Weapon_Color", 
-        init = function(self, mat, values)
-            self.ResultTo = values.resultvar
-        end,
-        bind = function(self, mat, ent)
-            
-            if IsValid(ent) and ent.ArcCW and IsValid(ent:GetOwner()) then
-                mat:SetVector(self.ResultTo, (ent:GetOwner():GetPlayerColor()*.9))
+    
+    local function proxystuff(digit)
+        return {
+            name = "UC_Weapon_Color" .. digit, 
+            init = function(self, mat, values)
+                self.ResultTo = values.resultvar
+            end,
+            bind = function(self, mat, ent)
+                local owner = ent:GetOwner()
+    
+                if IsValid(ent) and ent.ArcCW and IsValid(owner) then
+                    if owner:GetInfo("arccw_uc_custcolor_enable") == "1" then 
+                        mat:SetVector(self.ResultTo, Vector(tonumber(owner:GetInfo("arccw_uc_custcolor_"..digit.."_r")), tonumber(owner:GetInfo("arccw_uc_custcolor_"..digit.."_g")), tonumber(owner:GetInfo("arccw_uc_custcolor_"..digit.."_b")))/230)
+                    else
+                        mat:SetVector(self.ResultTo, (owner:GetPlayerColor() * 0.9))
+                    end
+                -- else
+                    -- mat:SetVector(self.ResultTo, Vector(0.8, 0.8, 0.8))
+                end
             end
-        end
-    })
+        }
+    end
+
+    matproxy.Add(proxystuff(1))
+    matproxy.Add(proxystuff(2))
+
+
 
     CreateClientConVar("arccw_uc_disttrace", 0, true, false, "Mode for traces", 0, 4)
+
+    CreateClientConVar("arccw_uc_custcolor_enable", 255, true, true, "1 for custom colors, 0 for playermodel color", 0, 1)
+    CreateClientConVar("arccw_uc_custcolor_1_r", 255, true, true, "Main color R", 0, 255)
+    CreateClientConVar("arccw_uc_custcolor_1_g", 255, true, true, "Main color G", 0, 255)
+    CreateClientConVar("arccw_uc_custcolor_1_b", 255, true, true, "Main color B", 0, 255)
+    CreateClientConVar("arccw_uc_custcolor_2_r", 255, true, true, "Second color R", 0, 255)
+    CreateClientConVar("arccw_uc_custcolor_2_g", 255, true, true, "Second color G", 0, 255)
+    CreateClientConVar("arccw_uc_custcolor_2_b", 255, true, true, "Second color B", 0, 255)
+
     local function menu_uc(panel)
         panel:AddControl( "header", { description = "This menu contains options for configuring Urban Coalition weapons and items." } )
         local combobox = panel:ComboBox( "Trace count", "arccw_uc_disttrace" )--vgui.Create( "DComboBox", panel )
@@ -477,6 +500,14 @@ if CLIENT then
         combobox:AddChoice( "6-way (expensive)",    3 )
         combobox:AddChoice( "9-way (absurd)",       4 )
         panel:ControlHelp( "How accurate should the weapon tail calculation be for when used outdoors or indoors?" )
+
+
+        panel:AddControl( "header", { description = "________________" } )
+        panel:AddControl( "checkbox", { label = "Use defined colors for customisation", command = "arccw_uc_custcolor_enable" } ) -- idk write better   Write something about list of guns that supports it or something
+        panel:ControlHelp( "will use playermodel color if off" )
+        panel:AddControl( "color", { label = "Main color", red = "arccw_uc_custcolor_1_r", green = "arccw_uc_custcolor_1_g", blue = "arccw_uc_custcolor_1_b" } )
+        panel:AddControl( "color", { label = "Second color", red = "arccw_uc_custcolor_2_r", green = "arccw_uc_custcolor_2_g", blue = "arccw_uc_custcolor_2_b" } )
+
     end
 
     hook.Add("PopulateToolMenu", "ARCCW_UC_MenuOptions", function()
