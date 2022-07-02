@@ -1,8 +1,8 @@
-att.PrintName = "\"TR\" Near-empty tracers"
+att.PrintName = "\"TR\" Intermittent Tracers"
 
 att.SortOrder = 1
 att.Icon = Material("entities/att/arccw_uc_ammo_generic.png", "mips smooth")
-att.Description = "The last 5 rounds of the magazine are tracer rounds, providing a visual indication when the magazine is almost empty."
+att.Description = "Every 5 rounds as well as the last few rounds of the magazine are tracer rounds, providing a visual indication of rounds remaining and make hip firing somewhat easier."
 att.Desc_Pros = {
     "uc.lowind"
 }
@@ -16,7 +16,7 @@ att.Slot = "uc_ammo"
 att.InvAtt = "uc_ammo_tr"
 
 att.AutoStats = true
-att.Mult_HipDispersion = 0.95
+att.Mult_HipDispersion = 0.9
 
 att.Hook_AddShootSound = function(wep, data)
     local clip = wep:Clip1()
@@ -25,20 +25,24 @@ att.Hook_AddShootSound = function(wep, data)
     end
 end
 
-att.Override_TracerFinalMag = 6
-att.Override_TracerFinal = "arccw_uc_tracer"
+att.O_Hook_Override_TracerFinalMag = function(wep, data)
+    return {current = math.Clamp(math.ceil(wep:GetCapacity() * 0.2), 5, 20)}
+end
+att.Override_TracerNum = 5
+att.Override_Tracer = "arccw_uc_tracer"
+
 att.ToggleStats = {
     {
-        PrintName = "White",
-        Override_PhysTracerProfile = 8
-    },
-    {
         PrintName = "Green",
-        Override_PhysTracerProfile = 2
+        Override_PhysTracerProfile = "uc_tracer_g"
     },
     {
         PrintName = "Red",
-        Override_PhysTracerProfile = 1
+        Override_PhysTracerProfile = "uc_tracer_r"
+    },
+    {
+        PrintName = "White",
+        Override_PhysTracerProfile = "uc_tracer_w"
     },
 }
 

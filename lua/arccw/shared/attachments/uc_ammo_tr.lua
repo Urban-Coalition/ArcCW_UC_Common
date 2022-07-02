@@ -20,15 +20,15 @@ att.Mult_HipDispersion = 0.85
 att.ToggleStats = {
     {
         PrintName = "Green",
-        Override_PhysTracerProfile = 2
+        Override_PhysTracerProfile = "uc_tracer_g"
     },
     {
         PrintName = "Red",
-        Override_PhysTracerProfile = 1
+        Override_PhysTracerProfile = "uc_tracer_r"
     },
     {
         PrintName = "White",
-        Override_PhysTracerProfile = 8
+        Override_PhysTracerProfile = "uc_tracer_w"
     },
 }
 att.Override_Tracer = "arccw_uc_tracer"

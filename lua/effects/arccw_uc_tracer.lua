@@ -5,7 +5,7 @@ EFFECT.LifeTime = 0.2
 EFFECT.LifeTime2 = 0.15
 EFFECT.DieTime = 0
 EFFECT.Color = Color(255, 255, 255)
-EFFECT.Speed = 5000
+EFFECT.Speed = 6000
 
 local head = Material("effects/whiteflare")
 local tracer = Material("effects/smoke_trail")
@@ -41,6 +41,7 @@ function EFFECT:Init(data)
     local profile = 0
     if wep.GetBuff_Override then
         profile = wep:GetBuff_Override("Override_PhysTracerProfile", wep.PhysTracerProfile) or 0
+        if isnumber(profile) then profile = ArcCW.BulletProfileDict[ArcCW.BulletProfiles[profile]] end
     end
 
     self.LifeTime = (hit - start):Length() / self.Speed
@@ -50,7 +51,7 @@ function EFFECT:Init(data)
 
     self.StartPos = start
     self.EndPos = hit
-    self.Color = (ArcCW.BulletProfileDict[ArcCW.BulletProfiles[profile]] or ArcCW.BulletProfileDict["default0"]).color
+    self.Color = (ArcCW.BulletProfileDict[profile] or ArcCW.BulletProfileDict["default0"]).color
 
     -- print(profile)
 end
@@ -78,7 +79,7 @@ function EFFECT:Render()
     local col2 = LerpColor(d2, Color(255, 255, 255, 127), Color(0, 0, 0, 0))
 
     render.SetMaterial(head)
-    render.DrawSprite(endpos, size * 6, size * 6, col)
+    render.DrawSprite(endpos, size * 3, size * 3, col)
 
     render.SetMaterial(tracer)
     render.DrawBeam(endpos, startpos, size * 2, 0, 1, col)

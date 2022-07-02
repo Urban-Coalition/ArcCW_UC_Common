@@ -469,3 +469,26 @@ if CLIENT then
         spawnmenu.AddToolMenuOption("Options", "ArcCW", "ArcCW_UC", "Urban Coalition", "", "", menu_uc)
     end)
 end
+
+hook.Add("ArcCW_InitBulletProfiles", "UrbanCoalition", function()
+    ArcCW:AddBulletProfile("uc_tracer_g", {
+        color = Color(100, 255, 100),
+        size = 1.5,
+        size_min = 2,
+        tail_length = 0.05,
+    })
+
+    ArcCW:AddBulletProfile("uc_tracer_r", {
+        color = Color(255, 100, 100),
+        size = 1.5,
+        size_min = 2,
+        tail_length = 0.05,
+    })
+
+    ArcCW:AddBulletProfile("uc_tracer_w", {
+        color = Color(255, 255, 255),
+        size = 1.5,
+        size_min = 2,
+        tail_length = 0.05,
+    })
+end)
