@@ -1,7 +1,7 @@
-att.PrintName = "Holosun (RDS)"
+att.PrintName = "Holosun HS510C (RDS)"
 att.AbbrevName = "Holosun (RDS)"
 att.Icon = Material("entities/att/t1.png", "mips smooth")
-att.Description = "Improves sighted visibility with a red-dot targeting reticle, while adding minimal extra weight."
+att.Description = "Improves sighted visibility with a red-dot targeting reticle, while adding minimal extra weight. Includes a riser."
 
 att.SortOrder = 1
 
@@ -11,7 +11,7 @@ att.Desc_Pros = {
 att.Desc_Cons = {
 }
 att.AutoStats = true
-att.Slot = {"optic"}
+att.Slot = {"optic","optic_lp"}
 
 att.Model = "models/weapons/arccw/atts/uc_holosun2.mdl"
 att.ModelScale = Vector( 1.5, 1.5, 1.5 )
