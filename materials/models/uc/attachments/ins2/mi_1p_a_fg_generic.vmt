@@ -1,0 +1,9 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\uc\attachments\ins2\T_1P_A_FG_Generic_D"
+	"$bumpmap" "models\uc\attachments\ins2\T_1P_A_FG_Generic_N"
+	"$phongexponenttexture" "models\uc\attachments\ins2\T_1P_A_FG_Generic_M"
+	
+	"$envmap" "env_cubemap"
+	$envmaptint "[ 0.05 0.05 0.05 ]"
+}

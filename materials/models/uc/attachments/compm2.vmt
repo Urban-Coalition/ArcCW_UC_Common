@@ -12,20 +12,11 @@
 	
 	"$envmap" 					 "env_cubemap"
 	"$normalmapalphaenvmapmask" "1"
-	"$envmaptint" "[0.009 0.009 0.009]"
+	"$envmaptint" "[0.003 0.003 0.003]"
 	"$phongtint" 			"[0.5 0.5 0.5]"
 	"$PhongAlbedoTint" "1"
+
+	$color2 "[0.9 0.9 0.9]"
 	
 	"$surfaceprop" "metal"
-
-	"$metal" "1"
-	"$roughnessmultiplier" ".85"
-	
-	"$fuzz" "1"
-	"$fuzzmultiplier" ".2"
-
-	"$envmap" "models\weapons\ins2_sandstorm\envmap_unfuck"
-	"$srgbtint" "[.9 .9 .9]"
-
-	// "$nocull" "1"
 }
