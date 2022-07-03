@@ -2,6 +2,7 @@ att.PrintName = "ATA Giraffe-556 Suppressor" -- fictional
 att.AbbrevName = "Giraffe Suppressor"
 att.Icon = Material("entities/att/longass.png", "mips smooth")
 att.Description = "Traps propellant gas from the muzzle, reducing visual and audible report.\nExtremely long suppressor tube provides excellent noise reduction, but is also very unwieldy."
+att.Desc_Neutrals = {"uc.supptail"}
 
 att.AutoStats = true
 att.Slot = {"muzzle"}
@@ -27,3 +28,9 @@ att.Mult_SightedSpeedMult = 0.85
 att.Mult_Sway = 1.5
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
+
+att.Hook_GetDistantShootSound = function(wep, distancesound)
+    if distancesound == wep.DistantShootSoundSilenced and wep:GetBuff("PhysBulletMuzzleVelocity") < ArcCW.UC.SubsonicThreshold then
+        return false
+    end
+end

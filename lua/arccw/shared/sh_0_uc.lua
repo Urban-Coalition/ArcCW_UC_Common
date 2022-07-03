@@ -57,6 +57,9 @@ ArcCW.UC.PistolAmmoTypes = {
     ["plinking"] = true
 }
 
+ArcCW.UC.SubsonicThreshold = 340
+
+-- Refer to http://www.ballisticsbytheinch.com/ for muzzle velocity per barrel length if possible
 ArcCW.UC.StdDmg = {
     -- Pistol/plinking calibers
     ["22lr"] = {

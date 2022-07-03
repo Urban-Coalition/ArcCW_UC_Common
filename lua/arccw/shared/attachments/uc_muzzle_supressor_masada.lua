@@ -2,6 +2,7 @@ att.PrintName = "Magpul PTS AAC Masada Suppressor"
 att.AbbrevName = "Masada Suppressor"
 att.Icon = Material("entities/att/masada.png", "mips smooth")
 att.Description = "Traps propellant gas from the muzzle, reducing visual and audible report.\nReduces recoil by providing extra room for gas expansion."
+att.Desc_Neutrals = {"uc.supptail"}
 
 att.AutoStats = true
 att.Slot = {"muzzle"}
@@ -26,3 +27,9 @@ att.Mult_SightTime = 1.15
 att.Mult_Sway = 1.25
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
+
+att.Hook_GetDistantShootSound = function(wep, distancesound)
+    if distancesound == wep.DistantShootSoundSilenced and wep:GetBuff("PhysBulletMuzzleVelocity") < ArcCW.UC.SubsonicThreshold then
+        return false
+    end
+end

@@ -2,7 +2,7 @@ att.PrintName = "GA9 Revolution 9 Suppressor"
 att.AbbrevName = "GA9 Suppressor"
 att.Icon = Material("entities/att/ga9rev.png", "mips smooth")
 att.Description = "Traps propellant gas from the muzzle, reducing visual and audible report.\nCompact and lightweight, with little impact on handling, but still lengthens profile more than other muzzle attachments."
-att.Desc_Neutrals = {"uc.exclusive.pistol"}
+att.Desc_Neutrals = {"uc.exclusive.pistol", "uc.supptail"}
 
 att.AutoStats = true
 att.Slot = {"muzzle"}
@@ -30,6 +30,12 @@ att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
 
 att.Hook_Compatible = function(wep,data)
     if !ArcCW.UC.PistolAmmoTypes[wep:GetBuff_Override("Override_Ammo", wep.Primary.Ammo)] then
+        return false
+    end
+end
+
+att.Hook_GetDistantShootSound = function(wep, distancesound)
+    if distancesound == wep.DistantShootSoundSilenced and wep:GetBuff("PhysBulletMuzzleVelocity") < ArcCW.UC.SubsonicThreshold then
         return false
     end
 end

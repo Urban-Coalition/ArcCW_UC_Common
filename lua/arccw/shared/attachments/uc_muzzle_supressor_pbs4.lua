@@ -2,7 +2,7 @@ att.PrintName = "PBS-4 Suppressor"
 
 att.Icon = Material("entities/att/pbs4.png", "mips smooth")
 att.Description = "Traps propellant gas from the muzzle, reducing visual and audible report.\nOriginally designed for carbine barrels, this suppressor compensates for inaccuracy, and can be mounted to other barrels with some gunsmithing work."
-att.Desc_Neutrals = {"uc.exclusive.545"}
+att.Desc_Neutrals = {"uc.exclusive.545", "uc.supptail"}
 
 att.AutoStats = true
 att.AutoStats = true
@@ -31,6 +31,12 @@ att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
 
 att.Hook_Compatible = function(wep)
     if wep:GetBuff_Override("Override_Ammo", wep.Primary.Ammo) != "smg1" then
+        return false
+    end
+end
+
+att.Hook_GetDistantShootSound = function(wep, distancesound)
+    if distancesound == wep.DistantShootSoundSilenced and wep:GetBuff("PhysBulletMuzzleVelocity") < ArcCW.UC.SubsonicThreshold then
         return false
     end
 end
