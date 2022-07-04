@@ -328,6 +328,9 @@ elseif game.SinglePlayer() and CLIENT then
 end
 
 ArcCW.UC.InnyOuty = function(wep)
+    local dist = wep:GetBuff_Hook("Hook_GetDistantShootSound")
+    if dist == false then return end
+
     if game.SinglePlayer() and SERVER then
         net.Start("ArcCW_UC_InnyOuty")
         net.WriteEntity(wep)
