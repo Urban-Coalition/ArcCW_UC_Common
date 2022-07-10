@@ -3,6 +3,8 @@ att.AbbrevName = "Vertical Foregrip"
 att.Icon = Material("entities/att/longtroy.png", "mips smooth")
 att.Description = "Medium-length vertical foregrip for better control of the weapon."
 
+att.SortOrder = 9999
+
 att.AutoStats = true
 att.Slot = "foregrip"
 

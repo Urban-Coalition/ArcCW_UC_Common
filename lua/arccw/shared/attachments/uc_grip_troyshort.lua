@@ -3,9 +3,10 @@ att.AbbrevName = "Stubby Foregrip"
 att.Icon = Material("entities/att/shorttroy.png", "mips smooth")
 att.Description = "Decreases recoil marginally by providing a more natural forearm position."
 
+att.SortOrder = 9998
+
 att.AutoStats = true
 att.Slot = "foregrip"
-att.SortOrder = 1
 
 att.LHIK = true
 

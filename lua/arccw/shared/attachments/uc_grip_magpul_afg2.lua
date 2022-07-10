@@ -3,6 +3,8 @@ att.AbbrevName = "Angled Foregrip"
 att.Icon = Material("entities/att/afg2.png", "mips smooth")
 att.Description = "An ergonomically angled grip surface reduces wrist strain, increasing maneuverability."
 
+att.SortOrder = 9997
+
 att.AutoStats = true
 att.Slot = "foregrip"
 

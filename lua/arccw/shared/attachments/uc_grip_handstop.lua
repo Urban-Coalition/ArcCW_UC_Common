@@ -3,6 +3,8 @@ att.AbbrevName = "Handstop"
 att.Icon = Material("entities/att/hs.png", "mips smooth")
 att.Description = "Prevents the hand from sliding down the barrel, allowing improved point shooting precision."
 
+att.SortOrder = 9995
+
 att.AutoStats = true
 att.Slot = "foregrip"
 
