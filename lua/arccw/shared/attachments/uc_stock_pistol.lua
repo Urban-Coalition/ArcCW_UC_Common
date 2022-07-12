@@ -7,7 +7,7 @@ att.AutoStats = true
 
 att.Model = "models/weapons/arccw/atts/stock_fab.mdl"
 
-att.Mult_Recoil = .75
+att.Mult_Recoil = .70
 att.Mult_RecoilSide = .5
 att.Mult_Sway = .5
 att.Mult_SightTime = 1.3
