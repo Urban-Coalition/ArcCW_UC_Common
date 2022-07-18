@@ -1,4 +1,4 @@
-$modelname "weapons\arccw\atts\uc_ubgl_m203_v1.mdl"
+$modelname "weapons\arccw\atts\uc_ubgl_m203_v2.mdl"
  
 $bodygroup "studio" {
 	studio "hand_m203.smd"
@@ -13,13 +13,30 @@ $attachment "2" "camera" 0 0 0 rotate 0 0 0     // Camera rotation (only rotatio
 
 $collisionmodel "hand_m203.smd"
 
-$sequence "ref" {
-	"hand_m203.smd"
-	loop
-}
 $sequence "idle" {
 	"anims/idle.smd"
-	fps 60
+	fps 30
+}
+$sequence "idle_armed" {
+	"anims/idle_armed.smd"
+	fps 30
+}
+$sequence "reload" {
+	"anims/reload.smd"
+	fadein 0.1
+	fadeout 0.1
+	fps 30
+}
+$sequence "fire" {
+	"anims/fire.smd"
+	fadein 0.03
+	fadeout 0.2
+	fps 30
+}
+$sequence "test" {
+	"anims/test.smd"
+	fps 30
+	snap
 }
 
 $bonemerge "ValveBiped.Bip01_Spine4"
