@@ -11,7 +11,7 @@ att.Slot = "ubgl"
 att.LHIK = true
 
 att.ModelOffset = Vector(0, 0, 0)
-att.Model = "models/weapons/arccw/atts/uc_ubgl_m203_v3.mdl"
+att.Model = "models/weapons/arccw/atts/uc_ubgl_m203_v5.mdl"
 
 
 att.LHIK_Animation = true
@@ -36,19 +36,19 @@ local function Ammo(wep)
 end
 
 att.Hook_LHIK_TranslateAnimation = function(wep, key)
-    if key == "idle" then
-        if wep:GetInUBGL() then
-            return "idle_armed"
-        else
-            return "idle"
-        end
-    end
+    --if key == "idle" then
+    --    if wep:GetInUBGL() then
+    --        return "idle_armed"
+    --    else
+    --        return "idle"
+    --    end
+    --end
 end
 
 att.UBGL_Fire = function(wep, ubgl)
 --    if wep:Clip2() <= 0 then return end
 
-    wep:DoLHIKAnimation("fire", 0.5)
+    wep:DoLHIKAnimation("fire", 1)
 
 --    wep:FireRocket("arccw_gl_he", 30000)
 --    wep:EmitSound("weapons/grenade_launcher1.wav", 100)
@@ -63,7 +63,7 @@ att.UBGL_Reload = function(wep, ubgl)
 
 --    wep:SetNextSecondaryFire(CurTime() + 2.5)
 
-    wep:DoLHIKAnimation("test", 5)
+    wep:DoLHIKAnimation("admire", 4)
 --    wep:PlaySoundTable({
 --        {s = "weapons/arccw/m203/m203_dooropen.wav", t = 0.25},
 --        {s = "weapons/arccw/m203/m203_shellin.wav", t = 1.25},

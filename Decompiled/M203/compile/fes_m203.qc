@@ -1,4 +1,4 @@
-$modelname "weapons\arccw\atts\uc_ubgl_m203_v3.mdl"
+$modelname "weapons\arccw\atts\uc_ubgl_m203_v5.mdl"
  
 $bodygroup "studio" {
 	studio "hand_m203.smd"
@@ -35,6 +35,11 @@ $sequence "fire" {
 }
 $sequence "test" {
 	"anims/test.smd"
+	fps 30
+	snap
+}
+$sequence "admire" {
+	"anims/admire.smd"
 	fps 30
 	snap
 }
