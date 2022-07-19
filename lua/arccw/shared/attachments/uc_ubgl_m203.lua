@@ -1,5 +1,5 @@
-att.PrintName = "M203 Underbarrel Greande Launcher"
-att.AbbrevName = "M203 UBGL"
+att.PrintName = "M203 Underbarrel Greande Launcher (uni. test)"
+att.AbbrevName = "M203 UBGL (uni. test)"
 att.Icon = Material("entities/att/shorttroy.png", "mips smooth")
 att.Description = "AAAAAAAAAAAAAAA GANGS SHIT STRIAGHT KILLA.>!~!!!!~!~!~ PRA PRA PRA PRA"
 
