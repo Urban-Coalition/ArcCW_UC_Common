@@ -11,7 +11,7 @@ att.Slot = "ubgl"
 att.LHIK = true
 
 att.ModelOffset = Vector(0, 0, 0)
-att.Model = "models/weapons/arccw/atts/uc_ubgl_m203_v2.mdl"
+att.Model = "models/weapons/arccw/atts/uc_ubgl_m203_v3.mdl"
 
 
 att.LHIK_Animation = true

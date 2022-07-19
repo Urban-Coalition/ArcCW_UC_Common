@@ -1,4 +1,4 @@
-$modelname "weapons\arccw\atts\uc_ubgl_m203_v2.mdl"
+$modelname "weapons\arccw\atts\uc_ubgl_m203_v3.mdl"
  
 $bodygroup "studio" {
 	studio "hand_m203.smd"
