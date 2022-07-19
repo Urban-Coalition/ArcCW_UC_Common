@@ -1,7 +1,7 @@
 att.PrintName = "M203 Underbarrel Grenade Launcher (usable)"
 att.AbbrevName = "M203 UBGL (usable)"
 att.Icon = Material("entities/att/shorttroy.png", "mips smooth")
-att.Description = "Single-shot underbarrel grenade launcher. Designed to replace the Colt XM148. Versatile and effective. Fires high explosive."
+att.Description = "Single-shot underbarrel grenade launcher designed to replace the Colt XM148. Able to fire several basic 40x46mm grenade types."
 
 att.SortOrder = -100000
 
@@ -61,9 +61,67 @@ end
 att.UBGL_Fire = function(wep, ubgl)
     if wep:Clip2() <= 0 then return end
 
-    local proj = wep:FireRocket("arccw_uc_40mm_he", 10000)
-	proj.Damage = 100
-    wep:EmitSound("weapons/grenade_launcher1.wav", 100)
+    local owner = wep:GetOwner()
+    local class = wep:GetBuff_Override("UBGL_Entity")
+
+    if class == "BUCKSHOT" then
+        local dir = (owner:EyeAngles() + wep:GetFreeAimOffset()):Forward()
+
+        local bullet = {
+            DamageMax = 18,
+            DamageMin = 6,
+            Range = 50,
+            RangeMin = 5,
+            DamageType = DMG_BUCKSHOT + DMG_BULLET,
+            Penleft = 0,
+            Penetration = 0,
+            Num = 1,
+            Damaged = {},
+            Weapon = wep,
+        }
+
+        local data = {
+            Attacker = owner,
+            Dir        = dir,
+            Src        = wep:GetShootSrc(),
+            Spread     = Vector(0, 0, 0),
+            Damage     = 0,
+            Num        = 20,
+            Force      = 120,
+            HullSize   = 4,
+            Weapon     = wep,
+            Callback = function(attacker, tr, dmg)
+                -- HACK: Pass a fake bullet table instead of ourselves so we don't use the weapon's attributes unintentionally
+                bullet.Travelled = (tr.HitPos - tr.StartPos):Length()
+                ArcCW:BulletCallback(att, tr, dmg, bullet)
+            end
+        }
+
+        if wep:GetOwner():IsPlayer() then
+            for n = 1, 20 do
+                local dirry = Vector(dir.x, dir.y, dir.z)
+                math.randomseed(math.Round(util.SharedRandom(n, -1337, 1337, !game.SinglePlayer() and wep:GetOwner():GetCurrentCommand():CommandNumber() or CurTime()) * (wep:EntIndex() % 30241)))
+                wep:ApplyRandomSpread(dirry, ArcCW.MOAToAcc * 50)
+                data.Dir = dirry
+                if GetConVar("arccw_bullet_enable"):GetBool() then
+                    ArcCW:ShootPhysBullet(wep, data.Src, (250 / ArcCW.HUToM) * data.Dir:GetNormalized(), 0, bullet)
+                else
+                    owner:FireBullets(data, true)
+                end
+            end
+        else
+            data.Spread = Vector(ArcCW.MOAToAcc * 50, ArcCW.MOAToAcc * 50, 0)
+            owner:FireBullets(data, true)
+        end
+        wep:MyEmitSound(")^/arccw_uc/common/gl_fire_buck.ogg", 100, 100, 1, CHAN_WEAPON )
+        wep:MyEmitSound(")^/arccw_uc/common/gl_fire_buck_dist.ogg", 149, 100, 0.5, CHAN_WEAPON + 1)
+    else
+        local proj = wep:FireRocket(class, 5000 * ArcCW.HUToM)
+        proj.Damage = 100
+        wep:MyEmitSound(")^/arccw_uc/common/gl_fire_buck.ogg", 100, 100, 1, CHAN_WEAPON)
+        wep:MyEmitSound(")^/arccw_uc/common/gl_fire_buck_dist.ogg", 149, 100, 0.5, CHAN_WEAPON + 1)
+    end
+
     wep:SetClip2(wep:Clip2() - 1)
     wep:DoEffects()
 end
@@ -95,3 +153,18 @@ end
 att.Mult_SightTime = 1.2
 att.Mult_SpeedMult = 0.9
 att.Mult_SightedSpeedMult = 0.85
+
+att.ToggleStats = {
+    {
+        PrintName = "High Explosive",
+        UBGL_Entity = "arccw_uc_40mm_he"
+    },
+    {
+        PrintName = "Smoke",
+        UBGL_Entity = "arccw_uc_40mm_smoke"
+    },
+    {
+        PrintName = "Buckshot",
+        UBGL_Entity = "BUCKSHOT"
+    }
+}
