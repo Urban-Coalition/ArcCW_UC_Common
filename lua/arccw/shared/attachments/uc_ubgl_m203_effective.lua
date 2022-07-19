@@ -1,7 +1,7 @@
 att.PrintName = "M203 Underbarrel Grenade Launcher (usable)"
 att.AbbrevName = "M203 UBGL (usable)"
 att.Icon = Material("entities/att/shorttroy.png", "mips smooth")
-att.Description = "Single-shot underbarrel grenade launcher. Designed to replace the Colt XM148. Versatile and effective."
+att.Description = "Single-shot underbarrel grenade launcher. Designed to replace the Colt XM148. Versatile and effective. Fires high explosive."
 
 att.SortOrder = -100000
 
@@ -42,6 +42,22 @@ att.Hook_LHIK_TranslateAnimation = function(wep, key)
     --end
 end
 
+att.Hook_OnSelectUBGL = function(wep)
+    --wep:DoLHIKAnimation("in", 0.5)
+    wep:PlaySoundTable({
+        {s = "arccw_uc/common/raise.ogg", t = 0},
+        {s = "arccw_uc/common/grab.ogg", t = 0.4},
+    })
+end
+
+att.Hook_OnDeselectUBGL = function(wep)
+    --wep:DoLHIKAnimation("out", 0.5)
+    wep:PlaySoundTable({
+        {s = "arccw_uc/common/rattle_b2i_rifle.ogg", t = 0},
+        {s = "arccw_uc/common/shoulder.ogg", t = 0.4},
+    })
+end
+
 att.UBGL_Fire = function(wep, ubgl)
     if wep:Clip2() <= 0 then return end
 
@@ -60,9 +76,12 @@ att.UBGL_Reload = function(wep, ubgl)
 
     wep:DoLHIKAnimation("idle", 2)
     wep:PlaySoundTable({
-        {s = "arccw_uc/common/40mm/203open.ogg", t = 0.25},
-        {s = "arccw_uc/common/40mm/203insert.ogg", t = 1.25},
-        {s = "arccw_uc/common/40mm/203close.ogg", t = 1.75},
+        {s = { "arccw_uc/common/rattle1.ogg", "arccw_uc/common/rattle2.ogg", "arccw_uc/common/rattle3.ogg" }, t = 0},
+        {s = "arccw_uc/common/40mm/203open.ogg", t = 0.15},
+        {s = "arccw_uc/common/magpouch_replace_small.ogg", t = 0.5},
+        {s = "arccw_uc/common/40mm/203insert.ogg", t = 1.15},
+        {s = "arccw_uc/common/40mm/203close.ogg", t = 1.65},
+        {s = "arccw_uc/common/shoulder.ogg", t = 1.9},
     })
 
     local reserve = Ammo(wep)
