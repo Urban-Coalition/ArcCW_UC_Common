@@ -1,7 +1,11 @@
-$modelname "weapons\arccw\atts\uc_ubgl_m203_v6.mdl"
- 
+$modelname "weapons\arccw\atts\uc_ubgl_m203_v7.mdl"
+
 $bodygroup "studio" {
-	studio "hand_m203.smd"
+	studio "m203.smd"
+}
+$bodygroup "mode" {
+	studio "m203_ris.smd"
+	studio "m203_grenadier.smd"
 }
 $origin -2.80527 -18.6363 -3.80638
 $cdmaterials "models\weapons\arccw\ud_m16"
@@ -12,7 +16,7 @@ $attachment "1" "m203_main" 0 14 0.5 rotate 0 90 -180 // Muzzle
 $attachment "2" "root"   0 0 0 rotate 0 0 0     // VM movement (Hope this doesn't move the UBGL as well, otherwise I'll work something out for you)
 $attachment "3" "camera" 0 0 0 rotate 0 0 0     // Camera rotation (only rotation!)
 
-$collisionmodel "hand_m203.smd"
+$collisionmodel "m203.smd"
 
 $sequence "idle" {
 	"anims/idle.smd"

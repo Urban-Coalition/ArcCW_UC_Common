@@ -1,0 +1,17 @@
+VertexlitGeneric
+{
+	$basetexture 						"models\ma85_mwr\weapons\m203\wpn_h1_launch_m203_sight_col"
+	$bumpmap 							"models\ma85_mwr\weapons\m203\wpn_h1_launch_m203_sight_nml"
+
+	$phong                      		1
+	$phongexponent                      "10"
+	$phongboost                         "1"
+	$phongfresnelranges         "[.5 2.5 2.5]"
+	$phongalbedotint             "1"
+	$normalmapalphaphongmask    	1
+
+	$envmap                    		 env_cubemap
+	$envmaptint                 		"[.01 .01 .01]"
+	$normalmapalphaenvmapmask   	1
+
+}
