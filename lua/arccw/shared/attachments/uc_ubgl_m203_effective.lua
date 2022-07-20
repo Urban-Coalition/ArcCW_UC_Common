@@ -118,8 +118,8 @@ att.UBGL_Fire = function(wep, ubgl)
     else
         local proj = wep:FireRocket(class, 5000 * ArcCW.HUToM)
         proj.Damage = 100
-        wep:MyEmitSound(")^/arccw_uc/common/gl_fire_buck.ogg", 100, 100, 1, CHAN_WEAPON)
-        wep:MyEmitSound(")^/arccw_uc/common/gl_fire_buck_dist.ogg", 149, 100, 0.5, CHAN_WEAPON + 1)
+        wep:MyEmitSound(")^/arccw_uc/common/40mm/fire-0" .. math.random(1, 6) .. ".ogg", 100, 100, 1, CHAN_WEAPON)
+        wep:MyEmitSound(")^/arccw_uc/common/fire-dist-0" .. math.random(1, 6) .. ".ogg", 149, 100, 0.5, CHAN_WEAPON + 1)
     end
 
     wep:SetClip2(wep:Clip2() - 1)

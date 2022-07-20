@@ -27,13 +27,14 @@ att.UBGL_RPM = 300
 att.UBGL_Recoil = 0
 att.UBGL_Capacity = 1
 
-att.LHIK_GunDriver = 1
-att.LHIK_CamDriver = 2
+att.LHIK_GunDriver = 2
+att.LHIK_CamDriver = 3
 
 local function Ammo(wep)
     return wep:GetOwner():GetAmmoCount("smg1_grenade")
 end
 
+--[[]
 att.Hook_LHIK_TranslateAnimation = function(wep, key)
     if key == "idle" then
         if wep:GetInUBGL() then
@@ -43,6 +44,7 @@ att.Hook_LHIK_TranslateAnimation = function(wep, key)
         end
     end
 end
+]]
 
 att.UBGL_Fire = function(wep, ubgl)
     wep:DoLHIKAnimation("fire", 1)
