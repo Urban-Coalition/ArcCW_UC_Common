@@ -11,7 +11,7 @@ att.Slot = "ubgl"
 att.LHIK = true
 
 att.ModelOffset = Vector(0, 0, 0)
-att.Model = "models/weapons/arccw/atts/uc_ubgl_m203_v6.mdl"
+att.Model = "models/weapons/arccw/atts/uc_ubgl_m203_v7.mdl"
 
 
 att.LHIK_Animation = true
@@ -47,7 +47,7 @@ end
 ]]
 
 att.UBGL_Fire = function(wep, ubgl)
-    wep:DoLHIKAnimation("fire", 1)
+    wep:DoLHIKAnimation("test", 2)
 end
 
 att.UBGL_Reload = function(wep, ubgl)

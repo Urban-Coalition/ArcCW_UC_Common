@@ -117,9 +117,12 @@ att.UBGL_Fire = function(wep, ubgl)
         wep:MyEmitSound(")^/arccw_uc/common/gl_fire_buck_dist.ogg", 149, 100, 0.5, CHAN_WEAPON + 1)
     else
         local proj = wep:FireRocket(class, 5000 * ArcCW.HUToM)
-        proj.Damage = 100
+		if SERVER then
+        	proj.Damage = 100
+		end
         wep:MyEmitSound(")^/arccw_uc/common/40mm/fire-0" .. math.random(1, 6) .. ".ogg", 100, 100, 1, CHAN_WEAPON)
-        wep:MyEmitSound(")^/arccw_uc/common/fire-dist-0" .. math.random(1, 6) .. ".ogg", 149, 100, 0.5, CHAN_WEAPON + 1)
+        wep:MyEmitSound(")^/arccw_uc/common/40mm/fire-dist-0" .. math.random(1, 6) .. ".ogg", 149, 100, 0.5, CHAN_BODY)
+        wep:MyEmitSound(")^/arccw_uc/common/40mm/mech-0" .. math.random(1, 6) .. ".ogg", 149, 100, 0.5, CHAN_AUTO)
     end
 
     wep:SetClip2(wep:Clip2() - 1)
@@ -154,6 +157,7 @@ att.Mult_SightTime = 1.2
 att.Mult_SpeedMult = 0.9
 att.Mult_SightedSpeedMult = 0.85
 
+att.ToggleLockDefault = true
 att.ToggleStats = {
     {
         PrintName = "High Explosive",
