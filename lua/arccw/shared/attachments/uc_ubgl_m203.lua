@@ -1,11 +1,14 @@
-att.PrintName = "M203 Underbarrel Greande Launcher (experiment)"
-att.AbbrevName = "M203 UBGL (experiment)"
+att.PrintName = "M203 Greande Launcher (experiment)"
+att.AbbrevName = "Grenade Launcher (experiment)"
 att.Icon = Material("entities/att/shorttroy.png", "mips smooth")
 att.Description = "AAAAAAAAAAAAAAA GANGS SHIT STRIAGHT KILLA.>!~!!!!~!~!~ PRA PRA PRA PRA"
 
 att.SortOrder = -100000
 
 att.AutoStats = true
+att.Desc_Pros = {
+    "uc.ubgl"
+}
 att.Slot = "ubgl"
 
 att.LHIK = true

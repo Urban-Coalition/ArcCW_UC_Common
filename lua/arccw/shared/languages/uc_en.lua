@@ -48,6 +48,7 @@ L["uc.baton"] = "Target may drop their weapon"
 L["uc.ignite"] = "Ignites targets"
 L["uc.custcolor"] = "Use the menu in \"Utilities -> ArcCW -> Urban Coalition\" to modify color."
 L["uc.supptail"] = "No distant tail if muzzle velocity < 340m/s"
+L["uc.ubgl"] = "Underbarrel grenade launcher"
 
 L["uc.nooptics"] = "Disables Optic attachments"
 L["uc.noubs"] = "Disables Underbarrel attachments"
