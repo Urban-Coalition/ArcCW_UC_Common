@@ -42,9 +42,7 @@ att.Hook_Compatible = function(wep,data)
 end
 
 att.Hook_GetDistantShootSound = function(wep, distancesound)
-    if distancesound == wep.DistantShootSoundSilenced then
-        return false
-    end
+    return false
 end
 
 att.HideIfBlocked = true

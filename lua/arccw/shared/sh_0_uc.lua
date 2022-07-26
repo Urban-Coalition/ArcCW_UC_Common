@@ -343,7 +343,7 @@ ArcCW.UC.InnyOuty = function(wep)
             local dsiv = wep.DistantShootSoundIndoorsVolume
 
             if wep:GetBuff_Override("Silencer") then
-                if wep:CheckFlags(nil, {"powder_subsonic"}) or wep:CheckFlags(nil, {"cal_subsonic"}) then
+                if wep:GetBuff("PhysBulletMuzzleVelocity") < ArcCW.UC.SubsonicThreshold then--if wep:CheckFlags(nil, {"powder_subsonic"}) or wep:CheckFlags(nil, {"cal_subsonic"}) then
                     return -- no tail
                 else
                     dso = wep.DistantShootSoundOutdoorsSilenced
