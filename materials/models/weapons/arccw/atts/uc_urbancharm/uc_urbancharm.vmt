@@ -1,4 +1,4 @@
-UnlitGeneric
+VertexLitGeneric 
 {
-	$basetexture "../addons/ArcCW_UC_Common/materials/models/weapons/arccw/atts/uc_urbancharm/uc_urbancharm"
+	$basetexture "models/weapons/arccw/atts/uc_urbancharm/uc_urbancharm"
 }
