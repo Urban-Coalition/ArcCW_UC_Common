@@ -15,10 +15,6 @@ att.Model = "models/weapons/arccw/atts/charmbase.mdl"
 
 att.DroppedModel = "models/Items/BoxSRounds.mdl"
 
-att.Ignore = true
-
-att.SortOrder = -100
-
 att.Charm = true
 att.CharmModel = "models/weapons/arccw/atts/uc_urbancharm.mdl"
 att.CharmAtt = "Charm"
