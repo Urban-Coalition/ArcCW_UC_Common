@@ -1,5 +1,5 @@
-att.PrintName = "M203 Underbarrel Grenade Launcher (usable)"
-att.AbbrevName = "M203 Grenade Launcher (usable)"
+att.PrintName = "M203 Underbarrel Grenade Launcher"
+att.AbbrevName = "M203 Grenade Launcher"
 att.Icon = Material("entities/att/acwatt_uc_ubgl_m203.png", "mips smooth")
 att.Description = "Single-shot underbarrel grenade launcher designed to replace the Colt XM148. Able to fire several basic 40x46mm grenade types."
 
