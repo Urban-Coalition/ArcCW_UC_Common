@@ -49,6 +49,12 @@ att.Hook_LHIK_TranslateAnimation = function(wep, key)
     end
 end
 
+att.Hook_ShouldNotSight = function(wep)
+    if wep:GetInUBGL() then
+        return true
+    end
+end
+
 att.Hook_OnSelectUBGL = function(wep)
     wep:SetNextSecondaryFire(CurTime() + 0.6)
     wep:DoLHIKAnimation("to_armed", 0.6)
