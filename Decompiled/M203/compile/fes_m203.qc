@@ -1,4 +1,4 @@
-$modelname "weapons\arccw\atts\uc_ubgl_m203_v7.mdl"
+$modelname "weapons\arccw\atts\uc_ubgl_m203.mdl"
 
 $bodygroup "studio" {
 	studio "m203.smd"
@@ -13,7 +13,7 @@ $surfaceprop "weapon"
 $contents "solid"
 
 $attachment "1" "m203_main" 0 14 0.5 rotate 0 90 -180 // Muzzle
-$attachment "2" "root"   0 0 0 rotate 0 0 0     // VM movement (Hope this doesn't move the UBGL as well, otherwise I'll work something out for you)
+$attachment "2" "root"   0 0 0 rotate 0 0 0     // VM movement
 $attachment "3" "camera" 0 0 0 rotate 0 0 0     // Camera rotation (only rotation!)
 
 $collisionmodel "m203.smd"
@@ -38,15 +38,17 @@ $sequence "fire" {
 	fadeout 0.2
 	fps 30
 }
-$sequence "test" {
-	"anims/test.smd"
+$sequence "to_armed" {
+	"anims/to_armed.smd"
+	fadein 0.1
+	fadeout 0.1
 	fps 30
-	snap
 }
-$sequence "admire" {
-	"anims/admire.smd"
+$sequence "to_idle" {
+	"anims/to_idle.smd"
+	fadein 0.1
+	fadeout 0.1
 	fps 30
-	snap
 }
 
 $bonemerge "ValveBiped.Bip01_Spine4"
