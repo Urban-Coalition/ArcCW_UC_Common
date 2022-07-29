@@ -16,6 +16,8 @@ att.LHIK = true
 att.ModelOffset = Vector(0, 0, 0)
 att.Model = "models/weapons/arccw/atts/uc_ubgl_m203.mdl"
 
+att.SelectUBGLSound =  ""
+att.ExitUBGLSound = ""
 
 att.UBGL = true
 
