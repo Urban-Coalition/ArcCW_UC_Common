@@ -9,7 +9,7 @@ att.AutoStats = true
 att.Desc_Pros = {
     "uc.ubgl"
 }
-att.Slot = "ubgl"
+att.Slot = "uc_ubgl"
 
 att.LHIK = true
 
