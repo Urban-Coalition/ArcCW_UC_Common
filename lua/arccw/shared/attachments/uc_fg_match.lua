@@ -15,7 +15,7 @@ att.SortOrder = 2
 att.AutoStats = true
 
 att.Hook_Compatible = function(wep)
-    if wep:GetIsManualAction() or wep:GetIsShotgun() then
+    if wep:GetIsManualAction() then
         return false
     end
 end
