@@ -41,7 +41,7 @@ att.Hook_PhysBulletHit = function(wep,data)
         --     chance = chance * 2
         -- end
 
-        if chance <= dmg * .75 then -- Chance for a weapon drop increases the closer the shooter is to the target, but is never guaranteed
+        if chance <= dmg * .5 then -- Chance for a weapon drop increases the closer the shooter is to the target, but is never guaranteed
             tr.Entity:DropWeapon()
             if tr.Entity:IsPlayer() then
                 tr.Entity:ScreenFade(1,Color(128,0,0,64),.5,0)
