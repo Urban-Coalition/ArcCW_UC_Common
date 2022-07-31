@@ -137,7 +137,7 @@ ArcCW.UC.StdDmg = {
         vel = 450
     },
     ["50beo"] = {
-        max = 70,
+        max = 80,
         min = 20,
         pen = 12,
         vel = 540
