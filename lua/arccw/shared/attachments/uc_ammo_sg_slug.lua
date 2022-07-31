@@ -28,12 +28,12 @@ att.Mult_HipDispersion = 2
 
 att.Override_HullSize = 0
 
-att.Override_UC_ShellColor = Color(0.2*255, 0.45*255, 0.2*255)
+att.Override_UC_ShellColor = Color(0.2 * 255, 0.45 * 255, 0.2 * 255)
 
 att.GivesFlags = {"uc_slug"}
 
 att.Hook_Compatible = function(wep)
-    if !wep:GetIsShotgun() then
+    if !wep:GetIsShotgun() or wep:GetBuff_Override("UC_Shotshell")  then
         return false
     end
 end

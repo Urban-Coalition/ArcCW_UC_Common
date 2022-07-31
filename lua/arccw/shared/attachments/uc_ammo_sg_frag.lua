@@ -59,5 +59,5 @@ end
 att.Override_UC_ShellColor = Color(0.9 * 255, 0.7 * 255, 0.3 * 255)
 
 att.Hook_Compatible = function(wep)
-    if (!wep.ManualAction and !wep.UC_CanManualAction) or !wep:GetIsShotgun() then return false end
+    if (!wep.ManualAction and !wep.UC_CanManualAction) or !wep:GetIsShotgun() or wep:GetBuff_Override("UC_Shotshell") then return false end
 end

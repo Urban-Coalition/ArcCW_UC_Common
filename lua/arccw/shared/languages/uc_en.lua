@@ -66,6 +66,7 @@ L["uc.exclusive.545"] = "Exclusive to Russian carbine caliber firearms"
 L["uc.exclusive.subsonic"] = "Exclusive to small caliber firearms with < 340m/s muzzle velocity"
 
 L["uc.pellet.0.75"] = "-25% Pellets per shot"
+L["uc.pellet.2x"] = "+100% Pellets per shot"
 L["uc.pellet.8"] = "+8 Pellets per shot"
 L["uc.pellet.12"] = "+12 Pellets per shot"
 L["uc.pellet.24"] = "+24 Pellets per shot"

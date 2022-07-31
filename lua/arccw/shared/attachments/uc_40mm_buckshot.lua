@@ -21,7 +21,7 @@ att.Override_DamageMin = 6 * 20
 
 att.Override_Range = 50
 att.Override_RangeMin = 5
-att.Override_HullSize = 4
+att.Override_HullSize = 0.5
 
 att.Override_AccuracyMOA = 50
 

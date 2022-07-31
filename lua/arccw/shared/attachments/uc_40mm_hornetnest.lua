@@ -21,7 +21,7 @@ att.Override_DamageMin = 5 * 16
 
 att.Override_Range = 60
 att.Override_RangeMin = 15
-att.Override_HullSize = 2
+att.Override_HullSize = 0.1
 
 att.Override_AccuracyMOA = 25
 att.Mult_Recoil = 0.4
