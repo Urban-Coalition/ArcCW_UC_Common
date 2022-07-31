@@ -73,7 +73,8 @@ att.Mult_RangeMin = .33
 att.Override_DamageType = DMG_CLUB
 
 att.Override_AlwaysPhysBullet = true
---att.Override_PhysBulletMuzzleVelocity = 80
+att.Mult_PhysBulletMuzzleVelocity = 0.5
+att.Mult_PhysBulletGravity = 2
 
 att.Override_UC_ShellColor = Color(0.6 * 255, 0.2 * 255, 0.6 * 255)
 
