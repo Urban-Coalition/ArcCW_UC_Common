@@ -57,6 +57,19 @@ ArcCW.UC.PistolAmmoTypes = {
     ["plinking"] = true
 }
 
+
+local common = ")^/arccw_uc/common/"
+ArcCW.UC.DrawSounds = {
+    {s = common .. "raise.ogg", t = 0},
+    {s = common .. "shoulder.ogg", t = 0.15},
+    {s = common .. "rattle.ogg", t = 0.2},
+}
+
+ArcCW.UC.HolsterSounds = {
+    {s = common .. "rattle.ogg", t = 0},
+    {s = common .. "cloth_6.ogg", t = 0.2},
+}
+
 ArcCW.UC.SubsonicThreshold = 340
 
 -- Refer to http://www.ballisticsbytheinch.com/ for muzzle velocity per barrel length if possible
