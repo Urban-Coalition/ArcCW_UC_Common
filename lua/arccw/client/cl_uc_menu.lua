@@ -15,6 +15,8 @@ end
 
 hook.Add( "PopulateWeapons", "UC_AddWeaponContent", function( pnlContent, tree, node )
 
+    if !GetConVar("arccw_uc_menu"):GetBool() then return end
+
     local AllUCWeapons = {}
     local AllUCWeaponsByPack = {}
     for classname, _ in pairs( weapons.GetList() ) do
