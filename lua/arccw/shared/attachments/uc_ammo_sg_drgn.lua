@@ -73,8 +73,8 @@ att.Mult_Damage = .5
 att.Mult_DamageMin = .5
 
 att.Override_AlwaysPhysBullet = true
-att.Mult_PhysBulletMuzzleVelocity = 0.25
-att.Mult_PhysBulletGravity = 1.5
+att.Mult_PhysBulletMuzzleVelocity = 0.3
+att.Mult_PhysBulletGravity = 0.75
 
 --att.Override_PhysTracerProfile = 1
 att.Override_MuzzleEffect = "muzzleflash_dragonbreath"
