@@ -596,8 +596,8 @@ elseif SERVER then
             local enabled = tobool(ply:GetInfoNum("arccw_uc_custcolor_enable", 0))
             net.WriteBool(enabled)
             if enabled then
-                net.WriteColor(Color(ply:GetInfoNum("arccw_uc_custcolor_1_r", 255), ply:GetInfoNum("arccw_uc_custcolor_1_g", 255), ply:GetInfoNum("arccw_uc_custcolor_1_b"), 255), false)
-                net.WriteColor(Color(ply:GetInfoNum("arccw_uc_custcolor_2_r", 255), ply:GetInfoNum("arccw_uc_custcolor_2_g", 255), ply:GetInfoNum("arccw_uc_custcolor_2_b"), 255), false)
+                net.WriteColor(Color(ply:GetInfoNum("arccw_uc_custcolor_1_r", 255), ply:GetInfoNum("arccw_uc_custcolor_1_g", 255), ply:GetInfoNum("arccw_uc_custcolor_1_b", 255)), false)
+                net.WriteColor(Color(ply:GetInfoNum("arccw_uc_custcolor_2_r", 255), ply:GetInfoNum("arccw_uc_custcolor_2_g", 255), ply:GetInfoNum("arccw_uc_custcolor_2_b", 255)), false)
             end
         net.SendOmit(ply)
     end)
