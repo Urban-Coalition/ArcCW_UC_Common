@@ -30,10 +30,10 @@ All weapons using the same caliber are expected to do the same penetration and d
 #### Magnum Ammo (357)
 | Caliber     | Damage | Penetration | Expected Range
 | ----------- | -----  | ----------- |--------------
-| .50 AE      | 70-17  | 12mm        | 10/120m
-| .44 Magnum  | 60-15  | 10mm        | ~
-| .357 Magnum | 50-12  | 9mm         | ~
-| .50 Beowulf | 70-20  | 12mm        | 15/90m
+| .50 AE      | 80-12  | 12mm        | 10/120m
+| .44 Magnum  | 75-16  | 10mm        | ~
+| .357 Magnum | 60-20  | 9mm         | ~
+| .50 Beowulf | 80-20  | 12mm        | 15/90m
 
 #### Carbine Ammo (smg1)
 | Caliber     | Damage | Penetration | Expected Range
