@@ -119,20 +119,20 @@ ArcCW.UC.StdDmg = {
     },
     -- Magnum calibers
     ["357"] = {
-        max = 50,
-        min = 12,
+        max = 60,
+        min = 20,
         pen = 9,
         vel = 430
     },
     ["44"] = {
-        max = 60,
-        min = 15,
+        max = 75,
+        min = 16,
         pen = 10,
         vel = 360
     },
     ["50ae"] = {
-        max = 70,
-        min = 17,
+        max = 80,
+        min = 12,
         pen = 12,
         vel = 450
     },
