@@ -21,12 +21,12 @@ att.Mult_Range = 2
 att.Mult_Penetration = 2.5
 att.Override_DamageType = DMG_BURN
 
-att.Mult_Damage = 2/3
-att.Mult_DamageMin = 2/3
+att.Mult_Damage = 2 / 3
+att.Mult_DamageMin = 2 / 3
 
 att.Hook_BulletHit = function(wep,data)
     if SERVER and data.tr.Entity and !(data.tr.Entity:IsNPC() or data.tr.Entity:IsPlayer() or data.tr.Entity:IsNextBot()) then
-        data.damage = data.damage * 12
+        data.damage = data.damage * 4
     end
 
     local eff = EffectData()
