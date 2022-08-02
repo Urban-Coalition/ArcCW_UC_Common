@@ -14,10 +14,10 @@ att.Slot = "uc_ammo"
 
 att.AutoStats = true
 
-att.Mult_DamageMin = 1.15
+att.Mult_DamageMin = 1.2
 
 att.Mult_Damage = 0.9
-att.Mult_RangeMin = 0.8
+--att.Mult_RangeMin = 0.75
 
 att.Hook_Compatible = function(wep)
     if wep:GetIsShotgun() then
