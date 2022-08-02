@@ -68,7 +68,7 @@ We make an exception to the rule for shotguns because most use a single caliber,
 | Caliber      | Damage | Penetration | Expected Range
 | ------------ | -----  | ----------- | --------------
 | .338 Lapua   | 80-160 | 36mm        | 20/100m
-| .300 Win Mag | 44-85  | 24mm        | 10/50m
+| .300 Win Mag | 50-90  | 24mm        | 10/50m
 
 ---
 ### Damage Multipliers
