@@ -35,6 +35,12 @@ att.UBGL_ClipSize = 1
 att.LHIK_GunDriver = 2
 att.LHIK_CamDriver = 3
 
+att.Hook_ModifyAttBodygroups = function(wep, data)
+    if wep:GetBuff_Override("UC_UseClassicM203Mount") then
+        data.element.Model:SetBodygroup(1, 1)
+    end
+end
+
 local function Ammo(wep)
     return wep:GetOwner():GetAmmoCount("smg1_grenade")
 end
@@ -189,7 +195,3 @@ att.ToggleStats = {
         UBGL_Entity = "BUCKSHOT"
     }
 }
-
-att.Hook_ModifyAttBodygroups = function(wep, data)
-    data.element.Model:SetBodygroup(1, 1)
-end
