@@ -189,3 +189,7 @@ att.ToggleStats = {
         UBGL_Entity = "BUCKSHOT"
     }
 }
+
+att.Hook_ModifyAttBodygroups = function(wep, data)
+    data.element.Model:SetBodygroup(1, 1)
+end
