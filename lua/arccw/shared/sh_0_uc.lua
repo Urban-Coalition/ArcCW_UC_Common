@@ -184,12 +184,14 @@ ArcCW.UC.StdDmg = {
         max = 20,
         min = 13,
         pen = 2,
+        num = 8,
         vel = 400
     }, -- Pump
     ["12g_s"] = {
         max = 18,
         min = 10,
         pen = 2,
+        num = 8,
         vel = 400
     }, -- Semi
     ["410b"] = {
