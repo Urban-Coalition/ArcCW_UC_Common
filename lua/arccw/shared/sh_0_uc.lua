@@ -168,8 +168,8 @@ ArcCW.UC.StdDmg = {
         vel = 730
     }, -- 7.62x39, not 7.62x51 NATO
     ["762_51"] = {
-        max = 75,
-        min = 40,
+        max = 65,
+        min = 35,
         pen = 20,
         vel = 850
     }, -- 7.62x51 NATO
@@ -645,5 +645,12 @@ hook.Add("ArcCW_InitBulletProfiles", "UrbanCoalition", function()
         size = 0.5,
         size_min = 0.25,
         tail_length = 0.03,
+    })
+
+    ArcCW:AddBulletProfile("uc_api", {
+        color = Color(255, 175, 100),
+        size = 1,
+        size_min = 1,
+        tail_length = 0.05,
     })
 end)
