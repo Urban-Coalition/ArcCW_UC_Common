@@ -219,6 +219,10 @@ ArcCW.UC.StdDmg = {
     },
 }
 
+function ArcCW.UC.CalConv(from, to, stat)
+    return math.Round(ArcCW.UC.StdDmg[to][stat] / ArcCW.UC.StdDmg[from][stat], 2)
+end
+
 ArcCW.UC.ADSReload = function(wep)
     local vm = wep:GetOwner():GetViewModel()
     local delta = wep:GetSightDelta()
