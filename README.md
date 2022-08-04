@@ -43,11 +43,12 @@ All weapons using the same caliber are expected to do the same penetration and d
 | 5.45x39mm   | 40-20  | 12mm        | 36/360m
 
 #### Rifle Ammo (ar2)
-| Caliber     | Damage | Penetration | Expected Range
-| ----------- | -----  | ----------- |--------------
-| 7.62x51mm   | 75-40  | 20mm        | 50/400m
-| 7.62x39mm   | 50-25  | 16mm        | 30/300m
-| .366 TKM    | 60-30  | 18mm        | 30/300m
+| Caliber            | Damage | Penetration | Expected Range
+| -----------------  | ------ |------------ | --------------
+| 7.62x51mm (bolt)   | 80-50  | 20mm        | 50/400m
+| 7.62x51mm (semi)   | 65-35  | 20mm        | 50/400m
+| 7.62x39mm          | 50-25  | 16mm        | 30/300m
+| .366 TKM           | 60-30  | 18mm        | 30/300m
 
 #### Plinking Ammo (plinking)
 | Caliber     | Damage | Penetration | Expected Range
@@ -66,8 +67,8 @@ We make an exception to the rule for shotguns because most use a single caliber,
 #### Sniper Ammo (SniperPenetratedRound)
 | Caliber      | Damage | Penetration | Expected Range
 | ------------ | -----  | ----------- | --------------
-| .338 Lapua   | 85-160 | 36mm        | 20/100m
-| .300 Win Mag | 44-85  | 24mm        | 10/50m
+| .338 Lapua   | 80-160 | 36mm        | 20/100m
+| .300 Win Mag | 50-90  | 24mm        | 10/50m
 
 ---
 ### Damage Multipliers

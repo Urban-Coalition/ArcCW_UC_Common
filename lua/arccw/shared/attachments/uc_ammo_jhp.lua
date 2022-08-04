@@ -14,6 +14,7 @@ att.Slot = "uc_ammo"
 
 att.AutoStats = true
 
+att.Mult_RangeMin = 0.5
 att.Mult_Penetration = 0.25
 att.Mult_Damage = 1.17
 

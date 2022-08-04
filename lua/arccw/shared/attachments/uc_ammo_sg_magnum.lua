@@ -19,7 +19,7 @@ att.AutoStats = true
 att.Mult_Num = 0.75
 att.Mult_Damage = 1.25
 
-att.Mult_Range = 0.75
+att.Mult_Range = 0.5
 att.Mult_RangeMin = 2
 
 att.Mult_Recoil = 1.3
