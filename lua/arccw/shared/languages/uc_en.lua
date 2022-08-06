@@ -57,6 +57,7 @@ L["uc.nomuzzle"] = "Disables Muzzle attachments"
 L["uc.nogrip"] = "Disables Grip Type attachments"
 L["uc.nopowder"] = "Disables Powder Load attachments"
 L["uc.muzzleblocking"] = "Incompatible with certain Tube and Barrel combinations"
+L["uc.nohg"] = "Disables Handguard attachments"
 
 L["uc.exclusive.pistol"] = "Exclusive to small caliber firearms"
 L["uc.exclusive.rifle"] = "Exclusive to medium caliber firearms"
