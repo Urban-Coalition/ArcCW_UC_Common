@@ -675,6 +675,10 @@ do
 		[")^weapons/arccw_ud/m16/fire-05.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
 		[")^weapons/arccw_ud/m16/fire-06.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
 
+		[")^weapons/arccw_ud/m16/magout.ogg"]				= "weapons/m4a1/m4a1_clipout.wav",
+		[")^weapons/arccw_ud/m16/magin.ogg"]				= "weapons/m4a1/m4a1_clipin.wav",
+		[")^weapons/arccw_ud/m16/boltdrop.ogg"]				= "weapons/m4a1/m4a1_boltpull.wav",
+
 		-- MP5
 		[")^weapons/arccw_ur/mp5/magout.ogg"]				= "weapons/mp5navy/mp5_clipout.wav",
 		[")^weapons/arccw_ur/mp5/magin.ogg"]				= "weapons/mp5navy/mp5_clipin.wav",
