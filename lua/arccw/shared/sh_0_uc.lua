@@ -444,6 +444,8 @@ ArcCW.UC.InnyOuty = function(wep)
     end
 end
 
+CreateConVar("arccw_uc_gaymode", 0, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Evil bastard sounds", 0, 1)
+
 ArcCW.UC.CustColorUpdateInterval = 5
 
 if CLIENT then
@@ -660,3 +662,45 @@ hook.Add("ArcCW_InitBulletProfiles", "UrbanCoalition", function()
         tail_length = 0.05,
     })
 end)
+
+
+-- gaymode
+do
+	local gaylist = {
+		-- MP5
+		[")^weapons/arccw_ud/m16/fire-01.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
+		[")^weapons/arccw_ud/m16/fire-02.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
+		[")^weapons/arccw_ud/m16/fire-03.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
+		[")^weapons/arccw_ud/m16/fire-04.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
+		[")^weapons/arccw_ud/m16/fire-05.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
+		[")^weapons/arccw_ud/m16/fire-06.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
+
+		-- MP5
+		[")^weapons/arccw_ur/mp5/magout.ogg"]				= "weapons/mp5navy/mp5_clipout.wav",
+		[")^weapons/arccw_ur/mp5/magin.ogg"]				= "weapons/mp5navy/mp5_clipin.wav",
+		[")^weapons/arccw_ur/mp5/chamber.ogg"]				= "weapons/mp5navy/mp5_slideback.wav",
+	}
+
+	hook.Add("Hook_TranslateSound", "UC_Gaymode", function(wep, snd)
+
+		print(wep, snd)
+		if GetConVar("arccw_uc_gaymode"):GetBool() then
+			if istable(snd) then
+				local newtable = table.Copy(snd)
+
+				for ind, newsnd in ipairs(newtable) do
+					print(newsnd)
+					if gaylist[newsnd] then
+						newtable[ind] = gaylist[newsnd]
+					end
+				end
+				
+				return newtable
+			elseif gaylist[snd] then
+				return gaylist[snd]
+			end
+		end
+
+	end)
+
+end
