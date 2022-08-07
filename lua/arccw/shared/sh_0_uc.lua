@@ -687,13 +687,11 @@ do
 
 	hook.Add("Hook_TranslateSound", "UC_Gaymode", function(wep, snd)
 
-		print(wep, snd)
 		if GetConVar("arccw_uc_gaymode"):GetBool() then
 			if istable(snd) then
 				local newtable = table.Copy(snd)
 
 				for ind, newsnd in ipairs(newtable) do
-					print(newsnd)
 					if gaylist[newsnd] then
 						newtable[ind] = gaylist[newsnd]
 					end
