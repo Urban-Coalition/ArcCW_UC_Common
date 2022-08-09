@@ -140,7 +140,7 @@ att.UBGL_Fire = function(wep, ubgl)
     else
         local proj = wep:FireRocket(class, 5000)
         if SERVER then
-            proj.Damage = 120 -- lower than the m79 (200) for balance reasons
+            proj.Damage = 150 -- lower than the m79 (200) for balance reasons
         end
         wep:MyEmitSound(")^/arccw_uc/common/40mm/fire-0" .. math.random(1, 6) .. ".ogg", 100, 100, 1, CHAN_WEAPON)
         wep:MyEmitSound(")^/arccw_uc/common/40mm/fire-dist-0" .. math.random(1, 6) .. ".ogg", 149, 100, 0.5, CHAN_BODY)
