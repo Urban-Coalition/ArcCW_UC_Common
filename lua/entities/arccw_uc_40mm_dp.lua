@@ -30,7 +30,7 @@ function ENT:DoDetonation()
     end
     -- attempt to penetrate entity/world and place explosion behind
     local tr2 = util.TraceLine({
-        start = tr.HitPos + dir * 48,
+        start = tr.HitPos + dir * 69,
         endpos = tr.HitPos,
         filter = self,
     })
