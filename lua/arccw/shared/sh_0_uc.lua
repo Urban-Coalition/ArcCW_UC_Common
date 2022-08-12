@@ -732,18 +732,6 @@ do
 
 end
 
-local procedure = {
-	["sound"] = function(asset)
-		asset = string.Replace( asset, "sound\\", "" )
-		asset = string.Replace( asset, "sound/", "" )
-		LocalPlayer():EmitSound( asset, 75, 100, 0.01, CHAN_WEAPON )
-	end,
-	["model"] = function(asset)
-		local cmdl = ClientsideModel( asset )
-		cmdl:Remove()
-	end,
-}
-
 local paths = {
 	"sound/weapons/arccw_ud/",
 	"sound/weapons/arccw_ur/",
@@ -753,55 +741,66 @@ local paths = {
 	"models/items/arccw/",
 }
 
-local cooltable = {}
-
-function fukc()
-	local function recurse( path, dir )
-		local files, directories = file.Find( path .. (dir and (dir .. "/") or "") .. "*", "GAME" )
-		for i, fie in ipairs(files) do
-			local fiex = string.GetExtensionFromFilename(fie)
-			if fiex == "ogg" or fiex == "wav" or fiex == "mp3" or fiex == "mdl" then
-				table.insert( cooltable, path .. (dir and (dir .. "/") or "") .. fie )
-			end
-		end
-		for i, dir in ipairs(directories) do
-			recurse( path, dir )
-		end
-	end
-
-	cooltable = {}
-
-	UC_Precache = true
-	UC_PrecachePer = 0
-	UC_PrecachePeh = 0
-	UC_PrecacheCur = "..."
-	for i, path in ipairs(paths) do
-		recurse( path )
-	end
-
-	PrintTable(cooltable)
-
-	for i, fie in ipairs(cooltable) do
-		timer.Simple(i/GetConVar("arccw_uc_cache_client_persecond"):GetFloat(), function()
-			UC_PrecachePer = i
-			UC_PrecachePeh = #cooltable
-			UC_PrecacheCur = fie
-			local fiex = string.GetExtensionFromFilename(fie)
-			if fiex == "ogg" or fiex == "wav" or fiex == "mp3" then
-				procedure["sound"](fie)
-			elseif fiex == "mdl" then
-				procedure["model"](fie)
-			elseif fiex == "phy" or fiex == "vvd" or fiex == "vtx" then
-				-- ignore these
-			else
-				print("Unknown what to do with " .. fie .. "!")
-			end
-			if i == #cooltable then UC_Precache = false end
-		end)
-	end
-end
-
 if CLIENT then
+	local procedure = {
+		["sound"] = function(asset)
+			asset = string.Replace( asset, "sound\\", "" )
+			asset = string.Replace( asset, "sound/", "" )
+			LocalPlayer():EmitSound( asset, 75, 100, 0.01, CHAN_WEAPON )
+		end,
+		["model"] = function(asset)
+			local cmdl = ClientsideModel( asset )
+			cmdl:Remove()
+		end,
+	}
+
+	local cooltable = {}
+	function fukc()
+		local function recurse( path, dir )
+			local files, directories = file.Find( path .. (dir and (dir .. "/") or "") .. "*", "GAME" )
+			for i, fie in ipairs(files) do
+				local fiex = string.GetExtensionFromFilename(fie)
+				if fiex == "ogg" or fiex == "wav" or fiex == "mp3" or fiex == "mdl" then
+					table.insert( cooltable, path .. (dir and (dir .. "/") or "") .. fie )
+				end
+			end
+			for i, dir in ipairs(directories) do
+				recurse( path, dir )
+			end
+		end
+	
+		cooltable = {}
+	
+		UC_Precache = true
+		UC_PrecachePer = 0
+		UC_PrecachePeh = 0
+		UC_PrecacheCur = "..."
+		for i, path in ipairs(paths) do
+			recurse( path )
+		end
+	
+		PrintTable(cooltable)
+	
+		for i, fie in ipairs(cooltable) do
+			timer.Simple(i/GetConVar("arccw_uc_cache_client_persecond"):GetFloat(), function()
+				UC_PrecachePer = i
+				UC_PrecachePeh = #cooltable
+				UC_PrecacheCur = fie
+				local fiex = string.GetExtensionFromFilename(fie)
+				if fiex == "ogg" or fiex == "wav" or fiex == "mp3" then
+					procedure["sound"](fie)
+				elseif fiex == "mdl" then
+					procedure["model"](fie)
+				elseif fiex == "phy" or fiex == "vvd" or fiex == "vtx" then
+					-- ignore these
+				else
+					print("Unknown what to do with " .. fie .. "!")
+				end
+				if i == #cooltable then UC_Precache = false end
+			end)
+		end
+	end
+
 	hook.Add("HUDPaint", "UC_Precache", function()
 		if UC_Precache then
 			local i_1 = UC_PrecachePer or 1
@@ -833,6 +832,74 @@ if CLIENT then
 	concommand.Add( "arccw_uc_cache_client", function()
 		fukc()
 	end)
+end
 
-	concommand.Add( "arccw_uc_cache_server", function() end, nil, "command server to cache")
+if SERVER then
+	local procedure = {
+		["sound"] = function(asset)
+			local cmdl = ents.Create( "prop_dynamic" )
+			asset = string.Replace( asset, "sound\\", "" )
+			asset = string.Replace( asset, "sound/", "" )
+			cmdl:EmitSound( asset, 75, 100, 0.4, CHAN_WEAPON )
+			cmdl:Remove()
+		end,
+		["model"] = function(asset)
+			local cmdl = ents.Create( "prop_dynamic" )
+			print(cmdl)
+			cmdl:SetModel(asset)
+			cmdl:Spawn()
+			cmdl:Remove()
+		end,
+	}
+	local cooltable = {}
+	function fukc_server()
+		local function recurse( path, dir )
+			local files, directories = file.Find( path .. (dir and (dir .. "/") or "") .. "*", "GAME" )
+			for i, fie in ipairs(files) do
+				local fiex = string.GetExtensionFromFilename(fie)
+				if fiex == "ogg" or fiex == "wav" or fiex == "mp3" or fiex == "mdl" then
+					table.insert( cooltable, path .. (dir and (dir .. "/") or "") .. fie )
+				end
+			end
+			for i, dir in ipairs(directories) do
+				recurse( path, dir )
+			end
+		end
+
+		cooltable = {}
+
+		UC_Precache = true
+		UC_PrecachePer = 0
+		UC_PrecachePeh = 0
+		UC_PrecacheCur = "..."
+		for i, path in ipairs(paths) do
+			recurse( path )
+		end
+
+		PrintTable(cooltable)
+
+		for i, fie in ipairs(cooltable) do
+			timer.Simple(i/GetConVar("arccw_uc_cache_client_persecond"):GetFloat(), function()
+				UC_PrecachePer = i
+				UC_PrecachePeh = #cooltable
+				UC_PrecacheCur = fie
+				local fiex = string.GetExtensionFromFilename(fie)
+				if fiex == "ogg" or fiex == "wav" or fiex == "mp3" then
+					procedure["sound"](fie)
+				elseif fiex == "mdl" then
+					procedure["model"](fie)
+				elseif fiex == "phy" or fiex == "vvd" or fiex == "vtx" then
+					-- ignore these
+				else
+					print("Unknown what to do with " .. fie .. "!")
+				end
+				if i == #cooltable then UC_Precache = false end
+			end)
+		end
+	end
+
+	concommand.Add( "arccw_uc_cache_server", function()
+		print("hi")
+		fukc_server()
+	end, nil, "command server to cache")
 end
