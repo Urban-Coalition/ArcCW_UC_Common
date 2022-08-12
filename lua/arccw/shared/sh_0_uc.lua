@@ -735,6 +735,9 @@ end
 local paths = {
 	"sound/weapons/arccw_ud/",
 	"sound/weapons/arccw_ur/",
+	"sound/weapons/arccw_uc_galil/",
+	"sound/weapons/arccw_uc_lynx/",
+	"sound/weapons/arccw_uc_usp/",
 	"sound/arccw_uc/",
 	"sound/weapons/arccw/",
 	"models/weapons/arccw/",
@@ -883,7 +886,7 @@ if SERVER then
 		PrintTable(cooltable)
 
 		for i, fie in ipairs(cooltable) do
-			timer.Simple(i/(1/FrameTime()), function()
+			timer.Simple(i/(1/20), function()
 				print(fie)
 				UC_PrecachePer = i
 				UC_PrecachePeh = #cooltable
