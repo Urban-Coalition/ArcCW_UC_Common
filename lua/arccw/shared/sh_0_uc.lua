@@ -746,7 +746,11 @@ if CLIENT then
 		["sound"] = function(asset)
 			asset = string.Replace( asset, "sound\\", "" )
 			asset = string.Replace( asset, "sound/", "" )
-			LocalPlayer():EmitSound( asset, 75, 100, 0.01, CHAN_WEAPON )
+			if !IsValid(LocalPlayer()) then
+				print("LocalPlayer is NULL! You're too early!!")
+			else
+				LocalPlayer():EmitSound( asset, 75, 100, 0.01, CHAN_WEAPON )
+			end
 		end,
 		["model"] = function(asset)
 			local cmdl = ClientsideModel( asset )
