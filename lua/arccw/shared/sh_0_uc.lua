@@ -602,6 +602,31 @@ if CLIENT then
             green = "arccw_uc_custcolor_2_g",
             blue = "arccw_uc_custcolor_2_b"
         })
+
+        panel:AddControl("header", {
+            description = "________________"
+        })
+        panel:AddControl("header", {
+            description = "Asset precaching"
+        })
+
+        panel:AddControl("button", {
+            label = "Clientside Asset Cache",
+            command = "arccw_uc_cache_client"
+        })
+        panel:ControlHelp("Begin a clientside caching of all Urban Coalition assets.")
+        panel:AddControl("slider", {
+            label = "Attempts per second",
+            command = "arccw_uc_cache_client_persecond",
+            min = 10,
+            max = 60,
+        })
+
+        panel:AddControl("button", {
+            label = "Serverside Asset Cache",
+            command = "arccw_uc_cache_server"
+        })
+        panel:ControlHelp("Command the server to do a caching of all Urban Coalition assets.")
     end
 
     hook.Add("PopulateToolMenu", "ARCCW_UC_MenuOptions", function()
@@ -705,4 +730,109 @@ do
 
 	end)
 
+end
+
+local procedure = {
+	["sound"] = function(asset)
+		asset = string.Replace( asset, "sound\\", "" )
+		asset = string.Replace( asset, "sound/", "" )
+		LocalPlayer():EmitSound( asset, 75, 100, 0.01, CHAN_WEAPON )
+	end,
+	["model"] = function(asset)
+		local cmdl = ClientsideModel( asset )
+		cmdl:Remove()
+	end,
+}
+
+local paths = {
+	"sound/weapons/arccw_ud/",
+	"sound/weapons/arccw_ur/",
+	"sound/arccw_uc/",
+	"sound/weapons/arccw/",
+	"models/weapons/arccw/",
+	"models/items/arccw/",
+}
+
+local cooltable = {}
+
+function fukc()
+	local function recurse( path, dir )
+		local files, directories = file.Find( path .. (dir and (dir .. "/") or "") .. "*", "GAME" )
+		for i, fie in ipairs(files) do
+			local fiex = string.GetExtensionFromFilename(fie)
+			if fiex == "ogg" or fiex == "wav" or fiex == "mp3" or fiex == "mdl" then
+				table.insert( cooltable, path .. (dir and (dir .. "/") or "") .. fie )
+			end
+		end
+		for i, dir in ipairs(directories) do
+			recurse( path, dir )
+		end
+	end
+
+	cooltable = {}
+
+	UC_Precache = true
+	UC_PrecachePer = 0
+	UC_PrecachePeh = 0
+	UC_PrecacheCur = "..."
+	for i, path in ipairs(paths) do
+		recurse( path )
+	end
+
+	PrintTable(cooltable)
+
+	for i, fie in ipairs(cooltable) do
+		timer.Simple(i/GetConVar("arccw_uc_cache_client_persecond"):GetFloat(), function()
+			UC_PrecachePer = i
+			UC_PrecachePeh = #cooltable
+			UC_PrecacheCur = fie
+			local fiex = string.GetExtensionFromFilename(fie)
+			if fiex == "ogg" or fiex == "wav" or fiex == "mp3" then
+				procedure["sound"](fie)
+			elseif fiex == "mdl" then
+				procedure["model"](fie)
+			elseif fiex == "phy" or fiex == "vvd" or fiex == "vtx" then
+				-- ignore these
+			else
+				print("Unknown what to do with " .. fie .. "!")
+			end
+			if i == #cooltable then UC_Precache = false end
+		end)
+	end
+end
+
+if CLIENT then
+	hook.Add("HUDPaint", "UC_Precache", function()
+		if UC_Precache then
+			local i_1 = UC_PrecachePer or 1
+			local i_2 = UC_PrecachePeh or 1
+			local i_per = i_1 / i_2
+			local i_cur = UC_PrecacheCur or "..."
+			surface.SetDrawColor(255, 255, 255, 255)
+			local ss = ScreenScale(1) * GetConVar("arccw_hud_size"):GetFloat()
+			local bx, by = (ss*150), (ss*10)
+
+			-- Bar
+			surface.DrawOutlinedRect( ( ScrW() / 2 ) - ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ), bx, by, 2 )
+			surface.DrawRect( ( ScrW() / 2 ) - ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ), bx * i_per, by )
+
+			-- Top left
+			draw.SimpleText( "CACHING:", "ArcCW_12", ( ScrW() / 2 ) - ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ) - (ss*1), color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_BOTTOM )
+
+			-- Bottom right
+			draw.SimpleText( math.Round(i_per*100).."%", "ArcCW_12", ( ScrW() / 2 ) + ( bx / 2 ), ( ScrH() * 0.7 ) + ( by / 2 ) - (ss*1), color_white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_TOP )
+
+			-- Top right
+			draw.SimpleText( i_1 .. "/" .. i_2, "ArcCW_8", ( ScrW() / 2 ) + ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ) - (ss*1), color_white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_BOTTOM )
+
+			-- Bottom left
+			draw.SimpleText( i_cur, "ArcCW_6", ( ScrW() / 2 ) - ( bx / 2 ), ( ScrH() * 0.7 ) + ( by / 2 ) + (ss*1), color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+		end
+	end)
+	CreateClientConVar("arccw_uc_cache_client_persecond", 60, true, false)
+	concommand.Add( "arccw_uc_cache_client", function()
+		fukc()
+	end)
+
+	concommand.Add( "arccw_uc_cache_server", function() end, nil, "command server to cache")
 end
