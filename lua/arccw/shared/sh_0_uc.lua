@@ -879,7 +879,8 @@ if SERVER then
 		PrintTable(cooltable)
 
 		for i, fie in ipairs(cooltable) do
-			timer.Simple(i/FrameTime(), function()
+			timer.Simple(i/(1/FrameTime()), function()
+				print(fie)
 				UC_PrecachePer = i
 				UC_PrecachePeh = #cooltable
 				UC_PrecacheCur = fie
