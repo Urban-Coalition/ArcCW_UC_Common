@@ -735,6 +735,9 @@ end
 local paths = {
 	"sound/weapons/arccw_ud/",
 	"sound/weapons/arccw_ur/",
+	"sound/weapons/arccw_uc_galil/",
+	"sound/weapons/arccw_uc_lynx/",
+	"sound/weapons/arccw_uc_usp/",
 	"sound/arccw_uc/",
 	"sound/weapons/arccw/",
 	"models/weapons/arccw/",
