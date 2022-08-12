@@ -879,7 +879,7 @@ if SERVER then
 		PrintTable(cooltable)
 
 		for i, fie in ipairs(cooltable) do
-			timer.Simple(i/GetConVar("arccw_uc_cache_client_persecond"):GetFloat(), function()
+			timer.Simple(i/FrameTime(), function()
 				UC_PrecachePer = i
 				UC_PrecachePeh = #cooltable
 				UC_PrecacheCur = fie
