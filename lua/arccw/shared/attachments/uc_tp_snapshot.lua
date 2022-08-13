@@ -13,4 +13,4 @@ att.Slot = "uc_tp"
 att.AutoStats = true
 att.SortOrder = 3
 
-att.Mult_SightTime = 0.85
+att.Mult_SightTime = 0.5
