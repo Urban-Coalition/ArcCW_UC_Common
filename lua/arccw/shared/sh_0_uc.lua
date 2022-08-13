@@ -786,7 +786,7 @@ if CLIENT then
 			recurse( path )
 		end
 	
-		PrintTable(cooltable)
+		-- PrintTable(cooltable)
 	
 		for i, fie in ipairs(cooltable) do
 			timer.Simple(i/GetConVar("arccw_uc_cache_client_persecond"):GetFloat(), function()
@@ -852,7 +852,7 @@ if SERVER then
 		end,
 		["model"] = function(asset)
 			local cmdl = ents.Create( "prop_dynamic" )
-			print(cmdl)
+			-- print(cmdl)
 			cmdl:SetModel(asset)
 			cmdl:Spawn()
 			cmdl:Remove()
@@ -883,11 +883,11 @@ if SERVER then
 			recurse( path )
 		end
 
-		PrintTable(cooltable)
+		-- PrintTable(cooltable)
 
 		for i, fie in ipairs(cooltable) do
 			timer.Simple(i/(1/20), function()
-				print(fie)
+				-- print(fie)
 				UC_PrecachePer = i
 				UC_PrecachePeh = #cooltable
 				UC_PrecacheCur = fie
