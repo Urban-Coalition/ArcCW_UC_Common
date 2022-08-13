@@ -14,8 +14,8 @@ att.ModelOffset = Vector(0, 0, -0.14)
 att.Model = "models/weapons/arccw/atts/ud_foregrip_mod3.mdl"
 -- att.ModelSkin  = 1
 
-att.Mult_Recoil = .85
-att.Mult_SightTime = 1.1
+att.Mult_RecoilSide = .85
+att.Mult_SightTime = 1.08
 att.Mult_MoveDispersion = 1.25
 
 att.Override_HoldtypeActive = "smg"

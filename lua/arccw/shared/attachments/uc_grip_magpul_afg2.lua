@@ -13,9 +13,9 @@ att.LHIK = true
 att.ModelOffset = Vector(0, 0, -0.75)
 
 att.Model = "models/weapons/arccw/atts/uc_magpul_afg2.mdl"
-att.ModelSkin  = 1
+att.ModelSkin = 1
 
 att.Mult_SightTime = 0.8
 att.Mult_Sway = 1.25
-att.Mult_Recoil = 1.1
-att.Mult_RecoilSide = 1.25
+att.Mult_Recoil = 1.12
+att.Mult_RecoilSide = 1.16
