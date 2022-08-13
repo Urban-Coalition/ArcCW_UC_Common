@@ -15,7 +15,7 @@ att.AutoStats = true
 att.SortOrder = 2
 
 att.Hook_Compatible = function(wep)
-    if wep:GetIsManualAction() then return false end
+    if wep:GetIsManualAction() or wep.TriggerDelay then return false end
 
     -- for i, v in pairs(wep.Firemodes) do
     --     if !v then continue end

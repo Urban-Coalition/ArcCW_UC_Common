@@ -172,7 +172,7 @@ function ENT:Think()
             self.NextStickTick = CurTime() + 0.5
             if math.random() <= 0.25 then
                 for _, e in pairs(ents.FindInSphere(self:GetPos(), 96)) do
-                    if e:IsNPC() or e:IsNextBot() or e:IsVehicle() or (e:IsPlayer() and e:Alive()) then
+                    if e:IsNPC() or e:IsNextBot() or e:IsVehicle() or (e:IsPlayer() and e:Alive()) or (simfphys and simfphys.IsCar(e)) then
                         self.Stuck = true
                         timer.Simple(0, function()
                             -- we commit a mild amount of war crimes
