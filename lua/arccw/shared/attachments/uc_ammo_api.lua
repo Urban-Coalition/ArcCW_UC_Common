@@ -19,7 +19,7 @@ att.AutoStats = true
 
 att.Mult_Range = 2
 att.Mult_Penetration = 2.5
-att.Override_DamageType = DMG_BURN
+att.Override_DamageType = DMG_BURN + DMG_BULLET
 
 att.Mult_Damage = 0.75
 att.Mult_DamageMin = 0.75
