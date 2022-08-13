@@ -19,7 +19,7 @@ att.AutoStats = true
 att.Mult_Damage = 0.85
 att.Mult_DamageMin = 0.85
 
-att.Mult_MuzzleVelocity = 1.75
+att.Mult_MuzzleVelocity = 2
 
 att.Mult_ShootPitch = 1.15
 

@@ -5,7 +5,7 @@ ENT.PrintName = "40mm High Velocity"
 
 ENT.GrenadeDamage = false
 ENT.GrenadeRadius = 200
-ENT.DragCoefficient = 0.08
+ENT.DragCoefficient = 0
 
 ENT.Model = "models/weapons/shell.mdl"
 
