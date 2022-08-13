@@ -1,0 +1,49 @@
+{
+	"folders": [
+        {
+            "path": "../ArcCW/lua",
+            "name": "ArcCW Base"
+        },
+        {
+            "path": "../ArcCW_UC_Common/lua",
+            "name": "Urban Coalition Common"
+        },
+        {
+            "path": "../ArcCW_UD/lua",
+            "name": "Urban Decay"
+        },
+        {
+            "path": "../ArcCW_UR/lua",
+            "name": "Urban Renewal"
+        },
+        {
+            "path": "../ArcCW_UO/lua",
+            "name": "Urban Ordanance"
+        },
+        {
+            "path": "../ArcCW_UC_Galil/lua",
+            "name": "Urban One-off: Galil"
+        },
+        {
+            "path": "../ArcCW_UC_Lynx/lua",
+            "name": "Urban One-off: Honey Badger"
+        },
+        {
+            "path": "../ArcCW_UC_USP/lua",
+            "name": "Urban One-off: USP"
+        },
+        {
+            "path": "../ArcCW_UC_Extras/lua",
+            "name": "Urban Coalition Extras"
+        }
+    ],
+	"settings": {
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true
+	},
+	"extensions": {
+		"recommendations": [
+			"venner.vscode-glua-enhanced"
+		]
+	}
+}
