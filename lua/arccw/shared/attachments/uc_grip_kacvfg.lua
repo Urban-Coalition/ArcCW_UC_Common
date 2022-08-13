@@ -1,7 +1,7 @@
 att.PrintName = "Knight's Armament Company Vertical Foregrip"
 att.AbbrevName = "Vertical Foregrip"
 att.Icon = Material("entities/att/longtroy.png", "mips smooth")
-att.Description = "Medium-length vertical foregrip that assists in control of the weapon, but detracts from it's concealability."
+att.Description = "Medium-length vertical foregrip that assists in control of the weapon, but detracts from its concealability."
 
 att.SortOrder = 9999
 
