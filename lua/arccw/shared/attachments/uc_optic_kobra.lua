@@ -23,7 +23,7 @@ local R1, R2, R3, R4 = Material("hud/reticles/uc_kobra1.png", "mips smooth"), Ma
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 13, -1.3),
+        Pos = Vector(0, 15 -1.3),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_NONE,

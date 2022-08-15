@@ -19,7 +19,7 @@ att.ModelOffset = Vector(-2, 0, -4.55)
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 13, -1.5),
+        Pos = Vector(0, 14, -1.5),
         Ang = Angle(0, 0, 0),
         Magnification = 1.25,
         HolosightData = {
