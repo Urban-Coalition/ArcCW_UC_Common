@@ -109,8 +109,8 @@ att.UBGL_Fire = function(wep, ubgl)
             Src        = wep:GetShootSrc(),
             Spread     = Vector(0, 0, 0),
             Damage     = 0,
-            Num        = 20,
-            Force      = 120,
+            Num        = 1,
+            Force      = 5,
             HullSize   = 4,
             Weapon     = wep,
             Callback = function(attacker, tr, dmg)
@@ -134,6 +134,7 @@ att.UBGL_Fire = function(wep, ubgl)
             end
         else
             data.Spread = Vector(ArcCW.MOAToAcc * 50, ArcCW.MOAToAcc * 50, 0)
+            data.Num = 20
             owner:FireBullets(data, true)
         end
         wep:MyEmitSound(")^/arccw_uc/common/gl_fire_buck.ogg", 100, 100, 1, CHAN_WEAPON )
