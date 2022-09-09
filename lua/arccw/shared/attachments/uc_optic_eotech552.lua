@@ -18,7 +18,7 @@ att.ModelScale = Vector(0.67, 0.67, 0.67)
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 9, -1.35),
+        Pos = Vector(0, 9, -1.38),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_NONE
@@ -27,7 +27,7 @@ att.AdditionalSights = {
 
 att.Holosight = true
 att.HolosightReticle = Material("hud/reticles/ud_holo.png", "smooth")
-att.HolosightSize = 1.3
+att.HolosightSize = 1.1
 att.HolosightBone = "holosight"
 att.HolosightNoFlare = true
 
