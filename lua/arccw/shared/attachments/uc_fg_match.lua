@@ -10,7 +10,7 @@ att.Desc_Cons = {
 }
 att.Desc_Neutrals = {
 }
-att.Slot = {"uc_fg"}
+att.Slot = {"uc_fg","uc_fg_singleshot"}
 att.SortOrder = 2
 att.AutoStats = true
 
