@@ -9,6 +9,7 @@ att.Desc_Pros = {
     -- "uc.subsonic"
 }
 att.Desc_Cons = {
+    "uc.subsonic.vel"
 }
 att.Desc_Neutrals = {
 }
@@ -29,7 +30,7 @@ att.Override_PhysTracerProfile = 7
 att.Override_TracerNum = 0
 
 att.Mult_MalfunctionMean = 1.3
-att.Mult_PhysBulletMuzzleVelocity = 0.75
+att.Override_PhysBulletMuzzleVelocity = 339
 
 -- att.Hook_GetDistantShootSound = function(wep, distancesound)
 --     if distancesound == wep.DistantShootSoundSilenced then
