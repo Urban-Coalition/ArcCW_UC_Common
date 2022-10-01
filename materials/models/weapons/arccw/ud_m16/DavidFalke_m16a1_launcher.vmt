@@ -17,5 +17,4 @@ VertexLitGeneric
 	$phongboost					19
 	"$phongalbedotint" 			"1"
 	$phongfresnelranges			"[0.5 1.5 3.0]"
-	"$phongexponent" "15"
 }
