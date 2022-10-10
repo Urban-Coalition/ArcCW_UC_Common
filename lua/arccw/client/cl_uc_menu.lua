@@ -47,6 +47,8 @@ hook.Add( "PopulateWeapons", "UC_AddWeaponContent", function( pnlContent, tree, 
         NodeToUse = UCNode
     end
 
+    if NodeToUse == 0 then return end
+
     NodeToUse.DoPopulate = function(self)
         -- If we've already populated it - forget it.
         if (self.PropPanel) then return end
