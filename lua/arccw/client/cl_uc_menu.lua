@@ -137,3 +137,7 @@ function CreateUCWeapon(container, obj)
 
     return icon
 end
+
+
+-- remove this when fixed
+ArcCW.IncompatibleAddons["2654687324"] = "Breaks Urban Decay M16, you better use new epic m203 that included in urban common!"

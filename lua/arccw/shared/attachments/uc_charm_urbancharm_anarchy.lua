@@ -1,6 +1,6 @@
 att.PrintName = "Urban Charm - Anarchy"
 att.Description = "The icon of a Garry's Mod addon."
-
+att.Ignore = true
 att.Desc_Pros = {
 }
 att.Desc_Cons = {

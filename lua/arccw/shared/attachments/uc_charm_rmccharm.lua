@@ -1,5 +1,6 @@
 att.PrintName = "Red Mountain Company"
 att.Description = "Be the change you want to see."
+att.Ignore = true
 
 att.Desc_Pros = {
 }
