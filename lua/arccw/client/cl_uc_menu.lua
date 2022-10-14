@@ -13,6 +13,8 @@ local function DoGenericSpawnmenuRightclickMenu(self)
 end
 
 
+CreateClientConVar("arccw_uc_menu", 1, true, false, "Cool menu!", 0, 1) -- extra safety cause     people say it not work
+
 hook.Add( "PopulateWeapons", "UC_AddWeaponContent", function( pnlContent, tree, node )
 
     if !GetConVar("arccw_uc_menu"):GetBool() then return end
@@ -140,4 +142,6 @@ end
 
 
 -- remove this when fixed
-ArcCW.IncompatibleAddons["2654687324"] = "Breaks Urban Decay M16, you better use new epic m203 that included in urban common!"
+timer.Simple(2, function()
+    ArcCW.IncompatibleAddons["2654687324"] = "Breaks Urban Decay M16, you better use new epic m203 that included in urban common!"
+end)
