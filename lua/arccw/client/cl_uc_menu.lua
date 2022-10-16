@@ -143,5 +143,5 @@ end
 
 -- remove this when fixed
 timer.Simple(2, function()
-    ArcCW.IncompatibleAddons["2654687324"] = "Breaks Urban Decay M16, you better use new epic m203 that included in urban common!"
+    ArcCW.IncompatibleAddons["2654687324"] = "Prevents Urban Decay's M16 from properly loading."
 end)
