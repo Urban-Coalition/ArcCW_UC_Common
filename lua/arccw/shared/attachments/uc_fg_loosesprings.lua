@@ -17,7 +17,7 @@ function att.Hook_GetCapacity(wep,cap)
 end
 
 att.Hook_Compatible = function(wep)
-    if wep:GetCapacity() == 1 then return false end
+    if wep.RejectMagSizeChange or wep:GetCapacity() == 1 then return false end
 end
 
 att.Mult_RPM = .85
