@@ -27,6 +27,7 @@ att.Mult_Range = 2.5
 att.Mult_HipDispersion = 2
 
 att.Override_HullSize = 0
+att.Override_DamageType = DMG_BULLET
 
 att.Override_UC_ShellColor = Color(0.2 * 255, 0.45 * 255, 0.2 * 255)
 
