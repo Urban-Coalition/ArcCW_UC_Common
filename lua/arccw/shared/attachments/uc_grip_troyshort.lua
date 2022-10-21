@@ -1,4 +1,4 @@
-att.PrintName = "BCM Mod. 3"
+att.PrintName = "BCMGUNFIGHTER Vertical Grip Mod 3"
 att.AbbrevName = "Stubby Foregrip"
 att.Icon = Material("entities/att/shorttroy.png", "mips smooth")
 att.Description = "Decreases recoil marginally by providing a more natural forearm position."

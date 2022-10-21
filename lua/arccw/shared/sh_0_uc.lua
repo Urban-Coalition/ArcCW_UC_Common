@@ -458,7 +458,7 @@ if CLIENT then
     CreateClientConVar("arccw_uc_custcolor_2_g", 255, true, true, "Second color G", 0, 255)
     CreateClientConVar("arccw_uc_custcolor_2_b", 255, true, true, "Second color B", 0, 255)
 
-    CreateClientConVar("arccw_uc_menu", 1, true, false, "Cool menu!", 0, 1)
+    -- CreateClientConVar("arccw_uc_menu", 1, true, false, "Cool menu!", 0, 1)
 
     -- These convars are already known serverside; this only serves to tell the server it's time to update our colors to other clients.
     if not game.SinglePlayer() then
