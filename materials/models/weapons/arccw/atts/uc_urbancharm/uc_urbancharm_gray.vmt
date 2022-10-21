@@ -1,6 +1,10 @@
 VertexLitGeneric
 {
-	$basetexture "../addons/arccw_uc_common/materials/models/weapons/arccw/atts/uc_urbancharm/uc_urbancharm_gray"
+	$basetexture "../addons/ArcCW_UC_Common/materials/models/weapons/arccw/atts/uc_urbancharm/uc_urbancharm_gray"
 	$surfaceprop Default
-                $halflambert "1"
+
+	$phong 1
+	$phongfresnelranges "[0.5 0.75 1]"
+	$halflambert 1
+	$phongexponent 5
 }
