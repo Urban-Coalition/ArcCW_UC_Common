@@ -141,7 +141,7 @@ function CreateUCWeapon(container, obj)
 end
 
 
--- remove this when fixed
-timer.Simple(2, function()
-    ArcCW.IncompatibleAddons["2654687324"] = "Prevents Urban Decay's M16 from properly loading."
-end)
+-- fixed 
+-- timer.Simple(2, function()
+--     ArcCW.IncompatibleAddons["2654687324"] = "Prevents Urban Decay's M16 from properly loading."
+-- end)
