@@ -347,6 +347,8 @@ elseif game.SinglePlayer() and CLIENT then
 end
 
 ArcCW.UC.InnyOuty = function(wep)
+    if wep:GetBuff_Override("UC_NoInnyOuty") then return end
+
     local dist = wep:GetBuff_Hook("Hook_GetDistantShootSound")
     if dist == false then return end
 
