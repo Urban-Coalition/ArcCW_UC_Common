@@ -688,228 +688,303 @@ hook.Add("ArcCW_InitBulletProfiles", "UrbanCoalition", function()
         size_min = 1,
         tail_length = 0.05,
     })
+
+    ArcCW:AddBulletProfile("uc_dragon", {
+        color = Color(255, 220, 175),
+        sprite_head = false,
+        sprite_tail = false,
+
+        DrawBullet = function(bulinfo, bullet)
+
+            local a = bullet.PosStart and Lerp((bullet.PosStart - bullet.Pos):LengthSqr() / 40000, 0, 1) or 0
+            if a == 0 then return end
+
+            local emitter = ParticleEmitter(bullet.Pos)
+            if not IsValid(emitter) then return end
+
+            local vec = bullet.Vel * engine.TickInterval()
+            local count = math.ceil(vec:Length() / 12)
+
+            local count2 = math.ceil(math.sqrt(count) / 3 * a)
+            for j = 1, count2 do
+                local p = bullet.Pos - vec * (j / count2) + VectorRand() * math.Clamp((CurTime() - bullet.StartTime) / 0.5, 0, 8)
+
+                local spark = emitter:Add("effects/spark", p)
+                spark:SetVelocity(VectorRand() * 100 + vec * 0.75)
+                spark:SetGravity(Vector(math.Rand(-10, 10), math.Rand(-10, 10), -75))
+                spark:SetDieTime(math.Rand(0.15, 0.2))
+                spark:SetStartAlpha(255)
+                spark:SetEndAlpha(0)
+                spark:SetStartSize(math.Rand(3, 6))
+                spark:SetEndSize(0)
+                spark:SetRoll(math.Rand(-180, 180))
+                spark:SetRollDelta(math.Rand(-0.2, 0.2))
+                spark:SetColor(255, 220, 175)
+                spark:SetAirResistance(50)
+                spark:SetLighting(false)
+                spark:SetCollide(true)
+                spark:SetBounce(0.8)
+            end
+
+            emitter:Finish()
+            bullet.RenderTick = (bullet.RenderTick or 0) + 1
+        end,
+
+        PhysBulletHit = function(bulinfo, bullet, tr)
+            if not CLIENT then return end
+
+            local emitter = ParticleEmitter(bullet.Pos)
+            if not IsValid(emitter) then return end
+
+            local dir = bullet.Vel:GetNormalized()
+            local reflect = dir:Dot(tr.HitNormal) * 2 * tr.HitNormal  - dir
+            local vec = (reflect + VectorRand() * 0.1):GetNormalized()
+            --debugoverlay.Line(tr.HitPos, tr.HitPos - dir * 16, 10, Color(255, 0, 0), true)
+            --debugoverlay.Line(tr.HitPos, tr.HitPos - reflect * 16, 10, Color(255, 255, 0), true)
+
+            for i = 1, math.random(16, 32) do
+                local ember = emitter:Add("effects/spark", tr.HitPos + VectorRand() * 4)
+                ember:SetVelocity(VectorRand() * 200 - vec * math.Rand(200, 600) + Vector(0, 0, math.Rand(100, 200)))
+                ember:SetGravity(Vector(0, 0, -600))
+                ember:SetDieTime(math.Rand(0.6, 1.2))
+                ember:SetStartAlpha(255)
+                ember:SetEndAlpha(0)
+                ember:SetStartSize(math.Rand(3, 6))
+                ember:SetEndSize(0)
+                ember:SetRoll(math.Rand(-180, 180))
+                ember:SetRollDelta(math.Rand(-0.2, 0.2))
+                ember:SetColor(255, 220, 175)
+                ember:SetAirResistance(80)
+                ember:SetLighting(false)
+                ember:SetCollide(true)
+                ember:SetBounce(0.5)
+            end
+
+            emitter:Finish()
+        end
+    })
 end)
 
 
 -- gaymode
 do
-	local gaylist = {
-		-- MP5
-		[")^weapons/arccw_ud/m16/fire-01.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
-		[")^weapons/arccw_ud/m16/fire-02.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
-		[")^weapons/arccw_ud/m16/fire-03.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
-		[")^weapons/arccw_ud/m16/fire-04.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
-		[")^weapons/arccw_ud/m16/fire-05.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
-		[")^weapons/arccw_ud/m16/fire-06.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
+    local gaylist = {
+        -- MP5
+        [")^weapons/arccw_ud/m16/fire-01.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
+        [")^weapons/arccw_ud/m16/fire-02.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
+        [")^weapons/arccw_ud/m16/fire-03.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
+        [")^weapons/arccw_ud/m16/fire-04.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
+        [")^weapons/arccw_ud/m16/fire-05.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
+        [")^weapons/arccw_ud/m16/fire-06.ogg"]				= "weapons/m4a1/m4a1_unsil-1.wav",
 
-		[")^weapons/arccw_ud/m16/magout.ogg"]				= "weapons/m4a1/m4a1_clipout.wav",
-		[")^weapons/arccw_ud/m16/magin.ogg"]				= "weapons/m4a1/m4a1_clipin.wav",
-		[")^weapons/arccw_ud/m16/boltdrop.ogg"]				= "weapons/m4a1/m4a1_boltpull.wav",
+        [")^weapons/arccw_ud/m16/magout.ogg"]				= "weapons/m4a1/m4a1_clipout.wav",
+        [")^weapons/arccw_ud/m16/magin.ogg"]				= "weapons/m4a1/m4a1_clipin.wav",
+        [")^weapons/arccw_ud/m16/boltdrop.ogg"]				= "weapons/m4a1/m4a1_boltpull.wav",
 
-		-- MP5
-		[")^weapons/arccw_ur/mp5/magout.ogg"]				= "weapons/mp5navy/mp5_clipout.wav",
-		[")^weapons/arccw_ur/mp5/magin.ogg"]				= "weapons/mp5navy/mp5_clipin.wav",
-		[")^weapons/arccw_ur/mp5/chamber.ogg"]				= "weapons/mp5navy/mp5_slideback.wav",
-	}
+        -- MP5
+        [")^weapons/arccw_ur/mp5/magout.ogg"]				= "weapons/mp5navy/mp5_clipout.wav",
+        [")^weapons/arccw_ur/mp5/magin.ogg"]				= "weapons/mp5navy/mp5_clipin.wav",
+        [")^weapons/arccw_ur/mp5/chamber.ogg"]				= "weapons/mp5navy/mp5_slideback.wav",
+    }
 
-	hook.Add("Hook_TranslateSound", "UC_Gaymode", function(wep, snd)
+    hook.Add("Hook_TranslateSound", "UC_Gaymode", function(wep, snd)
 
-		if GetConVar("arccw_uc_gaymode"):GetBool() then
-			if istable(snd) then
-				local newtable = table.Copy(snd)
+        if GetConVar("arccw_uc_gaymode"):GetBool() then
+            if istable(snd) then
+                local newtable = table.Copy(snd)
 
-				for ind, newsnd in ipairs(newtable) do
-					if gaylist[newsnd] then
-						newtable[ind] = gaylist[newsnd]
-					end
-				end
-				
-				return newtable
-			elseif gaylist[snd] then
-				return gaylist[snd]
-			end
-		end
+                for ind, newsnd in ipairs(newtable) do
+                    if gaylist[newsnd] then
+                        newtable[ind] = gaylist[newsnd]
+                    end
+                end
 
-	end)
+                return newtable
+            elseif gaylist[snd] then
+                return gaylist[snd]
+            end
+        end
+
+    end)
 
 end
 
 local paths = {
-	"sound/weapons/arccw_ud/",
-	"sound/weapons/arccw_ur/",
-	"sound/weapons/arccw_uc_galil/",
-	"sound/weapons/arccw_uc_lynx/",
-	"sound/weapons/arccw_uc_usp/",
-	"sound/arccw_uc/",
-	"sound/weapons/arccw/",
-	"models/weapons/arccw/",
-	"models/items/arccw/",
+    "sound/weapons/arccw_ud/",
+    "sound/weapons/arccw_ur/",
+    "sound/weapons/arccw_uc_galil/",
+    "sound/weapons/arccw_uc_lynx/",
+    "sound/weapons/arccw_uc_usp/",
+    "sound/arccw_uc/",
+    "sound/weapons/arccw/",
+    "models/weapons/arccw/",
+    "models/items/arccw/",
 }
 
 if CLIENT then
-	local procedure = {
-		["sound"] = function(asset)
-			asset = string.Replace( asset, "sound\\", "" )
-			asset = string.Replace( asset, "sound/", "" )
-			if !IsValid(LocalPlayer()) then
-				print("LocalPlayer is NULL! You're too early!!")
-			else
-				LocalPlayer():EmitSound( asset, 75, 100, 0.01, CHAN_WEAPON )
-			end
-		end,
-		["model"] = function(asset)
-			local cmdl = ClientsideModel( asset )
-			cmdl:Remove()
-		end,
-	}
+    local procedure = {
+        ["sound"] = function(asset)
+            asset = string.Replace( asset, "sound\\", "" )
+            asset = string.Replace( asset, "sound/", "" )
+            if !IsValid(LocalPlayer()) then
+                print("LocalPlayer is NULL! You're too early!!")
+            else
+                LocalPlayer():EmitSound( asset, 75, 100, 0.01, CHAN_WEAPON )
+            end
+        end,
+        ["model"] = function(asset)
+            local cmdl = ClientsideModel( asset )
+            cmdl:Remove()
+        end,
+    }
 
-	local cooltable = {}
-	function fukc()
-		local function recurse( path, dir )
-			local files, directories = file.Find( path .. (dir and (dir .. "/") or "") .. "*", "GAME" )
-			for i, fie in ipairs(files) do
-				local fiex = string.GetExtensionFromFilename(fie)
-				if fiex == "ogg" or fiex == "wav" or fiex == "mp3" or fiex == "mdl" then
-					table.insert( cooltable, path .. (dir and (dir .. "/") or "") .. fie )
-				end
-			end
-			for i, dir in ipairs(directories) do
-				recurse( path, dir )
-			end
-		end
-	
-		cooltable = {}
-	
-		UC_Precache = true
-		UC_PrecachePer = 0
-		UC_PrecachePeh = 0
-		UC_PrecacheCur = "..."
-		for i, path in ipairs(paths) do
-			recurse( path )
-		end
-	
-		-- PrintTable(cooltable)
-	
-		for i, fie in ipairs(cooltable) do
-			timer.Simple(i/GetConVar("arccw_uc_cache_client_persecond"):GetFloat(), function()
-				UC_PrecachePer = i
-				UC_PrecachePeh = #cooltable
-				UC_PrecacheCur = fie
-				local fiex = string.GetExtensionFromFilename(fie)
-				if fiex == "ogg" or fiex == "wav" or fiex == "mp3" then
-					procedure["sound"](fie)
-				elseif fiex == "mdl" then
-					procedure["model"](fie)
-				elseif fiex == "phy" or fiex == "vvd" or fiex == "vtx" then
-					-- ignore these
-				else
-					print("Unknown what to do with " .. fie .. "!")
-				end
-				if i == #cooltable then UC_Precache = false end
-			end)
-		end
-	end
+    local cooltable = {}
+    function fukc()
+        local function recurse( path, dir )
+            local files, directories = file.Find( path .. (dir and (dir .. "/") or "") .. "*", "GAME" )
+            for i, fie in ipairs(files) do
+                local fiex = string.GetExtensionFromFilename(fie)
+                if fiex == "ogg" or fiex == "wav" or fiex == "mp3" or fiex == "mdl" then
+                    table.insert( cooltable, path .. (dir and (dir .. "/") or "") .. fie )
+                end
+            end
+            for i, dir in ipairs(directories) do
+                recurse( path, dir )
+            end
+        end
 
-	hook.Add("HUDPaint", "UC_Precache", function()
-		if UC_Precache then
-			local i_1 = UC_PrecachePer or 1
-			local i_2 = UC_PrecachePeh or 1
-			local i_per = i_1 / i_2
-			local i_cur = UC_PrecacheCur or "..."
-			surface.SetDrawColor(255, 255, 255, 255)
-			local ss = ScreenScale(1) * GetConVar("arccw_hud_size"):GetFloat()
-			local bx, by = (ss*150), (ss*10)
+        cooltable = {}
 
-			-- Bar
-			surface.DrawOutlinedRect( ( ScrW() / 2 ) - ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ), bx, by, 2 )
-			surface.DrawRect( ( ScrW() / 2 ) - ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ), bx * i_per, by )
+        UC_Precache = true
+        UC_PrecachePer = 0
+        UC_PrecachePeh = 0
+        UC_PrecacheCur = "..."
+        for i, path in ipairs(paths) do
+            recurse( path )
+        end
 
-			-- Top left
-			draw.SimpleText( "CACHING:", "ArcCW_12", ( ScrW() / 2 ) - ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ) - (ss*1), color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_BOTTOM )
+        -- PrintTable(cooltable)
 
-			-- Bottom right
-			draw.SimpleText( math.Round(i_per*100).."%", "ArcCW_12", ( ScrW() / 2 ) + ( bx / 2 ), ( ScrH() * 0.7 ) + ( by / 2 ) - (ss*1), color_white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_TOP )
+        for i, fie in ipairs(cooltable) do
+            timer.Simple(i/GetConVar("arccw_uc_cache_client_persecond"):GetFloat(), function()
+                UC_PrecachePer = i
+                UC_PrecachePeh = #cooltable
+                UC_PrecacheCur = fie
+                local fiex = string.GetExtensionFromFilename(fie)
+                if fiex == "ogg" or fiex == "wav" or fiex == "mp3" then
+                    procedure["sound"](fie)
+                elseif fiex == "mdl" then
+                    procedure["model"](fie)
+                elseif fiex == "phy" or fiex == "vvd" or fiex == "vtx" then
+                    -- ignore these
+                else
+                    print("Unknown what to do with " .. fie .. "!")
+                end
+                if i == #cooltable then UC_Precache = false end
+            end)
+        end
+    end
 
-			-- Top right
-			draw.SimpleText( i_1 .. "/" .. i_2, "ArcCW_8", ( ScrW() / 2 ) + ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ) - (ss*1), color_white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_BOTTOM )
+    hook.Add("HUDPaint", "UC_Precache", function()
+        if UC_Precache then
+            local i_1 = UC_PrecachePer or 1
+            local i_2 = UC_PrecachePeh or 1
+            local i_per = i_1 / i_2
+            local i_cur = UC_PrecacheCur or "..."
+            surface.SetDrawColor(255, 255, 255, 255)
+            local ss = ScreenScale(1) * GetConVar("arccw_hud_size"):GetFloat()
+            local bx, by = (ss*150), (ss*10)
 
-			-- Bottom left
-			draw.SimpleText( i_cur, "ArcCW_6", ( ScrW() / 2 ) - ( bx / 2 ), ( ScrH() * 0.7 ) + ( by / 2 ) + (ss*1), color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
-		end
-	end)
-	CreateClientConVar("arccw_uc_cache_client_persecond", 60, true, false)
-	concommand.Add( "arccw_uc_cache_client", function()
-		fukc()
-	end)
+            -- Bar
+            surface.DrawOutlinedRect( ( ScrW() / 2 ) - ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ), bx, by, 2 )
+            surface.DrawRect( ( ScrW() / 2 ) - ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ), bx * i_per, by )
+
+            -- Top left
+            draw.SimpleText( "CACHING:", "ArcCW_12", ( ScrW() / 2 ) - ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ) - (ss*1), color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_BOTTOM )
+
+            -- Bottom right
+            draw.SimpleText( math.Round(i_per*100).."%", "ArcCW_12", ( ScrW() / 2 ) + ( bx / 2 ), ( ScrH() * 0.7 ) + ( by / 2 ) - (ss*1), color_white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_TOP )
+
+            -- Top right
+            draw.SimpleText( i_1 .. "/" .. i_2, "ArcCW_8", ( ScrW() / 2 ) + ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ) - (ss*1), color_white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_BOTTOM )
+
+            -- Bottom left
+            draw.SimpleText( i_cur, "ArcCW_6", ( ScrW() / 2 ) - ( bx / 2 ), ( ScrH() * 0.7 ) + ( by / 2 ) + (ss*1), color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP )
+        end
+    end)
+    CreateClientConVar("arccw_uc_cache_client_persecond", 60, true, false)
+    concommand.Add( "arccw_uc_cache_client", function()
+        fukc()
+    end)
 end
 
 if SERVER then
-	local procedure = {
-		["sound"] = function(asset)
-			local cmdl = ents.Create( "prop_dynamic" )
-			asset = string.Replace( asset, "sound\\", "" )
-			asset = string.Replace( asset, "sound/", "" )
-			cmdl:EmitSound( asset, 75, 100, 0.4, CHAN_WEAPON )
-			cmdl:Remove()
-		end,
-		["model"] = function(asset)
-			local cmdl = ents.Create( "prop_dynamic" )
-			-- print(cmdl)
-			cmdl:SetModel(asset)
-			cmdl:Spawn()
-			cmdl:Remove()
-		end,
-	}
-	local cooltable = {}
-	function fukc_server()
-		local function recurse( path, dir )
-			local files, directories = file.Find( path .. (dir and (dir .. "/") or "") .. "*", "GAME" )
-			for i, fie in ipairs(files) do
-				local fiex = string.GetExtensionFromFilename(fie)
-				if fiex == "ogg" or fiex == "wav" or fiex == "mp3" or fiex == "mdl" then
-					table.insert( cooltable, path .. (dir and (dir .. "/") or "") .. fie )
-				end
-			end
-			for i, dir in ipairs(directories) do
-				recurse( path, dir )
-			end
-		end
+    local procedure = {
+        ["sound"] = function(asset)
+            local cmdl = ents.Create( "prop_dynamic" )
+            asset = string.Replace( asset, "sound\\", "" )
+            asset = string.Replace( asset, "sound/", "" )
+            cmdl:EmitSound( asset, 75, 100, 0.4, CHAN_WEAPON )
+            cmdl:Remove()
+        end,
+        ["model"] = function(asset)
+            local cmdl = ents.Create( "prop_dynamic" )
+            -- print(cmdl)
+            cmdl:SetModel(asset)
+            cmdl:Spawn()
+            cmdl:Remove()
+        end,
+    }
+    local cooltable = {}
+    function fukc_server()
+        local function recurse( path, dir )
+            local files, directories = file.Find( path .. (dir and (dir .. "/") or "") .. "*", "GAME" )
+            for i, fie in ipairs(files) do
+                local fiex = string.GetExtensionFromFilename(fie)
+                if fiex == "ogg" or fiex == "wav" or fiex == "mp3" or fiex == "mdl" then
+                    table.insert( cooltable, path .. (dir and (dir .. "/") or "") .. fie )
+                end
+            end
+            for i, dir in ipairs(directories) do
+                recurse( path, dir )
+            end
+        end
 
-		cooltable = {}
+        cooltable = {}
 
-		UC_Precache = true
-		UC_PrecachePer = 0
-		UC_PrecachePeh = 0
-		UC_PrecacheCur = "..."
-		for i, path in ipairs(paths) do
-			recurse( path )
-		end
+        UC_Precache = true
+        UC_PrecachePer = 0
+        UC_PrecachePeh = 0
+        UC_PrecacheCur = "..."
+        for i, path in ipairs(paths) do
+            recurse( path )
+        end
 
-		-- PrintTable(cooltable)
+        -- PrintTable(cooltable)
 
-		for i, fie in ipairs(cooltable) do
-			timer.Simple(i/(1/20), function()
-				-- print(fie)
-				UC_PrecachePer = i
-				UC_PrecachePeh = #cooltable
-				UC_PrecacheCur = fie
-				local fiex = string.GetExtensionFromFilename(fie)
-				if fiex == "ogg" or fiex == "wav" or fiex == "mp3" then
-					procedure["sound"](fie)
-				elseif fiex == "mdl" then
-					procedure["model"](fie)
-				elseif fiex == "phy" or fiex == "vvd" or fiex == "vtx" then
-					-- ignore these
-				else
-					print("Unknown what to do with " .. fie .. "!")
-				end
-				if i == #cooltable then UC_Precache = false end
-			end)
-		end
-	end
+        for i, fie in ipairs(cooltable) do
+            timer.Simple(i/(1/20), function()
+                -- print(fie)
+                UC_PrecachePer = i
+                UC_PrecachePeh = #cooltable
+                UC_PrecacheCur = fie
+                local fiex = string.GetExtensionFromFilename(fie)
+                if fiex == "ogg" or fiex == "wav" or fiex == "mp3" then
+                    procedure["sound"](fie)
+                elseif fiex == "mdl" then
+                    procedure["model"](fie)
+                elseif fiex == "phy" or fiex == "vvd" or fiex == "vtx" then
+                    -- ignore these
+                else
+                    print("Unknown what to do with " .. fie .. "!")
+                end
+                if i == #cooltable then UC_Precache = false end
+            end)
+        end
+    end
 
-	concommand.Add( "arccw_uc_cache_server", function()
-		print("hi")
-		fukc_server()
-	end, nil, "command server to cache")
+    concommand.Add( "arccw_uc_cache_server", function()
+        print("hi")
+        fukc_server()
+    end, nil, "command server to cache")
 end
