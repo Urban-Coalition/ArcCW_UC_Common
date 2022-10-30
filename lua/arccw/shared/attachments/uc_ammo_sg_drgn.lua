@@ -2,8 +2,7 @@ att.PrintName = "\"DRGN\" Dragon's Breath"
 
 att.SortOrder = -1
 att.Icon = Material("entities/att/arccw_uc_ammo_shotgun_generic.png", "mips smooth")
-att.Description = [[Novelty magnesium-based round that projects a spectacular jet of sparks and fire.
-Burning at over 3,000 °F, the blast isn't immediately lethal, but can easily set objects and people ablaze.
+att.Description = [[Novelty magnesium-based round that projects a spectacular jet of sparks and fire. Burning at over 3,000 °F, the blast isn't immediately lethal, but can easily set objects and people ablaze.
 
 Only compatible with manual action shotguns due to a weak pressure curve.]]
 att.Desc_Pros = {

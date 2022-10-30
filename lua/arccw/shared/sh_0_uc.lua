@@ -696,6 +696,7 @@ hook.Add("ArcCW_InitBulletProfiles", "UrbanCoalition", function()
 
         DrawBullet = function(bulinfo, bullet)
 
+            if CurTime() - bullet.StartTime <= 0.05 then return end
             local a = bullet.PosStart and Lerp((bullet.PosStart - bullet.Pos):LengthSqr() / 40000, 0, 1) or 0
             if a == 0 then return end
 
@@ -739,12 +740,10 @@ hook.Add("ArcCW_InitBulletProfiles", "UrbanCoalition", function()
             local dir = bullet.Vel:GetNormalized()
             local reflect = dir:Dot(tr.HitNormal) * 2 * tr.HitNormal  - dir
             local vec = (reflect + VectorRand() * 0.1):GetNormalized()
-            --debugoverlay.Line(tr.HitPos, tr.HitPos - dir * 16, 10, Color(255, 0, 0), true)
-            --debugoverlay.Line(tr.HitPos, tr.HitPos - reflect * 16, 10, Color(255, 255, 0), true)
 
             for i = 1, math.random(16, 32) do
                 local ember = emitter:Add("effects/spark", tr.HitPos + VectorRand() * 4)
-                ember:SetVelocity(VectorRand() * 200 - vec * math.Rand(200, 600) + Vector(0, 0, math.Rand(100, 200)))
+                ember:SetVelocity(VectorRand() * 100 - vec * math.Rand(100, 500) + Vector(0, 0, math.Rand(75, 150)))
                 ember:SetGravity(Vector(0, 0, -600))
                 ember:SetDieTime(math.Rand(0.6, 1.2))
                 ember:SetStartAlpha(255)
