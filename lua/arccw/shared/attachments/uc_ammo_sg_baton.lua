@@ -63,6 +63,7 @@ att.Hook_GetDistantShootSound = function(wep, distancesound)
     if distancesound == wep.DistantShootSound then return false
     end
 end
+att.UC_NoInnyOuty = true
 
 att.Mult_Damage = .2
 att.Mult_DamageMin = .2

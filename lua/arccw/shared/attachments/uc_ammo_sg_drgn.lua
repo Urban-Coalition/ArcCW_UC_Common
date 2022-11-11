@@ -2,8 +2,7 @@ att.PrintName = "\"DRGN\" Dragon's Breath"
 
 att.SortOrder = -1
 att.Icon = Material("entities/att/arccw_uc_ammo_shotgun_generic.png", "mips smooth")
-att.Description = [[Novelty magnesium-based round that projects a spectacular jet of sparks and fire.
-Burning at over 3,000 °F, the blast isn't immediately lethal, but can easily set objects and people ablaze.
+att.Description = [[Novelty magnesium-based round that projects a spectacular jet of sparks and fire. Burning at over 3,000 °F, the blast isn't immediately lethal, but can easily set objects and people ablaze.
 
 Only compatible with manual action shotguns due to a weak pressure curve.]]
 att.Desc_Pros = {
@@ -68,15 +67,18 @@ att.Override_PhysBulletImpact = false
 
 att.Override_DamageType = DMG_BURN + DMG_BUCKSHOT
 
+att.Override_HullSize = 2
+att.Override_HullSize_Priority = 100
 att.Add_AccuracyMOA = 35
 att.Mult_Damage = .5
 att.Mult_DamageMin = .5
 
 att.Override_AlwaysPhysBullet = true
-att.Mult_PhysBulletMuzzleVelocity = 0.3
+att.Override_PhysBulletMuzzleVelocity = 100
 att.Mult_PhysBulletGravity = 0.75
+att.Override_PhysBulletDrag = 4
 
---att.Override_PhysTracerProfile = 1
+att.Override_PhysTracerProfile = "uc_dragon"
 att.Override_MuzzleEffect = "muzzleflash_dragonbreath"
 
 att.Override_UC_ShellColor = Color(0.9 * 255, 0.3 * 255, 0.1 * 255)
