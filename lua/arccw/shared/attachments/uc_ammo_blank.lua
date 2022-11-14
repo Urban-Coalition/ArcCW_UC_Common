@@ -17,6 +17,7 @@ att.Slot = {"uc_ammo","ud_ammo_shotgun"}
 
 att.SortOrder = -9001
 att.AutoStats = true
+att.NotForNPCs = true
 
 att.Override_Num = 0
 att.Override_Num_Priority = 9001
