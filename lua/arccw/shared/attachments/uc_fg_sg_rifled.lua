@@ -9,7 +9,7 @@ att.Desc_Cons = {
 att.Desc_Neutrals = {
     "uc.reqslug"
 }
-att.Slot = "uc_fg"
+att.Slot = {"uc_fg","uc_fg_singleshot"}
 att.AutoStats = true
 
 att.Hook_Compatible = function(wep)
