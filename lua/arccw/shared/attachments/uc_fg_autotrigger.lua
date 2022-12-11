@@ -47,3 +47,5 @@ att.Mult_VisualRecoilMult = 2
 att.Mult_MalfunctionMean = .85
 
 att.AttachSound = "arccw_uc/common/gunsmith/internal_modification.ogg"
+
+att.ExcludeFlags = {"needsmanual"}
