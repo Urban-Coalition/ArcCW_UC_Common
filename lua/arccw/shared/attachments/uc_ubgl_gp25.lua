@@ -15,7 +15,7 @@ att.ExcludeFlags = {"uc_noubgl"}
 att.LHIK = true
 
 att.ModelOffset = Vector(0.2, 0, -1.2)
-att.Model = "models/weapons/arccw/atts/uc_ubgl_gp25_1.mdl"
+att.Model = "models/weapons/arccw/atts/uc_ubgl_gp25_2.mdl"
 
 att.SelectUBGLSound =  ""
 att.ExitUBGLSound = ""
@@ -113,9 +113,9 @@ att.UBGL_Reload = function(wep, ubgl)
     if wep:Clip2() >= 1 then return end
     if Ammo(wep) <= 0 then return end
 
-    wep:SetNextSecondaryFire(CurTime() + 2)
+    wep:SetNextSecondaryFire(CurTime() + 2.5)
 
-    wep:DoLHIKAnimation("reload", 2)
+    wep:DoLHIKAnimation("reload", 2.5)
     wep:PlaySoundTable({
         {s = { "arccw_uc/common/rattle1.ogg", "arccw_uc/common/rattle2.ogg", "arccw_uc/common/rattle3.ogg" }, t = 0},
         {s = "arccw_uc/common/magpouch_replace_small.ogg", t = 0.2},
