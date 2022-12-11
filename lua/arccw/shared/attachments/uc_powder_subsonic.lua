@@ -31,6 +31,7 @@ att.Override_TracerNum = 0
 
 att.Mult_MalfunctionMean = 1.3
 att.Override_PhysBulletMuzzleVelocity = 339
+att.Override_PhysBulletMuzzleVelocity_Priority = 2
 
 -- att.Hook_GetDistantShootSound = function(wep, distancesound)
 --     if distancesound == wep.DistantShootSoundSilenced then
