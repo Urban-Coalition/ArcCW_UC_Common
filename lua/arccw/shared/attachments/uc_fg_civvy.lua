@@ -13,8 +13,14 @@ att.Slot = "uc_fg"
 att.AutoStats = true
 
 att.Hook_Compatible = function(wep)
-    if wep:GetIsManualAction() or wep:GetIsShotgun() then
+    if wep:GetIsShotgun() then
         return false
+    end
+    for i, v in pairs(wep.Firemodes) do
+        if !v then continue end
+        if v.Mode and v.Override_ManualAction then
+            return false
+        end
     end
 end
 
