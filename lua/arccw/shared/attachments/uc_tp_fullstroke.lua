@@ -16,7 +16,11 @@ att.SortOrder = 15
 att.Mult_CycleTime = .9
 
 att.Hook_Compatible = function(wep)
-    if !wep:GetBuff_Override("Override_ManualAction", wep.ManualAction) then
-        return false
+    for i, v in pairs(wep.Firemodes) do
+        if !v then continue end
+        if v.Mode and v.Override_ManualAction then
+            return
+        end
     end
+    return false
 end
