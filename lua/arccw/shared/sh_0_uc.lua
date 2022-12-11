@@ -700,6 +700,10 @@ hook.Add("ArcCW_InitBulletProfiles", "UrbanCoalition", function()
             local a = bullet.PosStart and Lerp((bullet.PosStart - bullet.Pos):LengthSqr() / 40000, 0, 1) or 0
             if a == 0 then return end
 
+            -- Do not try to keep emitting while time is frozen (singleplayer pause)
+            if bullet.LastTick and bullet.LastTick == CurTime() then return end
+            bullet.LastTick = CurTime()
+
             local emitter = ParticleEmitter(bullet.Pos)
             if not IsValid(emitter) then return end
 
@@ -902,7 +906,7 @@ if CLIENT then
             draw.SimpleText( "CACHING:", "ArcCW_12", ( ScrW() / 2 ) - ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ) - (ss*1), color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_BOTTOM )
 
             -- Bottom right
-            draw.SimpleText( math.Round(i_per*100).."%", "ArcCW_12", ( ScrW() / 2 ) + ( bx / 2 ), ( ScrH() * 0.7 ) + ( by / 2 ) - (ss*1), color_white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_TOP )
+            draw.SimpleText( math.Round(i_per * 100) .. "%", "ArcCW_12", ( ScrW() / 2 ) + ( bx / 2 ), ( ScrH() * 0.7 ) + ( by / 2 ) - (ss*1), color_white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_TOP )
 
             -- Top right
             draw.SimpleText( i_1 .. "/" .. i_2, "ArcCW_8", ( ScrW() / 2 ) + ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ) - (ss*1), color_white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_BOTTOM )
