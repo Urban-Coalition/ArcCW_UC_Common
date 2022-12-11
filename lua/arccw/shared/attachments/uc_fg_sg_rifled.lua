@@ -1,7 +1,7 @@
 att.PrintName = "Rifled Barrel"
 
 att.Icon = Material("entities/att/arccw_uc_precisionrifling.png", "mips smooth")
-att.Description = "Specially made barrels designed for slug rounds. Improves precision noticably."
+att.Description = "Specially made lightweight barrels designed for slug rounds. Improves precision and time to aim noticably."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -18,8 +18,9 @@ att.Hook_Compatible = function(wep)
     end
 end
 
-att.Mult_AccuracyMOA = .5
-att.Mult_HipDispersion = 1.2
+att.Mult_AccuracyMOA = 0.5
+att.Mult_SightTime = 0.75
+att.Mult_HipDispersion = 1.25
 
 att.RequireFlags = {"uc_slug"}
 att.GivesFlags = {"uc_fg_sg_rifled"}
