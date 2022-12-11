@@ -16,3 +16,5 @@ att.GivesFlags = {"needsmanual"}
 att.Hook_Compatible = function(wep)
     if (!wep.ManualAction and !wep.UC_CanManualAction) or !wep:GetIsShotgun() then return false end
 end
+
+att.Ignore = true
