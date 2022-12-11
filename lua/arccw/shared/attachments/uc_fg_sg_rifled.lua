@@ -19,9 +19,7 @@ att.Hook_Compatible = function(wep)
 end
 
 att.Mult_AccuracyMOA = .5
-att.Mult_SightTime = 1.15
 att.Mult_HipDispersion = 1.2
-att.Mult_Recoil = 1.2
 
 att.RequireFlags = {"uc_slug"}
 att.GivesFlags = {"uc_fg_sg_rifled"}
