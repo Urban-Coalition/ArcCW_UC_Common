@@ -15,10 +15,9 @@ att.SortOrder = 20
 
 att.Override_ShootWhileSprint = true
 att.Mult_HipDispersion = 0.75
-att.Mult_ReloadTime = .9
 
 att.Mult_Recoil = 1.5
-att.Mult_RecoilSide = 2.5
+att.Mult_RecoilSide = 2
 att.Mult_SightTime = 1.5
 att.Mult_Sway = 2
 --att.Mult_MoveDispersion = 2
