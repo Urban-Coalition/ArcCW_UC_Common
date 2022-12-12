@@ -1,14 +1,14 @@
 "UnlitGeneric"
 {
-	$BASETEXTURE "particle/fastSideSprite_trail"
-	
+	$basetexture "particle/fastsidesprite_trail"
+
 	// Set this if you always want "additive over" blending (ONE:INVSRCALPHA)
 	$ADDOVERBLEND 1
-	
-// RAMPTEXTURE and POWERFUNCTION are mutually exclusive:	
-//	$RAMPTEXTURE "particle/fireGradient.vtf"
+
+// RAMPTEXTURE and POWERFUNCTION are mutually exclusive:
+//	$RAMPTEXTURE "particle/firegradient.vtf"
 	$POWERFUNCTION "[0.8 2.5 5]"
-	
+
 	$OVERBRIGHTFACTOR 2.5
 //	$EXTRACTGREENALPHA 1
 	$ADDSELF 1.0
