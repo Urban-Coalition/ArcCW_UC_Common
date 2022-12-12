@@ -16,6 +16,7 @@ att.Hook_Compatible = function(wep)
     if !wep:GetIsShotgun() then
         return false
     end
+    if wep:GetBuff_Override("Override_ManualAction", wep.ManualAction) then return end
     for i, v in pairs(wep.Firemodes) do
         if !v then continue end
         if v.Mode and v.Override_ManualAction then
