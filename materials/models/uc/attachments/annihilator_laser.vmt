@@ -1,8 +1,8 @@
 "VertexlitGeneric"
 {
-	"$basetexture" "models/UC/attachments/annihilator_laser_d"
+	"$basetexture" "models/uc/attachments/annihilator_laser_d"
 	$blendtintbybasealpha  "1"
-	"$bumpmap" "models/UC/attachments/annihilator_laser_n"
+	"$bumpmap" "models/uc/attachments/annihilator_laser_n"
 	$phong                      		1
 	$phongexponent                      "20"
 	$phongboost                         "0.5"
@@ -10,8 +10,8 @@
 	$phongalbedotint             "1"
 	$normalmapalphaphongmask    	1
 
-	"$envmap" "env_cubemap"					
-	"$envmaptint" "[ .05 .05 .05 ]"					
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[ .05 .05 .05 ]"
 	"$envmapFresnel" "1"
 
 	$nocull 1

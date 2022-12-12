@@ -1,9 +1,9 @@
 "VertexlitGeneric"
 {
-	"$basetexture" "models/UC/attachments/silencer_light_d"
-	"$bumpmap" "models/UC/attachments/silencer_light_n"
+	"$basetexture" "models/uc/attachments/silencer_light_d"
+	"$bumpmap" "models/uc/attachments/silencer_light_n"
 	"$normalmapalphaenvmapmask" 	1
-	
+
 	"$phong" 		"1"
 	"$phongexponent" "7"
 	"$phongboost" "1"
@@ -11,12 +11,12 @@
 	"$phongfresnelranges" "[.6 1 2]"
 	"$halflambert" "1"
 	"$color2"					"[.8 .8 .8]"
-	
+
 	"$envmap" "env_cubemap"
 	"$envmapfresnel" 			"1"
 	"$envmapFresnelMinMaxExp" "[0 5 .4]"
 	"$envmaptint" "[.15 .15  .15]"
-	
+
 	"$ambientocclusion" "1"
 	"$nocull" "1"
 }

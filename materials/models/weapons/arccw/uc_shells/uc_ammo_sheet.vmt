@@ -5,7 +5,7 @@
 	"$bumpmap" "models/weapons/arccw/uc_shells/uc_ammo_sheet_n"
 	"$phongexponenttexture" "models/weapons/arccw/uc_shells/uc_ammo_sheet_m"
 	"$normalmapalphaenvmapmask" 	1
-    
+
 	"$phongwarptexture"			"models\weapons\arccw\ud_stalol\phongwarp_metal"
 
 	"$blendTintByBaseAlpha" "1"
@@ -13,7 +13,7 @@
 	"$phongexponent"  "9"
 	"$phongboost"   "10.9"
 	"$phongalbedotint" 			"1"
-	"$phongtint"                   "[0.4 0.4 0.2]" 
+	"$phongtint"                   "[0.4 0.4 0.2]"
 	"$phongfresnelranges" "[.6 1 2]"
 	"$envmap" "env_cubemap"
 	"$envmaptint" "[0.35 0.35 0.35]"

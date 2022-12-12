@@ -1,7 +1,7 @@
 "VertexlitGeneric"
 {
-	"$basetexture" "models/UC/attachments/lens_d"
-	"$bumpmap" "models/UC/attachments/lens_n"
+	"$basetexture" "models/uc/attachments/lens_d"
+	"$bumpmap" "models/uc/attachments/lens_n"
 	$normalmapalphaenvmapmask 1
 	$phong 1
 	$phongboost 3

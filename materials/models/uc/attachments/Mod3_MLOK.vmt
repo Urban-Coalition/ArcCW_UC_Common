@@ -2,8 +2,8 @@
 // METALNESS: 211 GAMMA: 235
 "VertexLitGeneric"
 {
-	"$basetexture" "models/UC/attachments/Mod3_MLOK_c"
-	"$bumpmap" "models/UC/attachments/Mod3_MLOK_n"
+	"$basetexture" "models/uc/attachments/mod3_mlok_c"
+	"$bumpmap" "models/uc/attachments/mod3_mlok_n"
 	"$phongexponenttexture" "models/UC/attachments/Mod3_MLOK_m"
 	"$color2" "[ .4 .4 .4 ]"
 	"$blendtintbybasealpha" "1"

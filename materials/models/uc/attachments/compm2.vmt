@@ -3,13 +3,13 @@
 	"$basetexture" "models\uc\attachments\comp_m2_d"
 	"$bumpmap" "models\uc\attachments\comp_m2_n"
 	"$phongexponenttexture" "models\uc\attachments\comp_m2_m"
-	
+
 	"$phong" "1"
 	"$phongboost" "0.5"
 	"$phongexponent" "40"
 	"$phongfresnelranges"	"[1 3 4]"
-	//"$phongexponenttexture" "models/UC/attachments/eotech_xps3_r"
-	
+	//"$phongexponenttexture" "models/uc/attachments/eotech_xps3_r"
+
 	"$envmap" 					 "env_cubemap"
 	"$normalmapalphaenvmapmask" "1"
 	"$envmaptint" "[0.003 0.003 0.003]"
@@ -17,6 +17,6 @@
 	"$PhongAlbedoTint" "1"
 
 	$color2 "[0.9 0.9 0.9]"
-	
+
 	"$surfaceprop" "metal"
 }

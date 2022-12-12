@@ -1,14 +1,14 @@
 "VertexlitGeneric"
 {
-	"$basetexture" "models/UC/attachments/lens_d"
-	"$bumpmap" "models/UC/attachments/lens_n"
+	"$basetexture" "models/uc/attachments/lens_d"
+	"$bumpmap" "models/uc/attachments/lens_n"
 	$normalmapalphaenvmapmask 1
 	$phong 1
 	$phongboost 3
 	$phongexponent 5
 	$phongtint	"[.98 .84 .68]"
 	$phongfresnelranges "[.1 .4 2]"
-	
+
 	"$translucent" "1"
 	"$alpha" "0.01"
 

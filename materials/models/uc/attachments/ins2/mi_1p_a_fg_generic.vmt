@@ -1,12 +1,12 @@
 "VertexLitGeneric"
 {
-	"$basetexture" "models\uc\attachments\ins2\T_1P_A_FG_Generic_D"
-	"$bumpmap" "models\uc\attachments\ins2\T_1P_A_FG_Generic_N"
-	"$phongexponenttexture" "models\uc\attachments\ins2\T_1P_A_FG_Generic_M"
+	"$basetexture" "models\uc\attachments\ins2\t_1p_a_fg_generic_d"
+	"$bumpmap" "models\uc\attachments\ins2\t_1p_a_fg_generic_n"
+	"$phongexponenttexture" "models\uc\attachments\ins2\t_1p_a_fg_generic_m"
 	"$color2" "[1.25 1.25 1.25]"
 	"$envmap" "env_cubemap"
 	$envmaptint "[0.005 0.005 0.005]"
-	
+
 	"$phong"					"1" // bool -- phong enabler, have this on 1 if you have a central neural system
 	"$phongboost"				"19" // float -- phong intensity coefficient on top of normal map's alpha (aka phong mask)
 	"$phongfresnelranges"		"[0.5 1.5 3.0]" // vector -- phong fresnel ranges, default are [0 0.5 1]
