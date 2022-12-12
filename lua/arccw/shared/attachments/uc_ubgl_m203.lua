@@ -154,6 +154,8 @@ att.UBGL_Fire = function(wep, ubgl)
     wep:DoEffects()
 end
 
+local casing = {"arccw_uc/common/40mm/casing-40mm-01.ogg", "arccw_uc/common/40mm/casing-40mm-02.ogg", "arccw_uc/common/40mm/casing-40mm-03.ogg", "arccw_uc/common/40mm/casing-40mm-04.ogg", "arccw_uc/common/40mm/casing-40mm-05.ogg", "arccw_uc/common/40mm/casing-40mm-06.ogg"}
+
 att.UBGL_Reload = function(wep, ubgl)
     if wep:Clip2() >= 1 then return end
     if Ammo(wep) <= 0 then return end
@@ -164,6 +166,7 @@ att.UBGL_Reload = function(wep, ubgl)
     wep:PlaySoundTable({
         {s = { "arccw_uc/common/rattle1.ogg", "arccw_uc/common/rattle2.ogg", "arccw_uc/common/rattle3.ogg" }, t = 0},
         {s = "arccw_uc/common/40mm/203open.ogg", t = 0.2},
+        {s = casing, t = 0.7},
         {s = "arccw_uc/common/magpouch_replace_small.ogg", t = 0.9},
         {s = "arccw_uc/common/40mm/203insert.ogg", t = 1.2},
         {s = "arccw_uc/common/shoulder.ogg", t = 1.5},
