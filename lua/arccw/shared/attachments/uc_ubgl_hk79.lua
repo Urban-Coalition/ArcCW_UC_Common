@@ -1,7 +1,8 @@
 att.PrintName = "HK79 Underbarrel Grenade Launcher"
 att.AbbrevName = "HK79 Grenade Launcher"
---att.Icon = Material("entities/att/acwatt_uc_ubgl_hk79.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_ubgl_hk79.png", "mips smooth")
 att.Description = "Single-shot long-barreled underbarrel grenade launcher designed for the G3. The trigger is on the side, and the barrel release is on the bottom. Fires specialized 40x46mm grenade types."
+att.Ignore = true
 
 att.SortOrder = -100000
 
@@ -153,6 +154,3 @@ att.ToggleStats = {
         UBGL_Entity = "arccw_uc_40mm_airburst"
     },
 }
-
-att.Ignore = true -- TODO: Do animations and add back
-att.Icon = Material("entities/att/obsolete.png", "mips smooth")
