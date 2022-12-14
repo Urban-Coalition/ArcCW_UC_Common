@@ -15,7 +15,7 @@ att.SortOrder = 50
 
 att.Model = "models/weapons/arccw/atts/uc_muzzle1.mdl"
 att.ModelOffset = Vector(1.85, 0, 0)
-att.ModelScale = Vector(.85, .85, .85)
+att.ModelScale = Vector(.8, .8, .8)
 att.OffsetAng = Angle(0, 0, 0)
 
 -- att.Silencer = true
