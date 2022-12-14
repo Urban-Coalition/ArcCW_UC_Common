@@ -3,21 +3,26 @@ att.PrintName = "Homeboy"
 att.Icon = nil -- Material("entities/att/acwatt_lowpolysaiga12extmag.png", "smooth mips")
 att.Description = "GANGSTAS ROLL UP IN DA HOOD, POP POP POP POP POP [-----], I BALL HARD STICK A GLOCK UP IN YOUR FACE [-----], DROP DROP DROP DROP DROP GO YOUR HOMIES [-----]"
 att.Desc_Pros = {
-    "uc.homeboy"
 }
 att.Desc_Cons = {
 }
 att.Desc_Neutrals = {
+    "uc.homeboy"
 }
 att.Slot = "uc_tp"
 
 att.AutoStats = true
 att.SortOrder = 14
 
+--[[]
 att.Mult_HipDispersion = 0.5
 att.Mult_RecoilSide = 1.25
 att.Mult_SightTime = 1.75
 att.Mult_Sway = 1.5
+]]
+
+att.Mult_HipDispersion = 0.85
+att.Mult_MoveDispersion = 0.75
 
 att.LHIK = true
 att.LHIKHide = true
