@@ -1,7 +1,7 @@
 att.PrintName = "Basilisk Heavy Compensator"
 att.AbbrevName = "Basilisk Compensator"
 att.Icon = Material("entities/att/muzzle4.png", "mips smooth")
-att.Description = "Redirects propellant gases to the sides to reduce weapon recoil, particularly in the lateral directions."
+att.Description = "Redirects propellant gases to reduce weapon recoil.\nImproves recoil stability."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
@@ -19,12 +19,9 @@ att.OffsetAng = Angle(0, 0, 0)
 
 att.IsMuzzleDevice = true
 
-att.Mult_Recoil = 0.95
 att.Mult_RecoilSide = 0.75
 
-att.Add_BarrelLength = 2
-att.Mult_SightTime = 1.1
-att.Mult_Sway = 1.15
-att.Mult_ShootVol = 1.15
+att.Mult_ShootSpeedMult = 0.9
+att.Mult_Sway = 1.25
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
