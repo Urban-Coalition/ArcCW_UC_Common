@@ -8,7 +8,6 @@ att.SortOrder = -100000
 
 att.AutoStats = true
 att.Desc_Pros = {
-    "uc.ubgl"
 }
 att.Slot = "uc_ubgl"
 att.ExcludeFlags = {"uc_noubgl"}
