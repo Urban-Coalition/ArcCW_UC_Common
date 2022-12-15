@@ -1,15 +1,16 @@
-att.PrintName = "'Cage' Muzzle Compensator" -- fictional
+att.PrintName = "Cage Compensator" -- fictional
 att.AbbrevName = "Cage Compensator"
 att.Icon = Material("entities/att/muzzle5.png", "mips smooth")
-att.Description = "bithces"
+att.Description = "Dual purpose compensator and flash hider, improving weapon stability while providing a clearer firing view from the hip."
 att.Desc_Pros = {
+    "uc.flashhider"
 }
 att.Desc_Cons = {
 }
 att.AutoStats = true
 att.Slot = {"muzzle"}
 
-att.SortOrder = 100
+att.SortOrder = 50
 
 att.Model = "models/weapons/arccw/atts/uc_muzzle4.mdl"
 att.ModelOffset = Vector(2.3, 0, 0)
@@ -20,12 +21,10 @@ att.OffsetAng = Angle(0, 0, 0)
 att.Override_MuzzleEffect = "muzzleflash_suppressed"
 att.IsMuzzleDevice = true
 
--- att.Mult_ShootPitch = 1.1 please don't
--- att.Mult_ShootVol = 0.75
--- att.Mult_Range = 1.1
+att.Mult_RecoilSide = 0.85
+att.Mult_HipDispersion = 0.9
 
-att.Add_BarrelLength = 2
--- att.Mult_SightTime = 1.15
--- att.Mult_Sway = 1.25
+att.Mult_ShootSpeedMult = 0.9
+att.Mult_Sway = 1.25
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
