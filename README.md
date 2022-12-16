@@ -41,6 +41,7 @@ All weapons using the same caliber are expected to do the same penetration and d
 | 5.56x45mm   | 34-20  | 14mm        | 50/400m
 | .300 BLK    | 40-15  | 10mm        | ~
 | 5.45x39mm   | 40-20  | 12mm        | 36/360m
+| 5.7x28mm FN | 28-20  | 15mm        | 100/400m
 
 #### Rifle Ammo (ar2)
 Bolt action 7.62x51 has higher damage to allow for a one-shot chest kill using JHP. Minimum range is also increased to accomdate for it.

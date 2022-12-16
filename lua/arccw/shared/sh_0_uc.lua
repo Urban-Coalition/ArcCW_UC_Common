@@ -143,6 +143,12 @@ ArcCW.UC.StdDmg = {
         vel = 540
     },
     -- Carbine/rifle calibers
+    ["57fn"] = {
+        max = 28,
+        min = 20,
+        pen = 15,
+        vel = 910
+    }, -- 5.7x28mm FN
     ["556"] = {
         max = 34,
         min = 20,
