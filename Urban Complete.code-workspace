@@ -33,8 +33,19 @@
             "name": "Urban One-off: USP"
         },
         {
+            "path": "../ArcCW_UC_AR57/lua",
+            "name": "Urban One-off: AR-57"
+        },
+        {
+            "path": "../ArcCW_UC_Beretta/lua",
+            "name": "Urban One-off: Beretta"
+        },
+        {
             "path": "../ArcCW_UC_Extras/lua",
             "name": "Urban Coalition Extras"
+        },
+        {
+            "path": "../AFesiug"
         }
     ],
 	"settings": {
