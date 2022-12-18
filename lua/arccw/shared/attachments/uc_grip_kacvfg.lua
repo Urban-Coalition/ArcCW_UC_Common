@@ -13,10 +13,12 @@ att.LHIK = true
 att.ModelOffset = Vector(0, 0, -0.25)
 att.Model = "models/weapons/arccw/atts/uc_kacvfg1.mdl"
 
-att.Mult_Recoil = .85
-att.Mult_HipDispersion = .88
-att.Mult_SightTime = 1.12
+att.Mult_Recoil = 0.8
+
+att.Mult_SightTime = 1.1
+
 att.Mult_DrawTime = 1.15
+att.Mult_HolsterTime = 1.15
 
 att.Override_HoldtypeActive = "smg"
 att.Override_HoldtypeActive_Priority = 2

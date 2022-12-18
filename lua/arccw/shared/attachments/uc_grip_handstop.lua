@@ -18,7 +18,5 @@ att.ModelSkin = 1
 att.Override_ActivePos = Vector(-0.5, -0.5, 0.5)
 att.Override_ActiveAng = Angle(0, 0, -7)
 
-att.Mult_Sway = .75
-att.Mult_HipDispersion = .8
-att.Mult_SightTime = 1.15
-att.Mult_SightedSpeedMult = .88
+att.Mult_HipDispersion = 0.8
+att.Mult_ShootSpeedMult = 0.9
