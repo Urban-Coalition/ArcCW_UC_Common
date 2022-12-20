@@ -399,7 +399,7 @@ ArcCW.UC.InnyOuty = function(wep)
                     option = 2
                 end
 
-                if GetConVar("developer"):GetInt() > 0 then
+                if GetConVar("developer"):GetInt() > 1 then
                     print("perf" .. option)
                 end
 
@@ -425,7 +425,7 @@ ArcCW.UC.InnyOuty = function(wep)
 
             vol = vol / t_influ
 
-            if GetConVar("developer"):GetInt() > 0 then
+            if GetConVar("developer"):GetInt() > 1 then
                 print(vol)
             end
 
