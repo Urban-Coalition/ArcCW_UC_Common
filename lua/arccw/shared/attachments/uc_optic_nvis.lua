@@ -3,7 +3,7 @@ att.AbbrevName = "HALO-LR (1-6x)"
 att.Icon = Material("entities/att/nvis.png", "mips smooth")
 att.Description = "Cutting-edge night vision optic that highlights targets via infrared imaging. The complicated electronics result in a massive weight gain for the base weapon."
 
-att.SortOrder = 4
+att.SortOrder = 6
 
 att.Desc_Pros = {
     "autostat.holosight",
