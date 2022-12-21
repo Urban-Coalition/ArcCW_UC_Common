@@ -1,9 +1,9 @@
-att.PrintName = "N-Vision HALO-LR Thermal Scope (3.5-6.5x)"
-att.AbbrevName = "HALO-LR (3.5-6.5x)"
+att.PrintName = "N-Vision HALO-LR Thermal Scope (1-6x)"
+att.AbbrevName = "HALO-LR (1-6x)"
 att.Icon = Material("entities/att/nvis.png", "mips smooth")
 att.Description = "Cutting-edge night vision optic that highlights targets via infrared imaging. The complicated electronics result in a massive weight gain for the base weapon."
 
-att.SortOrder = 6.5
+att.SortOrder = 4
 
 att.Desc_Pros = {
     "autostat.holosight",
@@ -28,8 +28,8 @@ att.AdditionalSights = {
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
-        ZoomLevels = 3,
-        ScopeMagnification = 5,
+        ZoomLevels = 5,
+        ScopeMagnification = 1.1,
         Thermal = true,
         ThermalScopeColor = Color(255, 255, 255),
         ThermalHighlightColor = Color(255, 255, 255),
@@ -42,23 +42,14 @@ att.AdditionalSights = {
         Brightness = 0.1,
         ForceLowRes = true,
         FPSLock = 42,
-        -- SpecialScopeFunction = function(screen)
-            -- render.PushRenderTarget(screen)
-            
-            -- DrawBloom(0,0.3,5,5,3,0.5,1,1,1)
-            -- DrawSharpen(1,1.65)
-            -- DrawMotionBlur(0.45,1,1/45)
-
-            -- render.PopRenderTarget()
-        -- end,
     },
     {
         Pos = Vector(-0.035, 7, -1.25),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
-        ZoomLevels = 3,
-        ScopeMagnification = 5,
+        ZoomLevels = 5,
+        ScopeMagnification = 1.1,
         Thermal = true,
         ThermalScopeColor = Color(255, 255, 255),
         ThermalHighlightColor = Color(0, 0, 0),
@@ -71,19 +62,10 @@ att.AdditionalSights = {
         Brightness = 0.5,
         ForceLowRes = true,
         FPSLock = 42,
-        -- SpecialScopeFunction = function(screen)
-            -- render.PushRenderTarget(screen)
-            
-            -- DrawBloom(0, 0.3, 5, 5, 3, 0.5, 1, 1, 1)
-            -- DrawSharpen(1, 1.65)
-            -- DrawMotionBlur(0.45, 1, 1/45)
-
-            -- render.PopRenderTarget()
-        -- end,
     },
 }
 
-att.ScopeGlint = true
+att.ScopeGlint = false
 
 att.Holosight = true
 att.HolosightReticle = Material("hud/scopes/uc_nvis_reticle1grid.png", "mips smooth")
@@ -95,11 +77,10 @@ att.Colorable = false
 
 att.HolosightBlackbox = true
 
-att.HolosightMagnification = 5
-att.HolosightMagnificationMin = 3.5
-att.HolosightMagnificationMax = 6.5
+att.HolosightMagnification = 1
+att.HolosightMagnificationMin = 1.1
+att.HolosightMagnificationMax = 6
 
-att.Mult_SightTime = 1.25
-att.Mult_SightedSpeedMult = 0.65
-att.Mult_SpeedMult = 0.9
-att.Mult_Sway = 1.5
+att.Mult_SightTime = 1.1
+att.Mult_SightedSpeedMult = 0.7
+att.Mult_Sway = 1.25
