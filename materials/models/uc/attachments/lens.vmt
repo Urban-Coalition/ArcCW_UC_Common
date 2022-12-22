@@ -1,16 +1,20 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-	"$basetexture" "models/uc/attachments/lens_d"
-	"$bumpmap" "models/uc/attachments/lens_n"
-	$normalmapalphaenvmapmask 1
-	$phong 1
-	$phongboost 3
-	$phongexponent 5
-	$phongtint	"[.98 .84 .68]"
-	$phongfresnelranges "[.1 .4 2]"
+	"$baseTexture" "models\uc/attachments/gso\EoTech_Lens"
+	"$translucent" "1"
+	"$bumpmap" "models\uc/attachments/gso\EoTech_Lens_normal"
+ 	"$envmap" "env_cubemap"
+//	"$normalmapalphaenvmapmask" 1
+	"$envmapcontrast" 0.9
+	"$envmapsaturation" 0.6
+	"$envmaptint" "[ 0.2 0.2 0.2 ]"
 
-	"$envmap" "env_cubemap"
-	"$envmapfresnel" 			"1"
-	"$envmapFresnelMinMaxExp" "[0 5 .4]"
-	"$envmaptint" "[.98 .84 .68]"
+	"$phong" 			"1"
+	"$phongexponent" 		"0"
+	"$phongboost" 			"1.5"	
+	"$phongfresnelranges"		"[0.5 0.6 1]"
+	"$halflambert"			"1"
+	"$phongalbedotint"		"1"
+	"$PhongExponentTexture"		"models\uc/attachments/gso\EoTech_Lens_exponent"
+	$color2 "[0 0 0]"
 }
