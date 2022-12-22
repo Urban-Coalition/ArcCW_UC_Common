@@ -14,11 +14,11 @@ att.Slot = "optic"
 
 att.Model = "models/weapons/arccw/atts/uc_gso_eotech.mdl"
 att.ModelOffset = Vector(-0.5, 0, 0.05)
-att.ModelScale = Vector(1.4, 1.4, 1.4)
+att.ModelScale = Vector(1.3, 1.3, 1.3)
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 9, -1.64),
+        Pos = Vector(0, 9, -1.53),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_NONE
