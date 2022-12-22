@@ -3,7 +3,7 @@
 	"$basetexture"			"models\uc/attachments/gso\HAMR_d"
 	"$bumpmap" 			"models\uc/attachments/gso\HAMR_n"
 	$nocull  "1"
-		"$color"			"[1 1 1]"
+		"$color2"			"[1.4 1.4 1.4]"
 
 	 $phongtint 			"[.6 .8 1]"
 
@@ -12,7 +12,7 @@
 	//$PhongAlbedoTint 		"0"	
 	//$BasemapLuminancePhongMask	"1"
 	
-	$phongexponent 			"10"
-	$phongboost 			"1     "
-	$phongfresnelranges		"[0.25 0.25 0.25]"
+	$phongexponent 			"25"
+	$phongboost 			"0.7"
+	$phongfresnelranges		"[0.05 0.05 0.05]"
 }
