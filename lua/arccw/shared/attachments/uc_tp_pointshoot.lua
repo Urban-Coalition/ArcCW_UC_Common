@@ -13,4 +13,4 @@ att.Slot = "uc_tp"
 att.AutoStats = true
 att.SortOrder = 6
 
-att.Mult_HipDispersion = 0.4
+att.Mult_HipDispersion = 0.75
