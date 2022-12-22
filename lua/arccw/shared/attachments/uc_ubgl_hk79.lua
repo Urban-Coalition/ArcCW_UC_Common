@@ -84,7 +84,7 @@ att.UBGL_Fire = function(wep, ubgl)
     local owner = wep:GetOwner()
     local class = wep:GetBuff_Override("UBGL_Entity")
 
-    local vel, dmg = 5000, 130
+    local vel, dmg = 2500, 130
 
     -- hacky
     if class == "arccw_uc_40mm_hv" then

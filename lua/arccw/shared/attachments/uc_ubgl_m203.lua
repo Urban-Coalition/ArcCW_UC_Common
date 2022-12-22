@@ -62,8 +62,8 @@ att.Hook_ShouldNotSight = function(wep)
 end
 
 att.Hook_OnSelectUBGL = function(wep)
-    wep:SetNextSecondaryFire(CurTime() + 0.6)
-    wep:DoLHIKAnimation("to_armed", 0.6)
+    wep:SetNextSecondaryFire(CurTime() + 0.7)
+    wep:DoLHIKAnimation("to_armed", 0.7)
     wep:PlaySoundTable({
         {s = "arccw_uc/common/rattle_b2i_rifle.ogg", t = 0},
         {s = "arccw_uc/common/raise.ogg", t = 0.2},
@@ -72,8 +72,8 @@ att.Hook_OnSelectUBGL = function(wep)
 end
 
 att.Hook_OnDeselectUBGL = function(wep)
-    wep:SetNextSecondaryFire(CurTime() + 0.6)
-    wep:DoLHIKAnimation("to_idle", 0.6)
+    wep:SetNextSecondaryFire(CurTime() + 0.7)
+    wep:DoLHIKAnimation("to_idle", 0.7)
     wep:PlaySoundTable({
         {s = "arccw_uc/common/rattle_b2i_rifle.ogg", t = 0},
         {s = "arccw_uc/common/shoulder.ogg", t = 0.4},
@@ -139,7 +139,7 @@ att.UBGL_Fire = function(wep, ubgl)
         wep:MyEmitSound(")^/arccw_uc/common/gl_fire_buck.ogg", 100, 100, 1, CHAN_WEAPON )
         wep:MyEmitSound(")^/arccw_uc/common/gl_fire_buck_dist.ogg", 149, 100, 0.5, CHAN_WEAPON + 1)
     else
-        local proj = wep:FireRocket(class, 5000)
+        local proj = wep:FireRocket(class, 2500)
         if SERVER then
             proj.Damage = 130 -- lower than the m79 (200) for balance reasons
         end

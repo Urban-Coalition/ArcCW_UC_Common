@@ -59,8 +59,8 @@ att.Hook_ShouldNotSight = function(wep)
 end
 
 att.Hook_OnSelectUBGL = function(wep)
-    wep:SetNextSecondaryFire(CurTime() + 0.6)
-    wep:DoLHIKAnimation("to_armed", 0.6)
+    wep:SetNextSecondaryFire(CurTime() + 0.7)
+    wep:DoLHIKAnimation("to_armed", 0.7)
     wep:PlaySoundTable({
         {s = "arccw_uc/common/rattle_b2i_rifle.ogg", t = 0},
         {s = "arccw_uc/common/raise.ogg", t = 0.2},
@@ -69,8 +69,8 @@ att.Hook_OnSelectUBGL = function(wep)
 end
 
 att.Hook_OnDeselectUBGL = function(wep)
-    wep:SetNextSecondaryFire(CurTime() + 0.6)
-    wep:DoLHIKAnimation("to_idle", 0.6)
+    wep:SetNextSecondaryFire(CurTime() + 0.7)
+    wep:DoLHIKAnimation("to_idle", 0.7)
     wep:PlaySoundTable({
         {s = "arccw_uc/common/rattle_b2i_rifle.ogg", t = 0},
         {s = "arccw_uc/common/shoulder.ogg", t = 0.4},
@@ -83,7 +83,7 @@ att.UBGL_Fire = function(wep, ubgl)
     local owner = wep:GetOwner()
     local class = wep:GetBuff_Override("UBGL_Entity")
 
-    local vel, dmg = 5000, 130
+    local vel, dmg = 2500, 130
 
     -- hacky
     if class == "arccw_uc_40mm_he" then
@@ -112,15 +112,15 @@ att.UBGL_Reload = function(wep, ubgl)
     if wep:Clip2() >= 1 then return end
     if Ammo(wep) <= 0 then return end
 
-    wep:SetNextSecondaryFire(CurTime() + 2.5)
+    wep:SetNextSecondaryFire(CurTime() + 2.75)
 
-    wep:DoLHIKAnimation("reload", 2.5)
+    wep:DoLHIKAnimation("reload", 2.75)
     wep:PlaySoundTable({
         {s = { "arccw_uc/common/rattle1.ogg", "arccw_uc/common/rattle2.ogg", "arccw_uc/common/rattle3.ogg" }, t = 0},
         {s = "arccw_uc/common/magpouch_replace_small.ogg", t = 0.2},
-        {s = "arccw_uc/common/40mm/203insert.ogg", t = 0.8},
-        {s = "arccw_uc/common/shoulder.ogg", t = 1.2},
-        {s = "arccw_uc/common/shoulder.ogg", t = 1.7},
+        {s = "arccw_uc/common/40mm/203insert.ogg", t = 1.0},
+        {s = "arccw_uc/common/shoulder.ogg", t = 1.3},
+        {s = "arccw_uc/common/shoulder.ogg", t = 1.9},
     })
 
     local reserve = Ammo(wep)
