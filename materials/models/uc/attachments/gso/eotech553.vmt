@@ -3,9 +3,9 @@
 	"$baseTexture" "models\uc/attachments/gso\Eotech553"	
 	"$bumpmap" "models\uc/attachments/gso\Eotech553_Normal"
 	"$envmap" "env_cubemap"
-	"$envmaptint" "[.15 .15 .15]"
+	"$envmaptint" "[.05 .05 .05]"
 	"$phong" 			"1"
-	"$phongexponent"		"10"
+	"$phongexponent"		"25"
 	"$phongboost" 			"4"
 	"$phongfresnelranges"		"[0.1 0.4 .8]"
 	"$halflambert"			"1"
@@ -13,4 +13,6 @@
 	
 	"$rimlight" 0
 	"$rimlightexponent" 15
+	
+	$color2 "[1.7 1.7 2.2]"
 }
