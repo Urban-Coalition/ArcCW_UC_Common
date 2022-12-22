@@ -30,6 +30,9 @@ att.LHIKHide = true
 att.Override_ActivePos = Vector(1, 0, 1)
 att.Override_ActiveAng = Angle(0, 0, -60)
 
+att.Override_ActivePos_Priority = 15
+att.Override_ActiveAng_Priority = 15
+
 att.Override_RecoilDirection = Angle(0.707, -0.707, 0)
 att.Override_RecoilDirectionSide = Angle(0.707, 0.707, 0)
 
