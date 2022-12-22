@@ -24,9 +24,9 @@ att.ModelOffset = Vector(0, 0, 0.18)
 
 att.AdditionalSights = {
     {
-        Pos = Vector(-0.035, 7, -1.25),
+        Pos = Vector(-0.035, 6.5, -1.25),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.1,
+        Magnification = 1.5,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
         ZoomLevels = 5,
         ScopeMagnification = 1.1,
@@ -44,9 +44,9 @@ att.AdditionalSights = {
         FPSLock = 42,
     },
     {
-        Pos = Vector(-0.035, 7, -1.25),
+        Pos = Vector(-0.035, 6.5, -1.25),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.1,
+        Magnification = 1.5,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
         ZoomLevels = 5,
         ScopeMagnification = 1.1,
@@ -62,6 +62,35 @@ att.AdditionalSights = {
         Brightness = 0.5,
         ForceLowRes = true,
         FPSLock = 42,
+    },
+    {
+        Pos = Vector(-0.035, 6.5, -1.25),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.5,
+        ScrollFunc = ArcCW.SCROLL_ZOOM,
+        ZoomLevels = 5,
+        ScopeMagnification = 1.1,
+        IgnoreExtra = true,
+        ForceLowRes = true,
+        FPSLock = 42,
+
+        SpecialScopeFunction = function(screen)
+            render.PushRenderTarget(screen)
+
+            DrawColorModify({
+                ["$pp_colour_addr"] = 0,
+                ["$pp_colour_addg"] = 0,
+                ["$pp_colour_addb"] = 0,
+                ["$pp_colour_brightness"] = 0,
+                ["$pp_colour_contrast"] = 1,
+                ["$pp_colour_colour"] = 0.75,
+                ["$pp_colour_mulr"] = 0,
+                ["$pp_colour_mulg"] = 0,
+                ["$pp_colour_mulb"] = 0
+            })
+
+            render.PopRenderTarget()
+        end,
     },
 }
 
