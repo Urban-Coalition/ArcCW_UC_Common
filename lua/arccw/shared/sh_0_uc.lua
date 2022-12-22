@@ -232,10 +232,16 @@ function ArcCW.UC.CalConv(from, to, stat)
 end
 
 ArcCW.UC.ADSReload = function(wep)
-    local vm = wep:GetOwner():GetViewModel()
-    local delta = wep:GetSightDelta()
-    local coolilove = math.cos(delta * (math.pi / 2))
-    vm:SetPoseParameter("sights", Lerp(coolilove, 0, 1)) -- thanks fesiug
+    if IsValid(wep) and wep.ArcCW then
+        local vm = wep:GetOwner():GetViewModel()
+
+        local delta = 1-wep:GetSightDelta()
+
+        local bipoded = wep:GetInBipod()
+        wep.ADSBipodAnims = math.Approach(wep.ADSBipodAnims or 0, bipoded and 1 or 0, FrameTime() / 0.5)
+
+        vm:SetPoseParameter("sights", Lerp( math.ease.InOutCubic(math.max(delta, wep.ADSBipodAnims)), 0, 1)) -- thanks fesiug
+    end
 end
 
 -- right forward up
