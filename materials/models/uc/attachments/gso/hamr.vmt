@@ -2,7 +2,7 @@
 {
 	"$basetexture"			"models\uc/attachments/gso\HAMR_d"
 	"$bumpmap" 			"models\uc/attachments/gso\HAMR_n"
-	$nocull  "1"
+	$nocull  "0"
 		"$color2"			"[1.4 1.4 1.4]"
 
 	 $phongtint 			"[.6 .8 1]"
