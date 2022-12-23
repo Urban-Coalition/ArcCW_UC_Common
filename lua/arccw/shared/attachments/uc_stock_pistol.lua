@@ -1,6 +1,6 @@
 att.PrintName = "FAB Defense Collapsible Tactical Stock"
 att.AbbrevName = "Pistol Stock"
-att.Icon = nil
+att.Icon = Material("entities/att/acwatt_uc_stock_pistol.png", "mips smooth")
 att.Description = "Mitigates the recoil disadvantage typical of most pistols, but extends the weapon's profile substantially.\n\nYou probably shouldn't let the feds know you have this."
 att.Slot = "go_stock_pistol_bt"
 att.AutoStats = true
