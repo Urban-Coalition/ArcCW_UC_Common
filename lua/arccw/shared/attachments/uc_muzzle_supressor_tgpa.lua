@@ -1,6 +1,6 @@
 att.PrintName = "TGP-A Suppressor"
 
-att.Icon = Material("entities/att/tgpa.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_muzzle_supressor_tgpa.png", "mips smooth")
 att.Description = "Traps propellant gas from the muzzle, reducing visual and audible report.\nWell rounded suppressor with no notable downsides."
 att.Desc_Neutrals = {"uc.exclusive.545", "uc.supptail"}
 
