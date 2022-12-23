@@ -61,6 +61,10 @@ att.Hook_PhysBulletHit = function(wep, data)
     local effect = EffectData()
     effect:SetOrigin(data.tr.HitPos)
     util.Effect("StunstickImpact",effect)
+    
+    if data.tr.HitWorld then
+        util.Decal("FadingScorch",data.tr.HitPos - data.tr.HitNormal,data.tr.HitPos + data.tr.HitNormal)
+    end
 end
 
 att.Override_PhysBulletImpact = false
