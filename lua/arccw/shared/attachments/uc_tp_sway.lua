@@ -14,3 +14,5 @@ att.AutoStats = true
 att.SortOrder = 11
 
 att.Mult_Sway = .5
+
+att.NotForNPCs = true

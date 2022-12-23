@@ -25,3 +25,5 @@ att.Hook_Compatible = function(wep)
     end
     return false
 end
+
+att.NotForNPCs = true

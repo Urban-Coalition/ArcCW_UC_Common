@@ -30,3 +30,5 @@ att.Mult_ReloadTime = 0.95
 
 att.GivesFlags = {"ud_underload"}
 att.ExcludeFlags = {"ud_loosesprings"}
+
+att.NotForNPCs = true

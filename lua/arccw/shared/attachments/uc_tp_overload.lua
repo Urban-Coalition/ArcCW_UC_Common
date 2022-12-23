@@ -18,3 +18,5 @@ att.Add_ClipSize = 1
 att.Hook_Compatible = function(wep)
     if wep.RejectMagSizeChange or wep:GetCapacity() == 1 then return false end
 end
+
+att.NotForNPCs = true

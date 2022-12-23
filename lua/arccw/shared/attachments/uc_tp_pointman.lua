@@ -20,3 +20,5 @@ att.M_Hook_Mult_RPM = function(wep, data)
         data.mult = data.mult * 1.15
     end
 end
+
+att.NotForNPCs = true

@@ -16,3 +16,5 @@ att.SortOrder = 13
 att.Mult_ReloadTime = 0.9
 
 -- CS/GSO rapid reload OP
+
+att.NotForNPCs = true

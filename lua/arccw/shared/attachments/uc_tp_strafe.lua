@@ -16,3 +16,5 @@ att.SortOrder = 2
 
 att.Override_ShootSpeedMult = 1
 att.Mult_SightedSpeedMult = 1.2
+
+att.NotForNPCs = true
