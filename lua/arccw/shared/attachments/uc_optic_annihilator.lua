@@ -1,6 +1,6 @@
 att.PrintName = "Annihilator Handcannon Laser"
 att.AbbrevName = "Annihilator Laser"
-att.Icon = Material("entities/att/uc_optic_annihilator.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_optic_annihilator.png", "mips smooth")
 att.Description = "Oversized laser module with iron sights, attached on the upper rail."
 att.Desc_Cons = {
     "con.beam"
