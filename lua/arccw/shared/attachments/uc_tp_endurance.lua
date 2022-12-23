@@ -16,3 +16,5 @@ att.SortOrder = 17
 att.Mult_MoveSpeed = 1.1
 att.Mult_Recoil = 0.9
 att.Mult_RecoilSide = 0.9
+
+att.NotForNPCs = true

@@ -15,3 +15,5 @@ att.SortOrder = 4
 
 att.Mult_JumpDispersion = 0
 att.Mult_MoveDispersion = .5
+
+att.NotForNPCs = true

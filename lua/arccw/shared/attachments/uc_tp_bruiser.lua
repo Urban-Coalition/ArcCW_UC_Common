@@ -15,3 +15,5 @@ att.SortOrder = 19
 
 att.Mult_MeleeDamage = 1.35
 att.Mult_MeleeTime = .67
+
+att.NotForNPCs = true

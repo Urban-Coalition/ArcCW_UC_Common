@@ -34,3 +34,5 @@ att.Override_HoldtypeHolstered = "normal"
 att.Hook_Compatible = function(wep, data)
     if wep:GetIsManualAction() and wep:GetBuff("HoldtypeActive") ~= "pistol" and wep:GetBuff("HoldtypeActive") ~= "revolver" then return false end
 end
+
+att.NotForNPCs = true

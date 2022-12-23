@@ -14,3 +14,5 @@ att.AutoStats = true
 att.SortOrder = 5
 
 att.Mult_DrawTime = 0.5
+
+att.NotForNPCs = true

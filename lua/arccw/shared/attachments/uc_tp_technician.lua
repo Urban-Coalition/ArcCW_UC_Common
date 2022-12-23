@@ -17,3 +17,5 @@ att.SortOrder = 1.5
 att.Mult_MalfunctionFixTime = .65
 
 att.Ignore = true -- MalfunctionFixTime currently only works visually (8z fix pls)
+
+att.NotForNPCs = true
