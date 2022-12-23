@@ -1,6 +1,6 @@
 att.PrintName = "Leupold DeltaPoint Pro Reflex Sight (LP)"
 att.AbbrevName = "DP-Pro (LP)"
-att.Icon = Material("entities/att/dppro.png", "mips smooth")
+att.Icon = Material("entities/att/uc_optic_leupold_dppro.png", "mips smooth")
 att.Description = "Low-profile reflex sight. While its lens isn't as wide as other reflex sights, it's significantly lighter and small enough to use on pistols."
 
 att.SortOrder = 0.5

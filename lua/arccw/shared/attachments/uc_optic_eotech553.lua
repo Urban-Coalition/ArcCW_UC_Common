@@ -1,5 +1,5 @@
 att.PrintName = "EOTech 553 (HOLO)"
-att.Icon = Material("entities/att/acwatt_uc_optic_eotech.png", "mips smooth")
+att.Icon = Material("entities/att/uc_optic_eotech553.png", "mips smooth")
 att.Description = "Improves target acquisition with a highly precise circle-dot holographic reticle, while adding minimal extra weight."
 
 att.SortOrder = 1
