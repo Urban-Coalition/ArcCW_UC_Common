@@ -367,8 +367,8 @@ ArcCW.UC.InnyOuty = function(wep)
     if game.SinglePlayer() and SERVER then
         net.Start("ArcCW_UC_InnyOuty")
         net.WriteEntity(wep)
-        net.Send(wep:GetOwner())
-    elseif CLIENT and wep:GetOwner() == LocalPlayer() then
+        net.Send(Entity(1))
+    elseif CLIENT and (wep:GetOwner() == LocalPlayer() or game.SinglePlayer()) then
         if wep.DistantShootSoundOutdoors and wep.DistantShootSoundIndoors then
             local dso = wep.DistantShootSoundOutdoors
             local dsi = wep.DistantShootSoundIndoors
@@ -394,7 +394,9 @@ ArcCW.UC.InnyOuty = function(wep)
             local option = GetConVar("arccw_uc_disttrace"):GetInt()
             local fps = 1 / RealFrameTime()
 
-            if option > 0 then
+            if wep:GetOwner() ~= LocalPlayer() then
+                option = choice[1]
+            elseif option > 0 then
                 option = choice[option]
             else
                 if fps > 100 then
