@@ -12,7 +12,7 @@ att.Desc_Neutrals = {}
 att.AutoStats = true
 
 att.Slot = {"tac"}
-att.SortOrder = .9
+att.SortOrder = 20+3
 
 att.Model = "models/weapons/arccw/atts/uc_anpeq2.mdl"
 att.ModelOffset = Vector(0, 0.01, 0.35)

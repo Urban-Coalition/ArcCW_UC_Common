@@ -12,7 +12,7 @@ att.Desc_Neutrals = {}
 att.AutoStats = true
 
 att.Slot = {"tac"}
-att.SortOrder = .9
+att.SortOrder = 30+3
 
 att.Model = "models/weapons/arccw/atts/uc_flashlight.mdl"
 att.ModelOffset = Vector(0.5,0,-0.07)
