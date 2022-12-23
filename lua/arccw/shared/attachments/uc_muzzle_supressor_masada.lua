@@ -1,6 +1,6 @@
 att.PrintName = "Magpul PTS AAC Masada Suppressor"
 att.AbbrevName = "Masada Suppressor"
-att.Icon = Material("entities/att/masada.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_muzzle_supressor_masada.png", "mips smooth")
 att.Description = "Traps propellant gas from the muzzle, reducing visual and audible report.\nReduces recoil by providing extra room for gas expansion."
 att.Desc_Neutrals = {"uc.supptail"}
 

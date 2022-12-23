@@ -1,6 +1,6 @@
 att.PrintName = "Cage Compensator" -- fictional
 att.AbbrevName = "Cage Compensator"
-att.Icon = Material("entities/att/muzzle5.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_muzzle_fhider2.png", "mips smooth")
 att.Description = "Dual purpose compensator and flash hider, improving weapon stability while providing a clearer firing view from the hip."
 att.Desc_Pros = {
     "uc.flashhider"

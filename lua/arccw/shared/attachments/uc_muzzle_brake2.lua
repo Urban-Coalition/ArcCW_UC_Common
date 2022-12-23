@@ -1,6 +1,6 @@
 att.PrintName = "Helix Muzzle Brake" -- fictional
 att.AbbrevName = "Helix Brake"
-att.Icon = Material("entities/att/muzzle5.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_muzzle_brake2.png", "mips smooth")
 att.Description = "Redirects propellant gases to reduce weapon recoil.\nSlightly reduces recoil."
 att.Desc_Pros = {
 }

@@ -1,6 +1,6 @@
 att.PrintName = "Basilisk Heavy Compensator"
 att.AbbrevName = "Basilisk Compensator"
-att.Icon = Material("entities/att/muzzle4.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_muzzle_compensator.png", "mips smooth")
 att.Description = "Redirects propellant gases to reduce weapon recoil.\nImproves recoil stability."
 att.Desc_Pros = {
 }
