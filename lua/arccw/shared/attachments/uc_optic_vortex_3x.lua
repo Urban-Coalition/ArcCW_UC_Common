@@ -1,6 +1,6 @@
 att.PrintName = "Vortex SPITFIRE 3X PRISM SCOPE (1.5x-3x)"
 att.AbbrevName = "Spitfire (1.5x-3x)"
-att.Icon = Material("entities/att/uc_optic_vortex_3x.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_optic_vortex_3x.png", "mips smooth")
 att.Description = "Short to medium range combat scope that allows a more versatile engagement range."
 
 att.SortOrder = 3

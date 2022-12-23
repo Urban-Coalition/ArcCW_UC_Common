@@ -1,6 +1,6 @@
 att.PrintName = "Holosun HS510C (Riser) (RDS)"
 att.AbbrevName = "Holosun (R) (RDS)"
-att.Icon = Material("entities/att/uc_optic_holosun1.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_optic_holosun1.png", "mips smooth")
 att.Description = "Improves sighted visibility with a red-dot targeting reticle, while adding minimal extra weight. Includes a riser."
 
 att.SortOrder = 1

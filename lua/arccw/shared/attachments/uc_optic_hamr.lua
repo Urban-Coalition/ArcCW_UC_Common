@@ -1,6 +1,6 @@
 att.PrintName = "Leupold Mark 4 High Accuracy Multi-Range Riflescope (3x/HOLO)"
 att.AbbrevName = "HAMR (3x/HOLO)"
-att.Icon = Material("entities/att/uc_optic_hamr.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_optic_hamr.png", "mips smooth")
 att.Description = "Medium range scope with integrated DeltaPoint reflex sight."
 
 att.SortOrder = 3
