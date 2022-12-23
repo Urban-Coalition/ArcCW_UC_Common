@@ -1,6 +1,6 @@
 att.PrintName = "PBS-1 Suppressor"
 
-att.Icon = Material("entities/att/pbs1.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_muzzle_supressor_pbs1.png", "mips smooth")
 att.Description = "Traps propellant gas from the muzzle, reducing visual and audible report.\nGas redirection causes the side benefit of straightening recoil."
 att.Desc_Neutrals = {"uc.exclusive.762", "uc.supptail"}
 
