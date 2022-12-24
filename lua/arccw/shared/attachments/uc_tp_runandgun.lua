@@ -1,4 +1,4 @@
-att.PrintName = "Run and Gun"
+att.PrintName = "On the Move"
 
 att.Icon = Material("entities/att/arccw_uc_tp_run_and_gun.png", "smooth mips")
 att.Description = "Expert training in high-verticality maneuvers and countless moving-while-shooting drills allow you to aim steadily even while moving between cover or across open ground and enable pinpoint shooting while descending from heights or jumping."
