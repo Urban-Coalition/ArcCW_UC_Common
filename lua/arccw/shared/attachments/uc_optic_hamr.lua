@@ -15,7 +15,7 @@ att.AutoStats = true
 att.Slot = {"optic", "ud_optic", "ud_acog"}
 
 att.Model = "models/weapons/arccw/atts/uc_gso_hamr.mdl"
-att.ModelOffset = Vector(0, 0, 0)
+att.ModelOffset = Vector(0, 0, -0.1)
 att.ModelScale = Vector(1, 1, 1)
 att.OffsetAng = Angle(0, 0, 0)
 
