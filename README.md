@@ -1,5 +1,5 @@
 # Urban Coalition Common Pack
-
+https://discord.gg/gdJBZh9NPR  
 Contains universal attachments used by Urban Decay and future weapon packs.
 
 ## Slot types:
