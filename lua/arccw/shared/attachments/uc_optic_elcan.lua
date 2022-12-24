@@ -1,6 +1,6 @@
 att.PrintName = "ELCAN C79 (3.4x)"
 att.Icon = Material("entities/att/acwatt_uc_optic_elcan.png", "mips smooth")
-att.Description = "Medium range combat scope commonly used with machine guns.\nEquipped with backup iron sights for use in emergencies."
+att.Description = "Durable, dependable, and venerable medium-range combat scope built to stand up to constant heavy fire.\nEquipped with backup iron sights for use in emergencies."
 
 att.SortOrder = 3.4
 
