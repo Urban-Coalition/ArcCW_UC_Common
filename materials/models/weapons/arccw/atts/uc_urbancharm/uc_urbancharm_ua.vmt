@@ -1,6 +1,6 @@
 VertexLitGeneric
 {
-	$basetexture "../addons/arccw_uc_common/materials/models/weapons/arccw/atts/uc_urbancharm/uc_urbancharm_ua"
+	$basetexture "models/weapons/arccw/atts/uc_urbancharm/uc_urbancharm_ua"
 	$surfaceprop Default
                 $halflambert "1"
 }
