@@ -37,7 +37,7 @@ AccessorFunc(PANEL, "m_bIsNPCWeapon", "IsNPCWeapon")
 
 function PANEL:Init()
     self:SetPaintBackground(false)
-    local sw, sh = self:GetParent():GetParent():GetParent():GetSize()
+    -- local sw, sh = self:GetParent():GetParent():GetParent():GetSize()
     self:SetSize(384, 128) -- TODO: get real long n har. nvm
     self:SetText("")
     self:SetDoubleClickingEnabled(false)
@@ -180,7 +180,7 @@ function PANEL:Paint(w, h)
     if self:GetIsNPCWeapon() then
         surface.SetMaterial(matOverlay_NPCWeapon)
 
-        if self:GetSpawnName() == GetConVarString("gmod_npcweapon") then
+        if self:GetSpawnName() == GetConVar("gmod_npcweapon"):GetString() then
             surface.SetMaterial(matOverlay_NPCWeaponSelected)
         end
 

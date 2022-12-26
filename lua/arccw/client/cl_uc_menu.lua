@@ -39,17 +39,19 @@ hook.Add( "PopulateWeapons", "UC_AddWeaponContent", function( pnlContent, tree, 
     -- PrintTable(AllUCWeapons)
     -- PrintTable(AllUCWeaponsByPack)
 
-    local NodeToUse = 0
+    local NodeToUse = nil
     -- MW base devs, I tried to recreate this spawnmenu stuff without looking at the code for yours
     -- BUT I WAS FUCKING BAWLING MY EYES OUT TRYING TO GET HOW TO DO THIS NEXT LINE
     -- anyways you guys probably are not reading this so i will end it here thank you
     -- ( i had the idea to do this kinda shit like. 2 days before smgs were pushed. i'm fucking crying i crode 😭😭😭 )
     for _, UCNode in pairs(tree:Root():GetChildNodes()) do
-        if UCNode:GetText() != "ArcCW - Urban Coalition" then continue end
-        NodeToUse = UCNode
+        if UCNode:GetText() == "ArcCW - Urban Coalition" then
+            NodeToUse = UCNode
+            break
+        end
     end
 
-    if NodeToUse == 0 then return end
+    if !NodeToUse then return end
 
     NodeToUse.DoPopulate = function(self)
         -- If we've already populated it - forget it.
@@ -67,8 +69,8 @@ hook.Add( "PopulateWeapons", "UC_AddWeaponContent", function( pnlContent, tree, 
 
             local alphabeticallist = {}
             for _, k in pairs(class) do table.insert(alphabeticallist, {AllUCWeapons[k], PrintName = AllUCWeapons[k].PrintName}) end
-            for k, ent in SortedPairsByMemberValue( alphabeticallist, "PrintName" ) do
-                local ent = ent[1]
+            for k, e in SortedPairsByMemberValue( alphabeticallist, "PrintName" ) do
+                local ent = e[1]
                 CreateUCWeapon( self.PropPanel, {
                     nicename	= ent.PrintName or ent.ClassName,
                     spawnname	= ent.ClassName,
@@ -82,6 +84,14 @@ hook.Add( "PopulateWeapons", "UC_AddWeaponContent", function( pnlContent, tree, 
             end
 
         end
+    end
+
+    -- InternalDoClick is called on the first child node before our function override.
+    -- Remove its results and regenerate our cool tab
+    if tree:Root():GetChildNode(0) == NodeToUse then
+        NodeToUse.PropPanel:Remove()
+        NodeToUse.PropPanel = nil
+        NodeToUse:InternalDoClick()
     end
 end )
 
