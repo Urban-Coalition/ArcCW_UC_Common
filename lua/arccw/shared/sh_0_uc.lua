@@ -781,8 +781,11 @@ hook.Add("ArcCW_InitBulletProfiles", "UrbanCoalition", function()
 end)
 
 local paths = {
+    "sound/weapons/arccw/",
     "sound/weapons/arccw_ud/",
     "sound/weapons/arccw_ur/",
+    "sound/weapons/arccw_uo/",
+    "sound/weapons/arccw_uc_ar57/",
     "sound/weapons/arccw_uc_galil/",
     "sound/weapons/arccw_uc_lynx/",
     "sound/weapons/arccw_uc_usp/",
