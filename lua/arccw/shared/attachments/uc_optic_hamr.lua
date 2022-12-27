@@ -1,5 +1,5 @@
 att.PrintName = "Leupold Mark 4 High Accuracy Multi-Range Riflescope (3x/HOLO)"
-att.AbbrevName = "HAMR (3x/HOLO)"
+att.AbbrevName = "HAMR (2-4x/HOLO)"
 att.Icon = Material("entities/att/acwatt_uc_optic_hamr.png", "mips smooth")
 att.Description = "Top-of-the-line magnified combat optic with an integral DeltaPoint.\nThough it is moderately heavy, a skilled operator will be able to make use of it at every typical engagement distance."
 
@@ -24,6 +24,7 @@ att.AdditionalSights = {
         Pos = Vector(0, 8, -1.46325),
         Ang = Angle(0, 0, 0),
         Magnification = 1.25,
+        ScrollFunc = ArcCW.SCROLL_ZOOM,
         IgnoreExtra = true,
         CrosshairInSights = false,
         HolosightBone = "holosight",
@@ -34,7 +35,9 @@ att.AdditionalSights = {
             HolosightSize = 9.5,
             HolosightPiece = "models/weapons/arccw/atts/uc_gso_hamr_hsp.mdl",
             HolosightBlackbox = true,
-            HolosightMagnification = 3,
+            HolosightMagnificationMin = 2,
+            HolosightMagnificationMax = 4,
+            HolosightMagnification = 4,
             Colorable = true,
         },
     },
