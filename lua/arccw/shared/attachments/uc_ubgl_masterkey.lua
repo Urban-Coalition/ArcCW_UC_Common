@@ -82,6 +82,23 @@ att.Hook_OnDeselectUBGL = function(wep)
     })
 end
 
+local f1 = {
+    ")arccw_uc/common/ub12ga/fire-01.ogg",
+    ")arccw_uc/common/ub12ga/fire-02.ogg",
+    ")arccw_uc/common/ub12ga/fire-03.ogg",
+    ")arccw_uc/common/ub12ga/fire-04.ogg",
+    ")arccw_uc/common/ub12ga/fire-05.ogg",
+    ")arccw_uc/common/ub12ga/fire-06.ogg",
+}
+local f2 = {
+    ")arccw_uc/common/ub12ga/fire-dist-01.ogg",
+    ")arccw_uc/common/ub12ga/fire-dist-02.ogg",
+    ")arccw_uc/common/ub12ga/fire-dist-03.ogg",
+    ")arccw_uc/common/ub12ga/fire-dist-04.ogg",
+    ")arccw_uc/common/ub12ga/fire-dist-05.ogg",
+    ")arccw_uc/common/ub12ga/fire-dist-06.ogg",
+}
+
 att.UBGL_Fire = function(wep, ubgl)
     if wep:Clip2() <= 0 or wep:GetNextPrimaryFire() > CurTime() then return end
     if wep:GetNW2Bool("MasterkeyNeedsPump", false) then return end
@@ -139,8 +156,8 @@ att.UBGL_Fire = function(wep, ubgl)
         owner:FireBullets(data, true)
     end
 
-    wep:MyEmitSound(")^/weapons/arccw_ud/870/fire.ogg", 100, 100, 1, CHAN_WEAPON )
-    wep:MyEmitSound(")^/weapons/arccw_ud/870/fire_dist.ogg", 149, 100, 0.5, CHAN_WEAPON + 1)
+    wep:MyEmitSound(table.Random(f1), 80, 100, 1, CHAN_STATIC )
+    wep:MyEmitSound(table.Random(f2), 149, 100, 1, CHAN_STATIC )
 
     wep:DoLHIKAnimation("fire")
     wep:SetNextPrimaryFire(CurTime() + 0.4)
