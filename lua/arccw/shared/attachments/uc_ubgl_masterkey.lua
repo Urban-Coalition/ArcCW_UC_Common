@@ -98,6 +98,14 @@ local f2 = {
     ")arccw_uc/common/ub12ga/fire-dist-05.ogg",
     ")arccw_uc/common/ub12ga/fire-dist-06.ogg",
 }
+local f3 = {
+    ")arccw_uc/common/ub12ga/mech-01.ogg",
+    ")arccw_uc/common/ub12ga/mech-02.ogg",
+    ")arccw_uc/common/ub12ga/mech-03.ogg",
+    ")arccw_uc/common/ub12ga/mech-04.ogg",
+    ")arccw_uc/common/ub12ga/mech-05.ogg",
+    ")arccw_uc/common/ub12ga/mech-06.ogg",
+}
 
 att.UBGL_Fire = function(wep, ubgl)
     if wep:Clip2() <= 0 or wep:GetNextPrimaryFire() > CurTime() then return end
@@ -158,6 +166,7 @@ att.UBGL_Fire = function(wep, ubgl)
 
     wep:MyEmitSound(table.Random(f1), 80, 100, 1, CHAN_STATIC )
     wep:MyEmitSound(table.Random(f2), 149, 100, 1, CHAN_STATIC )
+    wep:MyEmitSound(table.Random(f3), 80, 100, 1, CHAN_STATIC )
 
     wep:DoLHIKAnimation("fire")
     wep:SetNextPrimaryFire(CurTime() + 0.4)
@@ -168,18 +177,49 @@ att.UBGL_Fire = function(wep, ubgl)
 end
 
 att.Hook_Think = function(wep)
-    if wep:GetNW2Bool("MasterkeyNeedsPump", false) and wep:GetNW2Float("MasterkeyPumpTime", CurTime()) <= CurTime() and !wep:GetOwner():KeyDown( IN_ATTACK ) then
+    if wep:GetNW2Bool("MasterkeyInReload", false) and wep:GetNW2Float("MasterkeyReloadTime", CurTime()) <= CurTime() then
+        if wep:Clip2() == 4 then
+            wep:DoLHIKAnimation("sgreload_end")
+            wep:SetReloading(CurTime() + 0.4)
+            wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.4)
+            wep:PlaySoundTable({
+                {s = ")arccw_uc/common/shoulder.ogg", t = 0.1},
+            })
+            wep:SetNW2Bool("MasterkeyInReload", false)
+        else
+            wep:DoLHIKAnimation("sgreload_insert")
+            wep:SetReloading(CurTime() + 0.4)
+            wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.4)
+            wep:PlaySoundTable({
+                {s = ")arccw_uc/common/shotgun-insert-alt-01.ogg", t = 0.05},
+            })
+            wep:SetClip2(wep:Clip2() + 1)
+            wep:GetOwner():RemoveAmmo(1, "buckshot")
+        end
+    elseif wep:GetNW2Bool("MasterkeyNeedsPump", false) and wep:GetNW2Float("MasterkeyPumpTime", CurTime()) <= CurTime() and wep:Clip2() > 0 and !wep:GetOwner():KeyDown( IN_ATTACK ) then
         wep:SetNW2Bool("MasterkeyNeedsPump", false)
-        wep:SetNextPrimaryFire(CurTime() + 0.4)
+        wep:SetPriorityAnim(CurTime() + 0.4)
         if game.SinglePlayer() and SERVER then
             wep:DoLHIKAnimation("cycle")
             wep:PlaySoundTable({
-                {s = ")^/weapons/arccw_ud/870/rack_1.ogg", t = 0.05},
-                {s = ")^/weapons/arccw_ud/870/eject.ogg", t = 0.15},
-                {s = ")^/weapons/arccw_ud/870/rack_2.ogg", t = 0.25},
+                {s = ")weapons/arccw_ud/870/rack_1.ogg", t = 0.05},
+                {s = ")weapons/arccw_ud/870/eject.ogg", t = 0.15},
+                {s = ")weapons/arccw_ud/870/rack_2.ogg", t = 0.25},
             })
         end
     end
+
+    --[[]
+	if wep:GetMW2Masterkey_Reloading() and wep:GetMW2Masterkey_ReloadingTimer() < CurTime() and wep:Clip2() >= 4 then
+		MW2Masterkey_ReloadFinish(wep)
+	elseif wep:GetMW2Masterkey_Reloading() and wep:GetMW2Masterkey_ReloadingTimer() < CurTime() and wep:Clip2() < 4 then
+		MW2Masterkey_ReloadLoop(wep)
+	end
+
+    if wep:GetMW2Masterkey_ShellInsertTime() < CurTime() and wep:GetMW2Masterkey_ShellInsertTime() != 0 then
+	    MW2Masterkey_InsertShell(wep)
+        wep:SetMW2Masterkey_ShellInsertTime(0)
+    end]]
 end
 
 att.UBGL_Reload = function(wep, ubgl)
@@ -188,28 +228,43 @@ att.UBGL_Reload = function(wep, ubgl)
 
     wep:SetNextSecondaryFire(CurTime() + 2.75)
 
-    wep:DoLHIKAnimation("reload", 2.75)
-    wep:PlaySoundTable({
-        {s = "arccw_uc/common/raise.ogg", t = 0.15},
-        {s = "arccw_uc/common/grab.ogg", t = 0.3},
+    if wep:Clip2() == 0 then
+        wep:DoLHIKAnimation("sgreload_start_empty", 2)
+        wep:PlaySoundTable({
+            {s = ")arccw_uc/common/raise.ogg", t = 0.15},
+            {s = ")arccw_uc/common/grab.ogg", t = 0.3},
 
-        {s = ")^/arccw_uc/common/shotgun-insert-alt-01.ogg", t = 0.5},
-        {s = ")^/arccw_uc/common/shotgun-insert-alt-02.ogg", t = 1.0},
-        {s = ")^/arccw_uc/common/shotgun-insert-alt-03.ogg", t = 1.5},
+            {s = ")arccw_uc/common/shotgun-insert-alt-01.ogg", t = 0.5},
 
-        {s = "arccw_uc/common/rattle_b2i_rifle.ogg", t = 2.0},
+            {s = ")arccw_uc/common/rattle_b2i_rifle.ogg", t = 1.0},
 
-        {s = ")^/weapons/arccw_ud/870/rack_1.ogg", t = 2.3},
-        {s = ")^/weapons/arccw_ud/870/rack_2.ogg", t = 2.5},
-        {s = "arccw_uc/common/shoulder.ogg", t = 2.6},
-    })
+            {s = ")weapons/arccw_ud/870/rack_1.ogg", t = 1.3},
+            {s = ")weapons/arccw_ud/870/rack_2.ogg", t = 1.5},
+            {s = ")arccw_uc/common/shoulder.ogg", t = 1.6},
+        })
+        wep:SetNW2Bool("MasterkeyNeedsPump", false)
+        wep:SetReloading(CurTime() + 2)
+        wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 2)
+        
+        wep:SetClip2(wep:Clip2() + 1)
+        wep:GetOwner():RemoveAmmo(1, "buckshot")
+    else
+        wep:DoLHIKAnimation("sgreload_start", 0.5)
+        wep:PlaySoundTable({
+            {s = ")arccw_uc/common/raise.ogg", t = 0.15},
+            {s = ")arccw_uc/common/grab.ogg", t = 0.3},
+        })
+        wep:SetReloading(CurTime() + 0.5)
+        wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.5)
+    end
+    wep:SetNW2Bool("MasterkeyInReload", true)
 
-    local reserve = Ammo(wep)
-    reserve = reserve + wep:Clip2()
-    local clip = 4
-    local load = math.Clamp(clip, 0, reserve)
-    wep:GetOwner():SetAmmo(reserve - load, "smg1_grenade")
-    wep:SetClip2(load)
+    --local reserve = Ammo(wep)
+    --reserve = reserve + wep:Clip2()
+    --local clip = 4
+    --local load = math.Clamp(clip, 0, reserve)
+    --wep:GetOwner():SetAmmo(reserve - load, "smg1_grenade")
+    --wep:SetClip2(load)
 end
 
 att.Mult_SightTime = 1.2
