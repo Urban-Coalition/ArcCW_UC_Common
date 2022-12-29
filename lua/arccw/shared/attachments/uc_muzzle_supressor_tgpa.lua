@@ -23,7 +23,7 @@ att.Mult_ShootVol = 0.75
 
 att.Add_BarrelLength = 5
 att.Mult_Range = 0.9
-att.Mult_SightTime = 1.05
+att.Mult_SightTime = 1.07
 att.Mult_Sway = 1.15
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
