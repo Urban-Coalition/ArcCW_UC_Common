@@ -236,8 +236,7 @@ att.UBGL_Reload = function(wep, ubgl)
     if wep:Clip2() == 0 then
         wep:DoLHIKAnimation("sgreload_start_empty", 2)
         wep:PlaySoundTable({
-            {s = ")arccw_uc/common/raise.ogg", t = 0.15},
-            {s = ")weapons/arccw_ud/870/rack_1.ogg", t = 0.3},
+            {s = ")weapons/arccw_ud/870/rack_1.ogg", t = 0},
 
             {s = ")arccw_uc/common/shotgun-insert-alt-01.ogg", t = 0.8},
 
