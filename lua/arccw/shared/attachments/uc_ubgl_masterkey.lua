@@ -178,28 +178,31 @@ end
 
 att.Hook_Think = function(wep)
     local pred = game.SinglePlayer() and SERVER or !game.SinglePlayer() and CLIENT
-    if wep:GetNW2Bool("MasterkeyInReload", false) and wep:GetNW2Float("MasterkeyReloadTime", CurTime()) <= CurTime() then
-        if wep:Clip2() == 4 then
-            wep:SetReloading(CurTime() + 0.4)
-            wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.4)
-            if pred then
-                wep:DoLHIKAnimation("sgreload_end")
-                wep:PlaySoundTable({
-                    {s = ")arccw_uc/common/shoulder.ogg", t = 0.1},
-                })
+    if wep:GetNW2Bool("MasterkeyInReload", false) then
+        if wep:GetNW2Float("MasterkeyReloadTime", CurTime()) <= CurTime() then
+            if wep:Clip2() == 4 then
+                wep:SetReloading(CurTime() + 0.4)
+                wep:SetNW2Float("MasterkeyPumpTime", CurTime() + 0.4)
+                wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.4)
+                if pred then
+                    wep:DoLHIKAnimation("sgreload_end")
+                    wep:PlaySoundTable({
+                        {s = ")arccw_uc/common/shoulder.ogg", t = 0.1},
+                    })
+                end
+                wep:SetNW2Bool("MasterkeyInReload", false)
+            else
+                wep:SetReloading(CurTime() + 0.4)
+                wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.4)
+                if pred then
+                    wep:DoLHIKAnimation("sgreload_insert")
+                    wep:PlaySoundTable({
+                        {s = ")arccw_uc/common/shotgun-insert-alt-01.ogg", t = 0.05},
+                    })
+                end
+                wep:SetClip2(wep:Clip2() + 1)
+                wep:GetOwner():RemoveAmmo(1, "buckshot")
             end
-            wep:SetNW2Bool("MasterkeyInReload", false)
-        else
-            wep:SetReloading(CurTime() + 0.4)
-            wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.4)
-            if pred then
-                wep:DoLHIKAnimation("sgreload_insert")
-                wep:PlaySoundTable({
-                    {s = ")arccw_uc/common/shotgun-insert-alt-01.ogg", t = 0.05},
-                })
-            end
-            wep:SetClip2(wep:Clip2() + 1)
-            wep:GetOwner():RemoveAmmo(1, "buckshot")
         end
     elseif wep:GetNW2Bool("MasterkeyNeedsPump", false) and wep:GetNW2Float("MasterkeyPumpTime", CurTime()) <= CurTime() and wep:Clip2() > 0 and !wep:GetOwner():KeyDown( IN_ATTACK ) then
         wep:SetNW2Bool("MasterkeyNeedsPump", false)
