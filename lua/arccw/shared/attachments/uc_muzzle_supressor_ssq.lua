@@ -1,6 +1,6 @@
 att.PrintName = "US G.I. 45 Suppressor"
 att.AbbrevName = "G.I. Suppressor"
-att.Icon = Material("entities/att/ga9rev.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_muzzle_supressor_ssq.png", "mips smooth")
 att.Description = "Traps propellant gas from the muzzle, reducing visual and audible report.\nEnhances ballistics performance significantly, but its low maximum pressure makes it incompatible with supersonic ammunition."
 att.Desc_Neutrals = {"uc.exclusive.subsonic", "uc.subsonic"}
 

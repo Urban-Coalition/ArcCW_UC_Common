@@ -15,10 +15,11 @@ att.Slot = {"optic"}
 
 att.Model = "models/weapons/arccw/atts/uc_holosun1.mdl"
 att.ModelScale = Vector( 1.5, 1.5, 1.5 )
+att.ModelOffset = Vector( -0.5, 0, 0 )
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 9, -1.5),
+        Pos = Vector(0, 9.5, -1.5),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_NONE

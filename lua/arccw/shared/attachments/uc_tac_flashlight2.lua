@@ -15,7 +15,7 @@ att.Slot = {"tac","tac_pistol"}
 att.SortOrder = 30+2
 
 att.Model = "models/weapons/arccw/atts/ud_flashlight_2.mdl"
-att.ModelOffset = Vector(0,0,-.15)
+att.ModelOffset = Vector(0,0,-.2)
 
 att.Flashlight = false
 att.FlashlightFOV = 50
