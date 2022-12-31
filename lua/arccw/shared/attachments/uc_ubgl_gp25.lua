@@ -107,7 +107,10 @@ att.UBGL_Fire = function(wep, ubgl)
     wep:MyEmitSound(")^/arccw_uc/common/40mm/fire-dist-0" .. math.random(1, 6) .. ".ogg", 149, 100, 0.5, CHAN_BODY)
     wep:MyEmitSound(")^/arccw_uc/common/40mm/mech-0" .. math.random(1, 6) .. ".ogg", 149, 100, 0.5, CHAN_AUTO)
 
-    wep:DoLHIKAnimation("fire")
+    if game.SinglePlayer() and SERVER or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted()) then
+        wep:DoEffects()
+        wep:DoLHIKAnimation("fire")
+    end
     wep:SetClip2(wep:Clip2() - 1)
     wep:DoEffects()
 end

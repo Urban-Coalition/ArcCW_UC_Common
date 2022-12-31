@@ -176,8 +176,8 @@ att.UBGL_Fire = function(wep, ubgl)
     
     if game.SinglePlayer() and SERVER or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted()) then
         wep:DoEffects()
+        wep:DoLHIKAnimation("fire")
     end
-    wep:DoLHIKAnimation("fire")
     wep:SetNextPrimaryFire(CurTime() + 0.4)
     wep:SetClip2(wep:Clip2() - 1)
     wep:SetNW2Bool("MasterkeyNeedsPump", true)
