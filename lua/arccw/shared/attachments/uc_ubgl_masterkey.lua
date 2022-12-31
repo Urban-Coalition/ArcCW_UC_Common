@@ -164,9 +164,11 @@ att.UBGL_Fire = function(wep, ubgl)
         owner:FireBullets(data, true)
     end
 
-    wep:MyEmitSound(table.Random(f1), 80, 100, 1, CHAN_STATIC )
-    wep:MyEmitSound(table.Random(f2), 149, 100, 1, CHAN_STATIC )
-    wep:MyEmitSound(table.Random(f3), 80, 100, 1, CHAN_STATIC )
+    if (game.SinglePlayer() and SERVER) or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted()) then
+        wep:MyEmitSound(table.Random(f1), 80, 100, 1, CHAN_STATIC )
+        wep:MyEmitSound(table.Random(f2), 149, 100, 1, CHAN_STATIC )
+        wep:MyEmitSound(table.Random(f3), 80, 100, 1, CHAN_STATIC )
+    end
 
     wep:DoLHIKAnimation("fire")
     wep:SetNextPrimaryFire(CurTime() + 0.4)
@@ -177,7 +179,7 @@ att.UBGL_Fire = function(wep, ubgl)
 end
 
 att.Hook_Think = function(wep)
-    local pred = game.SinglePlayer() and SERVER or !game.SinglePlayer() and CLIENT
+    local pred = game.SinglePlayer() and SERVER or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted())
     if wep:GetNW2Bool("MasterkeyInReload", false) then
         if wep:GetNW2Float("MasterkeyReloadTime", CurTime()) <= CurTime() then
             if wep:Clip2() == 4 then
