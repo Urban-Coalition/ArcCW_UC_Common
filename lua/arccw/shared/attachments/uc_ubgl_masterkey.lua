@@ -26,7 +26,7 @@ att.UBGL_PrintName = "UBSG"
 att.UBGL_Automatic = false
 att.UBGL_MuzzleEffect = "muzzleflash_shotgun"
 att.UBGL_Ammo = "buckshot"
-att.UBGL_RPM = 600
+att.UBGL_RPM = 120
 att.UBGL_Recoil = 1
 
 -- ??
@@ -169,11 +169,13 @@ att.UBGL_Fire = function(wep, ubgl)
         wep:MyEmitSound(table.Random(f2), 149, 100, 1, CHAN_STATIC )
         wep:MyEmitSound(table.Random(f3), 80, 100, 1, CHAN_STATIC )
     end
-
+    
+    if game.SinglePlayer() and SERVER or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted()) then
+        wep:DoEffects()
+    end
     wep:DoLHIKAnimation("fire")
     wep:SetNextPrimaryFire(CurTime() + 0.4)
     wep:SetClip2(wep:Clip2() - 1)
-    wep:DoEffects()
     wep:SetNW2Bool("MasterkeyNeedsPump", true)
     wep:SetNW2Float("MasterkeyPumpTime", CurTime() + 0.3)
 end
