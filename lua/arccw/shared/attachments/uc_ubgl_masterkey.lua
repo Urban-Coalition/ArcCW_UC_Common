@@ -1,7 +1,7 @@
 att.PrintName = "Masterkey Underslung Shotgun"
 att.AbbrevName = "Masterkey Shotgun"
 att.Icon = Material("entities/att/acwatt_uc_ubgl_masterkey.png", "mips smooth")
-att.Description = "Underslung shotgun primarily used to breach doors, but loaded with #00 Buckshot for your pleasure. Negatively impacts the weapon's handling."
+att.Description = "Underslung shotgun primarily used to breach doors, but loaded with #00 Buckshot for your pleasure."
 att.Ignore = true
 
 att.SortOrder = -100000
