@@ -26,7 +26,7 @@ att.UBGL_PrintName = "UBGL"
 att.UBGL_Automatic = false
 att.UBGL_MuzzleEffect = "muzzleflash_m79"
 att.UBGL_Ammo = "smg1_grenade"
-att.UBGL_RPM = 600
+att.UBGL_RPM = 120
 att.UBGL_Recoil = 2
 att.UBGL_Capacity = 1
 
@@ -122,16 +122,19 @@ att.UBGL_Reload = function(wep, ubgl)
 
     wep:SetNextSecondaryFire(CurTime() + 3)
 
-    wep:DoLHIKAnimation("reload", 3)
-    wep:PlaySoundTable({
-        {s = { "arccw_uc/common/rattle1.ogg", "arccw_uc/common/rattle2.ogg", "arccw_uc/common/rattle3.ogg" }, t = 0},
-        {s = "arccw_uc/common/40mm/203open.ogg", t = 0.2},
-        {s = "arccw_uc/common/magpouch_replace_small.ogg", t = 0.9},
-        {s = "arccw_uc/common/40mm/203insert.ogg", t = 1.7},
-        {s = "arccw_uc/common/shoulder.ogg", t = 2.0},
-        {s = "arccw_uc/common/40mm/203close.ogg", t = 2.2},
-        {s = "arccw_uc/common/shoulder.ogg", t = 2.7},
-    })
+    local holy = (game.SinglePlayer() and SERVER) or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted())
+    if holy then
+        wep:DoLHIKAnimation("reload", 3)
+        wep:PlaySoundTable({
+            {s = { "arccw_uc/common/rattle1.ogg", "arccw_uc/common/rattle2.ogg", "arccw_uc/common/rattle3.ogg" }, t = 0},
+            {s = "arccw_uc/common/40mm/203open.ogg", t = 0.2},
+            {s = "arccw_uc/common/magpouch_replace_small.ogg", t = 0.9},
+            {s = "arccw_uc/common/40mm/203insert.ogg", t = 1.7},
+            {s = "arccw_uc/common/shoulder.ogg", t = 2.0},
+            {s = "arccw_uc/common/40mm/203close.ogg", t = 2.2},
+            {s = "arccw_uc/common/shoulder.ogg", t = 2.7},
+        })
+    end
 
     local reserve = Ammo(wep)
     reserve = reserve + wep:Clip2()
