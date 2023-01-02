@@ -27,11 +27,11 @@ att.Hook_Compatible = function(wep)
 end
 
 att.Hook_BulletHit = function(wep,data)
-    if SERVER and data.tr.Entity and !(data.tr.Entity:IsNPC() or data.tr.Entity:IsPlayer() or data.tr.Entity:IsNextBot()) then
+    local ent = data.tr.HitEntity
+    if SERVER and ent and !(ent:IsNPC() or ent:IsPlayer() or ent:IsNextBot()) then
         data.damage = data.damage * 2
+        local eff = EffectData()
+        eff:SetOrigin(data.tr.HitPos)
+        util.Effect("cball_bounce",eff)
     end
-
-    local eff = EffectData()
-    eff:SetOrigin(data.tr.HitPos)
-    util.Effect("cball_bounce",eff)
 end
