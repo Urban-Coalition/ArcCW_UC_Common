@@ -45,7 +45,8 @@
             "name": "Urban Coalition Extras"
         },
         {
-            "path": "../AFesiug"
+            "path": "../UC_Beta/lua"
+            "name": "Urban Coalition Beta"
         }
     ],
 	"settings": {

@@ -25,7 +25,7 @@ att.UBGL_PrintName = "UBGL"
 att.UBGL_Automatic = false
 att.UBGL_MuzzleEffect = "muzzleflash_m79"
 att.UBGL_Ammo = "smg1_grenade"
-att.UBGL_RPM = 600
+att.UBGL_RPM = 120
 att.UBGL_Recoil = 2
 
 -- ??
@@ -63,21 +63,25 @@ end
 
 att.Hook_OnSelectUBGL = function(wep)
     wep:SetNextSecondaryFire(CurTime() + 0.7)
-    wep:DoLHIKAnimation("to_armed", 0.7)
-    wep:PlaySoundTable({
-        {s = "arccw_uc/common/rattle_b2i_rifle.ogg", t = 0},
-        {s = "arccw_uc/common/raise.ogg", t = 0.2},
-        {s = "arccw_uc/common/grab.ogg", t = 0.5},
-    })
+    if (game.SinglePlayer() and SERVER) or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted()) then
+        wep:DoLHIKAnimation("to_armed", 0.7)
+        wep:PlaySoundTable({
+            {s = "arccw_uc/common/rattle_b2i_rifle.ogg", t = 0},
+            {s = "arccw_uc/common/raise.ogg", t = 0.2},
+            {s = "arccw_uc/common/grab.ogg", t = 0.5},
+        })
+    end
 end
 
 att.Hook_OnDeselectUBGL = function(wep)
     wep:SetNextSecondaryFire(CurTime() + 0.7)
-    wep:DoLHIKAnimation("to_idle", 0.7)
-    wep:PlaySoundTable({
-        {s = "arccw_uc/common/rattle_b2i_rifle.ogg", t = 0},
-        {s = "arccw_uc/common/shoulder.ogg", t = 0.4},
-    })
+    if (game.SinglePlayer() and SERVER) or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted()) then
+        wep:DoLHIKAnimation("to_idle", 0.7)
+        wep:PlaySoundTable({
+            {s = "arccw_uc/common/rattle_b2i_rifle.ogg", t = 0},
+            {s = "arccw_uc/common/shoulder.ogg", t = 0.4},
+        })
+    end
 end
 
 att.UBGL_Fire = function(wep, ubgl)
@@ -148,7 +152,10 @@ att.UBGL_Fire = function(wep, ubgl)
         wep:MyEmitSound(")^/arccw_uc/common/40mm/mech-0" .. math.random(1, 6) .. ".ogg", 149, 100, 0.5, CHAN_AUTO)
     end
 
-    wep:DoLHIKAnimation("fire")
+    if game.SinglePlayer() and SERVER or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted()) then
+        wep:DoEffects()
+        wep:DoLHIKAnimation("fire")
+    end
     wep:SetClip2(wep:Clip2() - 1)
     wep:DoEffects()
 end
@@ -161,17 +168,20 @@ att.UBGL_Reload = function(wep, ubgl)
 
     wep:SetNextSecondaryFire(CurTime() + 2.75)
 
-    wep:DoLHIKAnimation("reload", 2.75)
-    wep:PlaySoundTable({
-        {s = { "arccw_uc/common/rattle1.ogg", "arccw_uc/common/rattle2.ogg", "arccw_uc/common/rattle3.ogg" }, t = 0},
-        {s = "arccw_uc/common/40mm/203open.ogg", t = 0.2},
-        {s = casing, t = 0.7},
-        {s = "arccw_uc/common/magpouch_replace_small.ogg", t = 0.9},
-        {s = "arccw_uc/common/40mm/203insert.ogg", t = 1.2},
-        {s = "arccw_uc/common/shoulder.ogg", t = 1.5},
-        {s = "arccw_uc/common/40mm/203close.ogg", t = 1.7},
-        {s = "arccw_uc/common/shoulder.ogg", t = 2.3},
-    })
+    local holy = (game.SinglePlayer() and SERVER) or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted())
+    if holy then
+        wep:DoLHIKAnimation("reload", 2.75)
+        wep:PlaySoundTable({
+            {s = { "arccw_uc/common/rattle1.ogg", "arccw_uc/common/rattle2.ogg", "arccw_uc/common/rattle3.ogg" }, t = 0},
+            {s = "arccw_uc/common/40mm/203open.ogg", t = 0.2},
+            {s = casing, t = 0.7},
+            {s = "arccw_uc/common/magpouch_replace_small.ogg", t = 0.9},
+            {s = "arccw_uc/common/40mm/203insert.ogg", t = 1.2},
+            {s = "arccw_uc/common/shoulder.ogg", t = 1.5},
+            {s = "arccw_uc/common/40mm/203close.ogg", t = 1.7},
+            {s = "arccw_uc/common/shoulder.ogg", t = 2.3},
+        })
+    end
 
     local reserve = Ammo(wep)
     reserve = reserve + wep:Clip2()
