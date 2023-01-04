@@ -38,7 +38,7 @@ end
 
 
 att.Hook_Compatible = function(wep)
-    if !(wep.Primary.Ammo == "ar2" or wep.Primary.Ammo == "SniperPenetratedRound") then
+    if !(wep.Primary.Ammo == "SniperPenetratedRound") then
         return false
     end
 end
