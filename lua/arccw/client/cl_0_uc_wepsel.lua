@@ -38,7 +38,7 @@ AccessorFunc(PANEL, "m_bIsNPCWeapon", "IsNPCWeapon")
 function PANEL:Init()
     self:SetPaintBackground(false)
     -- local sw, sh = self:GetParent():GetParent():GetParent():GetSize()
-    self:SetSize(384, 128) -- TODO: get real long n har. nvm
+    self:SetSize(384*0.9, 128) -- TODO: get real long n har. nvm
     self:SetText("")
     self:SetDoubleClickingEnabled(false)
     self.Image = self:Add("DImage")
