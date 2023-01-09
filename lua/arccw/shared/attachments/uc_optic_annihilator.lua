@@ -11,7 +11,8 @@ att.Slot = {"ur_deagle_tritium"} -- Deagle exclusive until we figure out the pro
 att.SortOrder = 998 -- Remove when att becomes universal
 
 att.Model = "models/weapons/arccw/atts/ur_annihilator_laser.mdl"
-att.ModelOffset = Vector(-6,0,-3.8) -- Will need to change when the model recompiles
+att.ModelOffset = Vector(-6,0,-3.5) -- Will need to change when the model recompiles
+att.ModelScale = Vector( 0.933, 0.933, 0.933 )
 
 att.Mult_Sway = 1.5
 att.Mult_SightTime = 1.25
@@ -19,7 +20,7 @@ att.Mult_SpeedMult = 0.975
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 20, -1.73),
+        Pos = Vector(0, 20, -1.62),
         Ang = Angle(-.2, 0, 0),
         Magnification = 1,
     }
