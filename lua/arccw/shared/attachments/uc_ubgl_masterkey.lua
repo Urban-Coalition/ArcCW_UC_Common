@@ -189,9 +189,9 @@ att.Hook_Think = function(wep)
     if wep:GetNW2Bool("MasterkeyInReload", false) then
         if wep:GetNW2Float("MasterkeyReloadTime", CurTime()) <= CurTime() then
             if Ammo(wep) <= 0 or wep:Clip2() == 4 then
-                wep:SetReloading(CurTime() + 0.4)
-                wep:SetNW2Float("MasterkeyPumpTime", CurTime() + 0.4)
-                wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.4)
+                wep:SetReloading(CurTime() + 0.5)
+                wep:SetNW2Float("MasterkeyPumpTime", CurTime() + 0.5)
+                wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.5)
                 if pred then
                     wep:DoLHIKAnimation("sgreload_end")
                     wep:PlaySoundTable({
@@ -200,10 +200,10 @@ att.Hook_Think = function(wep)
                 end
                 wep:SetNW2Bool("MasterkeyInReload", false)
             else
-                wep:SetReloading(CurTime() + 0.5)
-                wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.5)
+                wep:SetReloading(CurTime() + 0.7)
+                wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.7)
                 if pred then
-                    wep:DoLHIKAnimation("sgreload_insert", 0.5)
+                    wep:DoLHIKAnimation("sgreload_insert", 0.7)
                     wep:PlaySoundTable({
                         {s = ")arccw_uc/common/shotgun-insert-alt-01.ogg", t = 0.05},
                     })
@@ -216,7 +216,7 @@ att.Hook_Think = function(wep)
         wep:SetNW2Bool("MasterkeyNeedsPump", false)
         wep:SetPriorityAnim(CurTime() + 0.4)
         if pred then
-            wep:DoLHIKAnimation("cycle", 0.7)
+            wep:DoLHIKAnimation("cycle", 1.0)
             wep:PlaySoundTable({
                 {s = ")weapons/arccw_ud/870/rack_1.ogg", t = 0.02},
                 {s = ")weapons/arccw_ud/870/eject.ogg", t = 0.13},
@@ -233,7 +233,7 @@ att.UBGL_Reload = function(wep, ubgl)
     wep:SetNextSecondaryFire(CurTime() + 2.75)
 
     local holy = (game.SinglePlayer() and SERVER) or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted())
-    if wep:Clip2() == 0 then
+    if false and wep:Clip2() == 0 then
         if holy then
             wep:DoLHIKAnimation("sgreload_start_empty", 2)
             wep:PlaySoundTable({
@@ -251,14 +251,14 @@ att.UBGL_Reload = function(wep, ubgl)
         wep:GetOwner():RemoveAmmo(1, "buckshot")
     else
         if holy then
-            wep:DoLHIKAnimation("sgreload_start", 0.5)
+            wep:DoLHIKAnimation("sgreload_start", 0.7)
             wep:PlaySoundTable({
                 {s = ")arccw_uc/common/raise.ogg", t = 0.15},
                 {s = ")arccw_uc/common/grab.ogg", t = 0.3},
             })
         end
-        wep:SetReloading(CurTime() + 0.5)
-        wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.5)
+        wep:SetReloading(CurTime() + 0.7)
+        wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.7)
     end
     wep:SetNW2Bool("MasterkeyInReload", true)
 
