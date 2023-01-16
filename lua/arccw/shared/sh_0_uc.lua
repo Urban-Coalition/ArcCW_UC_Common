@@ -16,6 +16,8 @@ sound.Add({
     sound = {"^arccw_uc/common/db_add_1.ogg", "^arccw_uc/common/db_add_2.ogg", "^arccw_uc/common/db_add_3.ogg"}
 })
 
+CreateConVar("arccw_uc_infiniteubwammo", 0, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Infinite underbarrel weapon ammo.")
+
 game.AddParticles("particles/muzzleflash_dragonsbreath.pcf")
 PrecacheParticleSystem("muzzleflash_dragonbreath")
 game.AddParticles("particles/uo_explosions_fas2.pcf")

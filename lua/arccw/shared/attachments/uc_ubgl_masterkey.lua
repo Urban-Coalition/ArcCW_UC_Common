@@ -36,6 +36,8 @@ att.UBGL_ClipSize = 4
 att.LHIK_GunDriver = 2
 att.LHIK_CamDriver = 3
 
+local pretty = GetConVar("arccw_uc_infiniteubwammo")
+
 att.Hook_ModifyAttBodygroups = function(wep, data)
     if wep:GetBuff_Override("UC_UseClassicM203Mount") then
         data.element.Model:SetBodygroup(1, 1)
@@ -43,7 +45,7 @@ att.Hook_ModifyAttBodygroups = function(wep, data)
 end
 
 local function Ammo(wep)
-    return wep:GetOwner():GetAmmoCount("buckshot")
+    return (pretty:GetBool() and 9999 or wep:GetOwner():GetAmmoCount("buckshot"))
 end
 
 att.Hook_LHIK_TranslateAnimation = function(wep, key)
@@ -209,7 +211,9 @@ att.Hook_Think = function(wep)
                     })
                 end
                 wep:SetClip2(wep:Clip2() + 1)
-                wep:GetOwner():RemoveAmmo(1, "buckshot")
+                if !pretty:GetBool() then
+                    wep:GetOwner():RemoveAmmo(1, "buckshot")
+                end
             end
         end
     elseif wep:GetNW2Bool("MasterkeyNeedsPump", false) and wep:GetNW2Float("MasterkeyPumpTime", CurTime()) <= CurTime() and wep:Clip2() > 0 and !wep:GetOwner():KeyDown( IN_ATTACK ) then
@@ -248,7 +252,9 @@ att.UBGL_Reload = function(wep, ubgl)
         wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 2)
 
         wep:SetClip2(wep:Clip2() + 1)
-        wep:GetOwner():RemoveAmmo(1, "buckshot")
+        if !pretty:GetBool() then
+            wep:GetOwner():RemoveAmmo(1, "buckshot")
+        end
     else
         if holy then
             wep:DoLHIKAnimation("sgreload_start", 0.7)

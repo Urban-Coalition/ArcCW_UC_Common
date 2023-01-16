@@ -35,6 +35,8 @@ att.UBGL_ClipSize = 1
 att.LHIK_GunDriver = 2
 att.LHIK_CamDriver = 3
 
+local pretty = GetConVar("arccw_uc_infiniteubwammo")
+
 att.Hook_ModifyAttBodygroups = function(wep, data)
     if wep:GetBuff_Override("UC_UseClassicM203Mount") then
         data.element.Model:SetBodygroup(1, 1)
@@ -42,7 +44,7 @@ att.Hook_ModifyAttBodygroups = function(wep, data)
 end
 
 local function Ammo(wep)
-    return wep:GetOwner():GetAmmoCount("smg1_grenade")
+    return (pretty:GetBool() and 9999 or wep:GetOwner():GetAmmoCount("smg1_grenade"))
 end
 
 att.Hook_LHIK_TranslateAnimation = function(wep, key)
@@ -187,7 +189,9 @@ att.UBGL_Reload = function(wep, ubgl)
     reserve = reserve + wep:Clip2()
     local clip = 1
     local load = math.Clamp(clip, 0, reserve)
-    wep:GetOwner():SetAmmo(reserve - load, "smg1_grenade")
+    if (!pretty:GetBool()) then
+        wep:GetOwner():RemoveAmmo(1, "smg1_grenade")
+    end
     wep:SetClip2(load)
 end
 
