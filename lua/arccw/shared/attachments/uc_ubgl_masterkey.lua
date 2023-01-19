@@ -49,7 +49,7 @@ end
 
 att.Hook_LHIK_TranslateAnimation = function(wep, key)
     if key == "idle" then
-        if wep:GetNW2Bool("MasterkeyInReload", false) then
+        if wep:GetNW2Bool("MasterkeyInReload", false) or wep:GetNW2Float("MasterkeyReloadTime", CurTime()) >= CurTime() then
             return "DoNotPlayIdle"
         elseif wep:GetInUBGL() then
             return "idle_armed"
