@@ -2,7 +2,6 @@ att.PrintName = "Masterkey Underslung Shotgun"
 att.AbbrevName = "Masterkey Shotgun"
 att.Icon = Material("entities/att/acwatt_uc_ubgl_masterkey.png", "mips smooth")
 att.Description = "Underslung shotgun primarily used to breach doors, but loaded with #00 Buckshot for your pleasure."
-att.Ignore = true
 
 att.SortOrder = -100000
 
@@ -50,7 +49,9 @@ end
 
 att.Hook_LHIK_TranslateAnimation = function(wep, key)
     if key == "idle" then
-        if wep:GetInUBGL() then
+        if wep:GetNW2Bool("MasterkeyInReload", false) then
+            return "DoNotPlayIdle"
+        elseif wep:GetInUBGL() then
             return "idle_armed"
         else
             return "idle"
