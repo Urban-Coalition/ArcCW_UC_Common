@@ -15,7 +15,7 @@ att.Slot = {"tac","tac_pistol"}
 att.SortOrder = 20+4
 
 att.Model = "models/weapons/arccw/atts/uc_tlr2hl.mdl"
-att.ModelOffset = Vector(0.75,0,0)
+att.ModelOffset = Vector(0.75, 0, -0.1)
 att.OffsetAng = Angle(0,0,0)
 att.ModelScale = Vector(0.75, 0.75, 0.75)
 
