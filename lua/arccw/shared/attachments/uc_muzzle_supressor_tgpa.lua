@@ -10,7 +10,7 @@ att.Slot = {"ur_ak_muzzle"}
 att.SortOrder = 149
 
 att.Model = "models/weapons/arccw/atts/uc_tgpa.mdl"
-att.ModelOffset = Vector(2.3, 0, 0)
+att.ModelOffset = Vector(2.6, 0, 0)
 att.ModelScale = Vector(1.15, 1.15, 1.15)
 att.OffsetAng = Angle(0, 0, 0)
 

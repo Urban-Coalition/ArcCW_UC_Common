@@ -10,7 +10,7 @@ att.Slot = {"muzzle"}
 att.SortOrder = 150
 
 att.Model = "models/weapons/arccw/atts/ud_silencer_tactical.mdl"
-att.ModelOffset = Vector(1.95, 0, 0)
+att.ModelOffset = Vector(2.25, 0, 0)
 att.OffsetAng = Angle(0, 0, 0)
 
 att.Silencer = true
