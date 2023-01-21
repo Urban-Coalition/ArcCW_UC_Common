@@ -1,9 +1,9 @@
-att.PrintName = "Trijicon Tactical Advanced Riflescope (3-15x)"
-att.AbbrevName = "TARS (3-15x)"
+att.PrintName = "Trijicon Tactical Advanced Riflescope (3-8x)"
+att.AbbrevName = "TARS (3-8x)"
 att.Icon = Material("entities/att/acwatt_uc_optic_trijicon_tars.png", "mips smooth")
 att.Description = "Variable power scope, adjustable for a very wide range of magnifications."
 
-att.SortOrder = 15
+att.SortOrder = 8
 
 att.Desc_Pros = {
     "autostat.holosight",
@@ -24,9 +24,9 @@ att.AdditionalSights = {
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
+        ScopeMagnification = 3,
         ScopeMagnificationMin = 3,
-        ScopeMagnificationMax = 15,
-        ScopeMagnification = 8,
+        ScopeMagnificationMax = 8,
         HolosightData = {
             Holosight = true,
             HolosightReticle = Material("hud/scopes/uc_tars_reticle.png", "mips smooth"),
@@ -34,9 +34,9 @@ att.AdditionalSights = {
             HolosightSize = 10.2,
             HolosightPiece = "models/weapons/arccw/atts/uc_trijicon_tars_hsp.mdl",
             HolosightBlackbox = true,
-            HolosightMagnification = 9,
+            HolosightMagnification = 3,
             HolosightMagnificationMin = 3,
-            HolosightMagnificationMax = 15,
+            HolosightMagnificationMax = 8,
             Colorable = true,
             SpecialScopeFunction = function(screen)
                 render.PushRenderTarget(screen)

@@ -1,9 +1,9 @@
-att.PrintName = "Trijicon Advanced Combat Optical Gunsight (4x)"
-att.AbbrevName = "ACOG (4x)"
+att.PrintName = "Trijicon Advanced Combat Optical Gunsight (3x)"
+att.AbbrevName = "ACOG (3x)"
 att.Icon = Material("entities/att/acwatt_uc_optic_acog.png", "mips smooth")
 att.Description = "Medium range combat scope for improved precision at longer ranges.\nEquipped with backup iron sights for use in emergencies."
 
-att.SortOrder = 4
+att.SortOrder = 3
 
 att.Desc_Pros = {
     "autostat.holosight",
@@ -23,7 +23,7 @@ att.AdditionalSights = {
     {
         Pos = Vector(0, 8, -1.48),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.25,
+        Magnification = 1.1,
         IgnoreExtra = true,
         CrosshairInSights = false,
         HolosightBone = "holosight",
@@ -34,7 +34,7 @@ att.AdditionalSights = {
             HolosightSize = 9.5,
             HolosightPiece = "models/weapons/arccw/atts/ud_acog_hsp.mdl",
             HolosightBlackbox = true,
-            HolosightMagnification = 4,
+            HolosightMagnification = 3,
             Colorable = true,
         },
     },

@@ -1,9 +1,9 @@
-att.PrintName = "Vortex SPITFIRE 3X PRISM SCOPE (1.5x-3x)"
-att.AbbrevName = "Spitfire (1.5x-3x)"
+att.PrintName = "Vortex SPITFIRE PRISM SCOPE (1.5x)"
+att.AbbrevName = "Spitfire (1.5x)"
 att.Icon = Material("entities/att/acwatt_uc_optic_vortex_3x.png", "mips smooth")
 att.Description = "Short to medium range combat scope that allows a more versatile engagement range."
 
-att.SortOrder = 3
+att.SortOrder = 1.5
 
 att.Desc_Pros = {
     "autostat.holosight",
@@ -23,8 +23,6 @@ att.AdditionalSights = {
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
-        ScopeMagnificationMin = 1.5,
-        ScopeMagnificationMax = 3,
         ScopeMagnification = 1.5,
         HolosightData = {
             Holosight = true,
@@ -33,9 +31,7 @@ att.AdditionalSights = {
             HolosightSize = 8.5,
             HolosightPiece = "models/weapons/arccw/atts/uc_vortex3x_hsp.mdl",
             HolosightBlackbox = true,
-            HolosightMagnification = 2.25,
-            HolosightMagnificationMin = 1.5,
-            HolosightMagnificationMax = 3,
+            HolosightMagnification = 1.5,
             Colorable = true,
         },
     }
