@@ -41,6 +41,10 @@
             "name": "Urban One-off: Beretta"
         },
         {
+            "path": "../ArcCW_UC_Lynx/lua",
+            "name": "Urban One-off: Honey Badger"
+        },
+        {
             "path": "../ArcCW_UC_Extras/lua",
             "name": "Urban Coalition Extras"
         },
