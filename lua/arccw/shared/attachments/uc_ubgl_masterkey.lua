@@ -203,10 +203,10 @@ att.Hook_Think = function(wep)
                 end
                 wep:SetNW2Bool("MasterkeyInReload", false)
             else
-                wep:SetReloading(CurTime() + 0.7)
+                wep:SetReloading(CurTime() + 0.9)
                 wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.7)
                 if pred then
-                    wep:DoLHIKAnimation("sgreload_insert", 0.7)
+                    wep:DoLHIKAnimation("sgreload_insert", 0.9)
                     wep:PlaySoundTable({
                         {s = ")arccw_uc/common/shotgun-insert-alt-01.ogg", t = 0.05},
                     })
