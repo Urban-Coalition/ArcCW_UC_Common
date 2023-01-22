@@ -1,17 +1,17 @@
-att.PrintName = "PBS-1 Suppressor"
+att.PrintName = "TGP-A Suppressor"
 
-att.Icon = Material("entities/att/acwatt_uc_muzzle_supressor_pbs1.png", "mips smooth")
-att.Description = "Traps propellant gas from the muzzle, reducing visual and audible report.\nGas redirection causes the side benefit of straightening recoil."
-att.Desc_Neutrals = {"uc.exclusive.762", "uc.supptail"}
+att.Icon = Material("entities/att/acwatt_uc_muzzle_supp_tgpa.png", "mips smooth")
+att.Description = "Traps propellant gas from the muzzle, reducing visual and audible report.\nWell rounded suppressor with no notable downsides."
+att.Desc_Neutrals = {"uc.exclusive.545", "uc.supptail"}
 
 att.AutoStats = true
 att.Slot = {"ur_ak_muzzle"}
 
 att.SortOrder = 149
 
-att.Model = "models/weapons/arccw/atts/uc_pbs1.mdl"
-att.ModelOffset = Vector(2.9, 0, 0)
-att.ModelScale = Vector(1.3, 1.3, 1.3)
+att.Model = "models/weapons/arccw/atts/uc_tgpa.mdl"
+att.ModelOffset = Vector(2.6, 0, 0)
+att.ModelScale = Vector(1.15, 1.15, 1.15)
 att.OffsetAng = Angle(0, 0, 0)
 
 att.Silencer = true
@@ -20,16 +20,16 @@ att.IsMuzzleDevice = true
 
 att.Mult_ShootPitch = 1.1
 att.Mult_ShootVol = 0.75
-att.Mult_RecoilSide = 0.75
 
 att.Add_BarrelLength = 5
-att.Mult_SightTime = 1.1
+att.Mult_Range = 0.9
+att.Mult_SightTime = 1.07
 att.Mult_Sway = 1.15
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
 
 att.Hook_Compatible = function(wep)
-    if wep.Primary.Ammo != "ar2" then
+    if wep:GetBuff_Override("Override_Ammo", wep.Primary.Ammo) != "smg1" then
         return false
     end
 end
