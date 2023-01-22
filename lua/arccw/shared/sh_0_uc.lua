@@ -795,6 +795,9 @@ local paths = {
     "sound/weapons/arccw/",
     "models/weapons/arccw/",
     "models/items/arccw/",
+	
+    "models/uc/",
+    "sound/uc/",
 }
 
 if CLIENT then
