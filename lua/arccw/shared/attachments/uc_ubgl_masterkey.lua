@@ -238,7 +238,10 @@ att.UBGL_Reload = function(wep, ubgl)
     wep:SetNextSecondaryFire(CurTime() + 2.75)
 
     local holy = (game.SinglePlayer() and SERVER) or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted())
-    if false and wep:Clip2() == 0 then
+    if wep:Clip2() == 0 then -- Always pump on empty.
+        wep:SetNW2Bool("MasterkeyNeedsPump", true)
+    end
+    --[[if wep:Clip2() == 0 then
         if holy then
             wep:DoLHIKAnimation("sgreload_start_empty", 2)
             wep:PlaySoundTable({
@@ -256,7 +259,7 @@ att.UBGL_Reload = function(wep, ubgl)
         if !pretty:GetBool() then
             wep:GetOwner():RemoveAmmo(1, "buckshot")
         end
-    else
+    else]]
         if holy then
             wep:DoLHIKAnimation("sgreload_start", 0.7)
             wep:PlaySoundTable({
@@ -266,7 +269,7 @@ att.UBGL_Reload = function(wep, ubgl)
         end
         wep:SetReloading(CurTime() + 0.7)
         wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.7)
-    end
+    --end
     wep:SetNW2Bool("MasterkeyInReload", true)
 
     --local reserve = Ammo(wep)
