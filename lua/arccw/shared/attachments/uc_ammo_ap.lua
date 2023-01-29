@@ -26,12 +26,21 @@ att.Hook_Compatible = function(wep)
     end
 end
 
+local cov = GetConVar("arccw_uc_apobjmult")
+
+local badblood = { -- it's actually the good type
+    [-1] = true,
+    [3] = true,
+}
+
 att.Hook_BulletHit = function(wep,data)
-    local ent = data.tr.HitEntity
-    if SERVER and ent and !(ent:IsNPC() or ent:IsPlayer() or ent:IsNextBot()) then
-        data.damage = data.damage * 2
+    local ent = data.tr.Entity
+    local test1 = !(ent:IsNPC() or ent:IsPlayer() or ent:IsNextBot()) and true or false
+    local test2 = (!ent:GetBloodColor() or badblood[ent:GetBloodColor()]) and true or false
+    if IsValid(ent) and (test1 or test2) then
+        data.damage = data.damage * cov:GetFloat()
         local eff = EffectData()
         eff:SetOrigin(data.tr.HitPos)
-        util.Effect("cball_bounce",eff)
+        util.Effect("cball_bounce", eff)
     end
 end

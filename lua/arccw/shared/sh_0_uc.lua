@@ -17,6 +17,7 @@ sound.Add({
 })
 
 CreateConVar("arccw_uc_infiniteubwammo", 0, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Infinite underbarrel weapon ammo.")
+CreateConVar("arccw_uc_apobjmult", 3, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Damage multiplier against vehicles and objects.")
 
 game.AddParticles("particles/muzzleflash_dragonsbreath.pcf")
 PrecacheParticleSystem("muzzleflash_dragonbreath")
