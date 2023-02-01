@@ -340,6 +340,24 @@ local traces4 = {
 
 }
 
+-- Halve the magnification because
+-- real people have like 180 degrees of vision AND
+-- it's too high to be useful and
+-- games like to make it shorter why shouldn't we
+function UC_HalfScope( num )
+    local result = num
+
+    result = result/2
+    if result <= 1 then
+        result = num
+        result = num - 1
+        result = result / 2
+        result = result + 1
+    end
+
+    return result
+end
+
 local tracebase = {
     start = 0,
     endpos = 0,
@@ -603,8 +621,21 @@ if CLIENT then
             label = "Use defined colors for customisation",
             command = "arccw_uc_custcolor_enable"
         })
-
         panel:ControlHelp("will use playermodel color if off")
+    
+        panel:AddControl("checkbox", {
+            label = "Infinite Underbarrel Ammo",
+            command = "arccw_uc_infiniteubwammo"
+        })
+        panel:ControlHelp("Infinite ammo for Urban Coalition underbarrel weapons.")
+    
+        panel:AddControl("slider", {
+            label = "AP Damage Mult",
+            command = "arccw_uc_apobjmult",
+            min = 1,
+            max = 10,
+        })
+        panel:ControlHelp("Multiplier for damage dealt to objects while using 'Armor-piercing' rounds.")
 
         panel:AddControl("color", {
             label = "Primary Color",
