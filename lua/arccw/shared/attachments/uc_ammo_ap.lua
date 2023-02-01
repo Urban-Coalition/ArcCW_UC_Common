@@ -27,12 +27,10 @@ att.Hook_Compatible = function(wep)
 end
 
 local cov = GetConVar("arccw_uc_apobjmult")
-
 local badblood = { -- it's actually the good type
     [-1] = true,
     [3] = true,
 }
-
 att.Hook_BulletHit = function(wep,data)
     local ent = data.tr.Entity
     local test1 = !(ent:IsNPC() or ent:IsPlayer() or ent:IsNextBot()) and true or false
