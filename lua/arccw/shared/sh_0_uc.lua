@@ -346,15 +346,11 @@ local traces4 = {
 -- games like to make it shorter why shouldn't we
 function UC_HalfScope( num )
     local result = num
+    result = num - 1
+    result = result / 2
+    result = result + 1
 
-    result = result/2
-    if result <= 1 then
-        result = num
-        result = num - 1
-        result = result / 2
-        result = result + 1
-    end
-
+    -- print( num .. "x turned into " .. result .. "x" )
     return result
 end
 
