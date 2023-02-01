@@ -26,7 +26,7 @@ att.AdditionalSights = {
     {
         Pos = Vector(-0.035, 6.5, -1.25),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.5,
+        Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
         ZoomLevels = 3,
         ScopeMagnification = UC_HalfScope( 1.5 ),
@@ -46,7 +46,7 @@ att.AdditionalSights = {
     {
         Pos = Vector(-0.035, 6.5, -1.25),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.5,
+        Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
         ZoomLevels = 3,
         ScopeMagnification = UC_HalfScope( 1.5 ),
@@ -66,7 +66,7 @@ att.AdditionalSights = {
     {
         Pos = Vector(-0.035, 6.5, -1.25),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.5,
+        Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
         ZoomLevels = 3,
         ScopeMagnification = UC_HalfScope( 1.5 ),
