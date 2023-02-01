@@ -443,8 +443,10 @@ ArcCW.UC.InnyOuty = function(wep)
                 tracebase.filter = wo
                 t_influ = t_influ + (tin.Influence or 1)
                 local result = util.TraceLine(tracebase)
-                debugoverlay.Line(wop - (vector_up * 4), result.HitPos - (vector_up * 4), 1, Color((_ / 4) * 255, 0, (1 - (_ / 4)) * 255))
-                debugoverlay.Text(result.HitPos - (vector_up * 4), math.Round((result.HitSky and 1 or result.Fraction) * 100) .. "%", 1)
+                if GetConVar("developer"):GetInt() > 2 then
+                    debugoverlay.Line(wop - (vector_up * 4), result.HitPos - (vector_up * 4), 1, Color((_ / 4) * 255, 0, (1 - (_ / 4)) * 255))
+                    debugoverlay.Text(result.HitPos - (vector_up * 4), math.Round((result.HitSky and 1 or result.Fraction) * 100) .. "%", 1)
+                end
                 vol = vol + (result.HitSky and 1 or result.Fraction) * tin.Influence
             end
 
