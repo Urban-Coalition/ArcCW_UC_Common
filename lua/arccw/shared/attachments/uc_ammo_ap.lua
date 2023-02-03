@@ -34,7 +34,6 @@ att.Hook_BulletHit = function(wep,data)
     local ent = data.tr.Entity
     local test1 = !(ent:IsNPC() or ent:IsPlayer() or ent:IsNextBot()) and true or false
     local test2 = (metalMats[ent:GetMaterialType()]) and true or false
-    print(ent:GetMaterialType())
     if IsValid(ent) and (test1 or test2) then
         data.damage = data.damage * cov:GetFloat()
         local eff = EffectData()
