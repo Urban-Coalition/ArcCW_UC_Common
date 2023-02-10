@@ -17,7 +17,7 @@ ENT.FuseTime = 10
 ENT.DragCoefficient = 1
 ENT.DetonateOnImpact = true
 
-ENT.Model = "models/weapons/shell.mdl"
+ENT.Model = "models/items/ar2_grenade.mdl"
 ENT.ExplosionEffect = true
 ENT.Scorch = "Scorch"
 ENT.SmokeTrail = true
