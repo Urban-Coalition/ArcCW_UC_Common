@@ -26,10 +26,10 @@ att.AdditionalSights = {
     {
         Pos = Vector(-0.035, 6.5, -1.25),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.5,
+        Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
-        ZoomLevels = 5,
-        ScopeMagnification = 1.1,
+        ZoomLevels = 3,
+        ScopeMagnification = UC_HalfScope( 1.5 ),
         Thermal = true,
         ThermalScopeColor = Color(255, 255, 255),
         ThermalHighlightColor = Color(255, 255, 255),
@@ -46,10 +46,10 @@ att.AdditionalSights = {
     {
         Pos = Vector(-0.035, 6.5, -1.25),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.5,
+        Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
-        ZoomLevels = 5,
-        ScopeMagnification = 1.1,
+        ZoomLevels = 3,
+        ScopeMagnification = UC_HalfScope( 1.5 ),
         Thermal = true,
         ThermalScopeColor = Color(255, 255, 255),
         ThermalHighlightColor = Color(0, 0, 0),
@@ -66,10 +66,10 @@ att.AdditionalSights = {
     {
         Pos = Vector(-0.035, 6.5, -1.25),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.5,
+        Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
-        ZoomLevels = 5,
-        ScopeMagnification = 1.1,
+        ZoomLevels = 3,
+        ScopeMagnification = UC_HalfScope( 1.5 ),
         IgnoreExtra = true,
         ForceLowRes = true,
         FPSLock = 42,
@@ -106,9 +106,9 @@ att.Colorable = false
 
 att.HolosightBlackbox = true
 
-att.HolosightMagnification = 1
-att.HolosightMagnificationMin = 1.1
-att.HolosightMagnificationMax = 6
+att.HolosightMagnification = UC_HalfScope( 1.5 )
+att.HolosightMagnificationMin = UC_HalfScope( 1.5 )
+att.HolosightMagnificationMax = UC_HalfScope( 6 )
 
 att.Mult_SightTime = 1.1
 att.Mult_SightedSpeedMult = 0.7

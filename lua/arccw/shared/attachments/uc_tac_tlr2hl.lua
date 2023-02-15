@@ -31,12 +31,12 @@ att.Mult_MoveSpeed = 1
 
 att.Flashlight = false
 att.FlashlightFOV = 50
-att.FlashlightFarZ = 512 -- how far it goes
+att.FlashlightFarZ = 1024 -- how far it goes
 att.FlashlightNearZ = 1 -- how far away it starts
 att.FlashlightAttenuationType = ArcCW.FLASH_ATT_LINEAR -- LINEAR, CONSTANT, QUADRATIC are available
 att.FlashlightColor = Color(255, 235, 229)
 att.FlashlightTexture = "effects/flashlight001"
-att.FlashlightBrightness = 2
+att.FlashlightBrightness = 0.5
 att.FlashlightBone = "laser"
 
 att.ToggleStats = {

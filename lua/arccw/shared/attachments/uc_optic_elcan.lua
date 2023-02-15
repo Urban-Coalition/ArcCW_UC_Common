@@ -1,8 +1,8 @@
-att.PrintName = "ELCAN C79 (3x)"
+att.PrintName = "ELCAN C79 (2.5x)"
 att.Icon = Material("entities/att/acwatt_uc_optic_elcan.png", "mips smooth")
 att.Description = "Durable, dependable, and venerable medium-range combat scope built to stand up to constant heavy fire.\nEquipped with backup iron sights for use in emergencies."
 
-att.SortOrder = 3
+att.SortOrder = 2.5
 
 att.Desc_Pros = {
     "autostat.holosight",
@@ -33,7 +33,7 @@ att.AdditionalSights = {
             HolosightSize = 9.5,
             HolosightPiece = "models/weapons/arccw/atts/uc_gso_elcan_hsp.mdl",
             HolosightBlackbox = true,
-            HolosightMagnification = 3,
+            HolosightMagnification = UC_HalfScope( 2.5 ),
             Colorable = true,
         },
     },

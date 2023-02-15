@@ -23,7 +23,7 @@ att.AdditionalSights = {
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
-        ScopeMagnification = 1.5,
+        ScopeMagnification = UC_HalfScope( 1.5 ),
         HolosightData = {
             Holosight = true,
             HolosightReticle = Material("hud/scopes/uc_vortex_reticle.png", "mips smooth"),
@@ -31,7 +31,7 @@ att.AdditionalSights = {
             HolosightSize = 8.5,
             HolosightPiece = "models/weapons/arccw/atts/uc_vortex3x_hsp.mdl",
             HolosightBlackbox = true,
-            HolosightMagnification = 1.5,
+            HolosightMagnification = UC_HalfScope( 1.5 ),
             Colorable = true,
         },
     }

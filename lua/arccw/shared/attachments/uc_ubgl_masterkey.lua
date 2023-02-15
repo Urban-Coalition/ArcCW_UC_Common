@@ -188,10 +188,11 @@ att.UBGL_Fire = function(wep, ubgl)
 end
 
 att.Hook_Think = function(wep)
+    local p = wep:GetOwner()
     local pred = game.SinglePlayer() and SERVER or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted())
     if wep:GetNW2Bool("MasterkeyInReload", false) then
         if wep:GetNW2Float("MasterkeyReloadTime", CurTime()) <= CurTime() then
-            if Ammo(wep) <= 0 or wep:Clip2() == 4 then
+            if (!p and false or p:KeyDown(IN_ATTACK)) or Ammo(wep) <= 0 or wep:Clip2() == 4 then
                 wep:SetReloading(CurTime() + 0.5)
                 wep:SetNW2Float("MasterkeyPumpTime", CurTime() + 0.5)
                 wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.5)
@@ -235,7 +236,7 @@ att.UBGL_Reload = function(wep, ubgl)
     if wep:Clip2() >= 4 then return end
     if Ammo(wep) <= 0 then return end
 
-    wep:SetNextSecondaryFire(CurTime() + 2.75)
+    wep:SetNextSecondaryFire(CurTime() + 1)
 
     local holy = (game.SinglePlayer() and SERVER) or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted())
     if wep:Clip2() == 0 then -- Always pump on empty.

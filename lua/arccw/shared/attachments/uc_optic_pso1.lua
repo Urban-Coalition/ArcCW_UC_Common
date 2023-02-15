@@ -29,7 +29,7 @@ att.AdditionalSights = {
             HolosightSize = 10.5,
             HolosightPiece = "models/weapons/arccw/atts/ur_pso1_hsp.mdl",
             HolosightBlackbox = true,
-            HolosightMagnification = 4,
+            HolosightMagnification = UC_HalfScope( 4 ),
             Colorable = true,
         },
     }

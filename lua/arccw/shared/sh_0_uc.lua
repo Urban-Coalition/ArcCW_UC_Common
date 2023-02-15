@@ -17,6 +17,7 @@ sound.Add({
 })
 
 CreateConVar("arccw_uc_infiniteubwammo", 0, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Infinite underbarrel weapon ammo.")
+CreateConVar("arccw_uc_apobjmult", 3, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Damage multiplier against vehicles and objects.")
 
 game.AddParticles("particles/muzzleflash_dragonsbreath.pcf")
 PrecacheParticleSystem("muzzleflash_dragonbreath")
@@ -339,6 +340,20 @@ local traces4 = {
 
 }
 
+-- Halve the magnification because
+-- real people have like 180 degrees of vision AND
+-- it's too high to be useful and
+-- games like to make it shorter why shouldn't we
+function UC_HalfScope( num )
+    local result = num
+    result = num - 1
+    result = result / 2
+    result = result + 1
+
+    -- print( num .. "x turned into " .. result .. "x" )
+    return result
+end
+
 local tracebase = {
     start = 0,
     endpos = 0,
@@ -428,8 +443,10 @@ ArcCW.UC.InnyOuty = function(wep)
                 tracebase.filter = wo
                 t_influ = t_influ + (tin.Influence or 1)
                 local result = util.TraceLine(tracebase)
-                debugoverlay.Line(wop - (vector_up * 4), result.HitPos - (vector_up * 4), 1, Color((_ / 4) * 255, 0, (1 - (_ / 4)) * 255))
-                debugoverlay.Text(result.HitPos - (vector_up * 4), math.Round((result.HitSky and 1 or result.Fraction) * 100) .. "%", 1)
+                if GetConVar("developer"):GetInt() > 2 then
+                    debugoverlay.Line(wop - (vector_up * 4), result.HitPos - (vector_up * 4), 1, Color((_ / 4) * 255, 0, (1 - (_ / 4)) * 255))
+                    debugoverlay.Text(result.HitPos - (vector_up * 4), math.Round((result.HitSky and 1 or result.Fraction) * 100) .. "%", 1)
+                end
                 vol = vol + (result.HitSky and 1 or result.Fraction) * tin.Influence
             end
 
@@ -602,8 +619,21 @@ if CLIENT then
             label = "Use defined colors for customisation",
             command = "arccw_uc_custcolor_enable"
         })
-
         panel:ControlHelp("will use playermodel color if off")
+    
+        panel:AddControl("checkbox", {
+            label = "Infinite Underbarrel Ammo",
+            command = "arccw_uc_infiniteubwammo"
+        })
+        panel:ControlHelp("Infinite ammo for Urban Coalition underbarrel weapons.")
+    
+        panel:AddControl("slider", {
+            label = "AP Damage Mult",
+            command = "arccw_uc_apobjmult",
+            min = 1,
+            max = 10,
+        })
+        panel:ControlHelp("Multiplier for damage dealt to objects while using 'Armor-piercing' rounds.")
 
         panel:AddControl("color", {
             label = "Primary Color",
