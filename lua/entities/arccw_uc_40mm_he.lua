@@ -7,4 +7,4 @@ ENT.GrenadeDamage = false
 ENT.GrenadeRadius = 300
 ENT.DragCoefficient = 0.25
 
-ENT.Model = "models/weapons/shell.mdl"
+ENT.Model = "models/items/ar2_grenade.mdl"

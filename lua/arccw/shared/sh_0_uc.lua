@@ -591,8 +591,8 @@ if CLIENT then
         local ply = net.ReadEntity()
         ply.UC_CustEnable = net.ReadBool()
         if ply.UC_CustEnable then
-            ply.UC_CustColor1 = net.ReadColor(false)
-            ply.UC_CustColor2 = net.ReadColor(false)
+            ply.UC_Weapon_Color1 = net.ReadColor(false)
+            ply.UC_Weapon_Color2 = net.ReadColor(false)
         end
     end)
 
@@ -825,7 +825,7 @@ local paths = {
     "sound/weapons/arccw/",
     "models/weapons/arccw/",
     "models/items/arccw/",
-	
+
     "models/uc/",
     "sound/uc/",
 }
@@ -875,7 +875,7 @@ if CLIENT then
         -- PrintTable(cooltable)
 
         for i, fie in ipairs(cooltable) do
-            timer.Simple(i/GetConVar("arccw_uc_cache_client_persecond"):GetFloat(), function()
+            timer.Simple(i / GetConVar("arccw_uc_cache_client_persecond"):GetFloat(), function()
                 UC_PrecachePer = i
                 UC_PrecachePeh = #cooltable
                 UC_PrecacheCur = fie
@@ -902,7 +902,7 @@ if CLIENT then
             local i_cur = UC_PrecacheCur or "..."
             surface.SetDrawColor(255, 255, 255, 255)
             local ss = ScreenScale(1) * GetConVar("arccw_hud_size"):GetFloat()
-            local bx, by = (ss*150), (ss*10)
+            local bx, by = (ss * 150), (ss * 10)
 
             -- Bar
             surface.DrawOutlinedRect( ( ScrW() / 2 ) - ( bx / 2 ), ( ScrH() * 0.7 ) - ( by / 2 ), bx, by, 2 )
@@ -972,7 +972,7 @@ if SERVER then
         -- PrintTable(cooltable)
 
         for i, fie in ipairs(cooltable) do
-            timer.Simple(i/(1/20), function()
+            timer.Simple(i / (1 / 20), function()
                 -- print(fie)
                 UC_PrecachePer = i
                 UC_PrecachePeh = #cooltable
