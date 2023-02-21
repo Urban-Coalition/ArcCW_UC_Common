@@ -90,7 +90,7 @@ att.UBGL_Fire = function(wep, ubgl)
     if wep:Clip2() <= 0 then return end
 
     local owner = wep:GetOwner()
-    local class = wep:GetBuff_Override("UBGL_Entity")
+    local class = wep:GetBuff_Override("UBGL_Entity") or "arccw_uc_40mm_he"
 
     if class == "BUCKSHOT" then
         local dir = (owner:EyeAngles() + wep:GetFreeAimOffset()):Forward()
