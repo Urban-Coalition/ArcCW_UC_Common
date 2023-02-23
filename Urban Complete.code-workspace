@@ -49,8 +49,8 @@
             "name": "Urban Coalition Extras"
         },
         {
-            "path": "../UC_Beta/lua"
-            "name": "Urban Coalition Beta"
+            "path": "../UC_Beta/lua",
+            "name": "Suburb"
         }
     ],
 	"settings": {
