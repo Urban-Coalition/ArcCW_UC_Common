@@ -3,7 +3,7 @@ att.AbbrevName = "Angled Foregrip"
 att.Icon = Material("entities/att/acwatt_uc_grip_magpul_afg2.png", "mips smooth")
 att.Description = "An ergonomically angled grip surface reduces wrist strain, increasing maneuverability."
 
-att.SortOrder = 9997
+att.SortOrder = 1201
 
 att.AutoStats = true
 att.Slot = "foregrip"
