@@ -1,5 +1,5 @@
 att.PrintName = "MAGPUL AFG-2 Angled Fore Grip (Tan)"
-att.AbbrevName = "Angled Foregrip (Tan)"
+att.AbbrevName = "Magpul Angled Foregrip (Tan)"
 att.Icon = Material("entities/att/acwatt_uc_grip_magpul_afg2_tan.png", "mips smooth")
 att.Description = "An ergonomically angled grip surface reduces wrist strain, increasing maneuverability.\nThis unit is cosmetically colored tan."
 

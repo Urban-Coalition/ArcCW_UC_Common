@@ -1,6 +1,6 @@
 att.PrintName = "BCMGUNFIGHTER Vertical Grip Mod 3"
 att.AbbrevName = "BCM Stubby Foregrip"
-att.Icon = Material("entities/att/acwatt_uc_grip_troyshort.png", "mips smooth")
+att.Icon = Material("entities/att/acwatt_uc_grip_bcmvfg.png", "mips smooth")
 att.Description = "A short grip providing a more natural holding position, making the weapon easier to use while moving.\n"
 
 att.SortOrder = 1300
