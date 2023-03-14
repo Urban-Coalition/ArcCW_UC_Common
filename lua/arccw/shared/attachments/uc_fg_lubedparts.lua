@@ -1,7 +1,7 @@
-att.PrintName = "Lubricated Parts"
+att.PrintName = "UD-40 Coating"
 
 att.Icon = Material("entities/att/arccw_uc_lubedparts.png", "mips smooth")
-att.Description = "Lubricated internal components greatly reduce the likelihood of malfuntions."
+att.Description = "Liberal use of a special lubricant to greatly reduces the likelihood of jams and other malfuntions."
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
