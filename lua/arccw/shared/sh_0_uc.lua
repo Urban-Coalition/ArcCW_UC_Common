@@ -405,6 +405,7 @@ ArcCW.UC.InnyOuty = function(wep)
             dsi = wep:GetBuff_Hook("Hook_GetDistantShootSoundIndoors", dsi)
             local vol = 0
             local wo = wep:GetOwner()
+            if !IsValid(wo) then return end
             local wop = wo:EyePos()
             local woa = Angle(0, wo:EyeAngles().y, 0)
             local t_influ = 0
