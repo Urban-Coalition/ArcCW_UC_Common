@@ -41,7 +41,7 @@ att.Hook_AddShootSound = function(wep, data)
 
     local owner = wep:GetOwner()
     local effectdata = EffectData()
-	effectdata:SetOrigin(owner:EyePos() + owner:GetAimVector() * 80)
+	effectdata:SetOrigin(owner:EyePos() + owner:GetAimVector() * 32)
     effectdata:SetStart(owner:GetAimVector())
     util.Effect("arccw_uc_confetti", effectdata)
 end
