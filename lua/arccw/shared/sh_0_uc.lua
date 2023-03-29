@@ -371,7 +371,10 @@ if game.SinglePlayer() and SERVER then
     util.AddNetworkString("ArcCW_UC_InnyOuty")
 elseif game.SinglePlayer() and CLIENT then
     net.Receive("ArcCW_UC_InnyOuty", function(len, ply)
-        ArcCW.UC.InnyOuty(net.ReadEntity())
+        local ent = net.ReadEntity()
+        if IsValid(ent) then
+            ArcCW.UC.InnyOuty(ent)
+        end
     end)
 end
 
