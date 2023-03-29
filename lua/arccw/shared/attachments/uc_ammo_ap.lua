@@ -32,9 +32,7 @@ local metalMats = { -- it's actually the good type
 }
 att.Hook_BulletHit = function(wep,data)
     local ent = data.tr.Entity
-    local test1 = !(ent:IsNPC() or ent:IsPlayer() or ent:IsNextBot()) and true or false
-    local test2 = (metalMats[ent:GetMaterialType()]) and true or false
-    if IsValid(ent) and (test1 or test2) then
+    if IsValid(ent) and (metalMats[data.tr.MatType] or !(ent:IsNPC() or ent:IsPlayer() or ent:IsNextBot())) then
         data.damage = data.damage * cov:GetFloat()
         local eff = EffectData()
         eff:SetOrigin(data.tr.HitPos)
