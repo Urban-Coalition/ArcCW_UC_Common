@@ -27,8 +27,8 @@ att.Override_InfiniteAmmo = true
 
 local path = ")^arccw_uc/common/"
 att.Hook_GetShootSound = function(wep, fsound)
-    if fsound == wep.ShootSound or fsound == wep.FirstShootSound then return {path .. "shotgun-lesslethal-01.ogg", path .. "shotgun-lesslethal-02.ogg"} end
-    --if fsound == wep.ShootSoundSilenced then return path .. "shotgun-lesslethal_sup.ogg" end
+    if fsound == wep.ShootSound or fsound == wep.FirstShootSound then return {path .. "confetti-01.ogg", path .. "confetti-02.ogg", path .. "confetti-03.ogg", path .. "confetti-04.ogg", path .. "confetti-05.ogg", path .. "confetti-06.ogg"} end
+    --if fsound == wep.ShootSoundSilenced then return path .. "confetti_sup.ogg" end
 end
 att.Hook_GetDistantShootSound = function(wep, distancesound)
     if distancesound == wep.DistantShootSound then return false
