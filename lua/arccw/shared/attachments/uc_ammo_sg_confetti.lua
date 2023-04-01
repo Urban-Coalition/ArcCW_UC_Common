@@ -1,4 +1,4 @@
-att.PrintName = "\"CNFT\" Confetti"
+att.PrintName = "\"PARTY\" Confetti"
 att.Icon = Material("entities/att/arccw_uc_ammo_shotgun_generic.png", "mips smooth")
 att.Description = [[Joke ammunition filled with tiny pieces of colorful paper. Produces a celebratory puff instead of anything reasonably lethal, allowing your weapon to double as a party popper.
 
