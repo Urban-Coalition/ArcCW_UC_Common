@@ -16,5 +16,5 @@ att.Model = "models/weapons/arccw/atts/uc_magpul_afg2.mdl"
 att.ModelSkin = 0
 
 att.Mult_SightTime = 0.8
-att.Mult_Sway = 1.25
-att.Mult_Recoil = 1.12
+att.Mult_Sway = 1.15
+att.Mult_Recoil = 1.20

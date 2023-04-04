@@ -20,3 +20,4 @@ att.Override_ActiveAng = Angle(0, 0, -7)
 
 att.Mult_HipDispersion = 0.8
 att.Mult_ShootSpeedMult = 0.9
+att.Mult_Sway = 0.85
