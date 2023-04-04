@@ -26,6 +26,6 @@ att.Mult_HipDispersion = 0.9
 att.Mult_MoveDispersion = 0.9
 
 att.Mult_ShootSpeedMult = 0.9
-att.Mult_Sway = 1.25
+att.Mult_Sway = 1.15
 
 att.AttachSound = "arccw_uc/common/gunsmith/suppressor_thread.ogg"
