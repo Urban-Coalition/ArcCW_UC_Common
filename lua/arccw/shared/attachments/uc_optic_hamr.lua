@@ -21,9 +21,10 @@ att.OffsetAng = Angle(0, 0, 0)
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 8, -1.46325),
+        Pos = Vector(0, 8, -1.43),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
+        ViewModelFOV = 38,
         IgnoreExtra = true,
         CrosshairInSights = false,
         HolosightBone = "holosight",
@@ -31,7 +32,7 @@ att.AdditionalSights = {
             Holosight = true,
             HolosightReticle = Material("hud/scopes/uc_hamr.png", "smooth"),
             HolosightNoFlare = true,
-            HolosightSize = 9.5,
+            HolosightSize = 11.5,
             HolosightPiece = "models/weapons/arccw/atts/uc_gso_hamr_hsp.mdl",
             HolosightBlackbox = true,
             HolosightMagnification = UC_HalfScope( 3 ),
