@@ -23,7 +23,7 @@ hook.Add( "PopulateWeapons", "UC_AddWeaponContent", function( pnlContent, tree, 
     local AllUCWeaponsByPack = {}
     for classname, _ in pairs( weapons.GetList() ) do
         local wep = weapons.Get(_.ClassName)
-        if wep.Category == "ArcCW - Urban Coalition" then
+        if wep.Spawnable and wep.Category == "ArcCW - Urban Coalition" then
             AllUCWeapons[_.ClassName] = wep
         end
     end
