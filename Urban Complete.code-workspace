@@ -49,6 +49,10 @@
             "name": "Urban Coalition Extras"
         },
         {
+            "path": "../ArcCW_UC_SCAR/lua",
+            "name": "Urban One-off: SCAR"
+        },
+        {
             "path": "../UC_Beta/lua",
             "name": "Suburb"
         }
