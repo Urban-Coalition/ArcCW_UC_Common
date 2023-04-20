@@ -14,9 +14,9 @@ att.ModelOffset = Vector(2, 0, -0.8)
 att.Model = "models/weapons/arccw/atts/uc_handstop.mdl"
 att.ModelSkin = 1
 
--- need to add add_activepos
+--[[] need to add add_activepos
 att.Override_ActivePos = Vector(-0.5, -0.5, 0.5)
-att.Override_ActiveAng = Angle(0, 0, -7)
+att.Override_ActiveAng = Angle(0, 0, -7) no it looks shit on everything STOP!!!]]
 
 att.Mult_HipDispersion = 0.8
 att.Mult_ShootSpeedMult = 0.9
