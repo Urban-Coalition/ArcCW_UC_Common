@@ -20,3 +20,5 @@ att.Mult_HolsterTime = 1.1
 
 att.Override_HoldtypeActive = "smg"
 att.Override_HoldtypeActive_Priority = 2
+
+att.Ignore = true
