@@ -1,7 +1,7 @@
 "VertexLitGeneric"
 {
 	"$baseTexture" "models\uc/attachments/gso\EoTech_Lens"
-	"$translucent" "1"
+	"$translucent" "0"
 	"$bumpmap" "models\uc/attachments/gso\EoTech_Lens_normal"
  	"$envmap" "env_cubemap"
 //	"$normalmapalphaenvmapmask" 1
