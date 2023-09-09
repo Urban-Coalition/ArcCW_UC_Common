@@ -4,7 +4,7 @@ att.Icon = Material("entities/att/arccw_uc_matchgradetrigger.png", "mips smooth"
 att.Description = "Hair trigger for competition shooting allows crisp trigger pulls, improving first shot performance."
 att.Desc_Pros = {
     "uc.match.1",
-    "uc.match.2",
+    -- "uc.match.2",
 }
 att.Desc_Cons = {
 }
