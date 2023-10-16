@@ -26,8 +26,8 @@ att.AdditionalSights = {
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("hud/reticles/ud_holo.png", "smooth")
-att.HolosightSize = 1.1
+att.HolosightReticle = Material("hud/reticles/ud_holo - Copy.png", "mips smooth")
+att.HolosightSize = 1.5
 att.HolosightBone = "holosight"
 att.HolosightNoFlare = true
 

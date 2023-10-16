@@ -32,7 +32,7 @@ att.AdditionalSights = {
             HolosightReticle = R1,
             HolosightPiece = "models/weapons/arccw/atts/ur_kobra_hsp.mdl",
             HolosightNoFlare = true,
-            HolosightSize = 1.5,
+            HolosightSize = 2,
             HolosightBone = "holosight",
             Colorable = true
         }

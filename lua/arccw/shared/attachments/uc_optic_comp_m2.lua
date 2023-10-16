@@ -30,7 +30,7 @@ att.Holosight = true
 att.HolosightReticle = Material("hud/reticles/uc_reddot.png", "mips smooth")
 att.HolosightPiece = "models/weapons/arccw/atts/uc_comp_m2_hsp.mdl"
 att.HolosightNoFlare = false
-att.HolosightSize = 1.5
+att.HolosightSize = 1.75
 att.HolosightBone = "holosight"
 att.Colorable = true
 
