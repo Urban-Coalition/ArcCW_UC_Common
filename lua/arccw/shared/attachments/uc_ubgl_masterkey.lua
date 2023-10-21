@@ -235,50 +235,25 @@ end
 att.UBGL_Reload = function(wep, ubgl)
     if wep:Clip2() >= 4 then return end
     if Ammo(wep) <= 0 then return end
+    if wep:GetNW2Bool("MasterkeyInReload", false) then return end
 
     wep:SetNextSecondaryFire(CurTime() + 1)
 
-    local holy = (game.SinglePlayer() and SERVER) or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted())
     if wep:Clip2() == 0 then -- Always pump on empty.
         wep:SetNW2Bool("MasterkeyNeedsPump", true)
     end
-    --[[if wep:Clip2() == 0 then
-        if holy then
-            wep:DoLHIKAnimation("sgreload_start_empty", 2)
-            wep:PlaySoundTable({
-                {s = ")weapons/arccw_ud/870/rack_1.ogg", t = 0},
-                {s = ")arccw_uc/common/shotgun-insert-alt-01.ogg", t = 0.8},
-                {s = ")weapons/arccw_ud/870/rack_2.ogg", t = 1.5},
-                {s = ")arccw_uc/common/shoulder.ogg", t = 1.6},
-            })
-        end
-        wep:SetNW2Bool("MasterkeyNeedsPump", false)
-        wep:SetReloading(CurTime() + 2)
-        wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 2)
 
-        wep:SetClip2(wep:Clip2() + 1)
-        if !pretty:GetBool() then
-            wep:GetOwner():RemoveAmmo(1, "buckshot")
-        end
-    else]]
-        if holy then
-            wep:DoLHIKAnimation("sgreload_start", 0.7)
-            wep:PlaySoundTable({
-                {s = ")arccw_uc/common/raise.ogg", t = 0.15},
-                {s = ")arccw_uc/common/grab.ogg", t = 0.3},
-            })
-        end
-        wep:SetReloading(CurTime() + 0.7)
-        wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.7)
-    --end
+    if (game.SinglePlayer() and SERVER) or (!game.SinglePlayer() and CLIENT and IsFirstTimePredicted()) then
+        wep:DoLHIKAnimation("sgreload_start", 0.7)
+        wep:PlaySoundTable({
+            {s = ")arccw_uc/common/raise.ogg", t = 0.15},
+            {s = ")arccw_uc/common/grab.ogg", t = 0.3},
+        })
+    end
+
+    wep:SetReloading(CurTime() + 0.4)
+    wep:SetNW2Float("MasterkeyReloadTime", CurTime() + 0.4)
     wep:SetNW2Bool("MasterkeyInReload", true)
-
-    --local reserve = Ammo(wep)
-    --reserve = reserve + wep:Clip2()
-    --local clip = 4
-    --local load = math.Clamp(clip, 0, reserve)
-    --wep:GetOwner():SetAmmo(reserve - load, "smg1_grenade")
-    --wep:SetClip2(load)
 end
 
 att.Mult_SightTime = 1.2
