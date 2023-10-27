@@ -1,0 +1,5 @@
+VertexLitGeneric
+{
+	$basetexture	"models/uc/attachments/g33/g33_base"
+	$bumpmap		"models/uc/attachments/g33/g33_normal"
+}
