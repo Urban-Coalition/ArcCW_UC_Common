@@ -105,7 +105,7 @@ att.UBGL_Fire = function(wep, ubgl)
     if SERVER then
         proj.Damage = dmg -- lower than the m79 (200) for balance reasons
     end
-    wep:MyEmitSound(")^/arccw_uc/common/40mm/fire-0" .. math.random(1, 6) .. ".ogg", 100, 100, 1, CHAN_WEAPON)
+    wep:MyEmitSound(")^/arccw_uc/common/gp25-blast-0" .. math.random(1, 6) .. ".ogg", 100, 100, 1, CHAN_WEAPON)
     wep:MyEmitSound(")^/arccw_uc/common/40mm/fire-dist-0" .. math.random(1, 6) .. ".ogg", 149, 100, 0.5, CHAN_BODY)
     wep:MyEmitSound(")^/arccw_uc/common/40mm/mech-0" .. math.random(1, 6) .. ".ogg", 149, 100, 0.5, CHAN_AUTO)
 
@@ -129,9 +129,8 @@ att.UBGL_Reload = function(wep, ubgl)
         wep:PlaySoundTable({
             {s = { "arccw_uc/common/rattle1.ogg", "arccw_uc/common/rattle2.ogg", "arccw_uc/common/rattle3.ogg" }, t = 0},
             {s = "arccw_uc/common/magpouch_replace_small.ogg", t = 0.2},
-            {s = "arccw_uc/common/40mm/203insert.ogg", t = 1.0},
-            {s = "arccw_uc/common/shoulder.ogg", t = 1.3},
-            {s = "arccw_uc/common/shoulder.ogg", t = 1.9},
+            {s = "arccw_uc/common/gp25_insert.ogg", t = 1.0},
+            {s = "arccw_uc/common/shoulder.ogg", t = 2.2},
         })
     end
 
