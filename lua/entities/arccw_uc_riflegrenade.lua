@@ -24,7 +24,7 @@ ENT.SmokeTrail = true
 
 local path = "arccw_uc/common/"
 local path1 = "arccw_uc/common/"
-ENT.ExplosionSounds = {path .. "explosion-close-01.ogg", path .. "explosion-close-02.ogg"}
+ENT.ExplosionSounds = {path .. "explosion-close-01.ogg", path .. "explosion-close-02.ogg", path .. "explosion-close-03.ogg", path .. "explosion-close-04.ogg", path .. "explosion-close-05.ogg", path .. "explosion-close-06.ogg"}
 ENT.DebrisSounds = {path1 .. "debris-01.ogg", path1 .. "debris-02.ogg", path1 .. "debris-03.ogg", path1 .. "debris-04.ogg", path1 .. "debris-05.ogg"}
 
 
@@ -121,6 +121,7 @@ function ENT:Detonate()
             --self:EmitSound("phx/kaboom.wav", 125, 100, 1, CHAN_AUTO)
 
             -- Where is the sound zenith ? ???
+            -- what sound bich
         end
 
         util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.GrenadeRadius * 4)
