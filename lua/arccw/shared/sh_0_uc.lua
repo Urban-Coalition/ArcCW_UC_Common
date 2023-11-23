@@ -1001,3 +1001,7 @@ if SERVER then
         fukc_server()
     end, nil, "command server to cache")
 end
+
+-- As of 2023-11-12, this feature is only available on dev branch.
+-- Won't break anything on release branch though.
+list.Set("ContentCategoryIcons", "ArcCW - Urban Coalition", "uc_16.png")
