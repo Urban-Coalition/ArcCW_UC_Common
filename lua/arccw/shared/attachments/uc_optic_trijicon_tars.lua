@@ -20,10 +20,10 @@ att.ModelScale = Vector(1.05,1.05,1.05)
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 10.6, -1.51),
+        Pos = Vector(0, 11, -1.51),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
-		ViewModelFOV = 25,
+		ViewModelFOV = 38,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
         ScopeMagnification = UC_HalfScope( 3 ),
         ScopeMagnificationMin = UC_HalfScope( 3 ),
@@ -32,7 +32,7 @@ att.AdditionalSights = {
             Holosight = true,
             HolosightReticle = Material("hud/scopes/uc_tars_reticle.png", "mips smooth"),
             HolosightNoFlare = true,
-            HolosightSize = 18,
+            HolosightSize = 12,
             HolosightPiece = "models/weapons/arccw/atts/uc_trijicon_tars_hsp.mdl",
             HolosightBlackbox = true,
             HolosightMagnification = UC_HalfScope( 3 ),
